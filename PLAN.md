@@ -83,6 +83,12 @@
 
 **H. Sistema de la familia Radar** — tipografía, paleta base, estructura de páginas, componentes con fuente y nivel de afirmación, stack y cómo se sirven los datos, para heredarlo en F4.
 
+**I. Fondos y apoyos para pymes** (2-oct, Sergio: «es hiper necesario, la gente no sabe; hay tipos en Instagram que viven de decir lo que Corfo concursa»)
+- La investigación sube a F0 sin esperar las entrevistas: reunir datos no decide nada. La pregunta 6 del sondeo mide si la gente postula y cómo se entera.
+- Lo que Radar Pyme agrega frente a quien difunde convocatorias en redes: **tasa de adjudicación** cuando esté publicada, requisitos duros, aporte propio, **rendición de gastos** y calendario histórico de apertura. Quien vende asesoría para postular no tiene incentivo para publicar cuántos pierden.
+- Riesgo principal: la información de fondos caduca. Ningún fondo se publica sin fecha de verificación; el aviso automático de apertura (F6, motor de `radar-licitaciones`) deja de ser condicional si el sondeo confirma la demanda.
+- Parte del mapa ya verificado en `financiamiento/` (sept-2026). → `investigacion/2026-10-02-f0i-fondos.md`
+
 ## 5. Mantención
 
 Cada dato de `datos/` tiene fecha de reverificación según cómo cambia (mensual, anual, por ley). Antes de publicar se define quién lo revisa y cuándo; un sitio de referencia con un valor vencido hace más daño que no tenerlo.
