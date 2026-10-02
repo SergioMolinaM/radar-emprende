@@ -7,14 +7,14 @@
 - Pedir audio: cuentan más y con casos concretos.
 - Preguntar por lo que pasó, nunca «¿te serviría…?».
 - No corregir ni asesorar mientras responde. Si pide ayuda, se le da al final.
-- Las respuestas se pasan a una ficha anónima (`fichas/W1.md`…) con rubro y comuna; nombre y número quedan solo en `contactos.md`, fuera del repo. Los audios se borran después de transcribir.
+- Las respuestas se pasan a una ficha (`fichas/W1.md`…) con rubro y comuna; nombre y número quedan solo en `contactos.md`. Ni las fichas ni los contactos se versionan: el repo es público. Los audios se borran después de transcribir.
 
 ---
 
 **Mensaje 1 — invitación**
 
 > Hola [nombre], ¿cómo estás? Estoy juntando experiencias de emprendedores sobre el papeleo del negocio: SII, boletas, sueldos, bancos. No vendo nada; quiero entender cómo lo hace la gente de verdad, para armar información gratis y clara.
-> Son 5 preguntas cortas y puedes contestar con audio. ¿Te animas?
+> Son 6 preguntas cortas y puedes contestar con audio. ¿Te animas?
 
 *(Si dice que sí, seguir. Si no contesta en dos días, un solo recordatorio y nada más.)*
 
@@ -36,12 +36,16 @@
 
 **Mensaje 6**
 
+> ¿Has postulado alguna vez a un fondo (Sercotec, Corfo, Fosis, municipio) o le has vendido algo al Estado? ¿Cómo te enteraste de esa oportunidad? Si nunca, ¿por qué no?
+
+**Mensaje 7**
+
 > Última: cuando tienes una duda de impuestos o de sueldos, ¿a quién o dónde le preguntas primero?
 
-**Mensaje 7 — cierre**
+**Mensaje 8 — cierre**
 
 > Mil gracias, me sirve muchísimo. ¿Te puedo llamar 20 minutos algún día de estas semanas para profundizar? Si no puedes, no hay problema. Y si conoces a otro emprendedor que quiera contar su experiencia, te agradezco que me lo presentes.
 
 ---
 
-**A quién llamar después:** a quienes contaron un caso concreto (no una queja general), a quienes pagaron algo por no saber, y al menos a uno sin inicio de actividades.
+**A quién llamar después:** a quienes contaron un caso concreto (no una queja general), a quienes pagaron algo por no saber, al menos a uno sin inicio de actividades, y a uno que haya postulado a un fondo o vendido al Estado (si hay).

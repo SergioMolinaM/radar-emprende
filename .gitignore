@@ -1,5 +1,9 @@
 # Nombres, teléfonos y RUT de las personas entrevistadas: nunca al repo.
 contactos.md
+# Fichas de entrevistas: el repo es público y rubro + comuna identifica a una persona.
+# Solo se versiona la plantilla; lo publicable sale agregado por región.
+fichas/*
+!fichas/plantilla.md
 # Audios de entrevistas: se borran tras transcribir.
 *.m4a
 *.mp3

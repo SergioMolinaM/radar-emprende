@@ -17,17 +17,34 @@ Parte de la familia RADAR de Tercera Letra: información pública dispersa conve
 - **Elegido:** cinco entrevistas a pymes reales (`guion-entrevistas.md`) antes de escribir la guía.
 - **Descartado:** definir el contenido desde la búsqueda de software.
 - **Por qué es mejor para la gente:** la búsqueda mostró qué software existe, no qué le duele a una pyme; sin eso la guía responde preguntas que nadie hace.
-- **Costo para nosotros (no es criterio):** unas cinco horas de conversación más el registro.
+- **Costo para nosotros (no es criterio):** unas cinco horas de conversación más el registro. A las cinco entrevistas se suma un sondeo por WhatsApp a emprendedores (`guion-whatsapp.md`) para elegir a quién entrevistar.
+
+**2-oct-2026 — Abierto y libre: sitio gratis, contenido CC BY 4.0, código MIT, repo público.**
+- **Elegido:** acceso gratuito como Radar Construcción Industrializada, y además licencia libre para que otros reutilicen el contenido y los datos citando la fuente.
+- **Descartado:** el modelo de Radar CI tal cual (sitio público con repo privado y sin licencia), que deja leer pero no copiar.
+- **Por qué es mejor para la gente:** que contadores, municipios, Sercotec o cámaras de comercio puedan reproducir la guía multiplica su alcance; en un bien público eso vale más que el tráfico propio.
+- **Costo para nosotros (no es criterio):** cuidar que nada identificable llegue al repo; por eso las fichas de entrevistas no se versionan (rubro + comuna identifica a una persona) y lo publicable sale agregado por región.
+
+**2-oct-2026 — Núcleo angosto, no «todo para pymes».**
+- **Elegido:** un tema central profundo (candidatos: contratar al primer trabajador; formalizarse) que deciden las entrevistas; un radar automático de Compra Ágil y fondos concursables solo si las entrevistas muestran que lo usarían.
+- **Descartado:** una guía general de todo lo que toca a una pyme; y un radar de cambios normativos del SII y la DT (resumir mal una resolución hace daño y casi nada de lo publicado le toca a una pyme).
+- **Por qué es mejor para la gente:** la referencia se gana siendo angosto y profundo (lección del plan de Radar CI, 17-sep-2026).
+- **Costo para nosotros (no es criterio):** el radar de oportunidades reutilizaría el motor de `radar-licitaciones`.
 
 ## Abierto
 
 - Las cinco entrevistas: a quién (se anota en `contactos.md`, fuera del repo).
 - El contenido de la guía: sale de las fichas.
-- Formato y publicación: después del contenido.
+- Sitio y dominio: después del contenido.
 
 ## Estructura
 
-- `guion-entrevistas.md` — guion y reglas.
-- `fichas/` — una ficha anónima por entrevista (`P1.md`…), desde `plantilla.md`.
+- `guion-entrevistas.md` — entrevista larga (25–30 min) y reglas.
+- `guion-whatsapp.md` — sondeo corto por WhatsApp a emprendedores.
+- `fichas/` — una ficha por entrevista desde `plantilla.md`. **Solo la plantilla se versiona.**
 - `investigacion/` — barridos de fuentes con fecha.
-- `contactos.md` — **no se versiona** (`.gitignore`).
+- `contactos.md` — **no se versiona**.
+
+## Licencia
+
+Contenido y datos: [CC BY 4.0](LICENSE-CONTENIDO.md). Código: [MIT](LICENSE). Cita sugerida: «Radar Pyme — Tercera Letra SpA».

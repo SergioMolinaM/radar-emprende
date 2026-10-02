@@ -60,6 +60,10 @@ Preguntar solo lo que aplique según el bloque 2. Por cada uno: **la última vez
 - ¿Cómo sabe qué clientes le pagaron y cuáles no? ¿Cada cuánto lo revisa?
 - ¿Cuánto paga al mes en comisiones (banco, máquina de tarjetas)? ¿Lo tiene claro?
 
+**Fondos y ventas al Estado**
+- ¿Ha postulado a algún fondo (Sercotec, Corfo, Fosis, municipio) o le ha vendido al Estado (Mercado Público, Compra Ágil)? ¿Cómo se enteró? ¿Qué pasó?
+- Si nunca: ¿por qué no?
+
 **Datos de clientes** (solo si guarda datos de clientes: listas, WhatsApp, fichas)
 - ¿Ha escuchado de alguna ley nueva sobre datos personales? ¿Qué sabe? *(No explicar: anotar.)*
 
@@ -82,7 +86,7 @@ Si preguntó para qué es: *«Quiero armar información gratuita y clara para py
 
 ## Después de la entrevista
 
-Llenar la ficha **el mismo día**, desde `fichas/plantilla.md`, como `fichas/P1.md`, `P2.md`… Si hubo audio, borrarlo después de transcribir.
+Llenar la ficha **el mismo día**, desde `fichas/plantilla.md`, como `fichas/P1.md`, `P2.md`… Las fichas no se versionan (el repo es público); lo que se publique sale agregado por región. Si hubo audio, borrarlo después de transcribir.
 
 **Qué buscar al juntar las cinco:**
 - El problema que aparece en **tres o más** fichas con un caso concreto (no en opinión).
