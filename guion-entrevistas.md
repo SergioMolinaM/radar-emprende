@@ -30,6 +30,7 @@ Si se va a grabar: *«¿Me autoriza a grabar el audio solo para mis notas? Lo bo
 - ¿A qué se dedica el negocio y hace cuánto?
 - ¿Cuántas personas trabajan acá, contándolo a usted? ¿Con contrato, a honorarios, familiares?
 - ¿Vende a personas, a empresas o a ambas? ¿Emite boletas, facturas o las dos?
+- Si tiene inicio de actividades: ¿por qué decidió formalizarse y qué le costó (plata, tiempo, trámites)? Si no tiene: ¿qué lo ha frenado?
 - ¿Quién lleva los impuestos: usted, un contador, una empresa? ¿Cuánto le cobra al mes?
 - ¿Qué programas, apps o suscripciones paga para el negocio (facturación, sueldos, Office, punto de venta, tienda web)? ¿Cuánto al mes en total?
 
@@ -56,6 +57,9 @@ Preguntar solo lo que aplique según el bloque 2. Por cada uno: **la última vez
 - ¿Cómo paga las cotizaciones en Previred? ¿Alguna vez se atrasó? ¿Por qué?
 - ¿Sabe qué es el Libro de Remuneraciones Electrónico? ¿Quién lo sube? *(Si no sabe, no explicar: anotar.)*
 - La última vez que contrató a alguien: ¿cómo supo cuánto le iba a costar en total?
+
+**Si no tiene trabajadores**
+- ¿Ha pensado en contratar a alguien? ¿Qué lo frena? (costo, trámites, no saber cuánto sale, otra cosa)
 
 **Bancos**
 - ¿Cómo sabe qué clientes le pagaron y cuáles no? ¿Cada cuánto lo revisa?
