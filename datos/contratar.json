@@ -1,0 +1,425 @@
+{
+ "_meta": {
+  "descripcion": "Valores oficiales para calcular el costo de contratar a un trabajador dependiente en Chile. Las citas de nivel 1 fueron releídas por Claude contra la fuente el 2-oct-2026 (script de relectura con control positivo).",
+  "nivel": "1 = cita literal releída; 2 = derivado, o cita vía resumen no releída. Nivel 3 no entra a este archivo.",
+  "licencia": "CC BY 4.0, Radar Emprende - Tercera Letra SpA",
+  "investigacion": "investigacion/2026-10-02-f0a-contratar.md"
+ },
+ "ingreso_minimo": [
+  {
+   "id": "imm_18_65",
+   "valor": 553553,
+   "unidad": "CLP/mes",
+   "vigente_desde": "2026-05-01",
+   "fuente_url": "https://www.dt.gob.cl/portal/1628/w3-article-60141.html",
+   "fuente_cita": "A contar del 01 de mayo de 2026 el Ingreso Mínimo Mensual es de: $553.553 para trabajadores mayores de 18 años y de hasta 65 años.",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "reverificar": "2027-01-01",
+   "nota": "Ley 21.830 (DO 22-jun-2026). Se reajusta por IPC el 1-ene-2027."
+  },
+  {
+   "id": "imm_menores18_mayores65",
+   "valor": 412938,
+   "unidad": "CLP/mes",
+   "vigente_desde": "2026-05-01",
+   "fuente_url": "https://www.dt.gob.cl/portal/1628/w3-article-60141.html",
+   "fuente_cita": "$412.938 para trabajadores menores de 18 años y mayores de 65 años.",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "reverificar": "2027-01-01"
+  },
+  {
+   "id": "imm_no_remuneracional",
+   "valor": 356815,
+   "unidad": "CLP/mes",
+   "vigente_desde": "2026-05-01",
+   "fuente_url": "https://www.dt.gob.cl/portal/1628/w3-article-60141.html",
+   "fuente_cita": "$356.815 para fines no remuneracionales.",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "reverificar": "2027-01-01"
+  }
+ ],
+ "topes_imponibles": [
+  {
+   "id": "tope_afp_salud_accidentes",
+   "valor": 90.0,
+   "unidad": "UF/mes",
+   "vigente_desde": "2026-02",
+   "fuente_url": "https://www.spensiones.cl/portal/institucional/594/w3-article-16921.html",
+   "fuente_cita": "de salud y de ley de accidentes del trabajo será de 90,0 UF",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "reverificar": "2027-02-01",
+   "nota": "Rige desde el pago de las remuneraciones de febrero de 2026, todo el año."
+  },
+  {
+   "id": "tope_cesantia",
+   "valor": 135.2,
+   "unidad": "UF/mes",
+   "vigente_desde": "2026-02",
+   "fuente_url": "https://www.spensiones.cl/portal/institucional/594/w3-article-16921.html",
+   "fuente_cita": "en el caso del seguro de cesantía, quedará en 135,2 UF",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "reverificar": "2027-02-01"
+  }
+ ],
+ "trabajador": [
+  {
+   "id": "afp_obligatoria",
+   "valor": 10.0,
+   "unidad": "% imponible",
+   "vigente_desde": "permanente",
+   "fuente_url": "https://www.spensiones.cl/portal/institucional/594/w3-propertyvalue-9897.html",
+   "fuente_cita": "Cotización obligatoria del 10% de las remuneraciones y rentas imponibles mensuales con un tope de 90 Unidades de Fomento (UF)",
+   "consultado": "2026-10-02",
+   "nivel": 2,
+   "nota": "Cita vía resumen del investigador; no incluida en la relectura del 2-oct."
+  },
+  {
+   "id": "comision_afp_uno",
+   "valor": 0.46,
+   "unidad": "% imponible",
+   "vigente_desde": "2025-10-01",
+   "fuente_url": "https://www.spensiones.cl/portal/institucional/594/w3-article-16714.html",
+   "fuente_cita": "AFP Uno, cuya comisión de administración es la más baja: 0,46%",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "reverificar": "2027-10-01",
+   "nota": "Comisiones de las otras AFP (Modelo 0,58; PlanVital 1,16; Habitat 1,27; Capital y Cuprum 1,44; Provida 1,45) pendientes de relectura."
+  },
+  {
+   "id": "salud",
+   "valor": 7.0,
+   "unidad": "% imponible",
+   "vigente_desde": "permanente",
+   "fuente_url": "https://www.chileatiende.gob.cl/fichas/5390-declarar-y-pagar-el-7-de-las-cotizaciones-de-salud-de-fonasa",
+   "fuente_cita": "corresponde el descuento de un 7% de la renta imponible para todos los cotizantes afiliados a FONASA",
+   "consultado": "2026-10-02",
+   "nivel": 2,
+   "nota": "Cita vía resumen; no incluida en la relectura del 2-oct."
+  },
+  {
+   "id": "cesantia_trabajador_indefinido",
+   "valor": 0.6,
+   "unidad": "% imponible",
+   "vigente_desde": "permanente",
+   "fuente_url": "https://www.suseso.gob.cl/613/w3-propertyvalue-122245.html",
+   "fuente_cita": "a) Un 0,6% de las remuneraciones imponibles, de cargo del trabajador con contrato de duración indefinida.",
+   "consultado": "2026-10-02",
+   "nivel": 1
+  },
+  {
+   "id": "cesantia_trabajador_plazo_fijo",
+   "valor": 0.0,
+   "unidad": "% imponible",
+   "vigente_desde": "permanente",
+   "fuente_url": "https://www.suseso.gob.cl/613/w3-propertyvalue-122245.html",
+   "fuente_cita": "un 3% de las remuneraciones imponibles para los trabajadores con contrato a plazo fijo",
+   "consultado": "2026-10-02",
+   "nivel": 2,
+   "nota": "Derivado del art. 5: el 3 % es del empleador y la letra a) solo grava al trabajador indefinido."
+  }
+ ],
+ "empleador": [
+  {
+   "id": "cesantia_empleador_indefinido",
+   "valor": 2.4,
+   "unidad": "% imponible",
+   "vigente_desde": "permanente",
+   "fuente_url": "https://www.suseso.gob.cl/613/w3-propertyvalue-122245.html",
+   "fuente_cita": "b) Un 2,4% de las remuneraciones imponibles, en el caso de los trabajadores con contrato de duración indefinida",
+   "consultado": "2026-10-02",
+   "nivel": 1
+  },
+  {
+   "id": "cesantia_empleador_plazo_fijo",
+   "valor": 3.0,
+   "unidad": "% imponible",
+   "vigente_desde": "permanente",
+   "fuente_url": "https://www.suseso.gob.cl/613/w3-propertyvalue-122245.html",
+   "fuente_cita": "un 3% de las remuneraciones imponibles para los trabajadores con contrato a plazo fijo",
+   "consultado": "2026-10-02",
+   "nivel": 1
+  },
+  {
+   "id": "accidentes_basica",
+   "valor": 0.9,
+   "unidad": "% imponible",
+   "vigente_desde": "permanente",
+   "fuente_url": "https://www.suseso.gob.cl/613/w3-propertyvalue-68980.html",
+   "fuente_cita": "una cotización básica general del 0,90% de las remuneraciones imponibles, de cargo del empleador",
+   "consultado": "2026-10-02",
+   "nivel": 1
+  },
+  {
+   "id": "sanna",
+   "valor": 0.03,
+   "unidad": "% imponible",
+   "vigente_desde": "permanente",
+   "fuente_url": "https://www.suseso.gob.cl/613/w3-propertyvalue-135999.html",
+   "fuente_cita": "la cotización del 0,03% que además deberán enterar, en virtud del artículo 3° de la Ley N°21.010",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "nota": "Pagador «empleador» según fuentes secundarias; ley no leída."
+  },
+  {
+   "id": "accidentes_adicional",
+   "valor": null,
+   "unidad": "% imponible",
+   "vigente_desde": "-",
+   "fuente_url": "https://www.suseso.gob.cl/613/w3-propertyvalue-68980.html",
+   "fuente_cita": "no podrá exceder de un 3,4% de las remuneraciones imponibles",
+   "consultado": "2026-10-02",
+   "nivel": 2,
+   "nota": "Depende de actividad y siniestralidad. Empresa nueva: tasa del D.S. 110 (tabla no obtenida). Conflicto 3,4 % (art. 15) vs 6,80 % (Tabla 3 Compendio SUSESO) sin resolver: no se calcula; se muestra «depende de tu mutual»."
+  }
+ ],
+ "reforma_pensiones_ley_21735": {
+  "fuente_url": "https://www.bcn.cl/leychile/navegar?idNorma=1212060",
+  "fuente_pdf": "https://previsionsocial.gob.cl/traspaso-gobierno/Ley_Chile_Ley_21735_Biblioteca_del_Congreso_Nacional.pdf",
+  "publicacion": "2025-03-26",
+  "consultado": "2026-10-02",
+  "nota": "Cotización de cargo del empleador sobre remuneración imponible (tope 90 UF). Desde el 1-ago-2026 incluye el seguro de invalidez y sobrevivencia (SIS): no se suma aparte.",
+  "sis_incluido": {
+   "id": "sis_dentro_seguro_social",
+   "valor": true,
+   "unidad": "booleano",
+   "vigente_desde": "2026-08-01",
+   "fuente_url": "https://www.bcn.cl/leychile/navegar?idNorma=1212060",
+   "fuente_cita": "A partir de esa misma fecha dicho seguro será financiado por el Fondo Autónomo de Protección Previsional, mediante la cotización que realicen los empleadores al seguro social previsional establecido en la presente ley, y sustituirá la cotización que establece el decreto ley N° 3.500, de 1980, para tal efecto.",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "nota": "Art. 8° transitorio; releído en el PDF de BCN."
+  },
+  "etapas": [
+   {
+    "desde": "2025-08-01",
+    "total": 1.0,
+    "cci": 0.1,
+    "crp": 0.0,
+    "seguro_social": 0.9
+   },
+   {
+    "desde": "2026-08-01",
+    "total": 3.5,
+    "cci": 0.1,
+    "crp": 0.9,
+    "seguro_social": 2.5,
+    "cita": "la tasa de cotización será de 3,5% de las remuneraciones imponibles de las y los trabajadores. Dicha cotización se abonará de la siguiente forma: 0,1%, 0,9% y 2,5%"
+   },
+   {
+    "desde": "2027-08-01",
+    "total": 4.25,
+    "cci": 0.25,
+    "crp": 1.5,
+    "seguro_social": 2.5
+   },
+   {
+    "desde": "2028-08-01",
+    "total": 5.0,
+    "cci": 1.0,
+    "crp": 1.5,
+    "seguro_social": 2.5
+   },
+   {
+    "desde": "2029-08-01",
+    "total": 5.7,
+    "cci": 1.7,
+    "crp": 1.5,
+    "seguro_social": 2.5,
+    "alternativa": 5.5
+   },
+   {
+    "desde": "2030-08-01",
+    "total": 6.4,
+    "cci": 2.4,
+    "crp": 1.5,
+    "seguro_social": 2.5,
+    "alternativa": 6.0
+   },
+   {
+    "desde": "2031-08-01",
+    "total": 7.1,
+    "cci": 3.1,
+    "crp": 1.5,
+    "seguro_social": 2.5,
+    "alternativa": 6.5
+   },
+   {
+    "desde": "2032-08-01",
+    "total": 7.8,
+    "cci": 3.8,
+    "crp": 1.5,
+    "seguro_social": 2.5,
+    "alternativa": 7.0
+   },
+   {
+    "desde": "2033-08-01",
+    "total": 8.5,
+    "cci": 4.5,
+    "crp": 1.5,
+    "seguro_social": 2.5,
+    "alternativa": 7.5
+   }
+  ],
+  "nivel_etapas": "1 para 2025 y 2026 (releídas en el PDF); 1 del investigador para 2027-2033 (leídas en el PDF por él, no releídas una por una).",
+  "rama_alternativa": "Desde 2029 las tasas pueden reemplazarse por la columna «alternativa» (8,5 % recién en 2035) si un decreto de Hacienda así lo señala tras la evaluación de la Ley 21.713. Si ese decreto existe: NO VERIFICADO (nivel 3); la guía muestra la rama base con esta advertencia.",
+  "fechas_calendario": "SP: «A partir del 1 de agosto de 2026 y hasta julio de 2027 la cotización de cargo del empleador será de 3,5%» (https://www.spensiones.cl/portal/institucional/594/w3-propertyvalue-10906.html)",
+  "reverificar": "2027-07-15"
+ },
+ "impuesto_unico": {
+  "fuente_url": "https://www.sii.cl/valores_y_fechas/impuesto_2da_categoria/impuesto2026.htm",
+  "utm_url": "https://www.sii.cl/valores_y_fechas/utm/utm2026.htm",
+  "consultado": "2026-10-02",
+  "nivel": 1,
+  "reverificar": "mensual",
+  "utm": {
+   "2026-09": 71721,
+   "2026-10": 72151
+  },
+  "tramos_mensuales_oct_2026": [
+   {
+    "hasta": 974038.5,
+    "factor": 0,
+    "rebaja": 0
+   },
+   {
+    "hasta": 2164530.0,
+    "factor": 0.04,
+    "rebaja": 38961.54
+   },
+   {
+    "hasta": 3607550.0,
+    "factor": 0.08,
+    "rebaja": 125542.74
+   },
+   {
+    "hasta": 5050570.0,
+    "factor": 0.135,
+    "rebaja": 323957.99
+   },
+   {
+    "hasta": 6493590.0,
+    "factor": 0.23,
+    "rebaja": 803762.14
+   },
+   {
+    "hasta": 8658120.0,
+    "factor": 0.304,
+    "rebaja": 1284287.8
+   },
+   {
+    "hasta": 22366810.0,
+    "factor": 0.35,
+    "rebaja": 1682561.32
+   },
+   {
+    "hasta": null,
+    "factor": 0.4,
+    "rebaja": 2800901.82
+   }
+  ],
+  "nota": "Se usa la tabla del mes de pago. Releídos: tramos 1 a 4 y el último; los demás vistos en el mismo texto de la tabla."
+ },
+ "beneficios_y_obligaciones": [
+  {
+   "id": "gratificacion_art50",
+   "valor": {
+    "porcentaje": 25,
+    "tope_imm_anual": 4.75
+   },
+   "unidad": "regla",
+   "vigente_desde": "permanente",
+   "fuente_url": "https://www.dt.gob.cl/portal/1628/w3-article-60162.html",
+   "fuente_cita": "los 4,75 Ingresos Mínimos Mensuales equivalente al Ingreso Mínimo Mensual vigente al 31 de diciembre",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "nota": "Solo obliga a empresas con fines de lucro, contabilidad y utilidad líquida (art. 47); el art. 50 es una opción. No mostrar como costo automático."
+  },
+  {
+   "id": "asignacion_familiar",
+   "valor": [
+    {
+     "tramo": "A",
+     "renta_hasta": 649039,
+     "monto": 22601
+    },
+    {
+     "tramo": "B",
+     "renta_hasta": 947990,
+     "monto": 13870
+    },
+    {
+     "tramo": "C",
+     "renta_hasta": 1478539,
+     "monto": 4382
+    },
+    {
+     "tramo": "D",
+     "renta_hasta": null,
+     "monto": 0
+    }
+   ],
+   "unidad": "CLP por carga",
+   "vigente_desde": "2026-07-01",
+   "fuente_url": "https://www.suseso.gob.cl/606/w3-article-498133.html",
+   "fuente_cita": "202603 O-01-S-02728-2026 21.830 01-07-2026 1 649.039 22.601",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "reverificar": "2027-01-01",
+   "nota": "La paga el Estado a través del empleador; no es costo. Período desde 01-07-2026 con ingresos de referencia de enero a junio de 2026."
+  },
+  {
+   "id": "plazo_contrato_escrito",
+   "valor": {
+    "general_dias": 15,
+    "obra_o_menos_30_dias": 5
+   },
+   "unidad": "días",
+   "vigente_desde": "permanente",
+   "fuente_url": "https://www.dt.gob.cl/portal/1628/w3-article-60780.html",
+   "fuente_cita": "El empleador dispone de un plazo de 15 días para escriturar el contrato de trabajo, contado desde la incorporación del trabajador. Si el contrato es por obra, trabajo determinado o de duración inferior a 30 días, el plazo se reduce a 5 días.",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "nota": "Multa de una a cinco UTM por no escriturar."
+  },
+  {
+   "id": "libro_remuneraciones_umbral",
+   "valor": 5,
+   "unidad": "trabajadores",
+   "vigente_desde": "permanente",
+   "fuente_url": "https://www.dt.gob.cl/portal/1628/w3-article-60232.html",
+   "fuente_cita": "obligado a llevar un libro de remuneraciones cuando cuenta con cinco o más trabajadores",
+   "consultado": "2026-10-02",
+   "nivel": 1
+  },
+  {
+   "id": "lre_plazo",
+   "valor": 15,
+   "unidad": "días hábiles del mes siguiente al pago",
+   "vigente_desde": "permanente",
+   "fuente_url": "https://www.dt.gob.cl/portal/1626/w3-article-119843.html",
+   "fuente_cita": "La información deberás registrarla dentro de los 15 días hábiles del mes siguiente al respectivo pago.",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "nota": "Desde cuántos trabajadores es exigible el LRE electrónico: no verificado (nivel 3)."
+  },
+  {
+   "id": "pago_cotizaciones",
+   "valor": {
+    "dia_general": 10,
+    "dia_internet": 13
+   },
+   "unidad": "día del mes siguiente",
+   "vigente_desde": "permanente",
+   "fuente_url": "https://www.spensiones.cl/portal/institucional/594/w3-propertyvalue-10906.html",
+   "fuente_cita": "hasta el día 10 del mes siguiente al que pagó la remuneración",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "nota": "El día 13 por internet viene del investigador vía resumen (nivel 2)."
+  }
+ ]
+}

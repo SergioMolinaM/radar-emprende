@@ -25,8 +25,11 @@
 
 - **Sergio eligió Radar Emprende** («dale»). Repo de GitHub y carpeta local renombrados a `radar-emprende` (GitHub redirige el nombre viejo). F6 sin Compra Ágil (lo hace RadarPyme).
 
+- **`datos/contratar.json`**: primer archivo de datos. Claude releyó 15 páginas oficiales con script y control positivo (todas coinciden) y el PDF de la Ley 21.735: el SIS queda dentro del 3,5 % desde ago-2026 (art. 8° transitorio, «sustituirá la cotización»). Asignación familiar: tabla SUSESO con período desde 01-07-2026, mismos montos (duda cerrada). Costo empleador sobre el IMM, indefinido: 6,83 % = $37.808, más adicional de la mutual.
+
 ### Pendiente
 
+- Relectura pendiente: comisiones de las otras AFP, 10 % AFP y 7 % salud (nivel 2), Previred día 13; luego B/C/D (formalizarse) y fondos.
 - Consulta a abogado de propiedad industrial por la marca RADAR (afecta a toda la familia) antes de inscribir radar-emprende.cl o radaremprende.cl y de difundir.
 - Releer contra la fuente las citas de A y B/C/D (todas vía WebFetch, resumidor) antes de `datos/*.json`. Dudas abiertas: SIS dentro del 3,5 % vs. Hacienda «se suma»; tope 3,4 % vs. tabla SUSESO 6,80 % (Ley 16.744); asignación familiar vigente hasta 30-jun-2026; LRE «15 días hábiles» vs. «día 15»; IDPC Pro Pyme 12,5 % (Ley 21.755 sin leer).
 - G e I entregados. G: la serie fuerte es el Registro de Empresas y Sociedades (datos.gob.cl, CC BY, comuna y mes); SII/EME sin cabeceras verificadas → verificador con Python en curso. I: fondos.gob.cl no sirve como fuente (54 fondos de emprendimiento, 0 abiertos, fichas Corfo 2024); tasa de adjudicación oficial solo Capital Semilla 2011 (4,8 %); el resto se pide por Ley 20.285. Fuentes automatizables: calendario y RSS de Sercotec, tabla paginada de INDAP.
