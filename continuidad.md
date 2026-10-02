@@ -13,8 +13,11 @@
 - Decidido con Sergio: abierto y libre (contenido CC BY 4.0, código MIT, repo público) y núcleo angosto; radar de Compra Ágil y fondos solo si las entrevistas lo piden. Pregunta de fondos y ventas al Estado agregada a ambos guiones.
 - `fichas/*` fuera de git salvo la plantilla (rubro + comuna identifica). Repo público creado por Sergio: https://github.com/SergioMolinaM/radar-pyme (verificado PUBLIC, 9 entradas en la raíz).
 
+- `PLAN.md`: decisiones cerradas, protocolo R1–R8 adaptado (R1: no asesora casos particulares), fases F0–F6. F0 (base de datos verificada) empezó en paralelo al sondeo: dos investigadores en curso (contratar; formalizarse + calendario + herramientas).
+
 ### Pendiente
 
+- F0: releer las citas de los investigadores contra la fuente y pasar lo nivel 1 a `datos/*.json`.
 - Elegir las cinco pymes y anotarlas en `contactos.md` (no versionado).
 - Hacer las entrevistas y llenar `fichas/P1.md`…`P5.md` el mismo día.
 - Mandar el sondeo de WhatsApp a 15–20 emprendedores; de ahí salen los cinco de la entrevista larga.
