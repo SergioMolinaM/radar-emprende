@@ -1,0 +1,190 @@
+{
+ "_meta": {
+  "descripcion": "Fondos para emprendedores y pymes. Cada cita fue releída por Claude en el PDF de las bases el 2-oct-2026. Las bases son de la Región Metropolitana; otras regiones pueden variar en cupos y fechas.",
+  "licencia": "CC BY 4.0, Radar Emprende - Tercera Letra SpA",
+  "investigacion": "investigacion/2026-10-02-f0i-fondos.md",
+  "advertencia": "La información de fondos caduca. Toda convocatoria se reverifica contra sus bases antes de publicarse."
+ },
+ "convocatorias": [
+  {
+   "id": "sercotec-capital-semilla-emprende-2026-rm",
+   "institucion": "Sercotec",
+   "nombre": "Capital Semilla Emprende",
+   "region": "Metropolitana",
+   "anio": 2026,
+   "bases_url": "https://www.sercotec.cl/wp-content/uploads/2026/04/Bases-Semilla-EMPRENDE-2026-Metropolitana-VB%C2%B0.pdf",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "monto": {
+    "valor": 3500000,
+    "unidad": "CLP netos",
+    "cita": "Sercotec entregará un financiamiento de $3.500.000.- netos"
+   },
+   "aporte_propio": {
+    "valor": 3,
+    "unidad": "% del subsidio, en gestión y en inversiones",
+    "cita": "un aporte empresarial del 3% del valor del subsidio de Sercotec destinado para las Acciones de Gestión Empresarial (por cada ítem o subítem a financiar) y un 3% del valor del subsidio de Sercotec destinado a las Inversiones",
+    "nota": "Más los impuestos (IVA) de las compras."
+   },
+   "postulacion": {
+    "apertura": "2026-04-29T12:00",
+    "cierre": "2026-05-13T15:00",
+    "cita": "a contar de las 12:00 horas del día 29 de abril de 2026 hasta las 15:00 horas del día 13 de mayo de 2026"
+   },
+   "requisitos_trampa": [
+    {
+     "texto": "Excluye a quien tenga más del 50 % de una sociedad o una EIRL de primera categoría.",
+     "cita": "Los/as emprendedores/as que tengan una participación mayor al 50% en cualquier tipo de sociedad o empresa (de primera categoría ante el SII) y/o una empresa Individual de Responsabilida"
+    }
+   ],
+   "rendicion": {
+    "compra_asistida_minima": 100000,
+    "cita": "Para la modalidad de compra asistida, el monto de las mismas deberá ser igual o superior a $100.000.- (cien mil pesos) netos."
+   },
+   "cupos_rm": 58,
+   "cupos_cita": "número estimado de 58 emprendedores y emprendedoras a nivel regional"
+  },
+  {
+   "id": "sercotec-crece-urbano-2026-rm",
+   "institucion": "Sercotec",
+   "nombre": "Crece (Multisectorial Urbano)",
+   "region": "Metropolitana",
+   "anio": 2026,
+   "bases_url": "https://www.sercotec.cl/wp-content/uploads/2026/06/Bases-de-Convocatoria_Crece-Multisectorial_Urbano-2026_Metropolitana.pdf",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "monto": {
+    "valor": 5000000,
+    "unidad": "CLP netos",
+    "cita": "por un valor de $5.000.000 netos"
+   },
+   "aporte_propio": {
+    "valor": 15,
+    "unidad": "% del subsidio",
+    "cita": "un aporte empresarial del 15% del valor del subsidio de Sercotec, por cada ítem o subítem a financiar",
+    "nota": "Prensa de 2025 decía 5 % y una guía privada 30 %: vale el 15 % de las bases 2026."
+   },
+   "postulacion": {
+    "apertura": "2026-05-28T12:00",
+    "cierre": "2026-06-11T15:00",
+    "cita": "a contar de las 12:00 horas del día 28 de mayo de 2026, hasta las 15:00 horas del día 11 de junio de 2026"
+   },
+   "requisitos_trampa": [
+    {
+     "texto": "Ventas netas anuales entre 200 y 25.000 UF, acreditadas con la Carpeta Tributaria Regular para Créditos del SII.",
+     "cita": "con ventas netas demostrables anuales mayores o iguales a 200 UF e inferiores o iguales a 25.000 UF"
+    },
+    {
+     "texto": "Exige aprobar cursos virtuales de Sercotec antes de postular (3 de 6, según el investigador; no releído).",
+     "nivel": 2
+    }
+   ],
+   "ejecucion": {
+    "plazo": "cuatro meses desde la firma",
+    "cita": "un plazo máximo de cuatro meses, contados desde la fecha de firma del contrato"
+   },
+   "rendicion": {
+    "compra_asistida_minima": 200000,
+    "cita": "el monto de éstas deberá ser igual o superior a $ 200.000.- (doscientos mil pesos) netos"
+   }
+  },
+  {
+   "id": "sercotec-capital-semilla-modo-empleo-2026-rm",
+   "institucion": "Sercotec",
+   "nombre": "Capital Semilla Modo Empleo",
+   "region": "Metropolitana",
+   "anio": 2026,
+   "bases_url": "https://www.sercotec.cl/wp-content/uploads/2026/08/Bases-Capital-Semilla-Modo-Empleo-Metropolitana-2026-1.pdf",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "monto": {
+    "valor": 3000000,
+    "unidad": "CLP netos",
+    "cita": "El Capital Semilla entregará un financiamiento de $3.000.000.- netos"
+   },
+   "aporte_propio": {
+    "valor": 3,
+    "unidad": "% del subsidio",
+    "cita": "un aporte empresarial del 3% del valor del subsidio de Sercotec destinado para las Acciones de Gestión Empresarial"
+   },
+   "postulacion": {
+    "apertura": "2026-08-25T12:00",
+    "cierre": "2026-09-08T15:00",
+    "cita": "a contar de las 12:00 horas del día 25 de agosto de 2026 hasta las 15:00 horas del día 08 de septiembre de 2026"
+   },
+   "requisitos_trampa": [
+    {
+     "texto": "No haber cotizado de ninguna forma en los 6 meses anteriores a la convocatoria.",
+     "cita": "no deberán registrar cotizaciones previsionales de ningún tipo (como trabajador/a dependiente, trabajador/a independiente o afiliado/a voluntario/a) durante los 6 (seis)"
+    }
+   ],
+   "nota": "El 28-sep-2026 el Gobierno anunció que duplica los cupos sin abrir nueva postulación (RSS Sercotec; prensa). Nivel 2."
+  },
+  {
+   "id": "corfo-semilla-expande-2026",
+   "institucion": "Corfo",
+   "nombre": "Semilla Expande",
+   "region": "Nacional",
+   "anio": 2026,
+   "bases_url": "https://saowcsblobassets.blob.core.windows.net/assets/CONV/26EXP-1/Bases%20Tecnicas%20Semilla%20Expande%202026.pdf",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "monto": {
+    "etapa_1": 25000000,
+    "extension": 20000000,
+    "unidad": "CLP",
+    "cita": "a) Etapa 1: hasta $25.000.000.- (veinticinco millones de pesos). b) Etapa 2 o «Extensión»: ... un subsidio adicional de hasta $20.000.000.-"
+   },
+   "aporte_propio": {
+    "regla": "Corfo cofinancia hasta el 75 % del costo total del proyecto",
+    "cita": "Corfo cofinanciará hasta el 75,00% del costo total del proyecto",
+    "trampa": "El 25 % es del costo total, no del subsidio: con $25.000.000 de Corfo el proyecto cuesta al menos $33.333.333 y el emprendedor pone al menos $8.333.333 (un tercio del subsidio).",
+    "nivel_trampa": 2
+   },
+   "requisitos_trampa": [
+    {
+     "texto": "Menos de 36 meses desde el inicio de actividades.",
+     "cita": "No haber iniciado actividades ante el Servicio de Impuestos Internos, con anterioridad a 36 meses"
+    },
+    {
+     "texto": "Ventas de la solución de al menos $100.000 en los últimos 12 meses.",
+     "cita": "ventas netas facturadas de la solución materia del proyecto postulado de al menos $100.000"
+    },
+    {
+     "texto": "Ventas totales de la persona jurídica que no excedan $80.000.000 en 12 meses.",
+     "cita": "no excedan de $80.000.000.- (ochenta millones de pesos) durante los últimos 12 meses"
+    }
+   ],
+   "postulacion": {
+    "nota": "Fechas 2026 (15-ene a 24-feb) según el investigador; no releídas.",
+    "nivel": 2
+   }
+  }
+ ],
+ "tasas_de_adjudicacion": [
+  {
+   "programa": "Sercotec Capital Semilla Emprende",
+   "anio": 2011,
+   "postulantes": 26457,
+   "admisibles": 16444,
+   "ganadores": 1272,
+   "tasa_sobre_postulantes": 4.8,
+   "tasa_sobre_admisibles": 7.7,
+   "fuente_url": "http://www.dipres.gob.cl/597/articles-139768_informe_final.pdf",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "cita": "1.272 proyectos fueron seleccionados ganadores del capital semilla el año 2011 lo que representa el 4,8% del total de postula",
+   "nota": "Único dato oficial encontrado de cuántos ganan. No es extrapolable a 2026. La tasa sobre admisibles (7,7 %) es cálculo propio: 1.272 / 16.444."
+  },
+  {
+   "programa": "Sercotec Capital Semilla Emprende",
+   "anio": 2010,
+   "postulantes": 27370,
+   "fuente_url": "http://www.dipres.gob.cl/597/articles-139768_informe_final.pdf",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "cita": "cifra que aumentó a 22.423 en 2009 y 27.370 el año 2010",
+   "nota": "Planes recibidos; ganadores 2010 (1.282) según el investigador, no releído."
+  }
+ ]
+}

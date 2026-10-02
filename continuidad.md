@@ -32,10 +32,12 @@
 
 - `patentes-ia` ya estudió Ruta de la Pyme, Pyme Ágil y SUPER; formalización y permisos quedan fuera del núcleo de Radar Emprende (PLAN §0), para no duplicar lo que la postulación de Bienes Públicos ofrece.
 
+- **`datos/fondos.json`**: Semilla Emprende, Crece, Modo Empleo (Sercotec RM 2026) y Semilla Expande (Corfo) con citas releídas en las bases; tasa de adjudicación 2011 (DIPRES). radar-publico-delta.vercel.app no es de Sergio (tercero). Solicitudes de transparencia ampliadas a desglose por comuna.
+
 ### Pendiente
 
-- Sergio: ¿radar-publico-delta.vercel.app es suyo?
-- Escribir `datos/fondos.json` con lo releído.
+- Sergio: enviar solicitudes de transparencia, sondeo WhatsApp, consulta de marca.
+- Releer comisiones de las otras AFP, 10 % AFP, 7 % salud, Previred día 13, cursos previos de Crece y fechas de Expande.
 - Relectura pendiente: comisiones de las otras AFP, 10 % AFP y 7 % salud (nivel 2), Previred día 13; luego B/C/D (formalizarse) y fondos.
 - Consulta a abogado de propiedad industrial por la marca RADAR (afecta a toda la familia) antes de inscribir radar-emprende.cl o radaremprende.cl y de difundir.
 - Releer contra la fuente las citas de A y B/C/D (todas vía WebFetch, resumidor) antes de `datos/*.json`. Dudas abiertas: SIS dentro del 3,5 % vs. Hacienda «se suma»; tope 3,4 % vs. tabla SUSESO 6,80 % (Ley 16.744); asignación familiar vigente hasta 30-jun-2026; LRE «15 días hábiles» vs. «día 15»; IDPC Pro Pyme 12,5 % (Ley 21.755 sin leer).

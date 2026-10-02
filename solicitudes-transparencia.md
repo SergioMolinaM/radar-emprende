@@ -1,5 +1,7 @@
 # Solicitudes de acceso a la información — tasas de adjudicación
 
+**Por qué comuna:** permite responder «¿a qué comunas no llega ningún programa de fomento?», la pregunta de la propuesta al GORE del 12-jun, cruzando con las constituciones del Registro de Empresas por comuna.
+
 **Por qué:** el único dato oficial de cuántos ganan un fondo pyme es Capital Semilla 2011 (DIPRES: 1.272 de 26.457 postulantes, 4,8 %; ver `investigacion/2026-10-02-f0i-fondos.md`). Para 2023–2026 solo se publican cupos. Se piden por Ley 20.285.
 
 **Quién envía:** Sergio, desde el portal de transparencia de cada organismo (o portaltransparencia.cl), como persona natural o como Tercera Letra SpA. Estado: **borrador, sin enviar.**
@@ -8,7 +10,7 @@
 
 ## 1. Sercotec
 
-> En virtud de la Ley N° 20.285 sobre Acceso a la Información Pública, solicito, en formato electrónico reutilizable (CSV o XLSX), la siguiente información para cada convocatoria de los programas Capital Semilla Emprende, Capital Abeja Emprende, Crece, Mejora Negocios, Digitaliza tu Almacén y Modo Empleo (o sus equivalentes), realizadas entre el 1 de enero de 2023 y la fecha de respuesta, desagregada por región:
+> En virtud de la Ley N° 20.285 sobre Acceso a la Información Pública, solicito, en formato electrónico reutilizable (CSV o XLSX), la siguiente información para cada convocatoria de los programas Capital Semilla Emprende, Capital Abeja Emprende, Crece, Mejora Negocios, Digitaliza tu Almacén y Modo Empleo (o sus equivalentes), realizadas entre el 1 de enero de 2023 y la fecha de respuesta, desagregada por región y por comuna del domicilio del postulante o beneficiario:
 > 1. Número de postulaciones recibidas.
 > 2. Número de postulaciones declaradas admisibles.
 > 3. Número de proyectos seleccionados o adjudicados.
@@ -19,7 +21,7 @@
 
 ## 2. Corfo
 
-> En virtud de la Ley N° 20.285 sobre Acceso a la Información Pública, solicito, en formato electrónico reutilizable (CSV o XLSX), para cada convocatoria de los instrumentos Semilla Inicia, Semilla Expande y de los programas regionales de apoyo al emprendimiento y a empresas de menor tamaño, realizadas entre el 1 de enero de 2023 y la fecha de respuesta, desagregada por región:
+> En virtud de la Ley N° 20.285 sobre Acceso a la Información Pública, solicito, en formato electrónico reutilizable (CSV o XLSX), para cada convocatoria de los instrumentos Semilla Inicia, Semilla Expande y de los programas regionales de apoyo al emprendimiento y a empresas de menor tamaño, realizadas entre el 1 de enero de 2023 y la fecha de respuesta, desagregada por región y por comuna del domicilio del postulante o beneficiario:
 > 1. Número de postulaciones recibidas.
 > 2. Número de postulaciones admisibles o que pasaron a evaluación.
 > 3. Número de proyectos adjudicados.
@@ -30,7 +32,7 @@
 
 ## 3. Fosis
 
-> En virtud de la Ley N° 20.285 sobre Acceso a la Información Pública, solicito, en formato electrónico reutilizable (CSV o XLSX), para los programas de emprendimiento (Yo Emprendo, Yo Emprendo Semilla, Emprendamos o sus equivalentes), por año entre 2023 y 2026 y desagregado por región:
+> En virtud de la Ley N° 20.285 sobre Acceso a la Información Pública, solicito, en formato electrónico reutilizable (CSV o XLSX), para los programas de emprendimiento (Yo Emprendo, Yo Emprendo Semilla, Emprendamos o sus equivalentes), por año entre 2023 y 2026 y desagregado por región y por comuna:
 > 1. Número de postulaciones recibidas.
 > 2. Número de cupos disponibles.
 > 3. Número de personas seleccionadas.
