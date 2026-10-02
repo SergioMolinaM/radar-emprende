@@ -29,3 +29,14 @@ Carpeta `_propuestas-archivadas/lobby-gore-rm/` (propuesta HTML/PDF y deck). Dir
 ## Radar Pyme en Vercel (radar-publico-delta.vercel.app)
 
 Sitio que Sergio envió el 2-oct. Título «Radar Pyme | Alertas de Mercado Público para pymes»; hecho con Astro; correo hola@radarpyme.cl (el mismo dominio del RadarPyme de «Marcos»). Ofrece alertas de Compra Ágil y Mercado Público por WhatsApp: beta de 7 días gratis, luego $9.990 y $19.990 al mes + IVA (precio de lanzamiento; después $14.990 y $29.990). «Servicio independiente. No afiliado a ChileCompra ni Mercado Público.» Pide nombre, WhatsApp, comuna y rubro. **Quién lo hizo: no verificado.** No se encontró en los repos de GitHub de Sergio (61 repos listados; ninguno con «pyme» salvo radar-emprende).
+
+## Lo que ya sabía el portafolio (patentes-ia y financiamiento)
+
+Encontrado con `rg --no-ignore` en el portafolio el 2-oct, después del aviso de Sergio. El proyecto **`patentes-ia`** (vivo, prioridad de Sergio; postulación a Bienes Públicos RM 2026 en `financiamiento/postulaciones/corfo-bienes-publicos-rm-2026/`) ya estudió esta capa:
+
+- **Ruta de la Pyme**: «Guía de trámites por comuna y rubro, con cuenta obligatoria. En fuentes públicas no hay zonificación ni Plan Regulador» (`patentes-ia/.claude/worktrees/agent-a0366f2086250bb02/continuidad.md`). Financiada con FIC-R. Decisión registrada ahí: presentarse como la capa de zonificación que le falta a la Ruta, no como duplicado.
+- **Pyme Ágil** (Ministerio de Economía): trámite de patente de principio a fin; Lo Barnechea adherida desde el 17-abr-2026, Cerro Navia también. Decisión de Sergio del 26-sep en patentes-ia: guiar y derivar a Pyme Ágil, sin expediente propio. La Res. 121 de Bienes Públicos pide adicionalidad respecto de Pyme Ágil.
+- **SUPER** (super.gob.cl): 267 permisos por institución, verificado en patentes-ia el 28-sep.
+- `patentes-ia` responde «¿puedo instalar este giro en esta dirección?» con la norma citada, primero para Lo Barnechea.
+
+**Consecuencia para Radar Emprende:** la capa «formalizarse y sacar la patente» tiene cuatro dueños (Ruta de la Pyme, Pyme Ágil, SUPER y `patentes-ia`). Radar Emprende no la toca; la enlaza, y enlaza a `patentes-ia` cuando esté publicada. Nada en Radar Emprende debe leerse como duplicado de lo que la postulación de Bienes Públicos ofrece al GORE.

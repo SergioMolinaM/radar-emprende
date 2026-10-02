@@ -14,6 +14,7 @@
 | 2-oct-2026 | Núcleo angosto. Candidatos: **contratar al primer trabajador** y **formalizarse**. Radar de Compra Ágil y fondos solo si las entrevistas lo piden. Sin radar de cambios normativos. | README |
 | 2-oct-2026 | **Nombre: Radar Emprende** (antes Radar Pyme). radarpyme.cl es un producto comercial vivo de otro titular que cruza catálogos con Compra Ágil; radaremprende.cl y radar-emprende.cl libres; sin marca con «EMPREND» en INAPI. «RADAR» a secas está registrada en clases 35 y 42 por un tercero: consulta a abogado de PI antes de inscribir dominio o difundir. | `investigacion/2026-10-02-nombre.md` |
 | 2-oct-2026 | **F6 sin Compra Ágil.** RadarPyme ya cruza catálogos con Compra Ágil y licitaciones; Radar Emprende lo enlaza o propone alianza. F6 queda solo para aviso de apertura de fondos (Sercotec, INDAP). | `investigacion/2026-10-02-nombre.md` |
+| 2-oct-2026 | **Formalización y permisos fuera del núcleo.** Los cubren Ruta de la Pyme (GORE RM/UAI), Pyme Ágil (Economía), SUPER y el propio `patentes-ia` (Bienes Públicos RM). Radar Emprende empieza donde la Ruta de la Pyme termina (tesis de la propuesta al GORE del 12-jun): contratar, fondos, vender al Estado, sobrevivir. | `investigacion/2026-10-02-ruta-de-la-pyme.md` |
 | 22-jul-2026 (Radar Circular) | Protocolo de veracidad R1–R8, adoptado y adaptado en §2. | `radar-circular/PROTOCOLO-VERACIDAD-VEREDICTOS.md` |
 
 ## 1. Cómo se empieza antes de las entrevistas sin contradecir la decisión
