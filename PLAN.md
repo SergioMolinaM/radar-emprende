@@ -77,6 +77,12 @@
 - **Costo para nosotros (no es criterio):** el catálogo hay que reverificarlo (mantención, licencia) igual que los datos.
 - Criterios de entrada: licencia libre real (OSI), actividad en los últimos 12 meses, uso en español, y una línea honesta de qué exige (escritorio, servidor, conocimiento técnico).
 
+**F. Benchmark** — quién ya publica guías y calculadoras para pymes (oficiales y privados), qué está resuelto (se enlaza, no se duplica), qué es contradictorio, qué nadie con interés comercial puede publicar. Dominio candidato. → `investigacion/2026-10-02-benchmark.md`
+
+**G. Capa de datos (nivel Radar)** — inventario de series públicas sobre empresas, emprendimiento e informalidad por región y comuna (SII, INE EME y ENE, ELE, Registro de Empresas y Sociedades, ChileCompra, Sercotec/Corfo), con archivo abierto y período real. → `investigacion/2026-10-02-datos-publicos.md`
+
+**H. Sistema de la familia Radar** — tipografía, paleta base, estructura de páginas, componentes con fuente y nivel de afirmación, stack y cómo se sirven los datos, para heredarlo en F4.
+
 ## 5. Mantención
 
 Cada dato de `datos/` tiene fecha de reverificación según cómo cambia (mensual, anual, por ley). Antes de publicar se define quién lo revisa y cuándo; un sitio de referencia con un valor vencido hace más daño que no tenerlo.
