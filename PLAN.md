@@ -1,4 +1,6 @@
-# Plan — Radar Pyme
+# Plan — Radar Emprende
+
+*(Hasta el 2-oct-2026 se llamó Radar Pyme; ver §0.)*
 
 **Fecha:** 2-oct-2026 · **Reparto:** Sergio hace el sondeo y las entrevistas; Claude arma la base de datos verificada en paralelo.
 
@@ -10,6 +12,8 @@
 | 2-oct-2026 | Entrevistas antes de escribir la guía. | README |
 | 2-oct-2026 | Abierto y libre: sitio gratis, contenido CC BY 4.0, código MIT, repo público. Fichas de entrevistas fuera de git. | README; `LICENSE`, `LICENSE-CONTENIDO.md` |
 | 2-oct-2026 | Núcleo angosto. Candidatos: **contratar al primer trabajador** y **formalizarse**. Radar de Compra Ágil y fondos solo si las entrevistas lo piden. Sin radar de cambios normativos. | README |
+| 2-oct-2026 | **Nombre: Radar Emprende** (antes Radar Pyme). radarpyme.cl es un producto comercial vivo de otro titular que cruza catálogos con Compra Ágil; radaremprende.cl y radar-emprende.cl libres; sin marca con «EMPREND» en INAPI. «RADAR» a secas está registrada en clases 35 y 42 por un tercero: consulta a abogado de PI antes de inscribir dominio o difundir. | `investigacion/2026-10-02-nombre.md` |
+| 2-oct-2026 | **F6 sin Compra Ágil.** RadarPyme ya cruza catálogos con Compra Ágil y licitaciones; Radar Emprende lo enlaza o propone alianza. F6 queda solo para aviso de apertura de fondos (Sercotec, INDAP). | `investigacion/2026-10-02-nombre.md` |
 | 22-jul-2026 (Radar Circular) | Protocolo de veracidad R1–R8, adoptado y adaptado en §2. | `radar-circular/PROTOCOLO-VERACIDAD-VEREDICTOS.md` |
 
 ## 1. Cómo se empieza antes de las entrevistas sin contradecir la decisión
@@ -22,7 +26,7 @@
 
 ## 2. Protocolo de veracidad (R1–R8 de Radar Circular, adaptado)
 
-- **R1 — Radar Pyme no asesora casos particulares.** Explica qué dice la norma y qué herramienta oficial usar. Lenguaje permitido: «la ley establece», «en general», «consulta tu caso con…». Prohibido: «tú debes», «no te corresponde pagar», «estás exento».
+- **R1 — Radar Emprende no asesora casos particulares.** Explica qué dice la norma y qué herramienta oficial usar. Lenguaje permitido: «la ley establece», «en general», «consulta tu caso con…». Prohibido: «tú debes», «no te corresponde pagar», «estás exento».
 - **R2 — Ningún valor sin su vigencia.** Cada cifra lleva desde cuándo rige, y si es gradual (por ejemplo la Ley 21.735 de pensiones), la tabla completa de etapas con sus fechas.
 - **R3 — Lo verificado vive en datos.** Valores en `datos/*.json` con `valor`, `unidad`, `vigente_desde`, `fuente_url`, `fuente_cita` (literal), `consultado`. La guía y las calculadoras leen de ahí; ningún valor se escribe a mano en un texto.
 - **R6 — La ambigüedad se publica como ambigüedad**, con el literal citado.
@@ -41,7 +45,7 @@
 | **F3** | Contenido del núcleo: guía en lenguaje llano + calculadora si el núcleo la necesita | Claude; Sergio lee | Revisor (si hay calculadora con datos de personas) y verificador pasan |
 | **F4** | Sitio estático, diseño de la familia Radar | Claude | Borrador de Netlify verificado; un solo deploy de producción con autorización expresa |
 | **F5** | Difusión a quienes repiten la información: contadores, oficinas municipales de fomento productivo, Centros de Negocios Sercotec, cámaras de comercio | Sergio | — |
-| **F6** | *Condicional:* radar de Compra Ágil y fondos sobre el motor de `radar-licitaciones` | Claude | Solo si F2 lo justifica |
+| **F6** | Aviso de apertura de fondos (calendario y RSS de Sercotec, tabla de INDAP) sobre el motor de `radar-licitaciones`. Compra Ágil fuera: ya lo hace RadarPyme | Claude | Solo si F2 lo justifica |
 
 ## 4. F0 — qué datos se reúnen
 
@@ -85,7 +89,7 @@
 
 **I. Fondos y apoyos para pymes** (2-oct, Sergio: «es hiper necesario, la gente no sabe; hay tipos en Instagram que viven de decir lo que Corfo concursa»)
 - La investigación sube a F0 sin esperar las entrevistas: reunir datos no decide nada. La pregunta 6 del sondeo mide si la gente postula y cómo se entera.
-- Lo que Radar Pyme agrega frente a quien difunde convocatorias en redes: **tasa de adjudicación** cuando esté publicada, requisitos duros, aporte propio, **rendición de gastos** y calendario histórico de apertura. Quien vende asesoría para postular no tiene incentivo para publicar cuántos pierden.
+- Lo que Radar Emprende agrega frente a quien difunde convocatorias en redes: **tasa de adjudicación** cuando esté publicada, requisitos duros, aporte propio, **rendición de gastos** y calendario histórico de apertura. Quien vende asesoría para postular no tiene incentivo para publicar cuántos pierden.
 - Riesgo principal: la información de fondos caduca. Ningún fondo se publica sin fecha de verificación; el aviso automático de apertura (F6, motor de `radar-licitaciones`) deja de ser condicional si el sondeo confirma la demanda.
 - Parte del mapa ya verificado en `financiamiento/` (sept-2026). → `investigacion/2026-10-02-f0i-fondos.md`
 

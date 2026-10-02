@@ -1,4 +1,6 @@
-# Radar Pyme
+# Radar Emprende
+
+*Hasta el 2-oct-2026 se llamó Radar Pyme; el nombre cambió porque radarpyme.cl es otro producto.*
 
 Guía pública y gratuita, en lenguaje llano, para el dueño de una pyme chilena: qué obligaciones tiene según su giro y tamaño, qué vence este mes, cuánto le cuesta de verdad contratar, y cuál de las herramientas gratuitas oficiales (SII, Previred, Dirección del Trabajo) le sirve para cada cosa.
 
@@ -47,4 +49,4 @@ Parte de la familia RADAR de Tercera Letra: información pública dispersa conve
 
 ## Licencia
 
-Contenido y datos: [CC BY 4.0](LICENSE-CONTENIDO.md). Código: [MIT](LICENSE). Cita sugerida: «Radar Pyme — Tercera Letra SpA».
+Contenido y datos: [CC BY 4.0](LICENSE-CONTENIDO.md). Código: [MIT](LICENSE). Cita sugerida: «Radar Emprende — Tercera Letra SpA».

@@ -1,4 +1,4 @@
-# Continuidad — Radar Pyme
+# Continuidad — Radar Emprende (antes Radar Pyme)
 
 ## Sesión 2026-10-02 (viernes)
 
@@ -23,9 +23,11 @@
 
 - Nombre investigado (`investigacion/2026-10-02-nombre.md`): RadarPyme es de una persona, un mes de vida, solo registro/login, sin términos publicados y sin marca. Radar Emprende: dominios .cl libres, sin marca; existe un podcast y el estudio «Radar Emprendedor» (G100). **«RADAR» a secas está registrada en INAPI en clases 35 y 42 por Marketing y Estrategia SpA; Radar Circular no está registrada.**
 
+- **Sergio eligió Radar Emprende** («dale»). Repo y carpeta renombrados a `radar-emprende`. F6 sin Compra Ágil (lo hace RadarPyme).
+
 ### Pendiente
 
-- Decidir nombre (Sergio) antes de difundir nada; consulta a abogado de propiedad industrial por la marca RADAR (afecta a toda la familia).
+- Consulta a abogado de propiedad industrial por la marca RADAR (afecta a toda la familia) antes de inscribir radar-emprende.cl o radaremprende.cl y de difundir.
 - Releer contra la fuente las citas de A y B/C/D (todas vía WebFetch, resumidor) antes de `datos/*.json`. Dudas abiertas: SIS dentro del 3,5 % vs. Hacienda «se suma»; tope 3,4 % vs. tabla SUSESO 6,80 % (Ley 16.744); asignación familiar vigente hasta 30-jun-2026; LRE «15 días hábiles» vs. «día 15»; IDPC Pro Pyme 12,5 % (Ley 21.755 sin leer).
 - G e I entregados. G: la serie fuerte es el Registro de Empresas y Sociedades (datos.gob.cl, CC BY, comuna y mes); SII/EME sin cabeceras verificadas → verificador con Python en curso. I: fondos.gob.cl no sirve como fuente (54 fondos de emprendimiento, 0 abiertos, fichas Corfo 2024); tasa de adjudicación oficial solo Capital Semilla 2011 (4,8 %); el resto se pide por Ley 20.285. Fuentes automatizables: calendario y RSS de Sercotec, tabla paginada de INDAP.
 - Encuestas previas (17 estudios): lo que pregunta el guion no está medido en ninguno; EME 8 cubre informalidad, contador y crédito. Doing Business descartado. Entrevista larga suma «por qué se formalizó» y «por qué no contrata».
@@ -38,4 +40,4 @@
 
 ### Estado del repo
 
-`main` siguiendo `origin/main` (público).
+`main` siguiendo `origin/main` (público, github.com/SergioMolinaM/radar-emprende).
