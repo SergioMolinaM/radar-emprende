@@ -30,6 +30,8 @@
 - **Ruta de la Pyme** (rutadelapyme.cl, GORE RM + UAI, viva) y la propuesta archivada `_propuestas-archivadas/lobby-gore-rm/` (12-jun) leídas tras aviso de Sergio: la formalización está cubierta; la propuesta ya diseñaba «Ruta del Crecimiento» y «Radar de Fomento RM». Detalle en `investigacion/2026-10-02-ruta-de-la-pyme.md`. INCUMPLIMIENTO: no busqué en lo archivado antes de investigar (memoria actualizada).
 - Fondos: bases releídas en PDF (Semilla, Crece, Modo Empleo, Expande, DIPRES 2011). Semilla 3 % aplica a gestión e inversiones; Expande: Corfo pone hasta 75 % del costo total (aporte ≥ 1/3 del subsidio). `datos/fondos.json` por escribir con esto.
 
+- `patentes-ia` ya estudió Ruta de la Pyme, Pyme Ágil y SUPER; formalización y permisos quedan fuera del núcleo de Radar Emprende (PLAN §0), para no duplicar lo que la postulación de Bienes Públicos ofrece.
+
 ### Pendiente
 
 - Sergio: ¿radar-publico-delta.vercel.app es suyo?
