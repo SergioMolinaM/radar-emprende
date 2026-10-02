@@ -38,9 +38,9 @@
 
 - **Capa de datos (Sergio: «parte con los datos»)**: `scripts/` (descargar, comunas, constituciones, cohortes, corfo) y `datos/` con tres JSON agregados (sin RUT). Bases en `data-raw/` (no versionado, se regenera con `scripts/descargar.py`). Homologación de comunas al Censo 2024 con calce estricto (el script se detiene ante un nombre sin calce).
   - Constituciones 2013-2026 por comuna: 2025 = 202.406 (10,95 por mil hab.); Providencia 80,9 por mil (hipótesis: domicilios tributarios).
-  - Cohortes 2020-2024: de las 134.769 sociedades de 2020, 20,7 % con término de giro, 44,8 % en la nómina SII 2024, 34,5 % fuera. 5 RUT no encontrados en el SII.
-  - Corfo DataInnovación 2016-2025: 6.830 de 7.180 proyectos con comuna; 96 comunas sin ningún proyecto (82.218 empresas); RM 54,1 % de proyectos vs 43,7 % de empresas. Se detectaron y corrigieron 5 grafías de comuna del SII que se perdían en silencio (Coyhaique, Aysén, Tiltil, Mostazal, Llaillay).
-  - Verificador en curso.
+  - Cohortes 2020-2024: de las 134.769 sociedades de 2020, 20,7 % con término de giro (11.558 de ellos fechados en 2023: hipótesis de término de oficio, no verificada), 44,8 % en la nómina SII 2024, 34,5 % fuera. 5 RUT no encontrados en el SII.
+  - Corfo DataInnovación 2016-2025: 6.064 proyectos con subsidio (los 1.116 certificados Ley I+D van aparte), 5.829 con comuna; **98 comunas sin ningún proyecto**. 215 beneficiarios personas naturales sin RUT publicado (Corfo pone «PERSONA NATURAL»). 5 grafías de comuna del SII que se perdían en silencio corregidas; calce estricto.
+  - **Verificador: FALLA en la primera pasada** (RUT con DV pegado sin guion, Ley I+D contada como proyecto, tres límites que no describían los datos) → arreglado → **PASA** en la segunda, con recálculo independiente de las 346 comunas × 3 archivos sin diferencias.
 
 ### Pendiente
 

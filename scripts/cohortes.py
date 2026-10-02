@@ -140,7 +140,8 @@ def main():
             },
             'nivel': 2,
             'limites': [
-                'No es una tasa de supervivencia. El término de giro formal es raro: una sociedad que dejó de operar casi nunca lo tramita. Figurar en la nómina del SII de un año es una señal de actividad, pero el SII no publica en la página revisada la regla que define quién figura (no verificado).',
+                'No es una tasa de supervivencia. «fuera_nomina_2024» junta sociedades inactivas que no han hecho término de giro con otras que no figuran por razones que el SII no explica en la página revisada (la regla de quién figura en la nómina no está verificada).',
+                'El término de giro no es raro en las cohortes antiguas (20,7 % de la de 2020), pero se concentra en ciertos años: 11.558 de los 27.879 términos de la cohorte 2020 tienen fecha en 2023. Hipótesis no verificada: términos de giro de oficio por el SII. Si es así, «termino_giro» mezcla cierres decididos por la empresa con cierres administrativos.',
                 'La nómina más reciente es la del año comercial 2024; la cohorte 2024 se mide en su mismo año (puede no haber tenido tiempo de declarar).',
                 'Cruce por RUT: todas las sociedades del RES 2020-2024 deberían figurar en PUB_NOMBRES_PJ; ver «no_encontradas_en_sii».',
                 'Comuna tributaria al constituirse; la sociedad pudo cambiar de domicilio después.',

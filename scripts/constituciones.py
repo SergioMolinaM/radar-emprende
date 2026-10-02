@@ -21,7 +21,8 @@ def main():
     por_par, por_nombre = C.indice_por_nombre(cs)
     conteo = collections.Counter()      # (codigo, anio) -> n
     tipos = collections.Counter()       # (anio, tipo) -> n
-    meses_2026 = set()
+    meses = collections.defaultdict(set)
+    ORDEN = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
     for f in sorted(RES.glob('*.csv')):
         with open(f, encoding='utf-8-sig') as fh:
             for fila in csv.DictReader(fh, delimiter=';'):
@@ -31,8 +32,7 @@ def main():
                 anio = int(fila['Anio'])
                 conteo[(cod, anio)] += 1
                 tipos[(anio, fila['Codigo de sociedad'])] += 1
-                if anio == 2026:
-                    meses_2026.add(fila['Mes'])
+                meses[anio].add(fila['Mes'])
     anios = sorted({a for _, a in conteo})
     filas = []
     for cod, c in sorted(cs.items()):
@@ -52,7 +52,7 @@ def main():
             'metodo': 'Se cuenta cada fila (todas son constituciones) por «Comuna Tributaria» y «Anio» (= año de aprobación del SII). Nombres de comuna homologados al Censo 2024 con scripts/comunas.py; 0 filas sin calce.',
             'limites': [
                 'Solo sociedades del Registro de Empresas y Sociedades (Ley 20.659). No incluye personas naturales con giro ni sociedades constituidas por escritura publicada en el Diario Oficial.',
-                f'2026 llega hasta el corte del archivo (meses: {sorted(meses_2026)}); no es comparable con años completos.',
+                f'Años incompletos: 2013 empieza en {[m for m in ORDEN if m in meses[2013]][0]} (primer mes con datos en el archivo) y 2026 llega hasta {[m for m in ORDEN if m in meses[2026]][-1]} (corte del archivo publicado el 28-sep-2026). No son comparables con años completos.',
                 'La tasa por 1.000 habitantes usa la población del Censo 2024 para 2025.',
                 'La comuna es la tributaria (domicilio ante el SII), que puede no ser donde opera el negocio. Providencia (80,9 por mil en 2025), Las Condes (29,6) y Santiago (25,8) están muy sobre el promedio nacional (10,95). Hipótesis no verificada (nivel 2): concentran domicilios tributarios (oficinas virtuales, estudios contables) de sociedades que operan en otras comunas. No leer la tasa como «emprendimiento local».',
             ],

@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "descripcion": "Proyectos de Corfo (innovación y emprendimiento) adjudicados entre 2016 y 2025, por comuna del domicilio vigente del beneficiario.",
+  "descripcion": "Proyectos de Corfo con subsidio (innovación y emprendimiento) adjudicados entre 2016 y 2025, por comuna del domicilio vigente del beneficiario. Los certificados de la Ley I+D (crédito tributario, no subsidio) se informan aparte en «certificados_ley_id».",
   "fuentes": [
    "Corfo DataInnovación, API de proyectos 2009-2026 (descargada el 1-sep-2026 para navegador-ds22; derechos reservados: se publican solo agregados).",
    "SII, nómina de personas jurídicas, domicilios vigentes (PUB_NOM_DIRECCIONES, agosto de 2026).",
@@ -8,20 +8,25 @@
   ],
   "nivel": 2,
   "limites": [
-   "Solo instrumentos de innovación y emprendimiento que publica DataInnovación (Ley I+D, Voucher, Startup, Semilla, etc.). No incluye Sercotec, Fosis ni el resto de Corfo.",
+   "La fuente cubre solo los instrumentos de innovación y emprendimiento que publica DataInnovación (Voucher, Startup, Semilla, Innova Región, etc., además de la Ley I+D, que aquí va aparte). No incluye Sercotec, Fosis ni el resto de Corfo.",
+   "Cuatro proyectos con subsidio traen aprobado_corfo = 0 (Huella 1, Innova Región 3) y se cuentan como proyectos.",
    "Comuna del domicilio vigente a agosto de 2026, no al momento del proyecto. Universidades, centros y grandes empresas suelen tener domicilio en Santiago, Providencia o Las Condes aunque ejecuten en regiones: comparar con «region_ejecucion» de Corfo antes de concluir.",
-   "Beneficiarios sin domicilio en la nómina de personas jurídicas (por ejemplo, personas naturales) quedan fuera: ver «sin_comuna».",
+   "Beneficiarios sin domicilio vigente en la nómina de personas jurídicas del SII quedan fuera (sobre todo personas naturales): ver «sin_comuna», por tipo de beneficiario.",
+   "Los certificados de la Ley I+D (1.116 entre 2016 y 2025) no son subsidios adjudicados: traen monto_consolidado_ley y aprobado_corfo = 0. No entran en «proyectos» ni en «proyectos_por_mil_empresas».",
+   "El denominador (empresas SII 2024) es de un solo año; el numerador suma diez años. Sirve para comparar comunas entre sí, no como tasa anual.",
+   "En comunas con uno o dos proyectos, el monto permite identificar el proyecto en DataInnovación (fuente pública).",
    "Proyectos por cada 1.000 empresas usa el número de empresas del SII de 2024 en la comuna.",
    "Monto aprobado Corfo tal como viene en DataInnovación (pesos nominales de cada año, sin ajustar)."
   ],
-  "proyectos_en_rango": 7180,
+  "proyectos_en_rango": 6064,
+  "certificados_ley_id_en_rango": 1116,
+  "certificados_ley_id_sin_comuna": 2,
   "sin_comuna": {
    "Persona Natural": 215,
-   "sin dato": 12,
-   "Persona Jurídica constituida en Chile": 10,
-   "PERSONA JURIDICA COMERCIAL": 113
+   "sin dato": 10,
+   "Persona Jurídica constituida en Chile": 10
   },
-  "comunas_sin_proyectos": 96,
+  "comunas_sin_proyectos": 98,
   "generado": "2026-10-02",
   "script": "scripts/corfo.py",
   "licencia": "CC BY 4.0 para el cálculo, Radar Emprende - Tercera Letra SpA (cita las fuentes originales)"
@@ -53,6 +58,7 @@
   "Navidad",
   "Paredones",
   "Chépica",
+  "Nancagua",
   "Palmilla",
   "Peralillo",
   "Pumanque",
@@ -91,6 +97,7 @@
   "Victoria",
   "Calbuco",
   "Fresia",
+  "Maullín",
   "Dalcahue",
   "Puqueldón",
   "Queilén",
@@ -130,12 +137,13 @@
    "comuna": "Iquique",
    "region": "Tarapacá",
    "codigo_region": 1,
-   "proyectos": 91,
+   "proyectos": 90,
    "beneficiarios": 64,
-   "proyectos_micro_pequena": 62,
+   "proyectos_micro_pequena": 61,
    "monto_aprobado_corfo": 3799613915,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 17697,
-   "proyectos_por_mil_empresas": 5.14
+   "proyectos_por_mil_empresas": 5.09
   },
   {
    "codigo": 1107,
@@ -146,6 +154,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 7,
    "monto_aprobado_corfo": 277701772,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 6533,
    "proyectos_por_mil_empresas": 1.07
   },
@@ -158,6 +167,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 7000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1184,
    "proyectos_por_mil_empresas": 0.84
   },
@@ -170,6 +180,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 99,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -182,6 +193,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 20236438,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 42,
    "proyectos_por_mil_empresas": 47.62
   },
@@ -194,6 +206,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 213,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -206,6 +219,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 77500000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 558,
    "proyectos_por_mil_empresas": 3.58
   },
@@ -214,12 +228,13 @@
    "comuna": "Antofagasta",
    "region": "Antofagasta",
    "codigo_region": 2,
-   "proyectos": 224,
-   "beneficiarios": 126,
-   "proyectos_micro_pequena": 136,
+   "proyectos": 210,
+   "beneficiarios": 122,
+   "proyectos_micro_pequena": 135,
    "monto_aprobado_corfo": 14942645366,
+   "certificados_ley_id": 16,
    "empresas_sii_2024": 28811,
-   "proyectos_por_mil_empresas": 7.77
+   "proyectos_por_mil_empresas": 7.29
   },
   {
    "codigo": 2102,
@@ -230,6 +245,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 7000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 934,
    "proyectos_por_mil_empresas": 1.07
   },
@@ -242,6 +258,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 178,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -254,6 +271,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 30000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 987,
    "proyectos_por_mil_empresas": 1.01
   },
@@ -266,6 +284,7 @@
    "beneficiarios": 12,
    "proyectos_micro_pequena": 13,
    "monto_aprobado_corfo": 787520009,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 10154,
    "proyectos_por_mil_empresas": 1.48
   },
@@ -278,6 +297,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 22,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -290,6 +310,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 96065470,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1344,
    "proyectos_por_mil_empresas": 2.23
   },
@@ -302,6 +323,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 16000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1602,
    "proyectos_por_mil_empresas": 1.25
   },
@@ -314,6 +336,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 256,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -326,6 +349,7 @@
    "beneficiarios": 20,
    "proyectos_micro_pequena": 19,
    "monto_aprobado_corfo": 2030375040,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 11589,
    "proyectos_por_mil_empresas": 2.93
   },
@@ -338,6 +362,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 57694400,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1570,
    "proyectos_por_mil_empresas": 1.27
   },
@@ -350,6 +375,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 792,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -362,6 +388,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1044,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -374,6 +401,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 241391296,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 837,
    "proyectos_por_mil_empresas": 1.19
   },
@@ -386,6 +414,7 @@
    "beneficiarios": 6,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 310781320,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 4178,
    "proyectos_por_mil_empresas": 1.68
   },
@@ -398,6 +427,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 455,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -410,6 +440,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 518,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -422,6 +453,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 19280000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 782,
    "proyectos_por_mil_empresas": 1.28
   },
@@ -430,24 +462,26 @@
    "comuna": "La Serena",
    "region": "Coquimbo",
    "codigo_region": 4,
-   "proyectos": 89,
-   "beneficiarios": 58,
+   "proyectos": 87,
+   "beneficiarios": 57,
    "proyectos_micro_pequena": 65,
    "monto_aprobado_corfo": 4879467736,
+   "certificados_ley_id": 2,
    "empresas_sii_2024": 19144,
-   "proyectos_por_mil_empresas": 4.65
+   "proyectos_por_mil_empresas": 4.54
   },
   {
    "codigo": 4102,
    "comuna": "Coquimbo",
    "region": "Coquimbo",
    "codigo_region": 4,
-   "proyectos": 69,
+   "proyectos": 65,
    "beneficiarios": 40,
    "proyectos_micro_pequena": 41,
    "monto_aprobado_corfo": 2603183981,
+   "certificados_ley_id": 5,
    "empresas_sii_2024": 17226,
-   "proyectos_por_mil_empresas": 4.01
+   "proyectos_por_mil_empresas": 3.77
   },
   {
    "codigo": 4103,
@@ -458,6 +492,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 71000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 718,
    "proyectos_por_mil_empresas": 2.79
   },
@@ -470,6 +505,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 67297500,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 347,
    "proyectos_por_mil_empresas": 2.88
   },
@@ -482,6 +518,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 518,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -490,12 +527,13 @@
    "comuna": "Vicuña",
    "region": "Coquimbo",
    "codigo_region": 4,
-   "proyectos": 11,
+   "proyectos": 9,
    "beneficiarios": 7,
    "proyectos_micro_pequena": 6,
    "monto_aprobado_corfo": 376993113,
+   "certificados_ley_id": 2,
    "empresas_sii_2024": 1993,
-   "proyectos_por_mil_empresas": 5.52
+   "proyectos_por_mil_empresas": 4.52
   },
   {
    "codigo": 4201,
@@ -506,6 +544,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 6300000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2649,
    "proyectos_por_mil_empresas": 0.38
   },
@@ -518,6 +557,7 @@
    "beneficiarios": 9,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 187517880,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 692,
    "proyectos_por_mil_empresas": 13.01
   },
@@ -530,6 +570,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 7000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2155,
    "proyectos_por_mil_empresas": 0.46
   },
@@ -542,6 +583,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 246564572,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 3019,
    "proyectos_por_mil_empresas": 1.99
   },
@@ -554,6 +596,7 @@
    "beneficiarios": 9,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 399757714,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 8134,
    "proyectos_por_mil_empresas": 1.23
   },
@@ -566,6 +609,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 273330400,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 865,
    "proyectos_por_mil_empresas": 2.31
   },
@@ -578,6 +622,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 107334950,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2196,
    "proyectos_por_mil_empresas": 0.91
   },
@@ -590,6 +635,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 11250000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 720,
    "proyectos_por_mil_empresas": 1.39
   },
@@ -602,6 +648,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 285,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -610,36 +657,39 @@
    "comuna": "Valparaíso",
    "region": "Valparaíso",
    "codigo_region": 5,
-   "proyectos": 154,
-   "beneficiarios": 98,
-   "proyectos_micro_pequena": 91,
+   "proyectos": 151,
+   "beneficiarios": 96,
+   "proyectos_micro_pequena": 90,
    "monto_aprobado_corfo": 9512140324,
+   "certificados_ley_id": 3,
    "empresas_sii_2024": 18634,
-   "proyectos_por_mil_empresas": 8.26
+   "proyectos_por_mil_empresas": 8.1
   },
   {
    "codigo": 5102,
    "comuna": "Casablanca",
    "region": "Valparaíso",
    "codigo_region": 5,
-   "proyectos": 11,
-   "beneficiarios": 9,
-   "proyectos_micro_pequena": 8,
+   "proyectos": 8,
+   "beneficiarios": 7,
+   "proyectos_micro_pequena": 6,
    "monto_aprobado_corfo": 310240992,
+   "certificados_ley_id": 3,
    "empresas_sii_2024": 3736,
-   "proyectos_por_mil_empresas": 2.94
+   "proyectos_por_mil_empresas": 2.14
   },
   {
    "codigo": 5103,
    "comuna": "Concón",
    "region": "Valparaíso",
    "codigo_region": 5,
-   "proyectos": 17,
+   "proyectos": 12,
    "beneficiarios": 11,
    "proyectos_micro_pequena": 8,
    "monto_aprobado_corfo": 600030361,
+   "certificados_ley_id": 5,
    "empresas_sii_2024": 4577,
-   "proyectos_por_mil_empresas": 3.71
+   "proyectos_por_mil_empresas": 2.62
   },
   {
    "codigo": 5104,
@@ -650,6 +700,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 114650000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 139,
    "proyectos_por_mil_empresas": 14.39
   },
@@ -662,6 +713,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2063,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -674,6 +726,7 @@
    "beneficiarios": 6,
    "proyectos_micro_pequena": 5,
    "monto_aprobado_corfo": 300978366,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2260,
    "proyectos_por_mil_empresas": 3.1
   },
@@ -682,36 +735,39 @@
    "comuna": "Viña del Mar",
    "region": "Valparaíso",
    "codigo_region": 5,
-   "proyectos": 225,
-   "beneficiarios": 150,
-   "proyectos_micro_pequena": 154,
+   "proyectos": 209,
+   "beneficiarios": 145,
+   "proyectos_micro_pequena": 148,
    "monto_aprobado_corfo": 11020885638,
+   "certificados_ley_id": 19,
    "empresas_sii_2024": 33718,
-   "proyectos_por_mil_empresas": 6.67
+   "proyectos_por_mil_empresas": 6.2
   },
   {
    "codigo": 5201,
    "comuna": "Isla de Pascua",
    "region": "Valparaíso",
    "codigo_region": 5,
-   "proyectos": 7,
-   "beneficiarios": 6,
-   "proyectos_micro_pequena": 3,
+   "proyectos": 6,
+   "beneficiarios": 5,
+   "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 228014170,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 756,
-   "proyectos_por_mil_empresas": 9.26
+   "proyectos_por_mil_empresas": 7.94
   },
   {
    "codigo": 5301,
    "comuna": "Los Andes",
    "region": "Valparaíso",
    "codigo_region": 5,
-   "proyectos": 14,
-   "beneficiarios": 10,
+   "proyectos": 11,
+   "beneficiarios": 9,
    "proyectos_micro_pequena": 7,
    "monto_aprobado_corfo": 402627607,
+   "certificados_ley_id": 3,
    "empresas_sii_2024": 5115,
-   "proyectos_por_mil_empresas": 2.74
+   "proyectos_por_mil_empresas": 2.15
   },
   {
    "codigo": 5302,
@@ -722,6 +778,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 35560840,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 977,
    "proyectos_por_mil_empresas": 2.05
   },
@@ -734,6 +791,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 753,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -746,6 +804,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1442,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -758,6 +817,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 15689190,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 3628,
    "proyectos_por_mil_empresas": 0.83
   },
@@ -770,6 +830,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 11250000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1756,
    "proyectos_por_mil_empresas": 0.57
   },
@@ -782,6 +843,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 829,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -794,6 +856,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 759,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -806,6 +869,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 137488902,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2102,
    "proyectos_por_mil_empresas": 1.43
   },
@@ -814,48 +878,52 @@
    "comuna": "Quillota",
    "region": "Valparaíso",
    "codigo_region": 5,
-   "proyectos": 41,
+   "proyectos": 37,
    "beneficiarios": 21,
-   "proyectos_micro_pequena": 27,
+   "proyectos_micro_pequena": 26,
    "monto_aprobado_corfo": 2408057022,
+   "certificados_ley_id": 5,
    "empresas_sii_2024": 7746,
-   "proyectos_por_mil_empresas": 5.29
+   "proyectos_por_mil_empresas": 4.78
   },
   {
    "codigo": 5502,
    "comuna": "Calera",
    "region": "Valparaíso",
    "codigo_region": 5,
-   "proyectos": 4,
+   "proyectos": 2,
    "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 93959324,
+   "certificados_ley_id": 2,
    "empresas_sii_2024": 3723,
-   "proyectos_por_mil_empresas": 1.07
+   "proyectos_por_mil_empresas": 0.54
   },
   {
    "codigo": 5503,
    "comuna": "Hijuelas",
    "region": "Valparaíso",
    "codigo_region": 5,
-   "proyectos": 4,
-   "beneficiarios": 4,
+   "proyectos": 3,
+   "beneficiarios": 3,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 215400400,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 1727,
-   "proyectos_por_mil_empresas": 2.32
+   "proyectos_por_mil_empresas": 1.74
   },
   {
    "codigo": 5504,
    "comuna": "La Cruz",
    "region": "Valparaíso",
    "codigo_region": 5,
-   "proyectos": 8,
+   "proyectos": 7,
    "beneficiarios": 4,
-   "proyectos_micro_pequena": 8,
+   "proyectos_micro_pequena": 7,
    "monto_aprobado_corfo": 282750071,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 1926,
-   "proyectos_por_mil_empresas": 4.15
+   "proyectos_por_mil_empresas": 3.63
   },
   {
    "codigo": 5506,
@@ -866,6 +934,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 20000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1619,
    "proyectos_por_mil_empresas": 1.24
   },
@@ -878,6 +947,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 179701400,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 7180,
    "proyectos_por_mil_empresas": 0.7
   },
@@ -886,12 +956,13 @@
    "comuna": "Algarrobo",
    "region": "Valparaíso",
    "codigo_region": 5,
-   "proyectos": 2,
-   "beneficiarios": 2,
+   "proyectos": 1,
+   "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 48000000,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 2257,
-   "proyectos_por_mil_empresas": 0.89
+   "proyectos_por_mil_empresas": 0.44
   },
   {
    "codigo": 5603,
@@ -902,6 +973,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1604,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -914,6 +986,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 50000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1701,
    "proyectos_por_mil_empresas": 1.18
   },
@@ -926,6 +999,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1440,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -934,12 +1008,13 @@
    "comuna": "Santo Domingo",
    "region": "Valparaíso",
    "codigo_region": 5,
-   "proyectos": 10,
-   "beneficiarios": 6,
-   "proyectos_micro_pequena": 6,
+   "proyectos": 8,
+   "beneficiarios": 5,
+   "proyectos_micro_pequena": 5,
    "monto_aprobado_corfo": 437954871,
+   "certificados_ley_id": 2,
    "empresas_sii_2024": 3513,
-   "proyectos_por_mil_empresas": 2.85
+   "proyectos_por_mil_empresas": 2.28
   },
   {
    "codigo": 5701,
@@ -950,6 +1025,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 28683718,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 6602,
    "proyectos_por_mil_empresas": 0.15
   },
@@ -962,6 +1038,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1043,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -974,6 +1051,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 66240000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1671,
    "proyectos_por_mil_empresas": 1.2
   },
@@ -986,6 +1064,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 78694169,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 684,
    "proyectos_por_mil_empresas": 2.92
   },
@@ -998,6 +1077,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 297224269,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1256,
    "proyectos_por_mil_empresas": 3.18
   },
@@ -1010,6 +1090,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 9780000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1283,
    "proyectos_por_mil_empresas": 0.78
   },
@@ -1018,12 +1099,13 @@
    "comuna": "Quilpué",
    "region": "Valparaíso",
    "codigo_region": 5,
-   "proyectos": 41,
+   "proyectos": 32,
    "beneficiarios": 25,
    "proyectos_micro_pequena": 18,
    "monto_aprobado_corfo": 1933145309,
+   "certificados_ley_id": 9,
    "empresas_sii_2024": 10178,
-   "proyectos_por_mil_empresas": 4.03
+   "proyectos_por_mil_empresas": 3.14
   },
   {
    "codigo": 5802,
@@ -1034,6 +1116,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 109166338,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 4307,
    "proyectos_por_mil_empresas": 0.93
   },
@@ -1046,6 +1129,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 50000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1594,
    "proyectos_por_mil_empresas": 1.88
   },
@@ -1054,36 +1138,39 @@
    "comuna": "Villa Alemana",
    "region": "Valparaíso",
    "codigo_region": 5,
-   "proyectos": 18,
-   "beneficiarios": 12,
+   "proyectos": 17,
+   "beneficiarios": 11,
    "proyectos_micro_pequena": 13,
    "monto_aprobado_corfo": 777502167,
+   "certificados_ley_id": 2,
    "empresas_sii_2024": 7263,
-   "proyectos_por_mil_empresas": 2.48
+   "proyectos_por_mil_empresas": 2.34
   },
   {
    "codigo": 6101,
    "comuna": "Rancagua",
    "region": "Libertador General Bernardo O'Higgins",
    "codigo_region": 6,
-   "proyectos": 41,
-   "beneficiarios": 26,
+   "proyectos": 35,
+   "beneficiarios": 23,
    "proyectos_micro_pequena": 15,
    "monto_aprobado_corfo": 2357537010,
+   "certificados_ley_id": 10,
    "empresas_sii_2024": 18539,
-   "proyectos_por_mil_empresas": 2.21
+   "proyectos_por_mil_empresas": 1.89
   },
   {
    "codigo": 6102,
    "comuna": "Codegua",
    "region": "Libertador General Bernardo O'Higgins",
    "codigo_region": 6,
-   "proyectos": 9,
+   "proyectos": 8,
    "beneficiarios": 5,
-   "proyectos_micro_pequena": 7,
+   "proyectos_micro_pequena": 6,
    "monto_aprobado_corfo": 348899290,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 940,
-   "proyectos_por_mil_empresas": 9.57
+   "proyectos_por_mil_empresas": 8.51
   },
   {
    "codigo": 6103,
@@ -1094,6 +1181,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 630,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1106,6 +1194,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 28267680,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1533,
    "proyectos_por_mil_empresas": 0.65
   },
@@ -1114,24 +1203,26 @@
    "comuna": "Doñihue",
    "region": "Libertador General Bernardo O'Higgins",
    "codigo_region": 6,
-   "proyectos": 3,
+   "proyectos": 2,
    "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 51000000,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 1505,
-   "proyectos_por_mil_empresas": 1.99
+   "proyectos_por_mil_empresas": 1.33
   },
   {
    "codigo": 6106,
    "comuna": "Graneros",
    "region": "Libertador General Bernardo O'Higgins",
    "codigo_region": 6,
-   "proyectos": 8,
-   "beneficiarios": 3,
+   "proyectos": 4,
+   "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 42986442,
+   "certificados_ley_id": 4,
    "empresas_sii_2024": 2203,
-   "proyectos_por_mil_empresas": 3.63
+   "proyectos_por_mil_empresas": 1.82
   },
   {
    "codigo": 6107,
@@ -1142,6 +1233,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 29794044,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2549,
    "proyectos_por_mil_empresas": 0.39
   },
@@ -1154,6 +1246,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 279536000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 3902,
    "proyectos_por_mil_empresas": 1.03
   },
@@ -1166,6 +1259,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 114055994,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1162,
    "proyectos_por_mil_empresas": 2.58
   },
@@ -1174,12 +1268,13 @@
    "comuna": "Mostazal",
    "region": "Libertador General Bernardo O'Higgins",
    "codigo_region": 6,
-   "proyectos": 7,
-   "beneficiarios": 6,
+   "proyectos": 5,
+   "beneficiarios": 4,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 123705434,
+   "certificados_ley_id": 2,
    "empresas_sii_2024": 1822,
-   "proyectos_por_mil_empresas": 3.84
+   "proyectos_por_mil_empresas": 2.74
   },
   {
    "codigo": 6111,
@@ -1190,6 +1285,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 39928576,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1409,
    "proyectos_por_mil_empresas": 0.71
   },
@@ -1202,6 +1298,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1168,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1214,6 +1311,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2161,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1226,6 +1324,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 137279200,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1225,
    "proyectos_por_mil_empresas": 2.45
   },
@@ -1234,24 +1333,26 @@
    "comuna": "Rengo",
    "region": "Libertador General Bernardo O'Higgins",
    "codigo_region": 6,
-   "proyectos": 12,
-   "beneficiarios": 7,
+   "proyectos": 9,
+   "beneficiarios": 6,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 341825065,
+   "certificados_ley_id": 4,
    "empresas_sii_2024": 4709,
-   "proyectos_por_mil_empresas": 2.55
+   "proyectos_por_mil_empresas": 1.91
   },
   {
    "codigo": 6116,
    "comuna": "Requínoa",
    "region": "Libertador General Bernardo O'Higgins",
    "codigo_region": 6,
-   "proyectos": 8,
-   "beneficiarios": 7,
+   "proyectos": 7,
+   "beneficiarios": 6,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 288415593,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 2515,
-   "proyectos_por_mil_empresas": 3.18
+   "proyectos_por_mil_empresas": 2.78
   },
   {
    "codigo": 6117,
@@ -1262,6 +1363,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 88425000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 4773,
    "proyectos_por_mil_empresas": 0.84
   },
@@ -1274,6 +1376,7 @@
    "beneficiarios": 5,
    "proyectos_micro_pequena": 5,
    "monto_aprobado_corfo": 270487733,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2976,
    "proyectos_por_mil_empresas": 2.35
   },
@@ -1286,6 +1389,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 500,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1298,6 +1402,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 134999310,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 939,
    "proyectos_por_mil_empresas": 3.19
   },
@@ -1310,6 +1415,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 60000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 941,
    "proyectos_por_mil_empresas": 1.06
   },
@@ -1322,6 +1428,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 749,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1334,6 +1441,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 591,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1342,12 +1450,13 @@
    "comuna": "San Fernando",
    "region": "Libertador General Bernardo O'Higgins",
    "codigo_region": 6,
-   "proyectos": 35,
+   "proyectos": 34,
    "beneficiarios": 12,
-   "proyectos_micro_pequena": 18,
+   "proyectos_micro_pequena": 17,
    "monto_aprobado_corfo": 1966545513,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 6887,
-   "proyectos_por_mil_empresas": 5.08
+   "proyectos_por_mil_empresas": 4.94
   },
   {
    "codigo": 6302,
@@ -1358,6 +1467,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1675,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1366,36 +1476,39 @@
    "comuna": "Chimbarongo",
    "region": "Libertador General Bernardo O'Higgins",
    "codigo_region": 6,
-   "proyectos": 3,
-   "beneficiarios": 3,
+   "proyectos": 2,
+   "beneficiarios": 2,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 17865000,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 3427,
-   "proyectos_por_mil_empresas": 0.88
+   "proyectos_por_mil_empresas": 0.58
   },
   {
    "codigo": 6304,
    "comuna": "Lolol",
    "region": "Libertador General Bernardo O'Higgins",
    "codigo_region": 6,
-   "proyectos": 4,
-   "beneficiarios": 2,
+   "proyectos": 3,
+   "beneficiarios": 1,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 203007440,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 935,
-   "proyectos_por_mil_empresas": 4.28
+   "proyectos_por_mil_empresas": 3.21
   },
   {
    "codigo": 6305,
    "comuna": "Nancagua",
    "region": "Libertador General Bernardo O'Higgins",
    "codigo_region": 6,
-   "proyectos": 1,
-   "beneficiarios": 1,
+   "proyectos": 0,
+   "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 1667,
-   "proyectos_por_mil_empresas": 0.6
+   "proyectos_por_mil_empresas": 0.0
   },
   {
    "codigo": 6306,
@@ -1406,6 +1519,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1461,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1418,6 +1532,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1288,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1426,12 +1541,13 @@
    "comuna": "Placilla",
    "region": "Libertador General Bernardo O'Higgins",
    "codigo_region": 6,
-   "proyectos": 2,
-   "beneficiarios": 2,
+   "proyectos": 1,
+   "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 20000000,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 933,
-   "proyectos_por_mil_empresas": 2.14
+   "proyectos_por_mil_empresas": 1.07
   },
   {
    "codigo": 6309,
@@ -1442,6 +1558,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 477,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1450,36 +1567,39 @@
    "comuna": "Santa Cruz",
    "region": "Libertador General Bernardo O'Higgins",
    "codigo_region": 6,
-   "proyectos": 4,
-   "beneficiarios": 4,
+   "proyectos": 3,
+   "beneficiarios": 3,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 144010000,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 4853,
-   "proyectos_por_mil_empresas": 0.82
+   "proyectos_por_mil_empresas": 0.62
   },
   {
    "codigo": 7101,
    "comuna": "Talca",
    "region": "Maule",
    "codigo_region": 7,
-   "proyectos": 51,
+   "proyectos": 50,
    "beneficiarios": 41,
-   "proyectos_micro_pequena": 32,
+   "proyectos_micro_pequena": 31,
    "monto_aprobado_corfo": 3701400190,
+   "certificados_ley_id": 2,
    "empresas_sii_2024": 21703,
-   "proyectos_por_mil_empresas": 2.35
+   "proyectos_por_mil_empresas": 2.3
   },
   {
    "codigo": 7102,
    "comuna": "Constitución",
    "region": "Maule",
    "codigo_region": 7,
-   "proyectos": 15,
-   "beneficiarios": 5,
+   "proyectos": 5,
+   "beneficiarios": 4,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 111281800,
+   "certificados_ley_id": 10,
    "empresas_sii_2024": 3855,
-   "proyectos_por_mil_empresas": 3.89
+   "proyectos_por_mil_empresas": 1.3
   },
   {
    "codigo": 7103,
@@ -1490,6 +1610,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 9440000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 654,
    "proyectos_por_mil_empresas": 1.53
   },
@@ -1502,6 +1623,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 307,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1510,12 +1632,13 @@
    "comuna": "Maule",
    "region": "Maule",
    "codigo_region": 7,
-   "proyectos": 31,
-   "beneficiarios": 10,
+   "proyectos": 24,
+   "beneficiarios": 9,
    "proyectos_micro_pequena": 10,
    "monto_aprobado_corfo": 1427965875,
+   "certificados_ley_id": 7,
    "empresas_sii_2024": 3708,
-   "proyectos_por_mil_empresas": 8.36
+   "proyectos_por_mil_empresas": 6.47
   },
   {
    "codigo": 7106,
@@ -1526,6 +1649,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 7000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 853,
    "proyectos_por_mil_empresas": 1.17
   },
@@ -1538,6 +1662,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 899,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1546,12 +1671,13 @@
    "comuna": "Río Claro",
    "region": "Maule",
    "codigo_region": 7,
-   "proyectos": 11,
+   "proyectos": 3,
    "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 86369505,
+   "certificados_ley_id": 8,
    "empresas_sii_2024": 1319,
-   "proyectos_por_mil_empresas": 8.34
+   "proyectos_por_mil_empresas": 2.27
   },
   {
    "codigo": 7109,
@@ -1562,6 +1688,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 5,
    "monto_aprobado_corfo": 178420021,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 3709,
    "proyectos_por_mil_empresas": 1.35
   },
@@ -1574,6 +1701,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 9040000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 782,
    "proyectos_por_mil_empresas": 1.28
   },
@@ -1586,6 +1714,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 11100000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 3579,
    "proyectos_por_mil_empresas": 0.28
   },
@@ -1598,6 +1727,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 60374000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 683,
    "proyectos_por_mil_empresas": 2.93
   },
@@ -1610,6 +1740,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1133,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1618,12 +1749,13 @@
    "comuna": "Curicó",
    "region": "Maule",
    "codigo_region": 7,
-   "proyectos": 27,
-   "beneficiarios": 24,
+   "proyectos": 26,
+   "beneficiarios": 23,
    "proyectos_micro_pequena": 20,
    "monto_aprobado_corfo": 678226944,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 16577,
-   "proyectos_por_mil_empresas": 1.63
+   "proyectos_por_mil_empresas": 1.57
   },
   {
    "codigo": 7302,
@@ -1634,6 +1766,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 40000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1117,
    "proyectos_por_mil_empresas": 0.9
   },
@@ -1646,6 +1779,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 815,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1654,12 +1788,13 @@
    "comuna": "Molina",
    "region": "Maule",
    "codigo_region": 7,
-   "proyectos": 5,
-   "beneficiarios": 2,
+   "proyectos": 2,
+   "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 27000000,
+   "certificados_ley_id": 3,
    "empresas_sii_2024": 3683,
-   "proyectos_por_mil_empresas": 1.36
+   "proyectos_por_mil_empresas": 0.54
   },
   {
    "codigo": 7305,
@@ -1670,6 +1805,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 85463000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1104,
    "proyectos_por_mil_empresas": 2.72
   },
@@ -1678,12 +1814,13 @@
    "comuna": "Romeral",
    "region": "Maule",
    "codigo_region": 7,
-   "proyectos": 11,
+   "proyectos": 8,
    "beneficiarios": 6,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 240501968,
+   "certificados_ley_id": 3,
    "empresas_sii_2024": 2112,
-   "proyectos_por_mil_empresas": 5.21
+   "proyectos_por_mil_empresas": 3.79
   },
   {
    "codigo": 7307,
@@ -1694,6 +1831,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 37000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2110,
    "proyectos_por_mil_empresas": 0.95
   },
@@ -1706,6 +1844,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 5,
    "monto_aprobado_corfo": 161019255,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 3166,
    "proyectos_por_mil_empresas": 1.58
   },
@@ -1718,6 +1857,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 581,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1726,12 +1866,13 @@
    "comuna": "Linares",
    "region": "Maule",
    "codigo_region": 7,
-   "proyectos": 13,
+   "proyectos": 11,
    "beneficiarios": 6,
    "proyectos_micro_pequena": 7,
    "monto_aprobado_corfo": 735004500,
+   "certificados_ley_id": 2,
    "empresas_sii_2024": 8661,
-   "proyectos_por_mil_empresas": 1.5
+   "proyectos_por_mil_empresas": 1.27
   },
   {
    "codigo": 7402,
@@ -1742,6 +1883,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 255115373,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1781,
    "proyectos_por_mil_empresas": 3.37
   },
@@ -1754,6 +1896,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 98928000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2987,
    "proyectos_por_mil_empresas": 1.0
   },
@@ -1766,6 +1909,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 102886818,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 4350,
    "proyectos_por_mil_empresas": 1.38
   },
@@ -1778,6 +1922,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2479,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1786,24 +1931,26 @@
    "comuna": "San Javier",
    "region": "Maule",
    "codigo_region": 7,
-   "proyectos": 8,
+   "proyectos": 7,
    "beneficiarios": 4,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 753360680,
+   "certificados_ley_id": 3,
    "empresas_sii_2024": 4438,
-   "proyectos_por_mil_empresas": 1.8
+   "proyectos_por_mil_empresas": 1.58
   },
   {
    "codigo": 7407,
    "comuna": "Villa Alegre",
    "region": "Maule",
    "codigo_region": 7,
-   "proyectos": 2,
+   "proyectos": 1,
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 247578832,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 1357,
-   "proyectos_por_mil_empresas": 1.47
+   "proyectos_por_mil_empresas": 0.74
   },
   {
    "codigo": 7408,
@@ -1814,6 +1961,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1518,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1822,24 +1970,26 @@
    "comuna": "Concepción",
    "region": "Biobío",
    "codigo_region": 8,
-   "proyectos": 274,
+   "proyectos": 263,
    "beneficiarios": 165,
    "proyectos_micro_pequena": 155,
    "monto_aprobado_corfo": 19644866927,
+   "certificados_ley_id": 12,
    "empresas_sii_2024": 30333,
-   "proyectos_por_mil_empresas": 9.03
+   "proyectos_por_mil_empresas": 8.67
   },
   {
    "codigo": 8102,
    "comuna": "Coronel",
    "region": "Biobío",
    "codigo_region": 8,
-   "proyectos": 45,
+   "proyectos": 29,
    "beneficiarios": 15,
    "proyectos_micro_pequena": 13,
    "monto_aprobado_corfo": 2564681452,
+   "certificados_ley_id": 17,
    "empresas_sii_2024": 6295,
-   "proyectos_por_mil_empresas": 7.15
+   "proyectos_por_mil_empresas": 4.61
   },
   {
    "codigo": 8103,
@@ -1850,6 +2000,7 @@
    "beneficiarios": 11,
    "proyectos_micro_pequena": 15,
    "monto_aprobado_corfo": 777869874,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 4529,
    "proyectos_por_mil_empresas": 3.31
   },
@@ -1862,6 +2013,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 10000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 789,
    "proyectos_por_mil_empresas": 1.27
   },
@@ -1874,6 +2026,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 181361225,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1384,
    "proyectos_por_mil_empresas": 2.89
   },
@@ -1886,6 +2039,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1695,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1894,24 +2048,26 @@
    "comuna": "Penco",
    "region": "Biobío",
    "codigo_region": 8,
-   "proyectos": 5,
+   "proyectos": 4,
    "beneficiarios": 4,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 357805071,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 2173,
-   "proyectos_por_mil_empresas": 2.3
+   "proyectos_por_mil_empresas": 1.84
   },
   {
    "codigo": 8108,
    "comuna": "San Pedro de La paz",
    "region": "Biobío",
    "codigo_region": 8,
-   "proyectos": 60,
-   "beneficiarios": 44,
+   "proyectos": 59,
+   "beneficiarios": 43,
    "proyectos_micro_pequena": 45,
    "monto_aprobado_corfo": 2564888268,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 9246,
-   "proyectos_por_mil_empresas": 6.49
+   "proyectos_por_mil_empresas": 6.38
   },
   {
    "codigo": 8109,
@@ -1922,6 +2078,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 165986000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 876,
    "proyectos_por_mil_empresas": 3.42
   },
@@ -1930,12 +2087,13 @@
    "comuna": "Talcahuano",
    "region": "Biobío",
    "codigo_region": 8,
-   "proyectos": 46,
+   "proyectos": 37,
    "beneficiarios": 23,
-   "proyectos_micro_pequena": 21,
+   "proyectos_micro_pequena": 20,
    "monto_aprobado_corfo": 3088732351,
+   "certificados_ley_id": 9,
    "empresas_sii_2024": 8386,
-   "proyectos_por_mil_empresas": 5.49
+   "proyectos_por_mil_empresas": 4.41
   },
   {
    "codigo": 8111,
@@ -1946,6 +2104,7 @@
    "beneficiarios": 8,
    "proyectos_micro_pequena": 14,
    "monto_aprobado_corfo": 583527838,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 3385,
    "proyectos_por_mil_empresas": 5.02
   },
@@ -1958,6 +2117,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 6,
    "monto_aprobado_corfo": 474995710,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 4204,
    "proyectos_por_mil_empresas": 1.67
   },
@@ -1970,6 +2130,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1524,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -1978,12 +2139,13 @@
    "comuna": "Arauco",
    "region": "Biobío",
    "codigo_region": 8,
-   "proyectos": 12,
-   "beneficiarios": 3,
+   "proyectos": 2,
+   "beneficiarios": 2,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 139850000,
+   "certificados_ley_id": 12,
    "empresas_sii_2024": 2623,
-   "proyectos_por_mil_empresas": 4.57
+   "proyectos_por_mil_empresas": 0.76
   },
   {
    "codigo": 8203,
@@ -1994,6 +2156,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 375008000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2517,
    "proyectos_por_mil_empresas": 1.99
   },
@@ -2006,6 +2169,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 436,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2018,6 +2182,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 4940000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1830,
    "proyectos_por_mil_empresas": 0.55
   },
@@ -2030,6 +2195,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 97500000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1009,
    "proyectos_por_mil_empresas": 1.98
   },
@@ -2042,6 +2208,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 30000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 543,
    "proyectos_por_mil_empresas": 3.68
   },
@@ -2050,12 +2217,13 @@
    "comuna": "Los Ángeles",
    "region": "Biobío",
    "codigo_region": 8,
-   "proyectos": 34,
+   "proyectos": 33,
    "beneficiarios": 27,
    "proyectos_micro_pequena": 28,
    "monto_aprobado_corfo": 1059106761,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 19030,
-   "proyectos_por_mil_empresas": 1.79
+   "proyectos_por_mil_empresas": 1.73
   },
   {
    "codigo": 8302,
@@ -2066,6 +2234,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 346,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2078,6 +2247,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 35824000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2143,
    "proyectos_por_mil_empresas": 0.47
   },
@@ -2090,6 +2260,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 44713700,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1185,
    "proyectos_por_mil_empresas": 0.84
   },
@@ -2102,6 +2273,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1832,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2114,6 +2286,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 3600000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1581,
    "proyectos_por_mil_empresas": 0.63
   },
@@ -2126,6 +2299,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 691,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2138,6 +2312,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 284,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2150,6 +2325,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 527,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2162,6 +2338,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 169,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2174,6 +2351,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 28051499,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1183,
    "proyectos_por_mil_empresas": 1.69
   },
@@ -2186,6 +2364,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1057,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2198,6 +2377,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1217,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2210,6 +2390,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 2000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 180,
    "proyectos_por_mil_empresas": 5.56
   },
@@ -2218,12 +2399,13 @@
    "comuna": "Temuco",
    "region": "La Araucanía",
    "codigo_region": 9,
-   "proyectos": 109,
+   "proyectos": 108,
    "beneficiarios": 81,
    "proyectos_micro_pequena": 76,
    "monto_aprobado_corfo": 3844126102,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 27128,
-   "proyectos_por_mil_empresas": 4.02
+   "proyectos_por_mil_empresas": 3.98
   },
   {
    "codigo": 9102,
@@ -2234,6 +2416,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1513,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2246,6 +2429,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 9970000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1362,
    "proyectos_por_mil_empresas": 0.73
   },
@@ -2254,12 +2438,13 @@
    "comuna": "Curarrehue",
    "region": "La Araucanía",
    "codigo_region": 9,
-   "proyectos": 5,
+   "proyectos": 3,
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 523780362,
+   "certificados_ley_id": 2,
    "empresas_sii_2024": 473,
-   "proyectos_por_mil_empresas": 10.57
+   "proyectos_por_mil_empresas": 6.34
   },
   {
    "codigo": 9105,
@@ -2270,6 +2455,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 5,
    "monto_aprobado_corfo": 235895700,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1485,
    "proyectos_por_mil_empresas": 4.04
   },
@@ -2282,6 +2468,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 541,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2294,6 +2481,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 159533392,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1280,
    "proyectos_por_mil_empresas": 0.78
   },
@@ -2302,12 +2490,13 @@
    "comuna": "Lautaro",
    "region": "La Araucanía",
    "codigo_region": 9,
-   "proyectos": 17,
+   "proyectos": 14,
    "beneficiarios": 7,
    "proyectos_micro_pequena": 8,
    "monto_aprobado_corfo": 1192300680,
+   "certificados_ley_id": 3,
    "empresas_sii_2024": 2786,
-   "proyectos_por_mil_empresas": 6.1
+   "proyectos_por_mil_empresas": 5.03
   },
   {
    "codigo": 9109,
@@ -2318,6 +2507,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 101823022,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1671,
    "proyectos_por_mil_empresas": 2.39
   },
@@ -2330,6 +2520,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 395,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2342,6 +2533,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1958,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2354,6 +2546,7 @@
    "beneficiarios": 7,
    "proyectos_micro_pequena": 10,
    "monto_aprobado_corfo": 404890362,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 3795,
    "proyectos_por_mil_empresas": 2.9
   },
@@ -2366,6 +2559,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 397,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2378,6 +2572,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 10000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1870,
    "proyectos_por_mil_empresas": 0.53
   },
@@ -2390,6 +2585,7 @@
    "beneficiarios": 5,
    "proyectos_micro_pequena": 5,
    "monto_aprobado_corfo": 94683813,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 4250,
    "proyectos_por_mil_empresas": 1.41
   },
@@ -2402,6 +2598,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 693,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2414,6 +2611,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1063,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2426,6 +2624,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 727,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2438,6 +2637,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 181469232,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1913,
    "proyectos_por_mil_empresas": 1.57
   },
@@ -2450,6 +2650,7 @@
    "beneficiarios": 5,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 50943000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 6637,
    "proyectos_por_mil_empresas": 0.75
   },
@@ -2462,6 +2663,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 66652666,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 491,
    "proyectos_por_mil_empresas": 4.07
   },
@@ -2474,6 +2676,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 11250000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 4041,
    "proyectos_por_mil_empresas": 0.25
   },
@@ -2486,6 +2689,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 30000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1516,
    "proyectos_por_mil_empresas": 0.66
   },
@@ -2498,6 +2702,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 42374836,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1920,
    "proyectos_por_mil_empresas": 0.52
   },
@@ -2510,6 +2715,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 378,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2522,6 +2728,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 689,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2534,6 +2741,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 555,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2546,6 +2754,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 606,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2558,6 +2767,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 982,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2570,6 +2780,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 646,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2582,6 +2793,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 8,
    "monto_aprobado_corfo": 348075501,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1388,
    "proyectos_por_mil_empresas": 5.76
   },
@@ -2594,6 +2806,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2661,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2602,12 +2815,13 @@
    "comuna": "Puerto Montt",
    "region": "Los Lagos",
    "codigo_region": 10,
-   "proyectos": 169,
-   "beneficiarios": 76,
-   "proyectos_micro_pequena": 66,
+   "proyectos": 106,
+   "beneficiarios": 68,
+   "proyectos_micro_pequena": 62,
    "monto_aprobado_corfo": 8265798292,
+   "certificados_ley_id": 74,
    "empresas_sii_2024": 25634,
-   "proyectos_por_mil_empresas": 6.59
+   "proyectos_por_mil_empresas": 4.14
   },
   {
    "codigo": 10102,
@@ -2618,6 +2832,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2179,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2630,6 +2845,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 10000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 475,
    "proyectos_por_mil_empresas": 2.11
   },
@@ -2642,6 +2858,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1050,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2654,6 +2871,7 @@
    "beneficiarios": 5,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 217875635,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2602,
    "proyectos_por_mil_empresas": 2.31
   },
@@ -2666,6 +2884,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 67500000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1733,
    "proyectos_por_mil_empresas": 0.58
   },
@@ -2678,6 +2897,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 168404000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1537,
    "proyectos_por_mil_empresas": 2.6
   },
@@ -2686,36 +2906,39 @@
    "comuna": "Maullín",
    "region": "Los Lagos",
    "codigo_region": 10,
-   "proyectos": 1,
-   "beneficiarios": 1,
-   "proyectos_micro_pequena": 1,
+   "proyectos": 0,
+   "beneficiarios": 0,
+   "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 1027,
-   "proyectos_por_mil_empresas": 0.97
+   "proyectos_por_mil_empresas": 0.0
   },
   {
    "codigo": 10109,
    "comuna": "Puerto Varas",
    "region": "Los Lagos",
    "codigo_region": 10,
-   "proyectos": 141,
-   "beneficiarios": 80,
-   "proyectos_micro_pequena": 73,
+   "proyectos": 113,
+   "beneficiarios": 77,
+   "proyectos_micro_pequena": 68,
    "monto_aprobado_corfo": 6525348142,
+   "certificados_ley_id": 32,
    "empresas_sii_2024": 7873,
-   "proyectos_por_mil_empresas": 17.91
+   "proyectos_por_mil_empresas": 14.35
   },
   {
    "codigo": 10201,
    "comuna": "Castro",
    "region": "Los Lagos",
    "codigo_region": 10,
-   "proyectos": 14,
+   "proyectos": 10,
    "beneficiarios": 7,
    "proyectos_micro_pequena": 5,
    "monto_aprobado_corfo": 663296982,
+   "certificados_ley_id": 4,
    "empresas_sii_2024": 4674,
-   "proyectos_por_mil_empresas": 3.0
+   "proyectos_por_mil_empresas": 2.14
   },
   {
    "codigo": 10202,
@@ -2726,6 +2949,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 82936222,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 4170,
    "proyectos_por_mil_empresas": 0.96
   },
@@ -2734,12 +2958,13 @@
    "comuna": "Chonchi",
    "region": "Los Lagos",
    "codigo_region": 10,
-   "proyectos": 4,
+   "proyectos": 3,
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 368215000,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 1243,
-   "proyectos_por_mil_empresas": 3.22
+   "proyectos_por_mil_empresas": 2.41
   },
   {
    "codigo": 10204,
@@ -2750,6 +2975,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 34285715,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 257,
    "proyectos_por_mil_empresas": 3.89
   },
@@ -2762,6 +2988,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1400,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2774,6 +3001,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 277,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2786,6 +3014,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 426,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2798,6 +3027,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 97698461,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2057,
    "proyectos_por_mil_empresas": 1.46
   },
@@ -2810,6 +3040,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 14675500,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 529,
    "proyectos_por_mil_empresas": 1.89
   },
@@ -2822,6 +3053,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 513,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2830,12 +3062,13 @@
    "comuna": "Osorno",
    "region": "Los Lagos",
    "codigo_region": 10,
-   "proyectos": 39,
-   "beneficiarios": 26,
+   "proyectos": 34,
+   "beneficiarios": 23,
    "proyectos_micro_pequena": 13,
    "monto_aprobado_corfo": 2051395383,
+   "certificados_ley_id": 7,
    "empresas_sii_2024": 15714,
-   "proyectos_por_mil_empresas": 2.48
+   "proyectos_por_mil_empresas": 2.16
   },
   {
    "codigo": 10302,
@@ -2846,6 +3079,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 95953635,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 790,
    "proyectos_por_mil_empresas": 2.53
   },
@@ -2858,6 +3092,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 99866000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1759,
    "proyectos_por_mil_empresas": 1.14
   },
@@ -2870,6 +3105,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 11025000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1096,
    "proyectos_por_mil_empresas": 0.91
   },
@@ -2882,6 +3118,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 10000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1134,
    "proyectos_por_mil_empresas": 0.88
   },
@@ -2894,6 +3131,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 351,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2906,6 +3144,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 777,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2918,6 +3157,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 570,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2930,6 +3170,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 558,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2942,6 +3183,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 944,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2954,6 +3196,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 241,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2966,6 +3209,7 @@
    "beneficiarios": 32,
    "proyectos_micro_pequena": 38,
    "monto_aprobado_corfo": 2664674837,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 6986,
    "proyectos_por_mil_empresas": 6.87
   },
@@ -2978,6 +3222,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 119,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -2990,6 +3235,7 @@
    "beneficiarios": 11,
    "proyectos_micro_pequena": 9,
    "monto_aprobado_corfo": 388521226,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2675,
    "proyectos_por_mil_empresas": 4.11
   },
@@ -3002,6 +3248,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 64323854,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 919,
    "proyectos_por_mil_empresas": 3.26
   },
@@ -3014,6 +3261,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 40000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 151,
    "proyectos_por_mil_empresas": 6.62
   },
@@ -3026,6 +3274,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 519,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -3038,6 +3287,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 115,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -3050,6 +3300,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 139,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -3062,6 +3313,7 @@
    "beneficiarios": 6,
    "proyectos_micro_pequena": 8,
    "monto_aprobado_corfo": 338480566,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 702,
    "proyectos_por_mil_empresas": 12.82
   },
@@ -3074,6 +3326,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 10479580,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 628,
    "proyectos_por_mil_empresas": 1.59
   },
@@ -3086,6 +3339,7 @@
    "beneficiarios": 34,
    "proyectos_micro_pequena": 35,
    "monto_aprobado_corfo": 1891116170,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 12589,
    "proyectos_por_mil_empresas": 3.5
   },
@@ -3098,6 +3352,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 25,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -3110,6 +3365,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 21,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -3122,6 +3378,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 59734872,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 34,
    "proyectos_por_mil_empresas": 29.41
   },
@@ -3134,6 +3391,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 9838800,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 239,
    "proyectos_por_mil_empresas": 4.18
   },
@@ -3146,6 +3404,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -3158,6 +3417,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 90440000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 853,
    "proyectos_por_mil_empresas": 2.34
   },
@@ -3170,6 +3430,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 10000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 87,
    "proyectos_por_mil_empresas": 11.49
   },
@@ -3182,6 +3443,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 25,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -3194,6 +3456,7 @@
    "beneficiarios": 11,
    "proyectos_micro_pequena": 12,
    "monto_aprobado_corfo": 508196331,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 3316,
    "proyectos_por_mil_empresas": 4.22
   },
@@ -3206,6 +3469,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 41,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -3214,24 +3478,26 @@
    "comuna": "Santiago",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 382,
-   "beneficiarios": 196,
-   "proyectos_micro_pequena": 169,
+   "proyectos": 321,
+   "beneficiarios": 185,
+   "proyectos_micro_pequena": 162,
    "monto_aprobado_corfo": 25156418368,
+   "certificados_ley_id": 66,
    "empresas_sii_2024": 82405,
-   "proyectos_por_mil_empresas": 4.64
+   "proyectos_por_mil_empresas": 3.9
   },
   {
    "codigo": 13102,
    "comuna": "Cerrillos",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 28,
-   "beneficiarios": 10,
+   "proyectos": 7,
+   "beneficiarios": 6,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 605556591,
+   "certificados_ley_id": 22,
    "empresas_sii_2024": 4982,
-   "proyectos_por_mil_empresas": 5.62
+   "proyectos_por_mil_empresas": 1.41
   },
   {
    "codigo": 13103,
@@ -3242,6 +3508,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 76220000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 5256,
    "proyectos_por_mil_empresas": 0.95
   },
@@ -3250,12 +3517,13 @@
    "comuna": "Conchalí",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 12,
+   "proyectos": 8,
    "beneficiarios": 6,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 608853071,
+   "certificados_ley_id": 5,
    "empresas_sii_2024": 6449,
-   "proyectos_por_mil_empresas": 1.86
+   "proyectos_por_mil_empresas": 1.24
   },
   {
    "codigo": 13105,
@@ -3266,6 +3534,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 7063,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -3274,72 +3543,78 @@
    "comuna": "Estación Central",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 26,
-   "beneficiarios": 14,
+   "proyectos": 25,
+   "beneficiarios": 13,
    "proyectos_micro_pequena": 9,
    "monto_aprobado_corfo": 2040591033,
+   "certificados_ley_id": 2,
    "empresas_sii_2024": 9367,
-   "proyectos_por_mil_empresas": 2.78
+   "proyectos_por_mil_empresas": 2.67
   },
   {
    "codigo": 13107,
    "comuna": "Huechuraba",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 102,
-   "beneficiarios": 55,
-   "proyectos_micro_pequena": 41,
+   "proyectos": 83,
+   "beneficiarios": 51,
+   "proyectos_micro_pequena": 39,
    "monto_aprobado_corfo": 7485088231,
+   "certificados_ley_id": 19,
    "empresas_sii_2024": 9116,
-   "proyectos_por_mil_empresas": 11.19
+   "proyectos_por_mil_empresas": 9.1
   },
   {
    "codigo": 13108,
    "comuna": "Independencia",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 14,
-   "beneficiarios": 12,
+   "proyectos": 13,
+   "beneficiarios": 11,
    "proyectos_micro_pequena": 9,
    "monto_aprobado_corfo": 422791332,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 6632,
-   "proyectos_por_mil_empresas": 2.11
+   "proyectos_por_mil_empresas": 1.96
   },
   {
    "codigo": 13109,
    "comuna": "La Cisterna",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 11,
+   "proyectos": 10,
    "beneficiarios": 7,
-   "proyectos_micro_pequena": 5,
+   "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 690398504,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 7520,
-   "proyectos_por_mil_empresas": 1.46
+   "proyectos_por_mil_empresas": 1.33
   },
   {
    "codigo": 13110,
    "comuna": "La Florida",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 32,
-   "beneficiarios": 23,
+   "proyectos": 30,
+   "beneficiarios": 22,
    "proyectos_micro_pequena": 19,
    "monto_aprobado_corfo": 1519162296,
+   "certificados_ley_id": 2,
    "empresas_sii_2024": 22771,
-   "proyectos_por_mil_empresas": 1.41
+   "proyectos_por_mil_empresas": 1.32
   },
   {
    "codigo": 13111,
    "comuna": "La Granja",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 3,
+   "proyectos": 2,
    "beneficiarios": 2,
-   "proyectos_micro_pequena": 3,
+   "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 109000000,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 4939,
-   "proyectos_por_mil_empresas": 0.61
+   "proyectos_por_mil_empresas": 0.4
   },
   {
    "codigo": 13112,
@@ -3350,6 +3625,7 @@
    "beneficiarios": 7,
    "proyectos_micro_pequena": 7,
    "monto_aprobado_corfo": 484462431,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 6670,
    "proyectos_por_mil_empresas": 1.2
   },
@@ -3358,36 +3634,39 @@
    "comuna": "La Reina",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 60,
-   "beneficiarios": 37,
-   "proyectos_micro_pequena": 42,
+   "proyectos": 53,
+   "beneficiarios": 36,
+   "proyectos_micro_pequena": 36,
    "monto_aprobado_corfo": 3542073138,
+   "certificados_ley_id": 7,
    "empresas_sii_2024": 9377,
-   "proyectos_por_mil_empresas": 6.4
+   "proyectos_por_mil_empresas": 5.65
   },
   {
    "codigo": 13114,
    "comuna": "Las Condes",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 998,
-   "beneficiarios": 554,
-   "proyectos_micro_pequena": 482,
+   "proyectos": 770,
+   "beneficiarios": 496,
+   "proyectos_micro_pequena": 459,
    "monto_aprobado_corfo": 63952598584,
+   "certificados_ley_id": 256,
    "empresas_sii_2024": 92359,
-   "proyectos_por_mil_empresas": 10.81
+   "proyectos_por_mil_empresas": 8.34
   },
   {
    "codigo": 13115,
    "comuna": "Lo Barnechea",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 54,
-   "beneficiarios": 43,
-   "proyectos_micro_pequena": 40,
+   "proyectos": 52,
+   "beneficiarios": 42,
+   "proyectos_micro_pequena": 38,
    "monto_aprobado_corfo": 2659784070,
+   "certificados_ley_id": 2,
    "empresas_sii_2024": 17804,
-   "proyectos_por_mil_empresas": 3.03
+   "proyectos_por_mil_empresas": 2.92
   },
   {
    "codigo": 13116,
@@ -3398,6 +3677,7 @@
    "beneficiarios": 5,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 380474670,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 3710,
    "proyectos_por_mil_empresas": 1.35
   },
@@ -3410,6 +3690,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 7000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 3828,
    "proyectos_por_mil_empresas": 0.26
   },
@@ -3418,156 +3699,169 @@
    "comuna": "Macul",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 104,
-   "beneficiarios": 46,
-   "proyectos_micro_pequena": 51,
+   "proyectos": 82,
+   "beneficiarios": 41,
+   "proyectos_micro_pequena": 50,
    "monto_aprobado_corfo": 6957579415,
+   "certificados_ley_id": 22,
    "empresas_sii_2024": 8129,
-   "proyectos_por_mil_empresas": 12.79
+   "proyectos_por_mil_empresas": 10.09
   },
   {
    "codigo": 13119,
    "comuna": "Maipú",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 37,
-   "beneficiarios": 22,
+   "proyectos": 28,
+   "beneficiarios": 19,
    "proyectos_micro_pequena": 16,
    "monto_aprobado_corfo": 1276062258,
+   "certificados_ley_id": 10,
    "empresas_sii_2024": 28973,
-   "proyectos_por_mil_empresas": 1.28
+   "proyectos_por_mil_empresas": 0.97
   },
   {
    "codigo": 13120,
    "comuna": "Ñuñoa",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 132,
-   "beneficiarios": 81,
-   "proyectos_micro_pequena": 84,
+   "proyectos": 110,
+   "beneficiarios": 76,
+   "proyectos_micro_pequena": 78,
    "monto_aprobado_corfo": 7968318770,
+   "certificados_ley_id": 24,
    "empresas_sii_2024": 22718,
-   "proyectos_por_mil_empresas": 5.81
+   "proyectos_por_mil_empresas": 4.84
   },
   {
    "codigo": 13121,
    "comuna": "Pedro Aguirre Cerda",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 6,
+   "proyectos": 5,
    "beneficiarios": 4,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 114454531,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 5387,
-   "proyectos_por_mil_empresas": 1.11
+   "proyectos_por_mil_empresas": 0.93
   },
   {
    "codigo": 13122,
    "comuna": "Peñalolén",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 30,
+   "proyectos": 29,
    "beneficiarios": 23,
-   "proyectos_micro_pequena": 21,
+   "proyectos_micro_pequena": 20,
    "monto_aprobado_corfo": 1917019335,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 12146,
-   "proyectos_por_mil_empresas": 2.47
+   "proyectos_por_mil_empresas": 2.39
   },
   {
    "codigo": 13123,
    "comuna": "Providencia",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 859,
-   "beneficiarios": 471,
-   "proyectos_micro_pequena": 493,
+   "proyectos": 732,
+   "beneficiarios": 450,
+   "proyectos_micro_pequena": 482,
    "monto_aprobado_corfo": 55341036903,
+   "certificados_ley_id": 137,
    "empresas_sii_2024": 84127,
-   "proyectos_por_mil_empresas": 10.21
+   "proyectos_por_mil_empresas": 8.7
   },
   {
    "codigo": 13124,
    "comuna": "Pudahuel",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 52,
-   "beneficiarios": 33,
+   "proyectos": 30,
+   "beneficiarios": 26,
    "proyectos_micro_pequena": 8,
    "monto_aprobado_corfo": 2363478059,
+   "certificados_ley_id": 26,
    "empresas_sii_2024": 12716,
-   "proyectos_por_mil_empresas": 4.09
+   "proyectos_por_mil_empresas": 2.36
   },
   {
    "codigo": 13125,
    "comuna": "Quilicura",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 84,
-   "beneficiarios": 54,
-   "proyectos_micro_pequena": 22,
+   "proyectos": 61,
+   "beneficiarios": 40,
+   "proyectos_micro_pequena": 20,
    "monto_aprobado_corfo": 3995682921,
+   "certificados_ley_id": 26,
    "empresas_sii_2024": 12858,
-   "proyectos_por_mil_empresas": 6.53
+   "proyectos_por_mil_empresas": 4.74
   },
   {
    "codigo": 13126,
    "comuna": "Quinta Normal",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 26,
-   "beneficiarios": 15,
+   "proyectos": 22,
+   "beneficiarios": 13,
    "proyectos_micro_pequena": 16,
    "monto_aprobado_corfo": 1247867296,
+   "certificados_ley_id": 7,
    "empresas_sii_2024": 8947,
-   "proyectos_por_mil_empresas": 2.91
+   "proyectos_por_mil_empresas": 2.46
   },
   {
    "codigo": 13127,
    "comuna": "Recoleta",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 35,
-   "beneficiarios": 27,
+   "proyectos": 33,
+   "beneficiarios": 26,
    "proyectos_micro_pequena": 24,
    "monto_aprobado_corfo": 1860227034,
+   "certificados_ley_id": 3,
    "empresas_sii_2024": 14290,
-   "proyectos_por_mil_empresas": 2.45
+   "proyectos_por_mil_empresas": 2.31
   },
   {
    "codigo": 13128,
    "comuna": "Renca",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 43,
-   "beneficiarios": 16,
-   "proyectos_micro_pequena": 23,
+   "proyectos": 31,
+   "beneficiarios": 15,
+   "proyectos_micro_pequena": 20,
    "monto_aprobado_corfo": 3498231792,
+   "certificados_ley_id": 12,
    "empresas_sii_2024": 7282,
-   "proyectos_por_mil_empresas": 5.9
+   "proyectos_por_mil_empresas": 4.26
   },
   {
    "codigo": 13129,
    "comuna": "San Joaquín",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 14,
-   "beneficiarios": 8,
+   "proyectos": 13,
+   "beneficiarios": 7,
    "proyectos_micro_pequena": 12,
    "monto_aprobado_corfo": 885960829,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 6364,
-   "proyectos_por_mil_empresas": 2.2
+   "proyectos_por_mil_empresas": 2.04
   },
   {
    "codigo": 13130,
    "comuna": "San Miguel",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 27,
-   "beneficiarios": 19,
-   "proyectos_micro_pequena": 16,
+   "proyectos": 22,
+   "beneficiarios": 18,
+   "proyectos_micro_pequena": 13,
    "monto_aprobado_corfo": 1582143465,
+   "certificados_ley_id": 5,
    "empresas_sii_2024": 11191,
-   "proyectos_por_mil_empresas": 2.41
+   "proyectos_por_mil_empresas": 1.97
   },
   {
    "codigo": 13131,
@@ -3578,6 +3872,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 92188448,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 3653,
    "proyectos_por_mil_empresas": 0.82
   },
@@ -3586,12 +3881,13 @@
    "comuna": "Vitacura",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 157,
-   "beneficiarios": 97,
-   "proyectos_micro_pequena": 80,
+   "proyectos": 135,
+   "beneficiarios": 90,
+   "proyectos_micro_pequena": 77,
    "monto_aprobado_corfo": 9964368316,
+   "certificados_ley_id": 27,
    "empresas_sii_2024": 22537,
-   "proyectos_por_mil_empresas": 6.97
+   "proyectos_por_mil_empresas": 5.99
   },
   {
    "codigo": 13201,
@@ -3602,6 +3898,7 @@
    "beneficiarios": 12,
    "proyectos_micro_pequena": 8,
    "monto_aprobado_corfo": 610131465,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 29589,
    "proyectos_por_mil_empresas": 0.47
   },
@@ -3610,12 +3907,13 @@
    "comuna": "Pirque",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 6,
-   "beneficiarios": 5,
+   "proyectos": 5,
+   "beneficiarios": 4,
    "proyectos_micro_pequena": 5,
    "monto_aprobado_corfo": 175675996,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 2371,
-   "proyectos_por_mil_empresas": 2.53
+   "proyectos_por_mil_empresas": 2.11
   },
   {
    "codigo": 13203,
@@ -3626,6 +3924,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 16600000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1412,
    "proyectos_por_mil_empresas": 1.42
   },
@@ -3634,60 +3933,65 @@
    "comuna": "Colina",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 46,
-   "beneficiarios": 36,
+   "proyectos": 43,
+   "beneficiarios": 34,
    "proyectos_micro_pequena": 26,
    "monto_aprobado_corfo": 2593802143,
+   "certificados_ley_id": 3,
    "empresas_sii_2024": 11960,
-   "proyectos_por_mil_empresas": 3.85
+   "proyectos_por_mil_empresas": 3.6
   },
   {
    "codigo": 13302,
    "comuna": "Lampa",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 69,
-   "beneficiarios": 40,
-   "proyectos_micro_pequena": 33,
+   "proyectos": 53,
+   "beneficiarios": 34,
+   "proyectos_micro_pequena": 32,
    "monto_aprobado_corfo": 4207895139,
+   "certificados_ley_id": 19,
    "empresas_sii_2024": 9845,
-   "proyectos_por_mil_empresas": 7.01
+   "proyectos_por_mil_empresas": 5.38
   },
   {
    "codigo": 13303,
    "comuna": "Tiltil",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 8,
+   "proyectos": 6,
    "beneficiarios": 6,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 121280293,
+   "certificados_ley_id": 2,
    "empresas_sii_2024": 1601,
-   "proyectos_por_mil_empresas": 5.0
+   "proyectos_por_mil_empresas": 3.75
   },
   {
    "codigo": 13401,
    "comuna": "San Bernardo",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 74,
-   "beneficiarios": 31,
-   "proyectos_micro_pequena": 22,
+   "proyectos": 46,
+   "beneficiarios": 26,
+   "proyectos_micro_pequena": 17,
    "monto_aprobado_corfo": 3367019293,
+   "certificados_ley_id": 32,
    "empresas_sii_2024": 17557,
-   "proyectos_por_mil_empresas": 4.21
+   "proyectos_por_mil_empresas": 2.62
   },
   {
    "codigo": 13402,
    "comuna": "Buin",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 16,
-   "beneficiarios": 10,
+   "proyectos": 13,
+   "beneficiarios": 9,
    "proyectos_micro_pequena": 6,
    "monto_aprobado_corfo": 1137890582,
+   "certificados_ley_id": 3,
    "empresas_sii_2024": 8595,
-   "proyectos_por_mil_empresas": 1.86
+   "proyectos_por_mil_empresas": 1.51
   },
   {
    "codigo": 13403,
@@ -3698,6 +4002,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 7,
    "monto_aprobado_corfo": 423317855,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2200,
    "proyectos_por_mil_empresas": 3.18
   },
@@ -3706,24 +4011,26 @@
    "comuna": "Paine",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 28,
-   "beneficiarios": 12,
+   "proyectos": 18,
+   "beneficiarios": 11,
    "proyectos_micro_pequena": 5,
    "monto_aprobado_corfo": 926214325,
+   "certificados_ley_id": 10,
    "empresas_sii_2024": 5831,
-   "proyectos_por_mil_empresas": 4.8
+   "proyectos_por_mil_empresas": 3.09
   },
   {
    "codigo": 13501,
    "comuna": "Melipilla",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 9,
+   "proyectos": 7,
    "beneficiarios": 6,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 693007510,
+   "certificados_ley_id": 2,
    "empresas_sii_2024": 10793,
-   "proyectos_por_mil_empresas": 0.83
+   "proyectos_por_mil_empresas": 0.65
   },
   {
    "codigo": 13502,
@@ -3734,6 +4041,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 519,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -3746,6 +4054,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 68848363,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 3107,
    "proyectos_por_mil_empresas": 0.64
   },
@@ -3758,6 +4067,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 10000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1323,
    "proyectos_por_mil_empresas": 0.76
   },
@@ -3770,6 +4080,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1121,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -3778,12 +4089,13 @@
    "comuna": "Talagante",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 16,
-   "beneficiarios": 10,
+   "proyectos": 12,
+   "beneficiarios": 9,
    "proyectos_micro_pequena": 9,
    "monto_aprobado_corfo": 748404535,
+   "certificados_ley_id": 5,
    "empresas_sii_2024": 5911,
-   "proyectos_por_mil_empresas": 2.71
+   "proyectos_por_mil_empresas": 2.03
   },
   {
    "codigo": 13602,
@@ -3794,6 +4106,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 8,
    "monto_aprobado_corfo": 550892208,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2133,
    "proyectos_por_mil_empresas": 3.75
   },
@@ -3806,6 +4119,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 8,
    "monto_aprobado_corfo": 778872200,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2872,
    "proyectos_por_mil_empresas": 2.79
   },
@@ -3814,36 +4128,39 @@
    "comuna": "Padre Hurtado",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 17,
-   "beneficiarios": 8,
+   "proyectos": 8,
+   "beneficiarios": 6,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 151914515,
+   "certificados_ley_id": 10,
    "empresas_sii_2024": 4690,
-   "proyectos_por_mil_empresas": 3.62
+   "proyectos_por_mil_empresas": 1.71
   },
   {
    "codigo": 13605,
    "comuna": "Peñaflor",
    "region": "Metropolitana de Santiago",
    "codigo_region": 13,
-   "proyectos": 12,
+   "proyectos": 9,
    "beneficiarios": 5,
    "proyectos_micro_pequena": 5,
    "monto_aprobado_corfo": 467204118,
+   "certificados_ley_id": 3,
    "empresas_sii_2024": 5908,
-   "proyectos_por_mil_empresas": 2.03
+   "proyectos_por_mil_empresas": 1.52
   },
   {
    "codigo": 14101,
    "comuna": "Valdivia",
    "region": "Los Ríos",
    "codigo_region": 14,
-   "proyectos": 136,
-   "beneficiarios": 86,
-   "proyectos_micro_pequena": 98,
+   "proyectos": 134,
+   "beneficiarios": 85,
+   "proyectos_micro_pequena": 96,
    "monto_aprobado_corfo": 7573766367,
+   "certificados_ley_id": 3,
    "empresas_sii_2024": 14461,
-   "proyectos_por_mil_empresas": 9.4
+   "proyectos_por_mil_empresas": 9.27
   },
   {
    "codigo": 14102,
@@ -3854,6 +4171,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 372,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -3866,6 +4184,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1364,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -3878,6 +4197,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 112500000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1433,
    "proyectos_por_mil_empresas": 1.4
   },
@@ -3890,6 +4210,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 16799700,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 595,
    "proyectos_por_mil_empresas": 3.36
   },
@@ -3898,12 +4219,13 @@
    "comuna": "Mariquina",
    "region": "Los Ríos",
    "codigo_region": 14,
-   "proyectos": 5,
-   "beneficiarios": 5,
-   "proyectos_micro_pequena": 3,
+   "proyectos": 4,
+   "beneficiarios": 4,
+   "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 382346000,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 1824,
-   "proyectos_por_mil_empresas": 2.74
+   "proyectos_por_mil_empresas": 2.19
   },
   {
    "codigo": 14107,
@@ -3914,6 +4236,7 @@
    "beneficiarios": 3,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 92638400,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1821,
    "proyectos_por_mil_empresas": 1.65
   },
@@ -3926,6 +4249,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 101081509,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 3103,
    "proyectos_por_mil_empresas": 0.64
   },
@@ -3934,12 +4258,13 @@
    "comuna": "La Unión",
    "region": "Los Ríos",
    "codigo_region": 14,
-   "proyectos": 10,
+   "proyectos": 9,
    "beneficiarios": 8,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 257831172,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 3620,
-   "proyectos_por_mil_empresas": 2.76
+   "proyectos_por_mil_empresas": 2.49
   },
   {
    "codigo": 14202,
@@ -3950,6 +4275,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 67500000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1442,
    "proyectos_por_mil_empresas": 0.69
   },
@@ -3962,6 +4288,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 11250000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 895,
    "proyectos_por_mil_empresas": 1.12
   },
@@ -3974,6 +4301,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 376997516,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2978,
    "proyectos_por_mil_empresas": 1.01
   },
@@ -3982,12 +4310,13 @@
    "comuna": "Arica",
    "region": "Arica y Parinacota",
    "codigo_region": 15,
-   "proyectos": 47,
-   "beneficiarios": 37,
+   "proyectos": 46,
+   "beneficiarios": 36,
    "proyectos_micro_pequena": 42,
    "monto_aprobado_corfo": 2006457981,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 18420,
-   "proyectos_por_mil_empresas": 2.55
+   "proyectos_por_mil_empresas": 2.5
   },
   {
    "codigo": 15102,
@@ -3998,6 +4327,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 146,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -4010,6 +4340,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 67500000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 156,
    "proyectos_por_mil_empresas": 6.41
   },
@@ -4022,6 +4353,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 55280000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 18,
    "proyectos_por_mil_empresas": 55.56
   },
@@ -4030,12 +4362,13 @@
    "comuna": "Chillán",
    "region": "Ñuble",
    "codigo_region": 16,
-   "proyectos": 67,
-   "beneficiarios": 35,
+   "proyectos": 66,
+   "beneficiarios": 34,
    "proyectos_micro_pequena": 52,
    "monto_aprobado_corfo": 3968202622,
+   "certificados_ley_id": 1,
    "empresas_sii_2024": 15978,
-   "proyectos_por_mil_empresas": 4.19
+   "proyectos_por_mil_empresas": 4.13
   },
   {
    "codigo": 16102,
@@ -4046,6 +4379,7 @@
    "beneficiarios": 6,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 150242269,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1766,
    "proyectos_por_mil_empresas": 3.4
   },
@@ -4058,6 +4392,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 4,
    "monto_aprobado_corfo": 133182608,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1744,
    "proyectos_por_mil_empresas": 2.87
   },
@@ -4070,6 +4405,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 113578408,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1152,
    "proyectos_por_mil_empresas": 1.74
   },
@@ -4082,6 +4418,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 536,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -4094,6 +4431,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 50565007,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1250,
    "proyectos_por_mil_empresas": 0.8
   },
@@ -4106,6 +4444,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 2000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1597,
    "proyectos_por_mil_empresas": 0.63
   },
@@ -4118,6 +4457,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 30000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1191,
    "proyectos_por_mil_empresas": 0.84
   },
@@ -4130,6 +4470,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 58884800,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1306,
    "proyectos_por_mil_empresas": 0.77
   },
@@ -4142,6 +4483,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 889,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -4154,6 +4496,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 256988756,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 406,
    "proyectos_por_mil_empresas": 7.39
   },
@@ -4166,6 +4509,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1320,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -4178,6 +4522,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 322,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -4190,6 +4535,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 9800000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 335,
    "proyectos_por_mil_empresas": 2.99
   },
@@ -4202,6 +4548,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 468,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -4214,6 +4561,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 6280000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 306,
    "proyectos_por_mil_empresas": 3.27
   },
@@ -4226,6 +4574,7 @@
    "beneficiarios": 4,
    "proyectos_micro_pequena": 3,
    "monto_aprobado_corfo": 187902524,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 5033,
    "proyectos_por_mil_empresas": 0.99
   },
@@ -4238,6 +4587,7 @@
    "beneficiarios": 2,
    "proyectos_micro_pequena": 2,
    "monto_aprobado_corfo": 33708000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 2291,
    "proyectos_por_mil_empresas": 0.87
   },
@@ -4250,6 +4600,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1054,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -4262,6 +4613,7 @@
    "beneficiarios": 0,
    "proyectos_micro_pequena": 0,
    "monto_aprobado_corfo": 0,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 425,
    "proyectos_por_mil_empresas": 0.0
   },
@@ -4274,6 +4626,7 @@
    "beneficiarios": 1,
    "proyectos_micro_pequena": 1,
    "monto_aprobado_corfo": 2000000,
+   "certificados_ley_id": 0,
    "empresas_sii_2024": 1017,
    "proyectos_por_mil_empresas": 0.98
   }
