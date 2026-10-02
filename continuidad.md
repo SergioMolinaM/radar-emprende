@@ -25,7 +25,9 @@
 
 - Decidir nombre (Sergio) antes de difundir nada.
 - Releer contra la fuente las citas de A y B/C/D (todas vía WebFetch, resumidor) antes de `datos/*.json`. Dudas abiertas: SIS dentro del 3,5 % vs. Hacienda «se suma»; tope 3,4 % vs. tabla SUSESO 6,80 % (Ley 16.744); asignación familiar vigente hasta 30-jun-2026; LRE «15 días hábiles» vs. «día 15»; IDPC Pro Pyme 12,5 % (Ley 21.755 sin leer).
-- Recibir G (datos públicos) e I (fondos).
+- G e I entregados. G: la serie fuerte es el Registro de Empresas y Sociedades (datos.gob.cl, CC BY, comuna y mes); SII/EME sin cabeceras verificadas → verificador con Python en curso. I: fondos.gob.cl no sirve como fuente (54 fondos de emprendimiento, 0 abiertos, fichas Corfo 2024); tasa de adjudicación oficial solo Capital Semilla 2011 (4,8 %); el resto se pide por Ley 20.285. Fuentes automatizables: calendario y RSS de Sercotec, tabla paginada de INDAP.
+- Encuestas previas (investigador en curso): para no gastar preguntas del sondeo en lo ya medido.
+- Borradores de solicitudes de transparencia (Ley 20.285) a Sercotec, Corfo y Fosis por postulantes y adjudicados 2023-2026: las firma y envía Sergio.
 - F0: releer las citas de los investigadores contra la fuente y pasar lo nivel 1 a `datos/*.json`.
 - Elegir las cinco pymes y anotarlas en `contactos.md` (no versionado).
 - Hacer las entrevistas y llenar `fichas/P1.md`…`P5.md` el mismo día.
