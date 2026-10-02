@@ -68,6 +68,15 @@
 
 **D. Catálogo de herramientas gratuitas oficiales:** qué hace cada una, para quién, URL.
 
+**E. Catálogo de herramientas libres para no pagar software** (pedido de Sergio, 2-oct)
+
+**2-oct-2026 — Se recomienda, no se instala ni se soporta.**
+- **Elegido:** catálogo de herramientas libres y gratuitas, separado en (1) las que tocan cumplimiento (facturas, boletas, sueldos), donde primero van las oficiales gratuitas y lo libre solo con advertencia, y (2) las que no lo tocan (oficina, contabilidad interna, inventario, tienda web, contraseñas, respaldos). Cada ficha dice para quién es, qué exige operarla y qué no hace.
+- **Descartado:** distribuir o instalar nosotros un paquete de software, o recomendar un ERP libre sin decir lo que cuesta operarlo.
+- **Por qué es mejor para la gente:** libre no es gratis de operar; un ERP mal instalado o una «factura» de un programa extranjero (que en Chile no es documento tributario) le genera a la pyme un costo o una multa. La advertencia vale tanto como la recomendación.
+- **Costo para nosotros (no es criterio):** el catálogo hay que reverificarlo (mantención, licencia) igual que los datos.
+- Criterios de entrada: licencia libre real (OSI), actividad en los últimos 12 meses, uso en español, y una línea honesta de qué exige (escritorio, servidor, conocimiento técnico).
+
 ## 5. Mantención
 
 Cada dato de `datos/` tiene fecha de reverificación según cómo cambia (mensual, anual, por ley). Antes de publicar se define quién lo revisa y cuándo; un sitio de referencia con un valor vencido hace más daño que no tenerlo.
