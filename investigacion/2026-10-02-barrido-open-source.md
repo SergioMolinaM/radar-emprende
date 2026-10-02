@@ -20,7 +20,7 @@ Advertencia: buena parte de los repositorios con actividad en 2026 se creó entr
 | devlas-cl/dte-sii | MIT | 29 | 2026-10-02 (creado 2026-03-20) | Boletas, CAF, libros, reclamos. |
 | emisso-ai/emisso-sii | MIT | 23 | 2026-07-01 | SDK DTE, certificado, RCV. |
 | cordada/lib-cl-sii-python | MIT | 37 | 2026-10-01 | Parseo y validación de DTE, RCV, RUT. |
-| emisso-ai/emisso-payroll | MIT | 6 | 2026-06-21 | Motor de cálculo de remuneraciones, Ley 21.720, finiquito, archivo Previred. LRE no verificado. |
+| emisso-ai/emisso-payroll | MIT | 6 | 2026-06-21 | Motor de cálculo de remuneraciones, reforma de pensiones (Ley 21.735; este barrido decía «21.720» por error), finiquito, archivo Previred. LRE no verificado. |
 | jlobos/rut.js | MIT | 172 | 2024-11-18 | Validación de RUT. |
 
 Ausencias (búsqueda → resultado; control):

@@ -23,7 +23,7 @@
 ## 2. Protocolo de veracidad (R1–R8 de Radar Circular, adaptado)
 
 - **R1 — Radar Pyme no asesora casos particulares.** Explica qué dice la norma y qué herramienta oficial usar. Lenguaje permitido: «la ley establece», «en general», «consulta tu caso con…». Prohibido: «tú debes», «no te corresponde pagar», «estás exento».
-- **R2 — Ningún valor sin su vigencia.** Cada cifra lleva desde cuándo rige, y si es gradual (por ejemplo la Ley 21.720), la tabla completa de etapas con sus fechas.
+- **R2 — Ningún valor sin su vigencia.** Cada cifra lleva desde cuándo rige, y si es gradual (por ejemplo la Ley 21.735 de pensiones), la tabla completa de etapas con sus fechas.
 - **R3 — Lo verificado vive en datos.** Valores en `datos/*.json` con `valor`, `unidad`, `vigente_desde`, `fuente_url`, `fuente_cita` (literal), `consultado`. La guía y las calculadoras leen de ahí; ningún valor se escribe a mano en un texto.
 - **R6 — La ambigüedad se publica como ambigüedad**, con el literal citado.
 - **R7 — Tres niveles:** 1, fuente literal → se publica; 2, supuesto declarado → se publica con el supuesto a la vista; 3, no afirmable → no sale.
@@ -50,7 +50,7 @@
 - Topes imponibles (AFP/salud, seguro de cesantía) en UF.
 - Cotización AFP por administradora (10 % + comisión) y SIS.
 - Seguro de cesantía: aporte de empleador y trabajador según tipo de contrato.
-- Ley 21.720: aporte del empleador, calendario completo de etapas.
+- Ley 21.735 (reforma de pensiones, 26-mar-2025): aporte del empleador, calendario completo de etapas. *(Corrección 2-oct: decía «Ley 21.720», que es la de inhibidores de señal; detectado por el benchmark.)*
 - Seguro de accidentes del trabajo (Ley 16.744): tasa básica y adicional.
 - Salud 7 %, gratificación legal y su tope, asignación familiar por tramo.
 - Impuesto único de segunda categoría: tramos vigentes.
