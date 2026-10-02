@@ -54,7 +54,7 @@ def main():
                 'Solo sociedades del Registro de Empresas y Sociedades (Ley 20.659). No incluye personas naturales con giro ni sociedades constituidas por escritura publicada en el Diario Oficial.',
                 f'2026 llega hasta el corte del archivo (meses: {sorted(meses_2026)}); no es comparable con años completos.',
                 'La tasa por 1.000 habitantes usa la población del Censo 2024 para 2025.',
-                'La comuna es la tributaria (domicilio ante el SII), que puede no ser donde opera el negocio. Comunas con oficinas virtuales y estudios contables (Providencia 80,9 por mil en 2025, Las Condes 29,6, Santiago 25,8, frente a 10,95 nacional) concentran domicilios de sociedades que operan en otras comunas: no leer la tasa como «emprendimiento local».',
+                'La comuna es la tributaria (domicilio ante el SII), que puede no ser donde opera el negocio. Providencia (80,9 por mil en 2025), Las Condes (29,6) y Santiago (25,8) están muy sobre el promedio nacional (10,95). Hipótesis no verificada (nivel 2): concentran domicilios tributarios (oficinas virtuales, estudios contables) de sociedades que operan en otras comunas. No leer la tasa como «emprendimiento local».',
             ],
             'generado': datetime.date.today().isoformat(),
             'script': 'scripts/constituciones.py',
