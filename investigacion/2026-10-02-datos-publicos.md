@@ -187,3 +187,91 @@
 ## 15. Siguiente paso mínimo (lo hace Sergio o un agente con shell)
 
 Descargar en una máquina con Python: `EMPRESAS.zip` del SII, la nómina de personas jurídicas, los CSV RES 2024-2026 y la base EME 8; abrir cabeceras y registrar columnas reales. Eso cierra los puntos 1, 2, 3, 4 y 5 de la sección 14.
+
+---
+
+## Verificación 2-oct (descarga real)
+
+**Método:** curl + Python 3.12 (pyxlsb y pypdf en venv), archivos bajados al scratchpad de la sesión, fuera del repo. Fechas de archivo = cabecera HTTP `Last-Modified`. Ningún dato personal del RES ni de la nómina del SII se copia aquí: los RUT y razones sociales se usaron solo para contar y cruzar.
+
+### V1. RES en datos.gob.cl (cierra puntos 3, 4 y 13 de §14)
+
+| Archivo | URL descargada (todas bajo `https://datos.gob.cl/dataset/363edd60-4919-4ff1-b85f-f8e14d61285a/resource/`) | Tamaño | Last-Modified | Filas |
+|---|---|---|---|---|
+| 2024 | `42ee8c8c-59cf-42e4-89af-ec19a87dbf8d/download/2024-sociedades-por-fecha-rut-constitucion.csv` | 24.450.789 B | 17-ene-2025 | 165.258 |
+| 2025 | `71c8e355-226a-461e-809a-870c2275a178/download/2025-sociedades-por-fecha-rut-constitucion.csv` | 29.713.181 B | 21-ene-2026 | 202.406 |
+| 2026 (a ago) | `472de7b5-384f-452d-9da5-2928689d8f2f/download/202608-sociedades-por-fecha-rut-constitucion.csv` | 21.470.812 B | 28-sep-2026 | 148.405 |
+
+- **Formato:** UTF-8 con BOM, separador `;`, CRLF. **15 columnas idénticas en los tres años** (el `_id` de §2 es del datastore, no del archivo): `ID;RUT;Razon Social;Fecha de actuacion (1era firma);Fecha de registro (ultima firma);Fecha de aprobacion x SII;Anio;Mes;Comuna Tributaria;Region Tributaria;Codigo de sociedad;Tipo de actuacion;Capital;Comuna Social;Region Social`.
+- **Ejemplo de formato (anonimizado):** `5xxxxxx;78xxxxxx-K;<razón social> SpA;01-01-2025;01-01-2025;01-01-2025;2025;Enero;MACUL;13;SpA;CONSTITUCIÓN;10000;MACUL;13`. RUT completo con DV (100 % de las filas calzan `\d{7,8}-[\dK]`), únicos dentro de cada año. Fechas `dd-mm-aaaa`; mes en texto; región como número 1-16; comuna en mayúsculas sin tildes.
+- **`Tipo de actuacion`: un solo valor, `CONSTITUCIÓN`, en el 100 % de las filas de 2024, 2025 y 2026.** Los archivos son solo constituciones (modificaciones y disoluciones no vienen).
+- **`Anio`/`Mes` = fecha de aprobación del SII** (coincide en 202.406/202.406 filas de 2025 y 148.405/148.405 de 2026). La fecha de 1.ª firma puede ser muy anterior (mínimo 24-may-2023 en el archivo 2025). Contar por `Anio/Mes` = contar por aprobación SII.
+- **Tipo societario 2025:** SpA 153.539 (75,9 %), EIRL 31.584, SRL 17.234, SA 41, otros 8.
+- **Comuna:** 346 comunas tributarias distintas en 2025 (347 sociales); 0 tributarias vacías, 3 sociales vacías. **Tributaria ≠ social en 2.704 filas de 2025 (1,3 %)**, 2.369 en 2024, 1.862 en 2026. Recomendación: usar la tributaria (sin vacíos); la diferencia es marginal.
+- **Sanity check, constituciones 2025 por región tributaria:** Tarapacá 3.877 · Antofagasta 6.439 · Atacama 2.544 · Coquimbo 8.010 · Valparaíso 20.400 · O'Higgins 10.314 · Maule 11.317 · Biobío 15.004 · Araucanía 10.389 · Los Lagos 10.302 · Aysén 1.433 · Magallanes 1.961 · Metropolitana 89.715 (44,3 %) · Los Ríos 4.310 · Arica 1.873 · Ñuble 4.518. Total 202.406.
+- **Contraste con Economía:** el CSV 2026 suma 148.405 en ene-ago; el informe mensual da 161.318 (RES + Diario Oficial). La diferencia (~13 mil) es consistente con la trampa de §2b: universos distintos.
+- **Licencia:** `cc-by` en la API (`package_show`, metadata 28-sep-2026). Confirmado.
+
+### V2. SII estadísticas de empresas (cierra punto 1 de §14)
+
+- **URLs (HTTP 200):** `https://www.sii.cl/sobre_el_sii/empresas/EMPRESAS.zip` (283.846.800 B, Last-Modified 25-nov-2025), `.../PUB_COMU.xlsb` (1.194.477 B), `.../PUB_COMU_TRTRAB.xlsb` (4.321.907 B), `.../PUB_TRAM5_COMU.xlsb` (4.784.600 B), `.../PUB_INI_FIN.xlsb` (6.831.302 B), los xlsb con Last-Modified 24-nov-2025. La página lista 59 xlsb + el zip + un PDF.
+- **`EMPRESAS.zip`:** 60 TXT separados por tabulador (uno por cada xlsb; `PUB_COMU_ACT` viene partido en V1/V2). Formato no uniforme: `PUB_COMU.txt` y `PUB_INI_FIN.txt` en Latin-1 con miles con punto (`12.670`); `PUB_COMU_TRTRAB`, `PUB_TRAM5_COMU` y `PUB_COMU_RUBR` traen **4 filas vacías antes de la cabecera** y números como float (`2005.0`). Hay que normalizar al leer.
+- **Período real:** años comerciales **2005-2024** (20 años) en los archivos revisados, salvo `PUB_COMU_ACT_V2` (2021-2024).
+- **`PUB_COMU` (24 columnas):** `Año Comercial | Comuna / Provincia / Región del domicilio o casa matriz | Número de empresas | Ventas anuales en UF | Número de trabajadores dependientes informados | Renta neta informada en UF | Trabajadores ponderados por meses trabajados |` las mismas tres por género femenino y masculino `|` número, honorarios en UF y ponderados de trabajadores a honorarios (total, femenino, masculino). 2024: 347 filas = 346 comunas + «Sin Información»; suma 1.582.805 empresas, igual a `PUB_TOTAL` 2024.
+- **`PUB_COMU_TRTRAB`:** mismas columnas + `Tramo según trabajadores dependientes informados`, 5 valores: `0) Sin trabajadores`, `1) 1 a 9 trabajadores`, `2) 10 a 49`, `3) 50 a 249`, `4) 250 o más trabajadores informados`. 1.676 filas en 2024.
+- **`PUB_TRAM5_COMU`:** + `Tramo según ventas (5 tramos)`: Micro, Pequeña, Mediana, Grande, Sin Ventas/Sin Información. (13 y 18 tramos en `PUB_TRAM_COMU` y `PUB_TRINT_COMU`, no abiertos.)
+- **Rubro:** `PUB_COMU_RUBR` trae letra CIIU + glosa (`C - Industria manufacturera`); `PUB_COMU_ACT_V2` trae actividad de 6 dígitos, subrubro y rubro.
+- **`PUB_INI_FIN` (8 columnas, 949.214 filas): no tiene columna de comuna, solo región** (cabecera completa leída). Columnas: `Año comercial | Clasificación | Tramo según ventas | Rubro | Región | Tramo según trabajadores informados | Género asociado al RUT | Número de empresas`. `Clasificación` tiene 8 categorías del tipo «Es/No es empresa el año anterior / Es empresa en el año / Es/No es empresa el año siguiente / Sin información». Sirve para entradas y salidas regionales, no comunales.
+- **Secreto estadístico (observado en los datos):** el SII **no suprime filas ni el número de empresas**; reemplaza por `*` las columnas en UF (ventas, renta, honorarios) y deja visibles los conteos de empresas y trabajadores. En `PUB_COMU` hay 78 filas con `*`; en `PUB_COMU_TRTRAB`, 13.508; en `PUB_COMU_ACT_V2`, 258.966 de 338.649. Hay filas enmascaradas con hasta 481 empresas, así que la regla no es solo «10 o menos empresas en la celda» (probablemente cuenta declarantes del monto; no verificado). Consecuencia: **los conteos por comuna × tramo están completos; las ventas por comuna × tramo, no.**
+- **xlsb abierto con pyxlsb:** `PUB_COMU.xlsb` tiene hojas `Datos` (6.941 filas no vacías, mismas cabeceras y valores que el TXT, sin redondeo) y `Notas` (pyxlsb leyó 0 celdas; puede tener solo formas o cuadros de texto: no verificado). El TXT basta.
+- **Licencia:** no aparece en la página. Sigue abierta (punto 10).
+
+### V3. SII nómina de personas jurídicas (cierra punto 2 de §14; la serie 2 de §11 deja de ser hipótesis)
+
+- **Hallazgo nuevo:** la página `nominapersonasjuridicas.html` ofrece, además de las nóminas por año comercial, **tres nóminas actualizadas en agosto de 2026**: `PUB_NOMBRES_PJ.zip` (razón social, inicio y **término de giro vigente**), `PUB_NOM_DIRECCIONES.zip` (domicilios y sucursales vigentes y no vigentes, con comuna) y `PUB_NOM_ACTECOS.zip` (actividades vigentes).
+- **URLs y archivos (todas bajo `https://www.sii.cl/estadisticas/nominas/`, HTTP 200):**
+  - `PUB_EMPRESAS_PJ_2020_A_2024.zip`: 187.529.334 B, Last-Modified 29-ene-2026; un TXT por año 2020-2024 (2024: 377 MB, 994.476 filas). **22 columnas:** `Año comercial | RUT | DV | Razón social | Tramo según ventas | Número de trabajadores dependie | Fecha inicio de actividades vige | Fecha término de giro | Fecha primera inscripción de ac | Tipo término de giro | Tipo de contribuyente | Subtipo de contribuyente | Tramo capital propio positivo | Tramo capital propio negativo | Rubro económico | Subrubro económico | Actividad económica | Región | Provincia | Comuna | R_PRESUNTA | OTROS_REGIMENES` (nombres truncados en el original). UTF-8, tabulador, fechas `aaaa-mm-dd`.
+  - `PUB_NOMBRES_PJ.zip`: 52.385.281 B, Last-Modified 5-ago-2026. `PUB_NOMBRES_PJ.txt` con `RUT | DV | COD_SUBTIPO | RAZON_SOCIAL | FECHA_INICIO_VIG | FECHA_TG_VIG`; 3.373.630 filas, 978.159 con fecha de término de giro (`dd-mm-aaaa`). Corte efectivo: inicio de actividades máximo **2-ago-2026**.
+  - `PUB_NOM_DIRECCIONES.zip`: 95.040.204 B, 5-ago-2026. `PUB_NOM_DOMICILIO.txt` y `PUB_NOM_SUCURSAL.txt` con `RUT | DV | VIGENCIA | FECHA | TIPO_DIRECCION | CALLE | NUMERO | BLOQUE | DEPARTAMENTO | VILLA_POBLACION | CIUDAD | COMUNA | REGION`. Trae dirección exacta: dato sensible cuando la sociedad lleva nombre de persona; usar solo la comuna.
+  - `PUB_NOM_ACTECOS.zip`: 39.445.684 B, 5-ago-2026. `RUT | DV | CODIGO ACTIVIDAD | DESC. ACTIVIDAD ECONOMICA | FECHA | AFECTA A IVA | CATEGORIA TRIBUTARIA`. **Da el rubro que el RES no trae.**
+- **Respuestas:** RUT completo sin enmascarar, en dos campos (`RUT` numérico + `DV`): sí (994.476/994.476 válidos en 2024). Comuna: sí (347 valores, 0 vacíos en 2024). Fecha y tipo de término de giro: sí; en 2024, 15.875 empresas con fecha, tipos `TERMINO DE GIRO PERSONA JURIDICA` (15.478) y `TERMINO GIRO SIMPLIFICADO RES. 41/2002` (397). Tramo de ventas como código 1-13 (glosa en la página).
+- **Prueba de cruce RES × SII por RUT (hecha):**
+  - Cohorte RES 2024: **165.258 de 165.258 RUT** están en `PUB_NOMBRES_PJ`; **6.886 (4,2 %) con término de giro** a ago-2026.
+  - Cohorte RES 2025: 202.406 de 202.406 encontrados; 4.598 (2,3 %) con término de giro.
+  - Cohorte RES 2026: 129.709 de 148.405 (todas las de ene-jul; solo 364 de 19.060 de agosto, por el corte del 2-ago); 923 con término.
+  - Cohorte RES 2024 clasificada como «empresa» por el SII en el año comercial 2024: 100.597 de 165.258 (60,9 %).
+- **Adversarial: el cruce funciona; la métrica no es «supervivencia».** El término de giro formal es raro (4 % a casi dos años): una sociedad sin movimiento rara vez lo tramita. Medir «sobrevive = sin término de giro» infla la supervivencia. La señal de actividad útil es figurar como empresa en la nómina del año comercial (contribuyente de 1.ª categoría, DJ 1887 o IVA vigente), con 13-14 meses de rezago. Propuesta: tres estados por cohorte y comuna (con término de giro / sin actividad declarada / activa).
+
+### V4. INE EME 8 (cierra punto 5 de §14)
+
+- **URLs (enlazadas en la página de Economía del 10-dic-2025):** `https://www.economia.gob.cl/wp-content/uploads/2025/12/base-de-datos-full-eme8-csv.csv` (13.664.609 B, Last-Modified 10-dic-2025) y `.../base-de-datos-empleo-eme8-csv.csv` (133.425 B). También `base-de-datos-full-eme8-r-rds.zip`, `base-de-datos-full-eme8-stata-dta.zip` y sus pares de empleo (no bajados). La página no enlaza SAV.
+- **Base full:** UTF-8 con BOM, separador coma, **7.170 filas × 669 columnas** (668 + índice sin nombre). Variables confirmadas en los datos y con etiqueta en el diccionario PDF: `region` (1-16); `e3` «Inició actividades en Servicio de Impuestos Internos» (1 sí, boleta de honorarios; 2 sí, empresa persona natural; 3 sí, EIRL o Ltda.; 4 sí, otro tipo; 5 no; 6 no, en proceso); `e4` (razón para no inscribirse); `registro_ue` (0/1); `cuentas_ue`; `separa_gasto`; `informalidad` (1 informal, 0 formal); `num_micro`; `estrato`; `conglomerado`; `factor_eme` (factor de expansión).
+- **Universo:** `informalidad` y `e3` son NA en las 407 filas con `num_micro = 0`. Hay que filtrar `num_micro == 1` (6.763 casos).
+- **Control contra la publicación oficial (reproducido):** con `num_micro == 1` y `factor_eme` salen 1.998.178 microemprendedores y 54,2 % informales, **iguales a la Síntesis de resultados** del INE (PDF leído hoy con pypdf: «1.998.178 personas microemprendedoras», «un 54,2% desarrolla una actividad económica informal»; 2022: 58,3 %).
+- **Informalidad por región (cálculo propio, ponderado, sin error muestral):** Tarapacá 64,3 · Antofagasta 58,3 · Atacama 61,7 · Coquimbo 55,8 · Valparaíso 53,5 · O'Higgins 51,6 · Maule 60,8 · Biobío 54,7 · Araucanía 66,0 · Los Lagos 56,1 · Aysén 50,0 · Magallanes 34,0 · Metropolitana 50,7 · Los Ríos 56,5 · Arica 57,5 · Ñuble 52,9 %. Las regiones chicas tienen 165-300 casos: publicar con intervalo usando `estrato`/`conglomerado`, nunca la cifra sola.
+- **Base de empleo:** 3.327 × 11 (`id`, `f2_*`); sin región ni factor: se une a la full por `id`.
+- **Inconsistencia de §4 resuelta:** la página del Ministerio dice «8.381 **viviendas seleccionadas** (9.094 informantes)»; el manual habla de la muestra lograda (7.170 informantes).
+- **Licencia:** la página dice que la EME es «una fuente de uso público»; no declara licencia. La frase «fines académicos» de §4 no está en el texto de la página leída hoy. Sigue abierta.
+
+### V5. INE informalidad (ENE) (cierra en parte el punto 6 de §14)
+
+- **INE.Stat `INF_TOI` está detenido (confirmado en vivo por la API, no es caché):** `https://stat.ine.cl/restsdmx/sdmx.ashx/GetData/INF_TOI/all/all` (HTTP 200, 18.276.777 B) devuelve 81 trimestres móviles, de `2017-V08` a **`2024-V04`**. Último valor nacional 28,2 %, igual a la lectura previa de mar-may 2024. Dimensiones: región (16 + total), sexo, rama, CISE, grupo ocupacional, n.º de trabajadores, tramo etario, lugar de trabajo, nivel educativo, provincia, ciudad.
+- **Último boletín nacional:** n.º 35, `https://www.ine.gob.cl/docs/default-source/informalidad-y-condiciones-laborales/boletines/2026/ene-informalidad-35.pdf` (1.476.790 B, 5 páginas), del 5-ago-2026: **trimestre abr-jun 2026, 27,0 % (+1,0 pp)**. El n.º 36 da 404 (control: el 34 y el 35 responden 200 con el mismo patrón): aún no publicado.
+- **Regional:** boletín por región en PDF, publicado el mismo día que el nacional. Descargado el de Biobío: `https://regiones.ine.cl/documentos/default-source/region-viii/estadisticas/informalidad-y-condiciones-laborales/boletines/2026/informe-informalidad-regi%c3%b3n-del-biob%c3%ado-trimestre-abril-junio-2026.pdf` (1.532.222 B, Last-Modified 5-ago-2026, 4 páginas, edición n.º 29): **abr-jun 2026, 28,3 % (+3,1 pp)**. La página regional (`regiones.ine.cl/<región>/estadisticas-regionales/sociales/mercado-laboral/informalidad-laboral`) muestra primero un intersticial de Sitefinity; con cookies devuelve el listado, cuyos enlaces a archivos son solo PDF (búsqueda de enlaces .xls/.xlsx/.csv sobre el mismo HTML que sí devolvió los 3 PDF). **Corrige §3:** el regional no va 2 meses atrás del boletín trimestral nacional; sale el mismo día con el mismo trimestre.
+- **Serie regional fresca:** solo PDF por región o microdatos ENE. La URL directa de los microdatos ENE **no se pudo verificar**: el HTML estático de las páginas del INE no trae la sección «Bases de datos» (carga con JavaScript). Un repositorio de terceros (baja confianza) los usa hasta jun-ago 2026, ~1,2 GB. Abierto: abrir esa sección con navegador.
+- **Licencia:** no aparece en los boletines ni en la respuesta SDMX revisados.
+
+### Estado de la lista de §14 tras la descarga
+
+| # | Punto | Estado |
+|---|---|---|
+| 1 | Columnas de los xlsb y `EMPRESAS.zip` | **Cerrado** (V2) |
+| 2 | Nómina PJ: comuna y RUT completo | **Cerrado: sí y sí** (V3); el cruce con RES por RUT calza al 100 % en 2024 y 2025 |
+| 3 | Valores de `Tipo de actuacion` | **Cerrado: solo CONSTITUCIÓN** (V1) |
+| 4 | RES 2026 con las mismas columnas | **Cerrado: sí, las mismas 15** (V1) |
+| 5 | URL de los CSV EME 8 y licencia | URL **cerrada**; licencia **abierta** (V4) |
+| 6 | `INF_TOI` y tabla regional | `INF_TOI` **cerrado: detenido en 2024-V04**; regional abr-jun 2026 solo en PDF; URL de microdatos ENE **abierta** |
+| 10 | Licencias SII/INE | Siguen **abiertas** |
+| 12 | Síntesis EME 8 | **Cerrado** para la cifra de informalidad (54,2 %, V4); ChileCompra 2.º semestre sigue abierto |
+| 13 | Comuna social vs tributaria | **Cerrado:** difieren en 1,3 % (2025); usar tributaria |
+| 7, 8, 9, 11 | ChileCompra, CMF, Sercotec/Fosis, ELE 8 | No abordados en esta verificación |
