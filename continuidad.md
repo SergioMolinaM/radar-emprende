@@ -23,7 +23,7 @@
 
 - Nombre investigado (`investigacion/2026-10-02-nombre.md`): RadarPyme es de una persona, un mes de vida, solo registro/login, sin términos publicados y sin marca. Radar Emprende: dominios .cl libres, sin marca; existe un podcast y el estudio «Radar Emprendedor» (G100). **«RADAR» a secas está registrada en INAPI en clases 35 y 42 por Marketing y Estrategia SpA; Radar Circular no está registrada.**
 
-- **Sergio eligió Radar Emprende** («dale»). Repo y carpeta renombrados a `radar-emprende`. F6 sin Compra Ágil (lo hace RadarPyme).
+- **Sergio eligió Radar Emprende** («dale»). Repo de GitHub y carpeta local renombrados a `radar-emprende` (GitHub redirige el nombre viejo). F6 sin Compra Ágil (lo hace RadarPyme).
 
 ### Pendiente
 
