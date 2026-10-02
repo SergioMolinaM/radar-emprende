@@ -31,6 +31,7 @@ Si se va a grabar: *«¿Me autoriza a grabar el audio solo para mis notas? Lo bo
 - ¿Cuántas personas trabajan acá, contándolo a usted? ¿Con contrato, a honorarios, familiares?
 - ¿Vende a personas, a empresas o a ambas? ¿Emite boletas, facturas o las dos?
 - ¿Quién lleva los impuestos: usted, un contador, una empresa? ¿Cuánto le cobra al mes?
+- ¿Qué programas, apps o suscripciones paga para el negocio (facturación, sueldos, Office, punto de venta, tienda web)? ¿Cuánto al mes en total?
 
 ## 3. El último mes (8 min)
 
