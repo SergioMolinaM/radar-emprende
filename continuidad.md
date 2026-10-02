@@ -11,15 +11,14 @@
 
 - `guion-whatsapp.md`: sondeo de 6 preguntas a emprendedores, para elegir a quién entrevistar.
 - Decidido con Sergio: abierto y libre (contenido CC BY 4.0, código MIT, repo público) y núcleo angosto; radar de Compra Ágil y fondos solo si las entrevistas lo piden. Pregunta de fondos y ventas al Estado agregada a ambos guiones.
-- `fichas/*` fuera de git salvo la plantilla (rubro + comuna identifica). Crear el repo público en GitHub quedó bloqueado por el clasificador de permisos; lo crea Sergio.
+- `fichas/*` fuera de git salvo la plantilla (rubro + comuna identifica). Repo público creado por Sergio: https://github.com/SergioMolinaM/radar-pyme (verificado PUBLIC, 9 entradas en la raíz).
 
 ### Pendiente
 
-- Crear el repo público: `gh repo create SergioMolinaM/radar-pyme --public --source=. --remote=origin --push` (desde esta carpeta).
 - Elegir las cinco pymes y anotarlas en `contactos.md` (no versionado).
 - Hacer las entrevistas y llenar `fichas/P1.md`…`P5.md` el mismo día.
 - Mandar el sondeo de WhatsApp a 15–20 emprendedores; de ahí salen los cinco de la entrevista larga.
 
 ### Estado del repo
 
-`main`, sin remoto todavía.
+`main` siguiendo `origin/main` (público).
