@@ -4,7 +4,7 @@
 
 **Por qué:** el único dato oficial de cuántos ganan un fondo pyme es Capital Semilla 2011 (DIPRES: 1.272 de 26.457 postulantes, 4,8 %; ver `investigacion/2026-10-02-f0i-fondos.md`). Para 2023–2026 solo se publican cupos. Se piden por Ley 20.285.
 
-**Quién envía:** Sergio, como persona natural o como Tercera Letra SpA. Estado: **borrador, sin enviar.**
+**Quién envía:** Sergio, como persona natural o como Tercera Letra SpA. Estado: **enviadas por Sergio el 2-oct-2026** (las tres). Plazo de respuesta: 20 días hábiles (prorrogables 10). Pendiente anotar los números de solicitud.
 
 **Dónde (verificado por Claude el 2-oct en Chrome y en el sitio de Sercotec):**
 - **Sercotec:** https://www.portaltransparencia.cl/PortalPdT/ingreso-sai-v2?idOrg=58300 (enlace que publica el propio transparencia.sercotec.cl). Sercotec está sujeta a la Ley 20.285 (Corte de Apelaciones de Santiago, rol 12-2023; ver `investigacion/2026-10-02-canales-transparencia.md`).

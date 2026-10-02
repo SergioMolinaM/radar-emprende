@@ -38,7 +38,8 @@
 
 ### Pendiente
 
-- Sergio: enviar solicitudes de transparencia, sondeo WhatsApp, consulta de marca.
+- Solicitudes de transparencia **enviadas por Sergio el 2-oct** (Sercotec, Corfo, Fosis); respuesta esperada hacia el 30-oct (20 días hábiles); anotar números de solicitud.
+- Sergio: sondeo WhatsApp y consulta de marca.
 - Relectura F0 cerrada: comisiones de las 7 AFP (SP), 10 % AFP, 7 % salud y plazos día 10/13 (Fonasa), 3 cursos previos de Crece (bases). Solo quedan en nivel 2 las fechas de Semilla Expande 2026 (convocatoria cerrada).
 - Canales de transparencia verificados (Chrome + sitio de Sercotec) y escritos en `solicitudes-transparencia.md`; Sercotec sí está sujeta a la Ley 20.285 (rol 12-2023).
 - Relectura pendiente: comisiones de las otras AFP, 10 % AFP y 7 % salud (nivel 2), Previred día 13; luego B/C/D (formalizarse) y fondos.
