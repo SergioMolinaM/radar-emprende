@@ -1,0 +1,9 @@
+# Nombres, teléfonos y RUT de las personas entrevistadas: nunca al repo.
+contactos.md
+# Audios de entrevistas: se borran tras transcribir.
+*.m4a
+*.mp3
+*.ogg
+*.opus
+*.wav
+.DS_Store
