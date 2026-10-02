@@ -30,7 +30,17 @@ ALIAS = {
     'ANTARTIDA': 'ANTARTICA',
     # SII, nómina de personas jurídicas 2024.
     'P AGUIRRE CERDA': 'PEDRO AGUIRRE CERDA',
+    # SII, estadísticas de empresas (PUB_COMU).
+    'AISEN': 'AYSEN',
+    'COIHAIQUE': 'COYHAIQUE',
+    'TITIL': 'TILTIL',
+    # SII, domicilios vigentes (PUB_NOM_DIRECCIONES).
+    'SAN FRANCISCO DE MOSTAZAL': 'MOSTAZAL',
+    'LLAYLLAY': 'LLAILLAY',
 }
+
+# Valores que no son comuna en las fuentes del SII.
+NO_COMUNA = {'SIN INFORMACION', 'SIN COMUNA'}
 
 
 def norm(nombre):
