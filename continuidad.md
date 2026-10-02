@@ -42,8 +42,12 @@
   - Corfo DataInnovación 2016-2025: 6.064 proyectos con subsidio (los 1.116 certificados Ley I+D van aparte), 5.829 con comuna; **98 comunas sin ningún proyecto**. 215 beneficiarios personas naturales sin RUT publicado (Corfo pone «PERSONA NATURAL»). 5 grafías de comuna del SII que se perdían en silencio corregidas; calce estricto.
   - **Verificador: FALLA en la primera pasada** (RUT con DV pegado sin guion, Ley I+D contada como proyecto, tres límites que no describían los datos) → arreglado → **PASA** en la segunda, con recálculo independiente de las 346 comunas × 3 archivos sin diferencias.
 
+- **Revisor: APROBADO con observaciones menores** (publicado sin datos personales; celdas chicas sin riesgo adicional porque las fuentes publican lo mismo por RUT). Aplicado: __pycache__ fuera del repo, licencia acotada al cálculo (columnas de INE/SII conservan su condición), nota de reproducibilidad de Corfo, regla de presentación n<5 en PLAN. INCUMPLIMIENTO: los datos se subieron antes de pasar por el revisor; se pasó después.
+
 ### Pendiente
 
+- **Decidir con Sergio la retención del crudo** (`data-raw/`: direcciones y razones sociales de todas las personas jurídicas): borrarlo tras generar y regenerar con `descargar.py`, o fijar plazo por escrito, antes del 1-dic (Ley 21.719).
+- Evaluar el conjunto CC0 de Corfo en datos.gob.cl para que `corfo.py` sea reproducible desde el repo público.
 - Solicitudes de transparencia **enviadas por Sergio el 2-oct** (Sercotec, Corfo, Fosis); respuesta esperada hacia el 2-nov (20 días hábiles; cálculo propio descontando los feriados del 12 y 31 de octubre); anotar números de solicitud.
 - Sergio: sondeo WhatsApp y consulta de marca.
 - Relectura F0 cerrada: comisiones de las 7 AFP (SP), 10 % AFP, 7 % salud y plazos día 10/13 (Fonasa), 3 cursos previos de Crece (bases). Solo quedan en nivel 2 las fechas de Semilla Expande 2026 (convocatoria cerrada).

@@ -149,7 +149,7 @@ def main():
             'no_encontradas_en_sii': no_en_sii,
             'generado': datetime.date.today().isoformat(),
             'script': 'scripts/cohortes.py',
-            'licencia': 'CC BY 4.0, Radar Emprende - Tercera Letra SpA (cita también las fuentes originales)',
+            'licencia': 'CC BY 4.0 para el cálculo, Radar Emprende - Tercera Letra SpA. Cita también las fuentes originales.',
         },
         'nacional': nacional,
         'comunas': filas,

@@ -12,7 +12,7 @@
   ],
   "generado": "2026-10-02",
   "script": "scripts/constituciones.py",
-  "licencia": "CC BY 4.0, Radar Emprende - Tercera Letra SpA (cita también la fuente original)"
+  "licencia": "CC BY 4.0 para el cálculo, Radar Emprende - Tercera Letra SpA; la columna poblacion_censo_2024 conserva las condiciones del INE. Cita también la fuente original."
  },
  "totales_por_anio": {
   "2013": 20671,

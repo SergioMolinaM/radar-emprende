@@ -58,7 +58,7 @@ def main():
             ],
             'generado': datetime.date.today().isoformat(),
             'script': 'scripts/constituciones.py',
-            'licencia': 'CC BY 4.0, Radar Emprende - Tercera Letra SpA (cita también la fuente original)',
+            'licencia': 'CC BY 4.0 para el cálculo, Radar Emprende - Tercera Letra SpA; la columna poblacion_censo_2024 conserva las condiciones del INE. Cita también la fuente original.',
         },
         'totales_por_anio': total_anio,
         'tipo_societario_por_anio': {str(a): {t: n for (aa, t), n in sorted(tipos.items()) if aa == a} for a in anios},

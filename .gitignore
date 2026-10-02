@@ -14,3 +14,4 @@ fichas/*
 
 # Bases oficiales descargadas (pesadas, con RUT): no se versionan; se regeneran con scripts/descargar.py
 data-raw/
+__pycache__/

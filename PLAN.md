@@ -94,6 +94,8 @@
 - Riesgo principal: la información de fondos caduca. Ningún fondo se publica sin fecha de verificación; el aviso automático de apertura (F6, motor de `radar-licitaciones`) deja de ser condicional si el sondeo confirma la demanda.
 - Parte del mapa ya verificado en `financiamiento/` (sept-2026). → `investigacion/2026-10-02-f0i-fondos.md`
 
+**Regla de presentación (revisor, 2-oct-2026):** en el sitio no se muestran porcentajes ni «tasas» cuando la celda tiene menos de 5 casos; se muestra el número. Es una regla estadística, no legal: las fuentes ya publican esos datos por RUT, pero «100 % fuera de nómina» sobre una sola sociedad se lee como un juicio sobre ella.
+
 ## 5. Mantención
 
 Cada dato de `datos/` tiene fecha de reverificación según cómo cambia (mensual, anual, por ley). Antes de publicar se define quién lo revisa y cuándo; un sitio de referencia con un valor vencido hace más daño que no tenerlo.
