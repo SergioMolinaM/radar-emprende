@@ -73,10 +73,10 @@
    "unidad": "% imponible",
    "vigente_desde": "permanente",
    "fuente_url": "https://www.spensiones.cl/portal/institucional/594/w3-propertyvalue-9897.html",
-   "fuente_cita": "Cotización obligatoria del 10% de las remuneraciones y rentas imponibles mensuales con un tope de 90 Unidades de Fomento (UF)",
+   "fuente_cita": "Cotización obligatoria del 10% de las remuneraciones y rentas imponibles mensuales con un tope de 90 Unidades de Fomento (UF).",
    "consultado": "2026-10-02",
-   "nivel": 2,
-   "nota": "Cita vía resumen del investigador; no incluida en la relectura del 2-oct."
+   "nivel": 1,
+   "nota": "Releído el 2-oct vía r.jina.ai (la SP bloquea la descarga directa)."
   },
   {
    "id": "comision_afp_uno",
@@ -88,18 +88,18 @@
    "consultado": "2026-10-02",
    "nivel": 1,
    "reverificar": "2027-10-01",
-   "nota": "Comisiones de las otras AFP (Modelo 0,58; PlanVital 1,16; Habitat 1,27; Capital y Cuprum 1,44; Provida 1,45) pendientes de relectura."
+   "nota": "Ver comisiones_afp para todas."
   },
   {
    "id": "salud",
    "valor": 7.0,
    "unidad": "% imponible",
    "vigente_desde": "permanente",
-   "fuente_url": "https://www.chileatiende.gob.cl/fichas/5390-declarar-y-pagar-el-7-de-las-cotizaciones-de-salud-de-fonasa",
-   "fuente_cita": "corresponde el descuento de un 7% de la renta imponible para todos los cotizantes afiliados a FONASA",
+   "fuente_url": "https://www.fonasa.gob.cl/empleadores/recaudacion-de-cotizaciones/",
+   "fuente_cita": "la recaudación de cotizaciones de salud (cotización del 7%) una de las principales fuentes de financiamiento (DFL N° 1 de 2005, artículo N° 50)",
    "consultado": "2026-10-02",
-   "nivel": 2,
-   "nota": "Cita vía resumen; no incluida en la relectura del 2-oct."
+   "nivel": 1,
+   "nota": "Releído el 2-oct en la página de Fonasa para empleadores vía r.jina.ai."
   },
   {
    "id": "cesantia_trabajador_indefinido",
@@ -121,6 +121,26 @@
    "consultado": "2026-10-02",
    "nivel": 2,
    "nota": "Derivado del art. 5: el 3 % es del empleador y la letra a) solo grava al trabajador indefinido."
+  },
+  {
+   "id": "comisiones_afp",
+   "valor": {
+    "Capital": 1.44,
+    "Cuprum": 1.44,
+    "Habitat": 1.27,
+    "Modelo": 0.58,
+    "PlanVital": 1.16,
+    "Provida": 1.45,
+    "Uno": 0.46
+   },
+   "unidad": "% imponible",
+   "vigente_desde": "vigentes al 2026-10-02",
+   "fuente_url": "https://www.spensiones.cl/portal/institucional/594/w3-propertyvalue-9897.html",
+   "fuente_cita": "AFP Capital: 1,44% * AFP Cuprum: 1,44% * AFP Habitat: 1,27% * AFP Modelo: 0,58% * AFP Planvital: 1,16% * AFP Provida: 1,45% * AFP Uno: 0,46%",
+   "consultado": "2026-10-02",
+   "nivel": 1,
+   "reverificar": "2027-04-01",
+   "nota": "Coincide con la tabla de Previred (cargo del trabajador = 10 % + comisión)."
   }
  ],
  "empleador": [
@@ -415,11 +435,11 @@
    },
    "unidad": "día del mes siguiente",
    "vigente_desde": "permanente",
-   "fuente_url": "https://www.spensiones.cl/portal/institucional/594/w3-propertyvalue-10906.html",
-   "fuente_cita": "hasta el día 10 del mes siguiente al que pagó la remuneración",
+   "fuente_url": "https://www.fonasa.gob.cl/empleadores/recaudacion-de-cotizaciones/",
+   "fuente_cita": "hasta el día 10 o hábil siguiente del mes siguiente al que se devengaron las remuneraciones ... a través de un medio electrónico (PreviRed), el plazo se extiende hasta las 13:45 del día 13 de cada mes, aun cuando éste sea sábado, domingo o festivo",
    "consultado": "2026-10-02",
    "nivel": 1,
-   "nota": "El día 13 por internet viene del investigador vía resumen (nivel 2)."
+   "nota": "Releído el 2-oct en Fonasa (vía r.jina.ai). El día 13 exige pago en modalidad full electrónica."
   }
  ]
 }

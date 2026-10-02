@@ -75,8 +75,9 @@
      "cita": "con ventas netas demostrables anuales mayores o iguales a 200 UF e inferiores o iguales a 25.000 UF"
     },
     {
-     "texto": "Exige aprobar cursos virtuales de Sercotec antes de postular (3 de 6, según el investigador; no releído).",
-     "nivel": 2
+     "texto": "Exige aprobar al menos 3 cursos virtuales de Sercotec antes de postular.",
+     "cita": "Acreditar la realización y aprobación de al menos 3 de los siguientes cursos virtuales de Sercotec (https://capacitacion.sercotec.cl/portal/)",
+     "nivel": 1
     }
    ],
    "ejecucion": {
