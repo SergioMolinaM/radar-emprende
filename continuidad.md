@@ -34,6 +34,8 @@
 
 - **`datos/fondos.json`**: Semilla Emprende, Crece, Modo Empleo (Sercotec RM 2026) y Semilla Expande (Corfo) con citas releídas en las bases; tasa de adjudicación 2011 (DIPRES). radar-publico-delta.vercel.app no es de Sergio (tercero). Solicitudes de transparencia ampliadas a desglose por comuna.
 
+- En el portafolio ya había 11.017 proyectos Corfo DataInnovación 2009-2026 con RUT y región (`navegador-ds22/fuentes/`): cruzables con la nómina SII para ver a qué comunas no llega Corfo. Anotado en `investigacion/2026-10-02-datos-publicos.md`.
+
 ### Pendiente
 
 - Sergio: enviar solicitudes de transparencia, sondeo WhatsApp, consulta de marca.

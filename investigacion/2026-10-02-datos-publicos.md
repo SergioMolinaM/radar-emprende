@@ -275,3 +275,11 @@ Descargar en una máquina con Python: `EMPRESAS.zip` del SII, la nómina de pers
 | 12 | Síntesis EME 8 | **Cerrado** para la cifra de informalidad (54,2 %, V4); ChileCompra 2.º semestre sigue abierto |
 | 13 | Comuna social vs tributaria | **Cerrado:** difieren en 1,3 % (2025); usar tributaria |
 | 7, 8, 9, 11 | ChileCompra, CMF, Sercotec/Fosis, ELE 8 | No abordados en esta verificación |
+
+## Hallazgo posterior: proyectos Corfo DataInnovación ya descargados en el portafolio (2-oct)
+
+`navegador-ds22/fuentes/corfo-datainnovacion-api-proyectos-2009-2026.json` (20 MB, descargado el 1-sep-2026 para Radar Circular): **11.017 proyectos adjudicados de Corfo, 2009–2026**, con `rut_beneficiario`, `region_ejecucion`, `tramo_ventas` (Microempresa 2.457, Pequeña 2.595, Sin ventas 1.772), `instrumento`, `año_adjudicacion`, montos Corfo y privado, `criterio_mujer`. Solo instrumentos de innovación y emprendimiento (Ley I+D, Voucher, Startup, Semilla: 250 filas con «Semilla» en el instrumento); no cubre Sercotec ni Fosis.
+
+- **Sirve para la pregunta «¿a qué comunas no llega Corfo?»**: el RUT del beneficiario cruza con la nómina de personas jurídicas del SII (que trae comuna). Son ganadores, no postulantes: no da tasa de adjudicación.
+- Licencia: DataInnovación figura con «derechos reservados» en el inventario de arriba (punto 9). Se puede calcular y citar; republicar la tabla completa, no sin consultar.
+- Encontrado recién en la búsqueda completa del portafolio con `rg --no-ignore`; la búsqueda temática inicial no lo vio.
