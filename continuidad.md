@@ -27,8 +27,13 @@
 
 - **`datos/contratar.json`**: primer archivo de datos. Claude releyó 15 páginas oficiales con script y control positivo (todas coinciden) y el PDF de la Ley 21.735: el SIS queda dentro del 3,5 % desde ago-2026 (art. 8° transitorio, «sustituirá la cotización»). Asignación familiar: tabla SUSESO con período desde 01-07-2026, mismos montos (duda cerrada). Costo empleador sobre el IMM, indefinido: 6,83 % = $37.808, más adicional de la mutual.
 
+- **Ruta de la Pyme** (rutadelapyme.cl, GORE RM + UAI, viva) y la propuesta archivada `_propuestas-archivadas/lobby-gore-rm/` (12-jun) leídas tras aviso de Sergio: la formalización está cubierta; la propuesta ya diseñaba «Ruta del Crecimiento» y «Radar de Fomento RM». Detalle en `investigacion/2026-10-02-ruta-de-la-pyme.md`. INCUMPLIMIENTO: no busqué en lo archivado antes de investigar (memoria actualizada).
+- Fondos: bases releídas en PDF (Semilla, Crece, Modo Empleo, Expande, DIPRES 2011). Semilla 3 % aplica a gestión e inversiones; Expande: Corfo pone hasta 75 % del costo total (aporte ≥ 1/3 del subsidio). `datos/fondos.json` por escribir con esto.
+
 ### Pendiente
 
+- Sergio: ¿radar-publico-delta.vercel.app es suyo?
+- Escribir `datos/fondos.json` con lo releído.
 - Relectura pendiente: comisiones de las otras AFP, 10 % AFP y 7 % salud (nivel 2), Previred día 13; luego B/C/D (formalizarse) y fondos.
 - Consulta a abogado de propiedad industrial por la marca RADAR (afecta a toda la familia) antes de inscribir radar-emprende.cl o radaremprende.cl y de difundir.
 - Releer contra la fuente las citas de A y B/C/D (todas vía WebFetch, resumidor) antes de `datos/*.json`. Dudas abiertas: SIS dentro del 3,5 % vs. Hacienda «se suma»; tope 3,4 % vs. tabla SUSESO 6,80 % (Ley 16.744); asignación familiar vigente hasta 30-jun-2026; LRE «15 días hábiles» vs. «día 15»; IDPC Pro Pyme 12,5 % (Ley 21.755 sin leer).
