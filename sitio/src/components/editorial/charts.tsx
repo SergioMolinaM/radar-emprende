@@ -1,6 +1,6 @@
 // Gráficos editoriales. Las barras van en HTML (el texto es texto: legible en móvil, seleccionable,
 // con separador decimal chileno); solo la serie temporal usa SVG, con viewBox angosto en pantallas chicas.
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type KeyboardEvent } from 'react'
 
 const fmt = (n: number, d = 1) => n.toLocaleString('es-CL', { maximumFractionDigits: d })
 /** Porcentajes: siempre un decimal (35,0 %). */
@@ -76,7 +76,7 @@ export function BarsH({ data, max, unit = '%' }: { data: BarDatum[]; max?: numbe
             <span className="rc-bar-t">
               <span className="rc-bar-f" style={{ width: `${w}%`, background: fill }} />
               <span className={'rc-bar-v' + (dentro ? ' is-in' : '')} style={{ left: `${w}%` }}>
-                {fmt(d.value)}{unitOf(unit, d.value)}
+                {typeof unit === 'string' && unit.includes('%') ? fmt1(d.value) : fmt(d.value)}{unitOf(unit, d.value)}
               </span>
             </span>
           </li>
@@ -174,5 +174,49 @@ export function LineMetas({
         </g>
       ))}
     </svg>
+  )
+}
+
+/* ---------- Columnas por año (una serie) ---------- */
+export interface ColDatum {
+  label: string
+  value: number
+  highlight?: boolean
+  /** Muestra la cifra sobre la columna. Se rotulan pocas: el resto queda en el título emergente. */
+  rotular?: boolean
+}
+/** Columnas en HTML: una serie, sin leyenda (el título la nombra). Cada columna lleva su cifra en el título emergente,
+ *  en el foco y para lectores de pantalla. Teclado: una sola parada de tabulación; las flechas recorren los años. */
+export function Columnas({ data, titulo }: { data: ColDatum[]; titulo: string }) {
+  const mx = Math.max(...data.map((d) => d.value))
+  const [activa, setActiva] = useState(data.length - 1)
+  const mover = (e: KeyboardEvent<HTMLOListElement>) => {
+    const paso = { ArrowRight: 1, ArrowLeft: -1, Home: -data.length, End: data.length }[e.key]
+    if (paso === undefined) return
+    e.preventDefault()
+    const i = Math.min(data.length - 1, Math.max(0, activa + paso))
+    setActiva(i)
+    ;(e.currentTarget.children[i] as HTMLElement).focus()
+  }
+  return (
+    <ol className="rc-colchart" aria-label={titulo} onKeyDown={mover}>
+      {data.map((d, i) => (
+        <li
+          key={d.label}
+          className={'rc-col' + (d.highlight ? ' is-hi' : '')}
+          title={`${d.label}: ${fmt(d.value, 0)}`}
+          tabIndex={i === activa ? 0 : -1}
+          onFocus={() => setActiva(i)}
+        >
+          <span className="rc-col-t">
+            <span className="rc-col-f" style={{ height: `${(100 * d.value) / mx}%` }}>
+              <span className={'rc-col-v' + (d.rotular ? ' is-on' : '')} aria-hidden="true">{fmt(d.value, 0)}</span>
+            </span>
+          </span>
+          <span className="rc-col-l" aria-hidden="true">{`’${d.label.slice(2)}`}</span>
+          <span className="rc-sr">{`${d.label}: ${fmt(d.value, 0)}`}</span>
+        </li>
+      ))}
+    </ol>
   )
 }

@@ -1,0 +1,371 @@
+{
+ "_meta": {
+  "descripcion": "Microemprendedores formales e informales por región y rama de actividad, y razón principal para iniciar o no iniciar actividades en el SII.",
+  "fuente": "Elaboración propia a partir de la base de datos de la VIII Encuesta de Microemprendimiento, 2025 (INE y Ministerio de Economía; base full, diccionario de variables y manual de usuario, economia.gob.cl, dic-2025).",
+  "universo": "Microemprendedores: cuenta propia y empleadores con hasta 10 trabajadores, formales e informales. Representatividad nacional y regional; no comunal.",
+  "definicion_informalidad": "Síntesis de resultados VIII EME, p.18: «Se considera como persona microemprendedora informal a quien no cuenta con registro ante el Servicio de Impuestos Internos y no lleva un sistema contable que les permita separar los gastos del negocio de los gastos del hogar.»",
+  "diseno": "Errores estándar con estrato, conglomerado y factor_eme (linealización de Taylor; estratos de un conglomerado sin aporte de varianza).",
+  "calidad": "INE (2020), Estándar para la evaluación de la calidad de las estimaciones en encuestas de hogares, pp.9-10: n >= 60, gl >= 9 y ee <= raíz cúbica de p²/9 (o de (1-p)²/9 si p >= 0,5); además cv del total de casos <= 15 % (regla que reproduce la marca oficial de Aysén). «no fiable» no se publica.",
+  "redondeo": "A dos decimales y luego a uno, mitad hacia arriba: reproduce las cifras de la síntesis oficial.",
+  "control": "Reproduce la tasa nacional (54,2 %), las 6 tasas por rama, las 16 regionales y la única marca de «poco fiable» (50,0 %) de la síntesis oficial, pp.18-20.",
+  "preguntas": {
+   "e4": "¿Cuál es la principal razón por la que no ha iniciado actividades de su negocio o actividad por cuenta propia ante el Servicio de Impuestos Internos (SII)? (pregunta E4, cuestionario EME 8, p.13; sólo a quien responde «No» en E3, no a quien está en proceso; respuesta espontánea, si no la hay se leen alternativas)",
+   "e6": "¿Cuál es la principal razón por la que inició actividades de su negocio o actividad por cuenta propia ante el Servicio de Impuestos Internos (SII)? (pregunta E6, cuestionario EME 8, p.14; respuesta espontánea, si no la hay se leen alternativas)"
+  },
+  "nota_e3": "Sin inicio de actividades en el SII no equivale a informal: la tasa de informalidad también considera la contabilidad y la separación de gastos.",
+  "generado": "2026-10-03",
+  "script": "scripts/eme8_informalidad.py",
+  "nivel": 2,
+  "licencia": "CC BY 4.0 para el cálculo (Radar Emprende, de Tercera Letra SpA)."
+ },
+ "informalidad": {
+  "nacional": {
+   "pct": 54.2,
+   "ee_pct": 0.83,
+   "cv_total_pct": 1.9,
+   "n": 6763,
+   "gl": 3525,
+   "calidad": "fiable"
+  },
+  "region": {
+   "15": {
+    "nombre": "Arica y Parinacota",
+    "pct": 57.5,
+    "ee_pct": 3.17,
+    "cv_total_pct": 8.9,
+    "n": 269,
+    "gl": 119,
+    "calidad": "fiable"
+   },
+   "1": {
+    "nombre": "Tarapacá",
+    "pct": 64.3,
+    "ee_pct": 3.4,
+    "cv_total_pct": 9.8,
+    "n": 270,
+    "gl": 89,
+    "calidad": "fiable"
+   },
+   "2": {
+    "nombre": "Antofagasta",
+    "pct": 58.3,
+    "ee_pct": 3.47,
+    "cv_total_pct": 8.2,
+    "n": 221,
+    "gl": 111,
+    "calidad": "fiable"
+   },
+   "3": {
+    "nombre": "Atacama",
+    "pct": 61.7,
+    "ee_pct": 3.24,
+    "cv_total_pct": 7.3,
+    "n": 300,
+    "gl": 158,
+    "calidad": "fiable"
+   },
+   "4": {
+    "nombre": "Coquimbo",
+    "pct": 55.8,
+    "ee_pct": 3.16,
+    "cv_total_pct": 7.6,
+    "n": 393,
+    "gl": 212,
+    "calidad": "fiable"
+   },
+   "5": {
+    "nombre": "Valparaíso",
+    "pct": 53.5,
+    "ee_pct": 2.23,
+    "cv_total_pct": 5.5,
+    "n": 675,
+    "gl": 360,
+    "calidad": "fiable"
+   },
+   "13": {
+    "nombre": "Metropolitana",
+    "pct": 50.7,
+    "ee_pct": 1.61,
+    "cv_total_pct": 3.8,
+    "n": 1231,
+    "gl": 671,
+    "calidad": "fiable"
+   },
+   "6": {
+    "nombre": "O'Higgins",
+    "pct": 51.6,
+    "ee_pct": 3.2,
+    "cv_total_pct": 8.5,
+    "n": 336,
+    "gl": 187,
+    "calidad": "fiable"
+   },
+   "7": {
+    "nombre": "Maule",
+    "pct": 60.8,
+    "ee_pct": 2.64,
+    "cv_total_pct": 6.6,
+    "n": 470,
+    "gl": 237,
+    "calidad": "fiable"
+   },
+   "16": {
+    "nombre": "Ñuble",
+    "pct": 52.9,
+    "ee_pct": 3.16,
+    "cv_total_pct": 8.2,
+    "n": 326,
+    "gl": 169,
+    "calidad": "fiable"
+   },
+   "8": {
+    "nombre": "Biobío",
+    "pct": 54.7,
+    "ee_pct": 2.13,
+    "cv_total_pct": 5.0,
+    "n": 652,
+    "gl": 391,
+    "calidad": "fiable"
+   },
+   "9": {
+    "nombre": "La Araucanía",
+    "pct": 66.1,
+    "ee_pct": 2.58,
+    "cv_total_pct": 6.0,
+    "n": 454,
+    "gl": 211,
+    "calidad": "fiable"
+   },
+   "14": {
+    "nombre": "Los Ríos",
+    "pct": 56.5,
+    "ee_pct": 3.08,
+    "cv_total_pct": 6.9,
+    "n": 331,
+    "gl": 180,
+    "calidad": "fiable"
+   },
+   "10": {
+    "nombre": "Los Lagos",
+    "pct": 56.1,
+    "ee_pct": 2.55,
+    "cv_total_pct": 7.1,
+    "n": 441,
+    "gl": 217,
+    "calidad": "fiable"
+   },
+   "11": {
+    "nombre": "Aysén",
+    "pct": 50.0,
+    "ee_pct": 5.25,
+    "cv_total_pct": 17.7,
+    "n": 229,
+    "gl": 118,
+    "calidad": "poco fiable"
+   },
+   "12": {
+    "nombre": "Magallanes",
+    "pct": 34.0,
+    "ee_pct": 3.81,
+    "cv_total_pct": 13.9,
+    "n": 165,
+    "gl": 95,
+    "calidad": "fiable"
+   }
+  },
+  "rama": {
+   "1": {
+    "nombre": "Sector primario",
+    "pct": 74.3,
+    "ee_pct": 1.97,
+    "cv_total_pct": 6.1,
+    "n": 783,
+    "gl": 429,
+    "calidad": "fiable"
+   },
+   "2": {
+    "nombre": "Manufactura",
+    "pct": 63.6,
+    "ee_pct": 2.19,
+    "cv_total_pct": 5.1,
+    "n": 944,
+    "gl": 635,
+    "calidad": "fiable"
+   },
+   "3": {
+    "nombre": "Construcción",
+    "pct": 67.9,
+    "ee_pct": 2.26,
+    "cv_total_pct": 5.3,
+    "n": 757,
+    "gl": 498,
+    "calidad": "fiable"
+   },
+   "4": {
+    "nombre": "Comercio",
+    "pct": 56.6,
+    "ee_pct": 1.49,
+    "cv_total_pct": 3.9,
+    "n": 1932,
+    "gl": 1372,
+    "calidad": "fiable"
+   },
+   "5": {
+    "nombre": "Transporte",
+    "pct": 57.1,
+    "ee_pct": 2.75,
+    "cv_total_pct": 7.2,
+    "n": 536,
+    "gl": 339,
+    "calidad": "fiable"
+   },
+   "6": {
+    "nombre": "Servicios",
+    "pct": 39.3,
+    "ee_pct": 1.48,
+    "cv_total_pct": 4.4,
+    "n": 1811,
+    "gl": 1293,
+    "calidad": "fiable"
+   }
+  }
+ },
+ "sin_inicio_actividades": {
+  "pct": 54.8,
+  "ee_pct": 0.83,
+  "cv_total_pct": 1.9,
+  "n": 6763,
+  "gl": 3525,
+  "calidad": "fiable"
+ },
+ "razones_no_inicio": {
+  "1": {
+   "razon": "El registro es demasiado caro o toma mucho tiempo",
+   "pct": 7.3,
+   "ee_pct": 0.55,
+   "cv_total_pct": 7.9,
+   "n": 3797,
+   "gl": 2306,
+   "calidad": "fiable"
+  },
+  "2": {
+   "razon": "No sabe cómo registrarse",
+   "pct": 6.4,
+   "ee_pct": 0.54,
+   "cv_total_pct": 8.8,
+   "n": 3797,
+   "gl": 2306,
+   "calidad": "fiable"
+  },
+  "3": {
+   "razon": "El negocio es demasiado pequeño o la actividad es poco frecuente",
+   "pct": 52.9,
+   "ee_pct": 1.08,
+   "cv_total_pct": 2.7,
+   "n": 3797,
+   "gl": 2306,
+   "calidad": "fiable"
+  },
+  "4": {
+   "razon": "No cumple los requisitos",
+   "pct": 6.1,
+   "ee_pct": 0.51,
+   "cv_total_pct": 8.6,
+   "n": 3797,
+   "gl": 2306,
+   "calidad": "fiable"
+  },
+  "5": {
+   "razon": "Temor a ser fiscalizado o a perder beneficios sociales",
+   "pct": 1.4,
+   "ee_pct": 0.26,
+   "cv_total_pct": 18.6,
+   "n": 3797,
+   "gl": 2306,
+   "calidad": "poco fiable"
+  },
+  "6": {
+   "razon": "El registro no es esencial para el negocio",
+   "pct": 20.4,
+   "ee_pct": 0.9,
+   "cv_total_pct": 4.9,
+   "n": 3797,
+   "gl": 2306,
+   "calidad": "fiable"
+  },
+  "77": {
+   "razon": "Otra",
+   "pct": 5.7,
+   "ee_pct": 0.53,
+   "cv_total_pct": 9.8,
+   "n": 3797,
+   "gl": 2306,
+   "calidad": "fiable"
+  }
+ },
+ "razones_inicio": {
+  "1": {
+   "razon": "Para cumplir la ley",
+   "pct": 42.1,
+   "ee_pct": 1.27,
+   "cv_total_pct": 3.8,
+   "n": 2880,
+   "gl": 1944,
+   "calidad": "fiable"
+  },
+  "2": {
+   "razon": "Para acceder a programas o beneficios",
+   "pct": 2.2,
+   "ee_pct": 0.32,
+   "cv_total_pct": 15.0,
+   "n": 2880,
+   "gl": 1944,
+   "calidad": "fiable"
+  },
+  "3": {
+   "razon": "Código 3, ambiguo: «Para acceder a financiamiento (créditos)» según el cuestionario; «Para descontar IVA (descontar gastos)» según el diccionario",
+   "pct": 1.6,
+   "ee_pct": 0.27,
+   "cv_total_pct": 16.8,
+   "n": 2880,
+   "gl": 1944,
+   "calidad": "poco fiable"
+  },
+  "4": {
+   "razon": "Para cotizar en pensiones y salud",
+   "pct": 0.5,
+   "ee_pct": 0.24,
+   "cv_total_pct": 50.9,
+   "n": 2880,
+   "gl": 1944,
+   "calidad": "no fiable"
+  },
+  "5": {
+   "razon": "Por exigencia de clientes o proveedores",
+   "pct": 26.1,
+   "ee_pct": 1.16,
+   "cv_total_pct": 5.1,
+   "n": 2880,
+   "gl": 1944,
+   "calidad": "fiable"
+  },
+  "6": {
+   "razon": "Para formalizar el negocio",
+   "pct": 26.9,
+   "ee_pct": 1.1,
+   "cv_total_pct": 4.7,
+   "n": 2880,
+   "gl": 1944,
+   "calidad": "fiable"
+  },
+  "77": {
+   "razon": "Otra",
+   "pct": 0.7,
+   "ee_pct": 0.27,
+   "cv_total_pct": 39.2,
+   "n": 2880,
+   "gl": 1944,
+   "calidad": "no fiable"
+  }
+ }
+}

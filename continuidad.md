@@ -1,5 +1,39 @@
 # Continuidad — Radar Emprende (antes Radar Pyme)
 
+## 2026-10-03 — gráfico de portada y página «Formales e informales» (EME 8)
+
+### Hecho
+
+**Contexto de Sergio:** hizo dos encuestas telefónicas; respuestas generales (clientes, financiamiento, «muchos trámites para abrir»), ninguna con caso concreto. Se le respondió adversarial: n = 2, respuesta esperable a una pregunta abierta (los guiones exigen «la última vez»); propuesta de umbral para descartar la premisa: si en las cinco entrevistas largas nadie trae un caso concreto de papeleo con costo, la premisa de la guía cae.
+
+**Decisiones**
+- **Radar es neutral entre formales e informales** (Sergio, 3-oct: «no somos esos de "formalízate es mejor"… entiende la filosofía de radar»). Mide y no prescribe (R1 de `radar-circular/PROTOCOLO-VERACIDAD-VEREDICTOS.md`); la ley se cita como fuente, no para empujar. Memoria `neutral-formales-informales`.
+- **Formalización entra como dato, no como guía que duplique la Ruta de la Pyme** (Sergio aceptó, 3-oct).
+  - Elegido: página de datos de la EME 8 (informalidad por región y rama, razones para iniciar o no actividades) + «Fuentes y servicios» neutral.
+  - Descartado: replicar la Ruta de la Pyme (Sergio lo ofreció: «si hay que duplicarlo no tengo problema»).
+  - Por qué es mejor para el producto: el motivo eran dos llamadas sin caso; un duplicado contradice la postulación de `patentes-ia` a Bienes Públicos RM (se presenta como lo que falta a la Ruta y a Pyme Ágil); y un paso a paso de trámites no es lo que hace un radar. La EME además mostró que «caro o lento» + «no sabe cómo» es el 13,7 % de las razones para no iniciar.
+  - Costo para nosotros (no es criterio): la página de datos es más barata que una guía; no decidió.
+
+**Portada** (`sitio/src/pages/Portada.tsx`): gráfico de columnas en el hueco a la derecha del titular: sociedades constituidas 2014–2025 (años completos; 2025 en rojo, 202.406, «3,9 veces las 51.547 de 2014»), con advertencia de que el alza puede incluir el paso desde escritura pública (no medido). Componente `Columnas` en `charts.tsx` (tabindex móvil, flechas). Verificador: FALLA (barra de 2025 un 10 % baja, desborde a la derecha) → arreglos → PASA. La clase se renombró a `.rc-colchart` porque `.rc-cols` desarmaba la lista de comunas de /corfo.
+
+**EME 8** (`scripts/eme8_informalidad.py` → `datos/eme8_informalidad.json`; nota `investigacion/2026-10-03-eme8-informalidad.md`): diccionario, cuestionario, manual y estándar de calidad INE 2020 leídos en original (PDF en `data-raw/eme/`). Errores de diseño (estrato, conglomerado, Taylor). Calidad INE + cv del total ≤ 15 % (reproduce la única marca oficial, Aysén). Redondeo en dos pasos. **Control positivo: reproduce las 23 cifras de la síntesis (nacional, 16 regiones, 6 ramas) y la marca; si no, se detiene.** Resultados: no iniciaron porque el negocio es muy chico o poco frecuente 52,9 %, no es esencial 20,4 %, caro/lento 7,3 %, no sabe cómo 6,4 %; iniciaron para cumplir la ley 42,1 %, formalizar 26,9 %, exigencia de clientes o proveedores 26,1 %.
+
+**Página `/formales-e-informales`** (`sitio/src/pages/Informalidad.tsx`, `datos-informalidad.ts`, `servicios.ts`; ruta, menú, RouteMeta, prerender, Metodología, tarjeta en portada). «Fuentes y servicios»: 10 enlaces oficiales verificados por el investigador (`investigacion/2026-10-03-fuentes-servicios.md`) y releídos por Claude con curl (200 y cita); cláusula de Capital Semilla («quien resulta seleccionado debe iniciar actividades») leída en las bases RM 2026, p. 4. Verificador: FALLA → PASA. Errores míos que cazó: citaba «E10» por la E6; decía que la E4 incluía a quienes están «en proceso» (saltan a E8); el código 3 de e6 tiene etiqueta distinta en cuestionario («financiamiento (créditos)») y diccionario («descontar IVA») → fuera del gráfico con nota. Memoria `cuestionario-pdf-leer-renderizado`.
+
+### Pendiente
+
+- **Claude:** recalcular `datos/eme8_limitantes.json` (2-oct) con el método de esta sesión (diseño + estándar INE); hoy usa solo n < 60 («criterio propio»). Desbloquea: nada; hacerlo antes de publicar esas cifras.
+- **Claude, opcional:** tabular `e4_otro` (n = 171; incluye «no es rentable o no le conviene»).
+- **Claude:** reverificar los 10 enlaces de «Fuentes y servicios» antes de cualquier deploy (consultados el 3-oct-2026); Emprendamos Semilla: requisito de inicio de actividades no verificado en sus bases (no se afirma en el sitio).
+- **Sergio:** consulta a abogado por la marca «RADAR» (bloquea dominio, deploy y difusión).
+- **Sergio:** sondeo de WhatsApp y cinco entrevistas largas; anotar las dos llamadas del 3-oct como fichas T1 y T2 («queja general, sin caso»). Propuesta pendiente de respuesta: sumar al guion «¿Conoce la Ruta de la Pyme? ¿La usó? ¿En qué paso se quedó?».
+- **Sergio:** retención de `data-raw/` antes del 1-dic-2026 (sin cambios).
+- Respuestas de transparencia hacia el 2-nov (sin cambios).
+
+### Estado del repo
+
+`main`; todo lo de esta sesión en el commit de cierre y pusheado. `data-raw/eme/` trae ahora diccionario, cuestionario y manual en PDF (no versionado). Un `vite preview` del sitio corre en el puerto 4321 desde el 2-oct (PID 320): sirve `sitio/dist/` del disco. Sin deploy.
+
 ## 2026-10-02 — de la idea a datos verificados y sitio local
 
 ### Hecho

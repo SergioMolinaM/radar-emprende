@@ -35,6 +35,7 @@ RUTAS: list[tuple[str, str, str | None]] = [
     ('/empresas-creadas', 'monthly', '0.9'),
     ('/cohortes', 'yearly', None),
     ('/corfo', 'yearly', None),
+    ('/formales-e-informales', 'yearly', None),
     ('/metodologia', 'monthly', None),
     ('/acerca', 'yearly', None),
 ]

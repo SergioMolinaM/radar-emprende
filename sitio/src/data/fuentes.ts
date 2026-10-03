@@ -6,6 +6,7 @@ import { CONSTITUCIONES } from './datos-constituciones'
 export { CONSTITUCIONES } from './datos-constituciones'
 export { COHORTES } from './datos-cohortes'
 export { CORFO } from './datos-corfo'
+export { INFORMALIDAD } from './datos-informalidad'
 
 /** Repositorio público del proyecto (scripts/ y datos/). */
 export const REPO = 'https://github.com/SergioMolinaM/radar-emprende'
@@ -60,5 +61,13 @@ export const FUENTES: Fuente[] = [
     consulta: '2026-10-02',
     uso: 'Proyectos con subsidio de innovación y emprendimiento por comuna del beneficiario; certificados de la Ley I+D aparte.',
     condicion: 'La página dice «todos los derechos reservados»: se publican solo agregados por comuna.',
+  },
+  {
+    id: 'eme',
+    nombre: 'INE y Ministerio de Economía, VIII Encuesta de Microemprendimiento (EME 8), base full, diccionario, cuestionario y manual',
+    url: 'https://www.economia.gob.cl/2025/12/10/octava-encuesta-de-microemprendimiento-eme-8.htm',
+    consulta: '2026-10-03',
+    uso: 'Informalidad por región y rama y razones para iniciar o no iniciar actividades en el SII, con errores de diseño y el estándar de calidad del INE (2020).',
+    condicion: 'El manual pide citar «Elaboración propia a partir de la base de datos de la VIII Encuesta de Microemprendimiento, 2025».',
   },
 ]

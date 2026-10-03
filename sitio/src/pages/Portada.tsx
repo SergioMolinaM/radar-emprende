@@ -1,7 +1,7 @@
 // src/pages/Portada.tsx — portada al modo de Radar Circular: portada, cifras, un hallazgo y el índice.
 // Todas las cifras salen de los JSON. La guía espera las entrevistas.
 import { Link } from 'react-router-dom'
-import { Byline, Dek, Hed, Kicker, KpiStrip, Rule, SectionTitle, SplitBar, type KpiItem } from '../components/editorial'
+import { Byline, Columnas, Dek, Hed, Kicker, KpiStrip, Rule, SectionTitle, SplitBar, type KpiItem } from '../components/editorial'
 import { CONSTITUCIONES, COHORTES, CORFO } from '../data/fuentes'
 import { fechaCorta, num } from '../data/fechas'
 import type { Estado } from '../data/tipos'
@@ -12,6 +12,16 @@ const ANIO = '2025'
 const total = CONSTITUCIONES.totales_por_anio[ANIO]
 const poblacion = CONSTITUCIONES.comunas.reduce((s, c) => s + c.poblacion_censo_2024, 0)
 const porMil = (1000 * total) / poblacion
+/** Años completos del archivo: 2013 empieza en mayo y el último año llega solo hasta el corte (límites del JSON). */
+const aniosCompletos = anios.slice(1, -1)
+const A0 = aniosCompletos[0]
+const serie = aniosCompletos.map((a) => ({
+  label: a,
+  value: CONSTITUCIONES.totales_por_anio[a],
+  highlight: a === ANIO,
+  rotular: a === ANIO,
+}))
+const veces = total / CONSTITUCIONES.totales_por_anio[A0]
 const cohortes = Object.keys(COHORTES.nacional).sort()
 const C0 = cohortes[0]
 const c0 = COHORTES.nacional[C0]
@@ -51,6 +61,7 @@ const SECCIONES = [
   { to: '/empresas-creadas', go: 'Ver la serie →', t: 'Empresas creadas por comuna', d: `Sociedades constituidas en cada comuna, ${anios[0]}–${anios[anios.length - 1]}, y por cada mil habitantes.` },
   { to: '/cohortes', go: 'Ver la serie →', t: 'Qué pasó con las empresas creadas', d: `Las sociedades creadas cada año entre ${cohortes[0]} y ${cohortes[cohortes.length - 1]}, según su situación ante el SII, en todo el país y por comuna.` },
   { to: '/corfo', go: 'Ver la serie →', t: 'A qué comunas llega Corfo', d: 'Proyectos de innovación y emprendimiento por comuna del beneficiario, y las comunas sin ninguno.' },
+  { to: '/formales-e-informales', go: 'Ver los datos →', t: 'Formales e informales', d: 'Microemprendedores con y sin registro en el SII por región y rama, y las razones que dan para iniciar actividades o no.' },
   { to: '/metodologia', go: 'Leer la metodología →', t: 'Metodología y fuentes', d: 'Fuentes con fecha de consulta, niveles de afirmación, regla de menos de cinco casos y cómo reproducir el cálculo.' },
 ]
 
@@ -79,6 +90,20 @@ export function Portada() {
             </Link>
           </div>
         </div>
+        <aside className="rc-cover-fig" aria-labelledby="fig-portada">
+          <p className="rc-cover-fig-k" id="fig-portada">
+            Sociedades constituidas por año · todo el país
+          </p>
+          <p className="rc-cover-fig-cap">
+            En {ANIO} se constituyeron <strong>{num(total)}</strong> sociedades, {num(veces, 1)} veces las {num(CONSTITUCIONES.totales_por_anio[A0])} de {A0}.
+          </p>
+          <Columnas data={serie} titulo={`Sociedades constituidas por año en el Registro de Empresas y Sociedades, ${A0} a ${ANIO}`} />
+          <p className="rc-sourcenote">
+            Registro de Empresas y Sociedades (datos.gob.cl), años completos {A0}–{ANIO}. Solo cuenta sociedades del
+            Registro, que empezó en 2013: el alza puede incluir sociedades que antes se constituían por escritura
+            pública (no medido). <Link to="/empresas-creadas">Por comuna →</Link>
+          </p>
+        </aside>
       </section>
 
       <section className="rc-block">

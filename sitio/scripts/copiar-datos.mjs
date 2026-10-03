@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url'
 const SITIO = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const ORIGEN = resolve(SITIO, '..', 'datos')
 const DESTINO = join(SITIO, 'src', 'data')
-const ARCHIVOS = ['constituciones_comuna.json', 'cohortes_comuna.json', 'corfo_comuna.json']
+const ARCHIVOS = ['constituciones_comuna.json', 'cohortes_comuna.json', 'corfo_comuna.json', 'eme8_informalidad.json']
 
 mkdirSync(DESTINO, { recursive: true })
 let fallas = 0

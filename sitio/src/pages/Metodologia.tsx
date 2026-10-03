@@ -1,6 +1,6 @@
 // src/pages/Metodologia.tsx — fuentes, niveles de afirmación, regla n < 5, correcciones y reproducibilidad.
 import { EditorialTable, N_MIN, PageHead, Rule, SectionTitle } from '../components/editorial'
-import { CONSTITUCIONES, COHORTES, CORFO, FUENTES, REPO } from '../data/fuentes'
+import { CONSTITUCIONES, COHORTES, CORFO, FUENTES, INFORMALIDAD, REPO } from '../data/fuentes'
 import { fechaCorta, llano } from '../data/fechas'
 
 /** Registro de correcciones (PLAN §2, R8). Formato: fecha ISO, qué decía, qué dice, por qué. */
@@ -10,6 +10,7 @@ const SERIES = [
   { nombre: 'Empresas creadas por comuna', archivo: 'datos/constituciones_comuna.json', m: CONSTITUCIONES._meta, fuentes: [CONSTITUCIONES._meta.fuente], metodo: CONSTITUCIONES._meta.metodo, nivel: CONSTITUCIONES._meta.nivel },
   { nombre: 'Qué pasó con las empresas creadas cada año', archivo: 'datos/cohortes_comuna.json', m: COHORTES._meta, fuentes: COHORTES._meta.fuentes, metodo: null as string | null, nivel: COHORTES._meta.nivel },
   { nombre: 'A qué comunas llega Corfo', archivo: 'datos/corfo_comuna.json', m: CORFO._meta, fuentes: CORFO._meta.fuentes, metodo: null as string | null, nivel: CORFO._meta.nivel },
+  { nombre: 'Formales e informales', archivo: 'datos/eme8_informalidad.json', m: INFORMALIDAD._meta, fuentes: [INFORMALIDAD._meta.fuente], metodo: `${INFORMALIDAD._meta.diseno} ${INFORMALIDAD._meta.calidad} ${INFORMALIDAD._meta.redondeo} Control: ${INFORMALIDAD._meta.control}` as string | null, nivel: INFORMALIDAD._meta.nivel },
 ]
 
 const SCRIPTS = [
@@ -18,6 +19,7 @@ const SCRIPTS = [
   { s: 'scripts/constituciones.py', q: 'Genera datos/constituciones_comuna.json.' },
   { s: 'scripts/cohortes.py', q: 'Genera datos/cohortes_comuna.json.' },
   { s: 'scripts/corfo.py', q: 'Genera datos/corfo_comuna.json.' },
+  { s: 'scripts/eme8_informalidad.py', q: 'Genera datos/eme8_informalidad.json; se detiene si no reproduce las cifras oficiales de la síntesis de la EME 8.' },
 ]
 
 export function Metodologia() {
@@ -52,7 +54,7 @@ export function Metodologia() {
       <Rule weight="hair" />
 
       <section className="rc-block">
-        <SectionTitle kicker="Lo que declara cada archivo de datos sobre sí mismo">Las tres series</SectionTitle>
+        <SectionTitle kicker="Lo que declara cada archivo de datos sobre sí mismo">Las series</SectionTitle>
         {SERIES.map((x) => (
           <div className="rc-prose" key={x.archivo} style={{ maxWidth: '72ch' }}>
             <h3>{x.nombre}</h3>

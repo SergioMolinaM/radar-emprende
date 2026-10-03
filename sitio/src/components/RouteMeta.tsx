@@ -28,6 +28,10 @@ const META: Record<string, Meta> = {
     title: `A qué comunas llega Corfo — ${SITIO}`,
     description: 'Proyectos de innovación y emprendimiento de Corfo adjudicados entre 2016 y 2025 por comuna del beneficiario, y las comunas sin ningún proyecto.',
   },
+  '/formales-e-informales': {
+    title: `Formales e informales — ${SITIO}`,
+    description: 'Microemprendedores con y sin registro en el SII por región y rama, y las razones para iniciar o no iniciar actividades, según la VIII Encuesta de Microemprendimiento (INE, 2025).',
+  },
   '/metodologia': {
     title: `Metodología y fuentes — ${SITIO}`,
     description: 'Fuentes con fecha de consulta, niveles de afirmación, regla de menos de cinco casos, correcciones y cómo reproducir cada cálculo.',

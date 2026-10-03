@@ -211,6 +211,7 @@ html { scrollbar-color: #6b6b6b #e4e4e4; scrollbar-width: auto; }
 .rc-bar-v { position: absolute; top: 50%; transform: translateY(-50%); font-family: var(--mono); font-size: 0.75rem; font-weight: 600; white-space: nowrap; padding-left: 8px; }
 .rc-bar-v.is-in { color: var(--paper); padding-left: 0; padding-right: 8px; transform: translate(-100%, -50%); }
 .rc-bar.is-hi .rc-bar-v { color: var(--accent); }
+.rc-bar.is-hi .rc-bar-v.is-in { color: var(--paper); }
 @media (max-width: 560px) {
   .rc-bar { grid-template-columns: 1fr; gap: 3px; }
   .rc-bar-l { text-align: left; }
@@ -418,7 +419,7 @@ html { scrollbar-color: #6b6b6b #e4e4e4; scrollbar-width: auto; }
 /* Lista de comunas en columnas */
 .rc-cols { columns: 4 12rem; column-gap: 24px; margin: 8px 0 0; padding: 0; list-style: none; font-size: 0.9rem; color: var(--ink-70); }
 .rc-cols li { break-inside: avoid; padding: 2px 0; }
-.rc-cols .rc-cols-reg { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-2); font-weight: 600; padding-top: 10px; }
+.rc-cols .rc-cols-reg { break-after: avoid; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-2); font-weight: 600; padding-top: 10px; }
 .rc-cero { color: var(--neg); font-weight: 600; }
 .rc-nmenor { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
 .rc-count { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); margin: 0 0 4px; }
@@ -459,3 +460,38 @@ html { scrollbar-color: #6b6b6b #e4e4e4; scrollbar-width: auto; }
 .rc-select { max-width: 100%; min-width: 0; text-overflow: ellipsis; }
 .rc-filter-group { max-width: 100%; min-width: 0; }
 .rc-sourcenote, .rc-fig-src, .rc-callout-body, .rc-prose, .rc-notas { overflow-wrap: anywhere; }
+
+/* ---------- Columnas por año (portada) ---------- */
+.rc-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.rc-colchart { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 2px; height: 220px; border-bottom: 1px solid var(--line-2); }
+.rc-col { position: relative; display: flex; flex-direction: column; min-width: 0; outline-offset: 1px; }
+/* padding-top: hueco para la cifra de la columna más alta; la altura % de la barra se mide contra el resto (todas proporcionales). */
+.rc-col-t { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: stretch; padding-top: 22px; }
+.rc-col-f { position: relative; flex-shrink: 0; display: block; background: var(--c5); border-radius: 3px 3px 0 0; transition: background 0.12s; }
+.rc-col.is-hi .rc-col-f { background: var(--accent-2); }
+.rc-col:hover .rc-col-f, .rc-col:focus-visible .rc-col-f { background: var(--ink); }
+.rc-col.is-hi:hover .rc-col-f, .rc-col.is-hi:focus-visible .rc-col-f { background: var(--accent-2); }
+/* Cifra y año son más anchos que la columna: text-align no sirve (el desborde de una línea siempre va a la derecha).
+   Con flex + justify-content el desborde se reparte hacia el lado que corresponde. */
+.rc-col-v { position: absolute; bottom: 100%; left: 0; right: 0; z-index: 1; display: flex; justify-content: center; font-family: var(--mono); font-size: 0.72rem; font-weight: 600; color: var(--ink); white-space: nowrap; margin-bottom: 4px; visibility: hidden; pointer-events: none; }
+.rc-col-v.is-on, .rc-col:hover .rc-col-v, .rc-col:focus-visible .rc-col-v { visibility: visible; }
+.rc-col-l { position: absolute; top: 100%; left: 0; right: 0; display: flex; justify-content: center; padding-top: 6px; font-family: var(--mono); font-size: 0.7rem; color: var(--muted); white-space: nowrap; }
+.rc-col:first-child .rc-col-v, .rc-col:first-child .rc-col-l { justify-content: flex-start; }
+.rc-col:last-child .rc-col-v, .rc-col:last-child .rc-col-l { justify-content: flex-end; }
+.rc-cover-fig .rc-colchart { margin-bottom: 26px; }
+/* --c5: 3,45:1 sobre el papel (WCAG 1.4.11) y distinto del rojo destacado. Bajo ~340 px los años no caben todos:
+   se rotula uno de cada dos, contando desde el último para que el año destacado siempre lleve rótulo. */
+.rc-cover-fig { container-type: inline-size; }
+@container (max-width: 340px) { .rc-col:nth-last-child(even) .rc-col-l { visibility: hidden; } }
+.rc-cover-fig-cap { font-size: 0.94rem; color: var(--ink-70); line-height: 1.45; margin: 0; max-width: 44ch; }
+.rc-cover-fig-cap strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- Fuentes y servicios ---------- */
+.rc-servicios { list-style: none; margin: 8px 0 0; padding: 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
+.rc-servicios li { display: flex; flex-direction: column; gap: 3px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.rc-servicios a { font-weight: 600; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.rc-servicio-d { font-size: 0.92rem; color: var(--ink-70); line-height: 1.45; }
+.rc-servicio-m { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.02em; }
+@media (max-width: 680px) { .rc-servicios { grid-template-columns: 1fr; } }
+
+.rc-kpi-label { hyphens: auto; } /* «microemprendedores» no cabe en la columna de 132 px a 320 */
