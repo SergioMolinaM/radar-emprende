@@ -33,7 +33,7 @@
 - **Sergio:** mandar el sondeo de WhatsApp (15–20 emprendedores) y hacer las cinco entrevistas largas; fichas en `fichas/` (no versionadas), contactos en `contactos.md`. Desbloquea F2 (elegir el núcleo de la guía).
 - **Sergio:** decidir la retención de `data-raw/` (direcciones y razones sociales de todas las personas jurídicas): borrar tras cada cálculo o fijar plazo, antes del 1-dic-2026 (Ley 21.719). No se borró: «sigamos» no fue un sí.
 - **Sergio:** ¿se queda la frase de portada «La guía para emprendedores se preparará a partir de entrevistas con dueños de negocios»? Sin respuesta.
-- Respuestas de transparencia hacia el 2-nov (20 días hábiles, cálculo propio); anotar los números de solicitud cuando Sergio los pase. Al llegar, guardar en `investigacion/transparencia/` y pasar cifras a `datos/`.
+- Respuestas de transparencia hacia el 2-nov (20 días hábiles, cálculo propio): Sercotec AH012T0003197, Corfo AH004T0008055, Fosis AI004T0002258 (acuses en Gmail, 2-oct). Al llegar, guardar en `investigacion/transparencia/` y pasar cifras a `datos/`.
 - Deploy del sitio: requiere autorización expresa y antes la marca y el dominio.
 - Opcional: leer el cuestionario EME 8 (módulo K, limitantes) desde la base ya descargada en `data-raw/eme/`.
 
