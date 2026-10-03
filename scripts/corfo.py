@@ -17,8 +17,7 @@ import zipfile
 import comunas as C
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
-PORTAFOLIO = RAIZ.parent
-CORFO = PORTAFOLIO / 'navegador-ds22' / 'fuentes' / 'corfo-datainnovacion-api-proyectos-2009-2026.json'
+CORFO = RAIZ / 'data-raw' / 'corfo' / 'datainnovacion-proyectos.json'
 SII = RAIZ / 'data-raw' / 'sii'
 SALIDA = RAIZ / 'datos' / 'corfo_comuna.json'
 DESDE, HASTA = 2016, 2025
@@ -155,7 +154,7 @@ def main():
         '_meta': {
             'descripcion': f'Proyectos de Corfo con subsidio (innovación y emprendimiento) adjudicados entre {DESDE} y {HASTA}, por comuna del domicilio vigente del beneficiario. Los certificados de la Ley I+D (crédito tributario, no subsidio) se informan aparte en «certificados_ley_id».',
             'fuentes': [
-                'Corfo DataInnovación, API de proyectos 2009-2026 (descargada el 1-sep-2026 para navegador-ds22; derechos reservados: se publican solo agregados).',
+                'Corfo DataInnovación, API pública de proyectos (https://datainnovacion.cl/api/v1/proyectos, descargada con scripts/descargar.py; 11.017 proyectos al 2-oct-2026). Se publican solo agregados.',
                 'SII, nómina de personas jurídicas, domicilios vigentes (PUB_NOM_DIRECCIONES, agosto de 2026).',
                 'SII, estadísticas de empresas por comuna, año comercial 2024 (PUB_COMU).',
             ],
@@ -179,7 +178,7 @@ def main():
             'generado': datetime.date.today().isoformat(),
             'script': 'scripts/corfo.py',
             'licencia': 'CC BY 4.0 para el cálculo, Radar Emprende - Tercera Letra SpA; la columna empresas_sii_2024 conserva las condiciones del SII. Cita las fuentes originales.',
-            'reproducibilidad': 'El archivo de Corfo DataInnovación está en un repo privado de Tercera Letra; quien clone este repo no puede regenerar este archivo hasta que se descargue desde la fuente pública (pendiente: evaluar el conjunto CC0 de Corfo en datos.gob.cl).',
+            'reproducibilidad': 'python scripts/descargar.py baja la API pública de DataInnovación (el token público se lee de su página de documentación) y python scripts/corfo.py regenera este archivo.',
         },
         'comunas_sin_proyectos': sin_proyectos,
         'comunas': filas,

@@ -37,7 +37,35 @@ FUENTES = {
 }
 
 
+def descargar_corfo():
+    """Proyectos de Corfo DataInnovación por su API pública.
+
+    La API pide un token que Corfo publica en su página de documentación («public apiKey»);
+    se lee de ahí en cada corrida para no dejarlo escrito en el repo.
+    """
+    import json
+    import re
+    ruta = RAIZ / 'corfo' / 'datainnovacion-proyectos.json'
+    if ruta.exists() and ruta.stat().st_size > 0:
+        print('ya está ', ruta.relative_to(RAIZ))
+        return
+    ruta.parent.mkdir(parents=True, exist_ok=True)
+    ua = {'User-Agent': 'Mozilla/5.0 (Radar Emprende)'}
+    doc = urllib.request.urlopen(urllib.request.Request('https://datainnovacion.cl/api', headers=ua), timeout=60).read().decode('utf-8', 'replace')
+    m = re.search(r'(eyJ[\w-]+\.[\w-]+\.[\w-]+)', doc)
+    if not m:
+        raise SystemExit('No se encontró el token público en https://datainnovacion.cl/api: revisar la página.')
+    req = urllib.request.Request('https://datainnovacion.cl/api/v1/proyectos',
+                                 headers={**ua, 'Accept': 'application/json', 'Authorization': m.group(1)})
+    datos = json.loads(urllib.request.urlopen(req, timeout=600).read().decode('utf-8'))
+    if not isinstance(datos, list) or not datos:
+        raise SystemExit(f'Respuesta inesperada de la API de DataInnovación: {str(datos)[:200]}')
+    ruta.write_text(json.dumps(datos, ensure_ascii=False), encoding='utf-8')
+    print('bajando  corfo/datainnovacion-proyectos.json:', len(datos), 'proyectos')
+
+
 def main():
+    descargar_corfo()
     for destino, url in FUENTES.items():
         ruta = RAIZ / destino
         if ruta.exists() and ruta.stat().st_size > 0:

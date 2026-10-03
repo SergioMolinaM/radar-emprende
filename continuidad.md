@@ -47,7 +47,9 @@
 ### Pendiente
 
 - **Decidir con Sergio la retención del crudo** (`data-raw/`: direcciones y razones sociales de todas las personas jurídicas): borrarlo tras generar y regenerar con `descargar.py`, o fijar plazo por escrito, antes del 1-dic (Ley 21.719).
-- Evaluar el conjunto CC0 de Corfo en datos.gob.cl para que `corfo.py` sea reproducible desde el repo público.
+- Corfo reproducible: `descargar.py` baja la API pública de DataInnovación (token publicado por Corfo, leído de su página en cada corrida); idéntica al archivo de navegador-ds22 (11.017 proyectos, mismas claves) y mismos totales. El conjunto CC0 de datos.gob.cl es solo un enlace a Power BI, no sirve.
+- `data-raw/` NO borrado: Sergio respondió «sigamos», no un sí explícito; sigue pendiente su decisión.
+- Sitio (páginas de datos, sin guía): subagente construyendo en `sitio/`, solo local.
 - Solicitudes de transparencia **enviadas por Sergio el 2-oct** (Sercotec, Corfo, Fosis); respuesta esperada hacia el 2-nov (20 días hábiles; cálculo propio descontando los feriados del 12 y 31 de octubre); anotar números de solicitud.
 - Sergio: sondeo WhatsApp y consulta de marca.
 - Relectura F0 cerrada: comisiones de las 7 AFP (SP), 10 % AFP, 7 % salud y plazos día 10/13 (Fonasa), 3 cursos previos de Crece (bases). Solo quedan en nivel 2 las fechas de Semilla Expande 2026 (convocatoria cerrada).
