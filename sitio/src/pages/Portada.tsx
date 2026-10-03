@@ -69,9 +69,6 @@ export function Portada() {
             ante el SII en los años siguientes y los proyectos de Corfo que llegan a cada territorio, con la fuente y los
             límites de cada cifra.
           </Dek>
-          <Dek>
-            La guía para emprendedores se preparará a partir de entrevistas con dueños de negocios.
-          </Dek>
           <Byline>Datos generados el {fechaCorta(CONSTITUCIONES._meta.generado)} · cortes de cada fuente en Metodología</Byline>
           <div className="rc-cover-cta">
             <Link className="rc-cta-primary" to="/empresas-creadas">
