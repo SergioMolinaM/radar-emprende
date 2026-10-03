@@ -1,21 +1,20 @@
 {
  "_meta": {
-  "descripcion": "Proyectos de Corfo con subsidio (innovación y emprendimiento) adjudicados entre 2016 y 2025, por comuna del domicilio vigente del beneficiario. Los certificados de la Ley I+D (crédito tributario, no subsidio) se informan aparte en «certificados_ley_id».",
+  "descripcion": "Proyectos de Corfo con subsidio (innovación y emprendimiento) adjudicados entre 2016 y 2025, por comuna del domicilio vigente del beneficiario. Los certificados de la Ley I+D (crédito tributario, no subsidio) se informan aparte.",
   "fuentes": [
-   "Corfo DataInnovación, API pública de proyectos (https://datainnovacion.cl/api/v1/proyectos, descargada con scripts/descargar.py; 11.017 proyectos al 2-oct-2026). Se publican solo agregados.",
+   "Corfo DataInnovación, API pública de proyectos (https://datainnovacion.cl/api/v1/proyectos, descargada con scripts/descargar.py; 11.017 proyectos al 2-oct-2026). Aquí se muestran solo totales por comuna.",
    "SII, nómina de personas jurídicas, domicilios vigentes (PUB_NOM_DIRECCIONES, agosto de 2026).",
    "SII, estadísticas de empresas por comuna, año comercial 2024 (PUB_COMU)."
   ],
   "nivel": 2,
   "limites": [
    "La fuente cubre solo los instrumentos de innovación y emprendimiento que publica DataInnovación (Voucher, Startup, Semilla, Innova Región, etc., además de la Ley I+D, que aquí va aparte). No incluye Sercotec, Fosis ni el resto de Corfo.",
-   "Cuatro proyectos con subsidio traen aprobado_corfo = 0 (Huella 1, Innova Región 3) y se cuentan como proyectos.",
-   "Comuna del domicilio vigente a agosto de 2026, no al momento del proyecto. Universidades, centros y grandes empresas suelen tener domicilio en Santiago, Providencia o Las Condes aunque ejecuten en regiones: comparar con «region_ejecucion» de Corfo antes de concluir.",
-   "Beneficiarios sin domicilio vigente en la nómina de personas jurídicas del SII quedan fuera (sobre todo personas naturales): ver «sin_comuna», por tipo de beneficiario.",
-   "Los certificados de la Ley I+D (1.116 entre 2016 y 2025) no son subsidios adjudicados: traen monto_consolidado_ley y aprobado_corfo = 0. No entran en «proyectos» ni en «proyectos_por_mil_empresas».",
-   "El denominador (empresas SII 2024) es de un solo año; el numerador suma diez años. Sirve para comparar comunas entre sí, no como tasa anual.",
+   "Cuatro proyectos con subsidio vienen con monto cero en la fuente (uno de Huella y tres de Innova Región) y se cuentan como proyectos.",
+   "Comuna del domicilio vigente a agosto de 2026, no al momento del proyecto. Universidades, centros y grandes empresas suelen tener domicilio en Santiago, Providencia o Las Condes aunque ejecuten el proyecto en regiones.",
+   "Beneficiarios sin domicilio vigente en la nómina de personas jurídicas del SII quedan fuera; son sobre todo personas naturales, cuyo RUT Corfo no publica.",
+   "Los certificados de la Ley I+D (1.116 entre 2016 y 2025) no son subsidios adjudicados (no tienen monto aprobado por Corfo) y no se cuentan como proyectos ni en la tasa por cada 1.000 empresas.",
+   "La tasa por cada 1.000 empresas divide los proyectos de diez años por las empresas de un solo año (SII, 2024). Sirve para comparar comunas entre sí, no como tasa anual.",
    "En comunas con uno o dos proyectos, el monto permite identificar el proyecto en DataInnovación (fuente pública).",
-   "Proyectos por cada 1.000 empresas usa el número de empresas del SII de 2024 en la comuna.",
    "Monto aprobado Corfo tal como viene en DataInnovación (pesos nominales de cada año, sin ajustar)."
   ],
   "proyectos_en_rango": 6064,
@@ -29,7 +28,7 @@
   "comunas_sin_proyectos": 98,
   "generado": "2026-10-02",
   "script": "scripts/corfo.py",
-  "licencia": "CC BY 4.0 para el cálculo, Radar Emprende - Tercera Letra SpA; la columna empresas_sii_2024 conserva las condiciones del SII. Cita las fuentes originales.",
+  "licencia": "CC BY 4.0 para el cálculo (Radar Emprende, de Tercera Letra SpA). El número de empresas del SII conserva las condiciones del SII.",
   "reproducibilidad": "python scripts/descargar.py baja la API pública de DataInnovación (el token público se lee de su página de documentación) y python scripts/corfo.py regenera este archivo."
  },
  "comunas_sin_proyectos": [

@@ -1,0 +1,25 @@
+# Radar Emprende — sitio estático. Sin dominio propio todavía (no inscrito al 2-oct-2026).
+# El sitio vive en la carpeta sitio/ del repo: en Netlify, «Base directory» = sitio.
+[build]
+  command   = "npm run build"
+  publish   = "dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options           = "DENY"
+    X-Content-Type-Options    = "nosniff"
+    Referrer-Policy           = "strict-origin-when-cross-origin"
+    Permissions-Policy        = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy   = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; frame-ancestors 'none';"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Las rutas reales existen como dist/<ruta>.html (scripts/prerender.py); lo demás es 404 de verdad.
+[[redirects]]
+  from   = "/*"
+  to     = "/404.html"
+  status = 404

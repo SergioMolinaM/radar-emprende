@@ -15,3 +15,9 @@ fichas/*
 # Bases oficiales descargadas (pesadas, con RUT): no se versionan; se regeneran con scripts/descargar.py
 data-raw/
 __pycache__/
+
+# Sitio: dependencias y build (se regeneran con npm install / npm run build)
+sitio/node_modules/
+sitio/dist/
+# Copias generadas por npm run datos (la fuente es datos/)
+sitio/src/data/*.json

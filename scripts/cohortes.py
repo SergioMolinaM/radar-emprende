@@ -127,7 +127,7 @@ def main():
 
     salida = {
         '_meta': {
-            'descripcion': 'Estado a la fecha de los datos de las sociedades constituidas en el RES entre 2020 y 2024, por comuna tributaria y año de constitución.',
+            'descripcion': 'Situación ante el SII de las sociedades creadas entre 2020 y 2024 en el Registro de Empresas y Sociedades, por comuna tributaria y año de creación.',
             'fuentes': [
                 'Registro de Empresas y Sociedades, Ministerio de Economía (datos.gob.cl, CC BY).',
                 'SII, nómina de personas jurídicas PUB_NOMBRES_PJ (actualizada en agosto de 2026): término de giro vigente.',
@@ -140,16 +140,16 @@ def main():
             },
             'nivel': 2,
             'limites': [
-                'No es una tasa de supervivencia. «fuera_nomina_2024» junta sociedades inactivas que no han hecho término de giro con otras que no figuran por razones que el SII no explica en la página revisada (la regla de quién figura en la nómina no está verificada).',
-                'El término de giro no es raro en las cohortes antiguas (20,7 % de la de 2020), pero se concentra en ciertos años: 11.558 de los 27.879 términos de la cohorte 2020 tienen fecha en 2023. Hipótesis no verificada: términos de giro de oficio por el SII. Si es así, «termino_giro» mezcla cierres decididos por la empresa con cierres administrativos.',
-                'La nómina más reciente es la del año comercial 2024; la cohorte 2024 se mide en su mismo año (puede no haber tenido tiempo de declarar).',
-                'Cruce por RUT: todas las sociedades del RES 2020-2024 deberían figurar en PUB_NOMBRES_PJ; ver «no_encontradas_en_sii».',
+                'El grupo «sin término de giro y fuera de la nómina» junta sociedades inactivas que no han hecho término de giro con otras que no figuran por razones que no conocemos: no encontramos publicada la regla con que el SII decide quién figura en la nómina.',
+                'Entre las sociedades más antiguas el término de giro es frecuente (20,7 % de las creadas en 2020) y se concentra en ciertos años: 11.558 de los 27.879 términos de giro de las sociedades creadas en 2020 tienen fecha en 2023. Hipótesis no verificada: términos de giro de oficio por el SII. Si es así, el grupo «con término de giro» mezcla cierres decididos por la empresa con cierres administrativos.',
+                'La nómina más reciente es la del año comercial 2024; las sociedades creadas en 2024 se miden en su mismo año y pueden no haber alcanzado a declarar.',
+                'Cruce por RUT: todas las sociedades del Registro 2020-2024 deberían figurar en la nómina del SII; solo 5 no se encontraron.',
                 'Comuna tributaria al constituirse; la sociedad pudo cambiar de domicilio después.',
             ],
             'no_encontradas_en_sii': no_en_sii,
             'generado': datetime.date.today().isoformat(),
             'script': 'scripts/cohortes.py',
-            'licencia': 'CC BY 4.0 para el cálculo, Radar Emprende - Tercera Letra SpA. Cita también las fuentes originales.',
+            'licencia': 'CC BY 4.0 para el cálculo (Radar Emprende, de Tercera Letra SpA).',
         },
         'nacional': nacional,
         'comunas': filas,

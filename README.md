@@ -4,7 +4,7 @@
 
 Guía pública y gratuita, en lenguaje llano, para el dueño de una pyme chilena: qué obligaciones tiene según su giro y tamaño, qué vence este mes, cuánto le cuesta de verdad contratar, y cuál de las herramientas gratuitas oficiales (SII, Previred, Dirección del Trabajo) le sirve para cada cosa.
 
-Parte de la familia RADAR de Tercera Letra: información pública dispersa convertida en inteligencia accesible, gratuita y verificada. Sin fines de lucro. Abierto el 2-oct-2026.
+Parte de la familia RADAR de Tercera Letra: información pública dispersa convertida en inteligencia accesible, gratuita y verificada. Gratuito y libre. Abierto el 2-oct-2026.
 
 ## Decisiones cerradas
 

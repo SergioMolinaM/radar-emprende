@@ -46,10 +46,13 @@
 
 ### Pendiente
 
+- Sergio: ¿se queda la frase de portada «la guía se preparará a partir de entrevistas»? (sin respuesta).
+- Deploy: no antes de la consulta de marca y del dominio; requiere autorización expresa.
+- Investigador en curso: ELE (INE) y rankings de desafíos de las empresas.
 - **Decidir con Sergio la retención del crudo** (`data-raw/`: direcciones y razones sociales de todas las personas jurídicas): borrarlo tras generar y regenerar con `descargar.py`, o fijar plazo por escrito, antes del 1-dic (Ley 21.719).
 - Corfo reproducible: `descargar.py` baja la API pública de DataInnovación (token publicado por Corfo, leído de su página en cada corrida); idéntica al archivo de navegador-ds22 (11.017 proyectos, mismas claves) y mismos totales. El conjunto CC0 de datos.gob.cl es solo un enlace a Power BI, no sirve.
 - `data-raw/` NO borrado: Sergio respondió «sigamos», no un sí explícito; sigue pendiente su decisión.
-- Sitio (páginas de datos, sin guía): subagente construyendo en `sitio/`, solo local.
+- **Sitio en `sitio/`** (solo local, sin deploy): diseño de Radar CI (Newsreader, Franklin, Spline Mono, sidebar oscura, componentes) con **paleta «Diario» elegida por Sergio** (negro y rojo #c8102e sobre blanco). Antes se probaron «blanco de imprenta» (Sergio: «el mismo diseño de CI, otros colores») y «Mar» (no le gustó el color); comparativa de 4 paletas en el scratchpad. Portada al estilo de Radar Circular (cifras, hallazgo con barra, «Dentro del radar»). Páginas: empresas creadas, qué pasó con las creadas cada año (paneles por año), Corfo por comuna, Metodología, Acerca. Regla n<5 en base y parte. Revisión de lenguaje (Sergio: «que no haya lenguaje IA ni muletillas»): fuera «Explorar», «cohorte», «×», jerga y repeticiones; contacto@terceraletra.cl existe (Sergio). Verificador: FALLA ×3 (contraste, textos, desborde a 320 px) → **PASA** en la cuarta.
 - Solicitudes de transparencia **enviadas por Sergio el 2-oct** (Sercotec, Corfo, Fosis); respuesta esperada hacia el 2-nov (20 días hábiles; cálculo propio descontando los feriados del 12 y 31 de octubre); anotar números de solicitud.
 - Sergio: sondeo WhatsApp y consulta de marca.
 - Relectura F0 cerrada: comisiones de las 7 AFP (SP), 10 % AFP, 7 % salud y plazos día 10/13 (Fonasa), 3 cursos previos de Crece (bases). Solo quedan en nivel 2 las fechas de Semilla Expande 2026 (convocatoria cerrada).
