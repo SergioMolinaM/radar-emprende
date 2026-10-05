@@ -12,7 +12,7 @@
 **Mecanismo mensual**
 - `scripts/actualizar.py` lee la API CKAN, baja cada año con versión nueva a `data-raw/res/<año>-...csv` y recalcula. Sale sin hacer nada si `corte.versiones` del JSON coincide con lo publicado; si el cálculo falla, borra `_ckan.json`.
 - `scripts/economia_res.py` busca el informe en la página de la categoría y baja la planilla. Control positivo: su serie RES reproduce la nuestra en 150 de 160 meses, y el resto difiere en 1–3. Sale sin escribir si el informe es el mismo.
-- `.github/workflows/actualizar.yml` corre cada lunes y abre un pull request si cambia `datos/`. Sergio activó el permiso de Actions para crear pull requests el 5-oct. **No ha corrido nunca en GitHub.**
+- `.github/workflows/actualizar.yml` corre cada lunes y abre un pull request si cambia `datos/`. Sergio activó el permiso de Actions para crear pull requests el 5-oct. Corrida manual del 5-oct (run 37360273523): PASA por el camino «sin datos nuevos». Se agregó la entrada `forzar` (corrida manual) para probar el camino del pull request y para reparar.
 - `constituciones.py`:
   - Sin años fijos: `corte`, `mensual`, `mensual_region`, `acumulado` y `capital`; `por_mil_hab_2025` pasa a `por_mil_hab`.
   - Se detiene ante meses faltantes o años intermedios incompletos.
