@@ -40,6 +40,11 @@
   - Tercera pasada: PASA.
 - Investigador: `investigacion/2026-10-05-fuentes-mensuales.md`.
 
+**Textos generales** (pedido de Sergio)
+- Titular nuevo: «Las empresas que nacen en cada comuna de Chile / y lo que pasa con ellas.»
+- Entradilla, meta description (index.html y RouteMeta) y pie de página actualizados con las secciones y fuentes nuevas.
+- Excepción CC BY-SA 4.0 del Censo agregada en el pie, Acerca, LICENSE-CONTENIDO.md y README.
+
 **Incumplimientos**
 - Encadené `cd X && …` en muchos comandos. Memoria `no-encadenar-cd`.
 

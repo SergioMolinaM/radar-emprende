@@ -12,7 +12,7 @@ const ORIGEN = null as string | null
 const HOME: Meta = {
   title: `${SITIO} — Chile`,
   description:
-    'Empresas creadas por comuna, qué pasó con ellas y a qué comunas llegan los proyectos de Corfo, con datos públicos, fuente y método.',
+    'Empresas que nacen en cada comuna de Chile, mes a mes; quiénes las crean y con cuánto capital; qué pasó con ellas ante el SII y a qué comunas llega Corfo. Datos públicos con fuente y método.',
 }
 const META: Record<string, Meta> = {
   '/': HOME,

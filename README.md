@@ -54,4 +54,4 @@ Parte de la familia RADAR de Tercera Letra: información pública dispersa conve
 
 ## Licencia
 
-Contenido y datos: [CC BY 4.0](LICENSE-CONTENIDO.md). Código: [MIT](LICENSE). Cita sugerida: «Radar Emprende — Tercera Letra SpA».
+Contenido y datos: [CC BY 4.0](LICENSE-CONTENIDO.md), salvo lo derivado del Censo 2024 (CC BY-SA 4.0, ver el mismo archivo). Código: [MIT](LICENSE). Cita sugerida: «Radar Emprende — Tercera Letra SpA».

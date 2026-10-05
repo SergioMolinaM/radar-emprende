@@ -84,13 +84,13 @@ export function Portada() {
         <div className="rc-cover-lead">
           <Kicker>Emprendimiento y pymes · Chile</Kicker>
           <Hed className="rc-cover-hed">
-            Cuántas empresas nacen en cada comuna
-            <span className="rc-cover-ask"> y qué pasa con ellas.</span>
+            Las empresas que nacen en cada comuna de Chile
+            <span className="rc-cover-ask"> y lo que pasa con ellas.</span>
           </Hed>
           <Dek>
-            Radar Emprende reúne datos oficiales sobre empresas por comuna: las sociedades que se crean, su situación
-            ante el SII en los años siguientes y los proyectos de Corfo que llegan a cada territorio, con la fuente y los
-            límites de cada cifra.
+            Radar Emprende reúne datos oficiales sobre las empresas que se crean en Chile: cuántas nacen cada mes y en
+            cada comuna, quiénes son sus socios y con cuánto capital parten, su situación ante el SII en los años
+            siguientes y los proyectos de Corfo que llegan a cada territorio, con la fuente y los límites de cada cifra.
           </Dek>
           <Byline>Datos generados el {fechaCorta(CONSTITUCIONES._meta.generado)} · cortes de cada fuente en Metodología</Byline>
           <div className="rc-cover-cta">

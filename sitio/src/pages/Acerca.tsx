@@ -41,6 +41,12 @@ export function Acerca() {
             Letra SpA» con enlace al sitio o al repositorio, e indicando si hubo cambios.
           </p>
           <p>
+            <strong>Excepción:</strong> la población del Censo 2024 y la tasa de sociedades por cada 1.000 habitantes,
+            que se calcula con ella, van bajo{' '}
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a>, porque es la licencia del
+            INE y exige la misma licencia para lo derivado. Quien las reutilice debe publicarlas bajo esa licencia.
+          </p>
+          <p>
             Cada columna copiada de una fuente oficial conserva la condición de su fuente; el detalle por archivo está en{' '}
             <Link to="/metodologia">Metodología</Link>.
           </p>
