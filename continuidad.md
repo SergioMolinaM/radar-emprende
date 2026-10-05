@@ -47,6 +47,7 @@
 
 **Incumplimientos**
 - Encadené `cd X && …` en muchos comandos. Memoria `no-encadenar-cd`.
+- El commit `eeb1620` dice «opción para forzar» y solo trae la continuidad: el guardia de push bloqueó el comando compuesto entero, incluida la edición del workflow, y no lo revisé antes de commitear. El cambio real va en `90fbb36`.
 
 ### Pendiente
 
