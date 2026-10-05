@@ -66,7 +66,15 @@
 
 ### Pendiente
 
-- **Sergio:** consulta a abogado por la marca «RADAR» (bloquea dominio, deploy y difusión).
+**Publicación del 6-oct (Sergio: «mañana publicamos»).** Propuesta de Claude: publicar sin difundir hasta la respuesta del abogado. Orden:
+1. **Sergio:** terminar la inscripción de radaremprende.cl a nombre de Tercera Letra SpA (NIC: $9.990/año, exento de IVA; pedir factura a nombre de la SpA).
+2. **Sergio:** `! netlify sites:create --name radar-emprende --account-slug sergiomolinam --disable-linking`.
+3. **Claude:** fijar `ORIGEN` en `RouteMeta.tsx` y `scripts/prerender.py`, build y borrador `netlify deploy --dir=dist` (0 créditos); verificador sobre la URL del borrador.
+4. **Sergio con guía:** dominio en Netlify y DNS en el panel de NIC; HTTPS automático.
+5. **Decisión de Sergio:** conectar el sitio a GitHub (recomendado: el pull request mensual aceptado publica solo, ~15 créditos/mes; commits de documentación con `[skip ci]`) o deploys a mano.
+6. **Sergio:** crear `~/.claude/DEPLOY-AUTORIZADO` con `!`; un solo deploy de producción.
+
+- **Sergio:** consulta a abogado por la marca «RADAR» (preguntas en `investigacion/2026-10-05-marcas-alternativas.md`; INAPI hay que consultarlo a mano). Sin respuesta: no difundir.
 - **Sergio:** crear el sitio en Netlify (comando arriba) o autorizar que Claude lo cree; después, borrador `netlify deploy --dir=dist` (0 créditos) y verificador sobre esa URL.
 - **Claude, al tener dominio:** fijar `ORIGEN` en `RouteMeta.tsx` y `scripts/prerender.py` (canónica, og:url, og:image, sitemap).
 - **Sergio:** retención de `data-raw/` antes del 1-dic-2026 (sin cambios; `data-raw/economia/` solo trae agregados).
