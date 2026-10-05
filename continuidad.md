@@ -54,6 +54,12 @@
 **Netlify**
 - Crear el sitio (`netlify sites:create --name radar-emprende --account-slug sergiomolinam --disable-linking`) fue denegado por el clasificador de permisos. Sin sitio ni borrador. Queda para Sergio. No conectar el repo a GitHub sin decidirlo: cada push a `main` sería un deploy de producción de 15 créditos.
 
+**Marca: insumos para el abogado** (`investigacion/2026-10-05-marcas-alternativas.md`)
+- INAPI no se pudo consultar: el buscador carga por JavaScript. No se afirma ninguna ausencia. Los pasos para hacerlo a mano están en la nota.
+- Dominios .cl el 5-oct: radaremprende.cl y radar-emprende.cl libres; vigia.cl, atalaya.cl y mirador.cl inscritos por terceros; vigiaemprende.cl, atalayaemprende.cl y miradoremprende.cl libres.
+- Existe un podcast «RADAR EMPRENDE» en Spotify (Ellioth Gomez). Comprobado por Claude con búsqueda; país y actividad no verificados.
+- Alternativa que propuso Claude si la familia cambia de nombre: Vigía. Tiene usos en datos (VigIA de Suseso/U. de Chile).
+
 **Incumplimientos**
 - Encadené `cd X && …` en muchos comandos. Memoria `no-encadenar-cd`.
 - El commit `eeb1620` dice «opción para forzar» y solo trae la continuidad: el guardia de push bloqueó el comando compuesto entero, incluida la edición del workflow, y no lo revisé antes de commitear. El cambio real va en `90fbb36`.
