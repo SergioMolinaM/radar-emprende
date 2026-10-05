@@ -67,6 +67,11 @@ export function RouteMeta() {
     if (ORIGEN) {
       const url = ORIGEN + (pathname === '/' ? '/' : pathname.replace(/\/$/, ''))
       upsertMeta('property', 'og:url', url)
+      // Imagen para redes: exige URL absoluta, por eso solo con dominio. Fuente: scripts/og-imagen.html.
+      upsertMeta('property', 'og:image', `${ORIGEN}/og.png`)
+      upsertMeta('property', 'og:image:width', '1200')
+      upsertMeta('property', 'og:image:height', '630')
+      upsertMeta('name', 'twitter:card', 'summary_large_image')
       let canon = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]')
       if (!canon) {
         canon = document.createElement('link')

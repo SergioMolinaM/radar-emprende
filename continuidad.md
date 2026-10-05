@@ -45,6 +45,15 @@
 - Entradilla, meta description (index.html y RouteMeta) y pie de página actualizados con las secciones y fuentes nuevas.
 - Excepción CC BY-SA 4.0 del Censo agregada en el pie, Acerca, LICENSE-CONTENIDO.md y README.
 
+**Workflow probado en GitHub**
+- Corrida forzada (run 37360518254): recalculó todo en un runner limpio y los JSON salieron idénticos a los del repo (cálculo reproducible). El camino que crea el pull request sigue sin probar: se probará con la primera publicación real (~28-oct).
+
+**Imagen para redes**
+- `sitio/public/og.png` (1200×630), generada desde `sitio/scripts/og-imagen.html` con Playwright y las tipografías del sitio. `RouteMeta` emite og:image y twitter:card solo cuando `ORIGEN` tenga dominio (exigen URL absoluta). Si cambia la marca, se regenera.
+
+**Netlify**
+- Crear el sitio (`netlify sites:create --name radar-emprende --account-slug sergiomolinam --disable-linking`) fue denegado por el clasificador de permisos. Sin sitio ni borrador. Queda para Sergio. No conectar el repo a GitHub sin decidirlo: cada push a `main` sería un deploy de producción de 15 créditos.
+
 **Incumplimientos**
 - Encadené `cd X && …` en muchos comandos. Memoria `no-encadenar-cd`.
 - El commit `eeb1620` dice «opción para forzar» y solo trae la continuidad: el guardia de push bloqueó el comando compuesto entero, incluida la edición del workflow, y no lo revisé antes de commitear. El cambio real va en `90fbb36`.
@@ -52,6 +61,8 @@
 ### Pendiente
 
 - **Sergio:** consulta a abogado por la marca «RADAR» (bloquea dominio, deploy y difusión).
+- **Sergio:** crear el sitio en Netlify (comando arriba) o autorizar que Claude lo cree; después, borrador `netlify deploy --dir=dist` (0 créditos) y verificador sobre esa URL.
+- **Claude, al tener dominio:** fijar `ORIGEN` en `RouteMeta.tsx` y `scripts/prerender.py` (canónica, og:url, og:image, sitemap).
 - **Sergio:** retención de `data-raw/` antes del 1-dic-2026 (sin cambios; `data-raw/economia/` solo trae agregados).
 - **Claude, primer lunes con datos nuevos (después del ~28-oct):** revisar la primera corrida real del workflow y su pull request. Si no corrió, ver el registro en Actions.
 - **Claude:** recalcular `datos/eme8_limitantes.json` con el método INE antes de publicar esas cifras (sin cambios).
