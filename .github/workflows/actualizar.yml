@@ -9,6 +9,11 @@ on:
   schedule:
     - cron: '0 12 * * 1'   # lunes, 12:00 UTC
   workflow_dispatch:
+    inputs:
+      forzar:
+        description: 'Recalcular aunque no haya publicación nueva (prueba o reparación)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -28,11 +33,11 @@ jobs:
       - name: Población del Censo 2024 (denominador de la tasa)
         run: python scripts/descargar.py censo/
       - name: Registro de Empresas y Sociedades
-        run: python scripts/actualizar.py
+        run: python scripts/actualizar.py ${{ inputs.forzar && '--forzar' || '' }}
       - name: Informe mensual de Economía (Diario Oficial y socios)
         # Si falla (p. ej. cambió la página), el Registro igual sigue a su pull request; la falla queda marcada en la corrida.
         continue-on-error: true
-        run: python scripts/economia_res.py
+        run: python scripts/economia_res.py ${{ inputs.forzar && '--forzar' || '' }}
       - name: Pull request si cambiaron los datos
         env:
           GH_TOKEN: ${{ github.token }}
@@ -43,6 +48,7 @@ jobs:
           fi
           corte=$(python -c "import json;r=json.load(open('datos/constituciones_comuna.json',encoding='utf-8'))['corte'];e=json.load(open('datos/economia_res.json',encoding='utf-8'))['corte'];print(f\"{r['anio']}-{r['mes']:02d}-eco-{e['anio']}-{e['mes']:02d}\")")
           rama="actualizacion/$corte"
+          if [ "${{ inputs.forzar }}" = "true" ]; then rama="$rama-forzado-${{ github.run_id }}"; fi
           if git ls-remote --exit-code --heads origin "$rama" >/dev/null; then
             echo "Ya existe la rama $rama: el pull request está abierto o se revisó."
             exit 0
