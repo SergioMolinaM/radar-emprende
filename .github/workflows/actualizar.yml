@@ -1,0 +1,58 @@
+# Actualización mensual de Radar Emprende.
+# Cada lunes revisa si el Registro de Empresas y Sociedades publicó un archivo nuevo en datos.gob.cl
+# (lo hace cerca de una vez al mes, entre el día 6 y el 28). Si lo hay, recalcula y abre un pull request:
+# los datos llegan al sitio solo cuando alguien lo revisa y lo acepta.
+# Requiere en GitHub: Settings → Actions → General → «Allow GitHub Actions to create and approve pull requests».
+name: Actualización mensual
+
+on:
+  schedule:
+    - cron: '0 12 * * 1'   # lunes, 12:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Dependencias
+        run: pip install openpyxl
+      - name: Población del Censo 2024 (denominador de la tasa)
+        run: python scripts/descargar.py censo/
+      - name: Registro de Empresas y Sociedades
+        run: python scripts/actualizar.py
+      - name: Informe mensual de Economía (Diario Oficial y socios)
+        # Si falla (p. ej. cambió la página), el Registro igual sigue a su pull request; la falla queda marcada en la corrida.
+        continue-on-error: true
+        run: python scripts/economia_res.py
+      - name: Pull request si cambiaron los datos
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- datos/; then
+            echo "Sin cambios en datos/."
+            exit 0
+          fi
+          corte=$(python -c "import json;r=json.load(open('datos/constituciones_comuna.json',encoding='utf-8'))['corte'];e=json.load(open('datos/economia_res.json',encoding='utf-8'))['corte'];print(f\"{r['anio']}-{r['mes']:02d}-eco-{e['anio']}-{e['mes']:02d}\")")
+          rama="actualizacion/$corte"
+          if git ls-remote --exit-code --heads origin "$rama" >/dev/null; then
+            echo "Ya existe la rama $rama: el pull request está abierto o se revisó."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$rama"
+          git add datos/
+          git commit -m "Datos con corte $corte (Registro de Empresas y Sociedades e informe de Economía)"
+          git push origin "$rama"
+          gh pr create --base main --head "$rama" \
+            --title "Actualización mensual: corte $corte" \
+            --body "Recalculado por la corrida semanal (scripts/actualizar.py). Revisar el diff de datos/constituciones_comuna.json y datos/economia_res.json antes de aceptar: al aceptarlo, el sitio se publica con estos datos."

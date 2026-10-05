@@ -1,5 +1,61 @@
 # Continuidad — Radar Emprende (antes Radar Pyme)
 
+## 2026-10-05 — radar mensual, Diario Oficial, socios y capital
+
+### Hecho
+
+**Decisiones**
+- **Radar, no guía ni herramienta** (Sergio: «no haremos una herramienta, solamente haremos un radar»). Reemplaza «Entrevistas antes que contenido» y «Núcleo angosto» del 2-oct; F1–F3 sin objeto. Las dos llamadas del 3-oct no se fichan. Registrada con sus cuatro líneas en README y PLAN §0.
+- **Ritmo mensual** (Sergio). El RES republica el archivo del año en datos.gob.cl cerca de una vez al mes: `package_activity_list` de la API CKAN da cambios entre el día 6 y el 28 de cada mes en 2026. Mismo recurso, otro nombre de archivo.
+- **Qué agregar.** Elegido: el Diario Oficial y los socios (planilla del informe mensual de Economía) y el capital declarado (CSV del RES). Descartado: rubros (el cuadro trae solo 5 giros y cada sociedad cuenta varios), liquidaciones Superir (PDF en imagen, 541 contra 148.405 invita a leer «nadie cierra»), ENE (sin serie regional descargable vigente, CC BY-SA), INDAP (solo agro). Por qué es mejor para el producto: son series mensuales, automatizables y verificables contra fuente. Costo (no es criterio): bajo, porque reusan archivos que ya se bajan.
+
+**Mecanismo mensual**
+- `scripts/actualizar.py` lee la API CKAN, baja cada año con versión nueva a `data-raw/res/<año>-...csv` y recalcula. Sale sin hacer nada si `corte.versiones` del JSON coincide con lo publicado; si el cálculo falla, borra `_ckan.json`.
+- `scripts/economia_res.py` busca el informe en la página de la categoría y baja la planilla. Control positivo: su serie RES reproduce la nuestra en 150 de 160 meses, y el resto difiere en 1–3. Sale sin escribir si el informe es el mismo.
+- `.github/workflows/actualizar.yml` corre cada lunes y abre un pull request si cambia `datos/`. Sergio activó el permiso de Actions para crear pull requests el 5-oct. **No ha corrido nunca en GitHub.**
+- `constituciones.py`:
+  - Sin años fijos: `corte`, `mensual`, `mensual_region`, `acumulado` y `capital`; `por_mil_hab_2025` pasa a `por_mil_hab`.
+  - Se detiene ante meses faltantes o años intermedios incompletos.
+  - Reproduce exacto el JSON de HEAD.
+  - El mes es el de aprobación del SII (calza en el 100 % de las filas de 2025 y 2026).
+
+**Hallazgos**
+- **Portada corregida antes de publicar.** El titular «3,9 veces 2014» contaba solo el RES. Con el Diario Oficial, 2025 suma 221.262 y 2014 suma 98.349: 2,2 veces. El DO bajó de 46.802 a 18.856. Columnas apiladas.
+- **Censo 2024 bajo CC BY-SA 4.0.** Leído en ine.gob.cl/terminos-de-uso-y-licencia-de-datos-abiertos. La población y la tasa por mil se declaran bajo esa licencia (fuentes.ts y `_meta` de constituciones).
+- **Comuna social = comuna tributaria en el 98,7 % de 2025.** No resuelve lo de Providencia.
+- **Capital** (columna «Capital», sin decir si está pagado):
+  - 2025: mediana $1,5 millones; 47,7 % declara $1 millón o menos.
+  - Solo se comparan 2025 y el año en curso (pesos nominales).
+  - 497 sociedades de 2025 declaran menos de $1.000 (unidad no verificada).
+- **Socios:** mujeres 37,8 % ene–ago 2026 (31,7 % en 2014); sociedades solo extranjeras 10,8 % (2,8 % en 2014).
+
+**Sitio**
+- `/empresas-creadas`: sección «Mes a mes» (KPI, 25 meses, tabla regional).
+- Página nueva `/quien-las-crea`.
+- Metodología con los scripts y la serie nuevos.
+- Los 10 enlaces de servicios se volvieron a comprobar el 5-oct con control positivo.
+- Verificador:
+  - FALLA (`_ckan.json` antes del recálculo y 4 menores) → corregido.
+  - FALLA (10 puntos visuales y de texto, ninguna cifra mal) → corregido.
+  - Tercera pasada: PASA.
+- Investigador: `investigacion/2026-10-05-fuentes-mensuales.md`.
+
+**Incumplimientos**
+- Encadené `cd X && …` en muchos comandos. Memoria `no-encadenar-cd`.
+
+### Pendiente
+
+- **Sergio:** consulta a abogado por la marca «RADAR» (bloquea dominio, deploy y difusión).
+- **Sergio:** retención de `data-raw/` antes del 1-dic-2026 (sin cambios; `data-raw/economia/` solo trae agregados).
+- **Claude, primer lunes con datos nuevos (después del ~28-oct):** revisar la primera corrida real del workflow y su pull request. Si no corrió, ver el registro en Actions.
+- **Claude:** recalcular `datos/eme8_limitantes.json` con el método INE antes de publicar esas cifras (sin cambios).
+- **Claude, opcional:** decidir si la EME 8 (coproducida por el INE, bajada de economia.gob.cl) cae bajo CC BY-SA. No verificado.
+- Respuestas de transparencia hacia el 2-nov (sin cambios).
+
+### Estado del repo
+
+`main`; cambios del 5-oct en el commit de cierre. `data-raw/res/` tiene un archivo por año y `_ckan.json`; `data-raw/economia/` tiene la planilla de agosto. Sin deploy. La preview del 2-oct sigue en el puerto 4321 (sirve `dist/` del disco).
+
 ## 2026-10-03 — gráfico de portada y página «Formales e informales» (EME 8)
 
 ### Hecho

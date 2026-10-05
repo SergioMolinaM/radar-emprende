@@ -184,10 +184,18 @@ export interface ColDatum {
   highlight?: boolean
   /** Muestra la cifra sobre la columna. Se rotulan pocas: el resto queda en el título emergente. */
   rotular?: boolean
+  /** Rótulo corto del eje; por omisión, el año abreviado (’25). */
+  eje?: string
+  /** Parte de `value` que se pinta como segmento inferior en otro tono (columnas apiladas). */
+  parte?: number
+  /** Texto para el título emergente y lectores de pantalla; por omisión, «etiqueta: valor». */
+  texto?: string
 }
 /** Columnas en HTML: una serie, sin leyenda (el título la nombra). Cada columna lleva su cifra en el título emergente,
- *  en el foco y para lectores de pantalla. Teclado: una sola parada de tabulación; las flechas recorren los años. */
-export function Columnas({ data, titulo }: { data: ColDatum[]; titulo: string }) {
+ *  en el foco y para lectores de pantalla. Teclado: una sola parada de tabulación; las flechas recorren las columnas. */
+/** `corto`: rótulos de eje de una o tres letras (meses); quedan centrados también en las columnas de los extremos. */
+export function Columnas({ data, titulo, corto = false, decimales = 0, sufijo = '' }: { data: ColDatum[]; titulo: string; corto?: boolean; decimales?: number; sufijo?: string }) {
+  const f = (v: number) => `${fmt(v, decimales)}${sufijo}`
   const mx = Math.max(...data.map((d) => d.value))
   const [activa, setActiva] = useState(data.length - 1)
   const mover = (e: KeyboardEvent<HTMLOListElement>) => {
@@ -199,22 +207,23 @@ export function Columnas({ data, titulo }: { data: ColDatum[]; titulo: string })
     ;(e.currentTarget.children[i] as HTMLElement).focus()
   }
   return (
-    <ol className="rc-colchart" aria-label={titulo} onKeyDown={mover}>
+    <ol className={'rc-colchart' + (corto ? ' is-corto' : '')} aria-label={titulo} onKeyDown={mover}>
       {data.map((d, i) => (
         <li
           key={d.label}
-          className={'rc-col' + (d.highlight ? ' is-hi' : '')}
-          title={`${d.label}: ${fmt(d.value, 0)}`}
+          className={'rc-col' + (d.highlight ? ' is-hi' : '') + (d.eje?.startsWith('’') ? ' is-marca' : '')}
+          title={d.texto ?? `${d.label}: ${f(d.value)}`}
           tabIndex={i === activa ? 0 : -1}
           onFocus={() => setActiva(i)}
         >
           <span className="rc-col-t">
             <span className="rc-col-f" style={{ height: `${(100 * d.value) / mx}%` }}>
-              <span className={'rc-col-v' + (d.rotular ? ' is-on' : '')} aria-hidden="true">{fmt(d.value, 0)}</span>
+              {d.parte != null && <span className="rc-col-p" style={{ height: `${(100 * d.parte) / d.value}%` }} />}
+              <span className={'rc-col-v' + (d.rotular ? ' is-on' : '')} aria-hidden="true">{f(d.value)}</span>
             </span>
           </span>
-          <span className="rc-col-l" aria-hidden="true">{`’${d.label.slice(2)}`}</span>
-          <span className="rc-sr">{`${d.label}: ${fmt(d.value, 0)}`}</span>
+          <span className="rc-col-l" aria-hidden="true">{d.eje ?? `’${d.label.slice(2)}`}</span>
+          <span className="rc-sr">{d.texto ?? `${d.label}: ${f(d.value)}`}</span>
         </li>
       ))}
     </ol>

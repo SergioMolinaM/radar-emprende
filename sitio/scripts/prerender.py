@@ -33,6 +33,7 @@ PUERTO = 4198
 RUTAS: list[tuple[str, str, str | None]] = [
     ('/', 'monthly', '1.0'),
     ('/empresas-creadas', 'monthly', '0.9'),
+    ('/quien-las-crea', 'monthly', None),
     ('/cohortes', 'yearly', None),
     ('/corfo', 'yearly', None),
     ('/formales-e-informales', 'yearly', None),

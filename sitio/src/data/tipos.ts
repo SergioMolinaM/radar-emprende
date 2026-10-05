@@ -34,9 +34,19 @@ export interface ConstitucionesJson {
     script: string
     licencia: string
   }
+  /** Último año del archivo y su último mes; anio_tasa es el último año completo. */
+  corte: { anio: number; mes: number; publicado: string; consulta: string; anio_tasa: number; versiones: Record<string, string> }
   totales_por_anio: PorAnio
+  /** Clave «AAAA-MM» (mes de aprobación del SII). */
+  mensual: Record<string, number>
+  /** Por código de región, con las mismas claves que mensual. */
+  mensual_region: Record<string, Record<string, number>>
+  /** El año en curso hasta el corte contra los mismos meses del año anterior. */
+  acumulado: { meses: number; anio: number; valor: number; anio_anterior: number; valor_anterior: number }
+  /** Capital declarado: último año completo y año en curso (pesos de cada año). */
+  capital: Record<string, { n: number; mediana: number; bajo_mil: number; tramos: Record<string, number>; por_tipo: Record<string, { n: number; mediana: number }> }>
   tipo_societario_por_anio: Record<string, Record<string, number>>
-  comunas: (ComunaBase & { poblacion_censo_2024: number; constituciones: PorAnio; por_mil_hab_2025: number })[]
+  comunas: (ComunaBase & { poblacion_censo_2024: number; constituciones: PorAnio; por_mil_hab: number })[]
 }
 
 /* ----- cohortes_comuna.json (scripts/cohortes.py) ----- */

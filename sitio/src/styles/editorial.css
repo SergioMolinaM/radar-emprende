@@ -478,6 +478,16 @@ html { scrollbar-color: #6b6b6b #e4e4e4; scrollbar-width: auto; }
 .rc-col-l { position: absolute; top: 100%; left: 0; right: 0; display: flex; justify-content: center; padding-top: 6px; font-family: var(--mono); font-size: 0.7rem; color: var(--muted); white-space: nowrap; }
 .rc-col:first-child .rc-col-v, .rc-col:first-child .rc-col-l { justify-content: flex-start; }
 .rc-col:last-child .rc-col-v, .rc-col:last-child .rc-col-l { justify-content: flex-end; }
+/* Segmento inferior de una columna apilada (p. ej. Diario Oficial bajo el Registro): mismo tono, rayado, para que no dependa del color. */
+.rc-col-p { position: absolute; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(135deg, var(--ink) 0 2px, transparent 2px 5px); opacity: 0.55; border-radius: 0; pointer-events: none; }
+.rc-key { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 10px 0 0; font-size: 0.78rem; color: var(--muted); }
+.rc-key i { display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; background: var(--c5); }
+.rc-key i.is-p { background: repeating-linear-gradient(135deg, var(--ink) 0 2px, var(--c5) 2px 5px); }
+.rc-fig-body .rc-colchart { margin-bottom: 30px; }
+.rc-col.is-hi .rc-col-p { background: repeating-linear-gradient(135deg, var(--paper) 0 2px, transparent 2px 5px); opacity: 0.85; }
+/* Meses: con columnas angostas las iniciales y los años se pegan; quedan solo los años (enero). */
+@media (max-width: 720px) { .rc-colchart.is-corto .rc-col:not(.is-marca) .rc-col-l { visibility: hidden; } }
+.rc-colchart.is-corto .rc-col:first-child .rc-col-l, .rc-colchart.is-corto .rc-col:last-child .rc-col-l { justify-content: center; }
 .rc-cover-fig .rc-colchart { margin-bottom: 26px; }
 /* --c5: 3,45:1 sobre el papel (WCAG 1.4.11) y distinto del rojo destacado. Bajo ~340 px los años no caben todos:
    se rotula uno de cada dos, contando desde el último para que el año destacado siempre lleve rótulo. */

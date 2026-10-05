@@ -1,40 +1,51 @@
 // src/pages/Portada.tsx — portada al modo de Radar Circular: portada, cifras, un hallazgo y el índice.
-// Todas las cifras salen de los JSON. La guía espera las entrevistas.
+// Todas las cifras salen de los JSON.
 import { Link } from 'react-router-dom'
 import { Byline, Columnas, Dek, Hed, Kicker, KpiStrip, Rule, SectionTitle, SplitBar, type KpiItem } from '../components/editorial'
-import { CONSTITUCIONES, COHORTES, CORFO } from '../data/fuentes'
+import { CONSTITUCIONES, COHORTES, CORFO, ECONOMIA } from '../data/fuentes'
 import { fechaCorta, num } from '../data/fechas'
 import type { Estado } from '../data/tipos'
 
 const anios = Object.keys(CONSTITUCIONES.totales_por_anio).sort()
-/** Año del campo por_mil_hab_2025 del JSON; también es el último año completo del archivo. */
-const ANIO = '2025'
+/** Último año completo del archivo; es también el año de la tasa por mil habitantes. */
+const ANIO = String(CONSTITUCIONES.corte.anio_tasa)
 const total = CONSTITUCIONES.totales_por_anio[ANIO]
 const poblacion = CONSTITUCIONES.comunas.reduce((s, c) => s + c.poblacion_censo_2024, 0)
 const porMil = (1000 * total) / poblacion
 /** Años completos del archivo: 2013 empieza en mayo y el último año llega solo hasta el corte (límites del JSON). */
 const aniosCompletos = anios.slice(1, -1)
 const A0 = aniosCompletos[0]
-const serie = aniosCompletos.map((a) => ({
+/** Sociedades constituidas por escritura en el Diario Oficial (informe mensual de Economía), suma del año. */
+const diarioOficial = (a: string) =>
+  Object.entries(ECONOMIA.diario_oficial).reduce((s, [k, v]) => (k.startsWith(a) ? s + v : s), 0)
+const totalCon = (a: string) => CONSTITUCIONES.totales_por_anio[a] + diarioOficial(a)
+/** Años completos en las dos fuentes: el informe de Economía puede ir un mes detrás del Registro. */
+const conDO = aniosCompletos.filter((a) => Object.keys(ECONOMIA.diario_oficial).filter((k) => k.startsWith(a)).length === 12)
+/** Último año completo en ambas fuentes: el del gráfico y el titular (puede ser anterior a ANIO en enero). */
+const ANIO_T = conDO[conDO.length - 1]
+const serie = conDO.map((a) => ({
   label: a,
-  value: CONSTITUCIONES.totales_por_anio[a],
-  highlight: a === ANIO,
-  rotular: a === ANIO,
+  value: totalCon(a),
+  parte: diarioOficial(a),
+  highlight: a === ANIO_T,
+  rotular: a === ANIO_T,
+  texto: `${a}: ${num(totalCon(a))} (${num(CONSTITUCIONES.totales_por_anio[a])} en el Registro y ${num(diarioOficial(a))} en el Diario Oficial)`,
 }))
-const veces = total / CONSTITUCIONES.totales_por_anio[A0]
+const veces = totalCon(ANIO_T) / totalCon(A0)
+const vecesRegistro = CONSTITUCIONES.totales_por_anio[ANIO_T] / CONSTITUCIONES.totales_por_anio[A0]
 const cohortes = Object.keys(COHORTES.nacional).sort()
 const C0 = cohortes[0]
 const c0 = COHORTES.nacional[C0]
 
 const KPIS: KpiItem[] = [
   {
-    valor: num(total),
-    label: `Sociedades constituidas en ${ANIO}`,
-    detalle: 'Registro de Empresas y Sociedades (datos.gob.cl) · todo el país',
+    valor: num(totalCon(ANIO_T)),
+    label: `Sociedades constituidas en ${ANIO_T}`,
+    detalle: `${num(CONSTITUCIONES.totales_por_anio[ANIO_T])} en el Registro de Empresas y Sociedades y ${num(diarioOficial(ANIO_T))} por escritura en el Diario Oficial · todo el país`,
   },
   {
     valor: num(porMil, 2),
-    label: `Sociedades por cada 1.000 habitantes en ${ANIO}`,
+    label: `Sociedades del Registro por cada 1.000 habitantes en ${ANIO}`,
     detalle: 'Constituciones del Registro sobre la población del Censo 2024 (INE) · nacional',
   },
   {
@@ -59,6 +70,7 @@ const ESTADOS: { e: Estado; label: string; color: string }[] = [
 
 const SECCIONES = [
   { to: '/empresas-creadas', go: 'Ver la serie →', t: 'Empresas creadas por comuna', d: `Sociedades constituidas en cada comuna, ${anios[0]}–${anios[anios.length - 1]}, y por cada mil habitantes.` },
+  { to: '/quien-las-crea', go: 'Ver los datos →', t: 'Quién las crea y con cuánto capital', d: 'Mujeres y extranjeros entre los socios de las sociedades nuevas, y el capital que declaran al constituirse.' },
   { to: '/cohortes', go: 'Ver la serie →', t: 'Qué pasó con las empresas creadas', d: `Las sociedades creadas cada año entre ${cohortes[0]} y ${cohortes[cohortes.length - 1]}, según su situación ante el SII, en todo el país y por comuna.` },
   { to: '/corfo', go: 'Ver la serie →', t: 'A qué comunas llega Corfo', d: 'Proyectos de innovación y emprendimiento por comuna del beneficiario, y las comunas sin ninguno.' },
   { to: '/formales-e-informales', go: 'Ver los datos →', t: 'Formales e informales', d: 'Microemprendedores con y sin registro en el SII por región y rama, y las razones que dan para iniciar actividades o no.' },
@@ -95,13 +107,19 @@ export function Portada() {
             Sociedades constituidas por año · todo el país
           </p>
           <p className="rc-cover-fig-cap">
-            En {ANIO} se constituyeron <strong>{num(total)}</strong> sociedades, {num(veces, 1)} veces las {num(CONSTITUCIONES.totales_por_anio[A0])} de {A0}.
+            En {ANIO_T} se constituyeron <strong>{num(totalCon(ANIO_T))}</strong> sociedades, {num(veces, 1)} veces las{' '}
+            {num(totalCon(A0))} de {A0}. Contando solo el Registro, el alza es de {num(vecesRegistro, 1)} veces; en esos
+            años las constituidas por escritura en el Diario Oficial bajaron de {num(diarioOficial(A0))} a{' '}
+            {num(diarioOficial(ANIO_T))}.
           </p>
-          <Columnas data={serie} titulo={`Sociedades constituidas por año en el Registro de Empresas y Sociedades, ${A0} a ${ANIO}`} />
+          <Columnas data={serie} titulo={`Sociedades constituidas por año, Registro de Empresas y Sociedades y Diario Oficial, ${A0} a ${ANIO_T}`} />
+          <p className="rc-key" aria-hidden="true">
+            <span><i />Registro de Empresas y Sociedades</span>
+            <span><i className="is-p" />Diario Oficial (escritura pública)</span>
+          </p>
           <p className="rc-sourcenote">
-            Registro de Empresas y Sociedades (datos.gob.cl), años completos {A0}–{ANIO}. Solo cuenta sociedades del
-            Registro, que empezó en 2013: el alza puede incluir sociedades que antes se constituían por escritura
-            pública (no medido). <Link to="/empresas-creadas">Por comuna →</Link>
+            Registro de Empresas y Sociedades (datos.gob.cl) y Ministerio de Economía (informe mensual de creación de
+            empresas, Diario Oficial), años completos {A0}–{ANIO_T}. <Link to="/empresas-creadas">Por comuna y mes a mes →</Link>
           </p>
         </aside>
       </section>

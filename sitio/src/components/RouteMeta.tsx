@@ -16,9 +16,13 @@ const HOME: Meta = {
 }
 const META: Record<string, Meta> = {
   '/': HOME,
+  '/quien-las-crea': {
+    title: `Quién crea sociedades y con cuánto capital — ${SITIO}`,
+    description: 'Mujeres y extranjeros entre los socios de las sociedades constituidas en el Registro de Empresas y Sociedades, por año, y capital declarado al constituirse.',
+  },
   '/empresas-creadas': {
     title: `Empresas creadas por comuna — ${SITIO}`,
-    description: 'Sociedades constituidas en el Registro de Empresas y Sociedades por comuna tributaria, 2013 a 2026, y por cada mil habitantes en 2025.',
+    description: 'Sociedades constituidas en el Registro de Empresas y Sociedades mes a mes, por región y por comuna tributaria desde 2013, y por cada mil habitantes en el último año completo.',
   },
   '/cohortes': {
     title: `Qué pasó con las empresas creadas cada año — ${SITIO}`,

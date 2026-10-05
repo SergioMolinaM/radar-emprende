@@ -15,6 +15,8 @@
 | 2-oct-2026 | **Nombre: Radar Emprende** (antes Radar Pyme). radarpyme.cl es un producto comercial vivo de otro titular que cruza catálogos con Compra Ágil; radaremprende.cl y radar-emprende.cl libres; sin marca con «EMPREND» en INAPI. «RADAR» a secas está registrada en clases 35 y 42 por un tercero: consulta a abogado de PI antes de inscribir dominio o difundir. | `investigacion/2026-10-02-nombre.md` |
 | 2-oct-2026 | **F6 sin Compra Ágil.** RadarPyme ya cruza catálogos con Compra Ágil y licitaciones; Radar Emprende lo enlaza o propone alianza. F6 queda solo para aviso de apertura de fondos (Sercotec, INDAP). | `investigacion/2026-10-02-nombre.md` |
 | 2-oct-2026 | **Formalización y permisos fuera del núcleo.** Los cubren Ruta de la Pyme (GORE RM/UAI), Pyme Ágil (Economía), SUPER y el propio `patentes-ia` (Bienes Públicos RM). Radar Emprende empieza donde la Ruta de la Pyme termina (tesis de la propuesta al GORE del 12-jun): contratar, fondos, vender al Estado, sobrevivir. | `investigacion/2026-10-02-ruta-de-la-pyme.md` |
+| 5-oct-2026 | **Radar de datos, no guía ni herramienta** (Sergio: «no haremos una herramienta, solamente haremos un radar»). Reemplaza «Entrevistas antes de escribir la guía» y «Núcleo angosto»: F1–F3 quedan sin objeto. | README, decisión del 5-oct |
+| 5-oct-2026 | **Actualización mensual** con el Registro de Empresas y Sociedades: `scripts/actualizar.py` lee la API de datos.gob.cl; GitHub Actions lo corre cada lunes y abre un pull request solo si hay datos nuevos. | README; `.github/workflows/actualizar.yml` |
 | 22-jul-2026 (Radar Circular) | Protocolo de veracidad R1–R8, adoptado y adaptado en §2. | `radar-circular/PROTOCOLO-VERACIDAD-VEREDICTOS.md` |
 
 ## 1. Cómo se empieza antes de las entrevistas sin contradecir la decisión
@@ -37,6 +39,8 @@
 - Las citas de los subagentes las relee Claude contra la fuente antes de pasar a `datos/`.
 
 ## 3. Fases
+
+*5-oct-2026: F1, F2 y F3 quedan sin objeto (radar, no guía). Las fases siguientes se conservan como historia; lo vigente es F4 (sitio), F5 (difusión) y la actualización mensual.*
 
 | Fase | Qué | Quién | Sale de la fase cuando |
 |---|---|---|---|

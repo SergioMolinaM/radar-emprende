@@ -10,7 +10,7 @@ export interface Servicio {
   inicio_actividades?: string
 }
 
-export const SERVICIOS_CONSULTA = '2026-10-03'
+export const SERVICIOS_CONSULTA = '2026-10-05'
 export const SERVICIOS: Servicio[] = [
   {
     nombre: 'Encuesta de Microemprendimiento (INE)',

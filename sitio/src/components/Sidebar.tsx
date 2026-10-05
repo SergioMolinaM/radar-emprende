@@ -12,6 +12,7 @@ interface NavItem {
 
 const NAV_EXPLORAR: NavItem[] = [
   { to: '/empresas-creadas', label: 'Empresas creadas por comuna' },
+  { to: '/quien-las-crea', label: 'Quién las crea y con cuánto capital' },
   { to: '/cohortes', label: 'Qué pasó con las empresas creadas' },
   { to: '/corfo', label: 'A qué comunas llega Corfo' },
   { to: '/formales-e-informales', label: 'Formales e informales' },

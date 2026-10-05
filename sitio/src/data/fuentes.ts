@@ -3,10 +3,12 @@
 // condiciones de uso, tomadas de los _meta y de investigacion/2026-10-02-datos-publicos.md.
 // Cada JSON vive en su propio módulo (datos-*.ts) para que cada página cargue solo el que usa.
 import { CONSTITUCIONES } from './datos-constituciones'
+import { ECONOMIA } from './datos-economia'
 export { CONSTITUCIONES } from './datos-constituciones'
 export { COHORTES } from './datos-cohortes'
 export { CORFO } from './datos-corfo'
 export { INFORMALIDAD } from './datos-informalidad'
+export { ECONOMIA } from './datos-economia'
 
 /** Repositorio público del proyecto (scripts/ y datos/). */
 export const REPO = 'https://github.com/SergioMolinaM/radar-emprende'
@@ -26,9 +28,17 @@ export const FUENTES: Fuente[] = [
     id: 'res',
     nombre: 'Registro de Empresas y Sociedades (RES), Ministerio de Economía, en datos.gob.cl',
     url: CONSTITUCIONES._meta.fuente_url,
-    consulta: '2026-10-02',
-    uso: 'Sociedades constituidas por comuna tributaria y año; base para seguir a las sociedades creadas entre 2020 y 2024.',
+    consulta: CONSTITUCIONES.corte.consulta,
+    uso: 'Sociedades constituidas por comuna tributaria, año y mes (el Registro republica el archivo del año cerca de una vez al mes); base para seguir a las sociedades creadas entre 2020 y 2024.',
     condicion: 'CC BY (declarada en datos.gob.cl).',
+  },
+  {
+    id: 'economia-res',
+    nombre: 'Ministerio de Economía, informe mensual de creación de empresas y cooperativas (planilla de figuras y cuadros)',
+    url: 'https://www.economia.gob.cl/category/estudios-encuestas/registro-de-empresas-y-sociedades',
+    consulta: ECONOMIA._meta.generado,
+    uso: 'Sociedades constituidas por escritura en el Diario Oficial, por mes; socios por sexo y sociedades según el sexo y la nacionalidad de sus socios.',
+    condicion: 'Sin licencia declarada en el informe: se publican las series con cita de la fuente.',
   },
   {
     id: 'sii-nomina',
@@ -52,7 +62,7 @@ export const FUENTES: Fuente[] = [
     url: 'https://censo2024.ine.gob.cl/wp-content/uploads/2025/03/D1_Poblacion-censada-por-sexo-y-edad-en-grupos-quinquenales.xlsx',
     consulta: '2026-10-02',
     uso: 'Población por comuna, denominador de las sociedades creadas por cada mil habitantes.',
-    condicion: 'La columna conserva las condiciones del INE (licencia no verificada en la página).',
+    condicion: 'CC BY-SA 4.0 (términos de uso del INE, ine.gob.cl, leídos el 05-oct-2026). Obliga a distribuir lo derivado bajo la misma licencia: la población y la tasa por cada 1.000 habitantes se publican bajo CC BY-SA 4.0.',
   },
   {
     id: 'corfo',

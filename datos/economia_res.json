@@ -1,0 +1,3072 @@
+{
+ "_meta": {
+  "descripcion": "Constituciones por escritura en el Diario Oficial y composición de los socios de las sociedades constituidas en el Registro de Empresas y Sociedades, por mes.",
+  "fuente": "Ministerio de Economía, Fomento y Turismo, informe mensual de creación de empresas y cooperativas de agosto de 2026, planilla de figuras y cuadros (actualizada el 24-sep-2026). Elaborada por la División de Política Comercial e Industrial con datos de la División de Empresas de Menor Tamaño.",
+  "fuente_url": "https://www.economia.gob.cl/2026/09/28/informe-de-creacion-de-empresas-y-cooperativas-agosto-2026.htm",
+  "archivo_url": "https://www.economia.gob.cl/wp-content/uploads/2026/09/figuras-y-cuadros-informe-res-agosto-2026.xlsx",
+  "metodo": "Se copian sin cambios las series mensuales de las figuras 2 (Diario Oficial), 6 (socios por sexo), 7 (sociedades según el sexo de sus socios) y 9 (según su nacionalidad). Las sumas por año y los porcentajes son cálculo propio.",
+  "nivel": 1,
+  "control": "La columna del Registro de la figura 2 reproduce la serie mensual calculada desde el CSV del Registro en 150 de 160 meses; los demás difieren en 1 a 3 sociedades (extracciones distintas del mismo registro).",
+  "limites": [
+   "El Diario Oficial cuenta sociedades constituidas por escritura pública; el informe no las desagrega por comuna ni por región.",
+   "Los socios por sexo y nacionalidad son solo los de las sociedades del Registro, no los de las constituidas en el Diario Oficial.",
+   "El informe no declara licencia de uso; se publican las series con cita de la fuente."
+  ],
+  "generado": "2026-10-05",
+  "script": "scripts/economia_res.py",
+  "licencia": "Series del Ministerio de Economía sin licencia declarada, citadas como fuente. Sumas y porcentajes: CC BY 4.0 (Radar Emprende, de Tercera Letra SpA)."
+ },
+ "corte": {
+  "anio": 2026,
+  "mes": 8,
+  "actualizado": "2026-09-24"
+ },
+ "diario_oficial": {
+  "2013-05": 5812,
+  "2013-06": 5127,
+  "2013-07": 5589,
+  "2013-08": 5917,
+  "2013-09": 4589,
+  "2013-10": 5102,
+  "2013-11": 4862,
+  "2013-12": 4707,
+  "2014-01": 4309,
+  "2014-02": 3640,
+  "2014-03": 4215,
+  "2014-04": 4046,
+  "2014-05": 4020,
+  "2014-06": 3947,
+  "2014-07": 3745,
+  "2014-08": 3986,
+  "2014-09": 3400,
+  "2014-10": 3915,
+  "2014-11": 3771,
+  "2014-12": 3808,
+  "2015-01": 3349,
+  "2015-02": 2777,
+  "2015-03": 3041,
+  "2015-04": 3270,
+  "2015-05": 2988,
+  "2015-06": 3171,
+  "2015-07": 3194,
+  "2015-08": 3521,
+  "2015-09": 3104,
+  "2015-10": 3296,
+  "2015-11": 3388,
+  "2015-12": 3034,
+  "2016-01": 2890,
+  "2016-02": 2441,
+  "2016-03": 2847,
+  "2016-04": 2984,
+  "2016-05": 2879,
+  "2016-06": 2830,
+  "2016-07": 2922,
+  "2016-08": 2827,
+  "2016-09": 2711,
+  "2016-10": 2713,
+  "2016-11": 2597,
+  "2016-12": 3065,
+  "2017-01": 2540,
+  "2017-02": 2391,
+  "2017-03": 2716,
+  "2017-04": 2495,
+  "2017-05": 2765,
+  "2017-06": 2709,
+  "2017-07": 2910,
+  "2017-08": 2685,
+  "2017-09": 2542,
+  "2017-10": 2336,
+  "2017-11": 2664,
+  "2017-12": 2417,
+  "2018-01": 2483,
+  "2018-02": 2303,
+  "2018-03": 2458,
+  "2018-04": 2923,
+  "2018-05": 2588,
+  "2018-06": 2793,
+  "2018-07": 2336,
+  "2018-08": 2836,
+  "2018-09": 2264,
+  "2018-10": 2699,
+  "2018-11": 2482,
+  "2018-12": 2577,
+  "2019-01": 2474,
+  "2019-02": 2085,
+  "2019-03": 2506,
+  "2019-04": 2498,
+  "2019-05": 2580,
+  "2019-06": 2571,
+  "2019-07": 2673,
+  "2019-08": 2719,
+  "2019-09": 2319,
+  "2019-10": 2341,
+  "2019-11": 2136,
+  "2019-12": 2263,
+  "2020-01": 2286,
+  "2020-02": 1915,
+  "2020-03": 1845,
+  "2020-04": 1148,
+  "2020-05": 1415,
+  "2020-06": 1618,
+  "2020-07": 1784,
+  "2020-08": 2393,
+  "2020-09": 2265,
+  "2020-10": 2326,
+  "2020-11": 2636,
+  "2020-12": 2186,
+  "2021-01": 2136,
+  "2021-02": 1907,
+  "2021-03": 2190,
+  "2021-04": 2045,
+  "2021-05": 2361,
+  "2021-06": 2091,
+  "2021-07": 2286,
+  "2021-08": 2353,
+  "2021-09": 2189,
+  "2021-10": 2121,
+  "2021-11": 2038,
+  "2021-12": 2306,
+  "2022-01": 2061,
+  "2022-02": 1552,
+  "2022-03": 1955,
+  "2022-04": 1973,
+  "2022-05": 1936,
+  "2022-06": 1836,
+  "2022-07": 2035,
+  "2022-08": 1989,
+  "2022-09": 1848,
+  "2022-10": 1717,
+  "2022-11": 1896,
+  "2022-12": 2450,
+  "2023-01": 2087,
+  "2023-02": 1538,
+  "2023-03": 1770,
+  "2023-04": 1604,
+  "2023-05": 1740,
+  "2023-06": 1534,
+  "2023-07": 1661,
+  "2023-08": 1729,
+  "2023-09": 1530,
+  "2023-10": 1421,
+  "2023-11": 1640,
+  "2023-12": 1731,
+  "2024-01": 1677,
+  "2024-02": 1584,
+  "2024-03": 1406,
+  "2024-04": 1863,
+  "2024-05": 1556,
+  "2024-06": 1377,
+  "2024-07": 1603,
+  "2024-08": 1609,
+  "2024-09": 1394,
+  "2024-10": 1576,
+  "2024-11": 1650,
+  "2024-12": 1535,
+  "2025-01": 1650,
+  "2025-02": 1270,
+  "2025-03": 1434,
+  "2025-04": 1544,
+  "2025-05": 1466,
+  "2025-06": 1463,
+  "2025-07": 1690,
+  "2025-08": 1768,
+  "2025-09": 1497,
+  "2025-10": 1845,
+  "2025-11": 1612,
+  "2025-12": 1617,
+  "2026-01": 1692,
+  "2026-02": 1488,
+  "2026-03": 1518,
+  "2026-04": 1559,
+  "2026-05": 1597,
+  "2026-06": 1594,
+  "2026-07": 1619,
+  "2026-08": 1846
+ },
+ "socios_sexo": {
+  "2013-05": {
+   "total": 3738,
+   "hombres": 2470,
+   "mujeres": 1266,
+   "sin_dato": 2
+  },
+  "2013-06": {
+   "total": 4576,
+   "hombres": 2997,
+   "mujeres": 1570,
+   "sin_dato": 9
+  },
+  "2013-07": {
+   "total": 5139,
+   "hombres": 3321,
+   "mujeres": 1804,
+   "sin_dato": 14
+  },
+  "2013-08": {
+   "total": 4930,
+   "hombres": 3183,
+   "mujeres": 1742,
+   "sin_dato": 5
+  },
+  "2013-09": {
+   "total": 3442,
+   "hombres": 2184,
+   "mujeres": 1253,
+   "sin_dato": 5
+  },
+  "2013-10": {
+   "total": 6192,
+   "hombres": 4209,
+   "mujeres": 1960,
+   "sin_dato": 23
+  },
+  "2013-11": {
+   "total": 6008,
+   "hombres": 4083,
+   "mujeres": 1914,
+   "sin_dato": 11
+  },
+  "2013-12": {
+   "total": 5127,
+   "hombres": 3484,
+   "mujeres": 1632,
+   "sin_dato": 11
+  },
+  "2014-01": {
+   "total": 5735,
+   "hombres": 3875,
+   "mujeres": 1833,
+   "sin_dato": 27
+  },
+  "2014-02": {
+   "total": 5072,
+   "hombres": 3422,
+   "mujeres": 1636,
+   "sin_dato": 14
+  },
+  "2014-03": {
+   "total": 6712,
+   "hombres": 4501,
+   "mujeres": 2203,
+   "sin_dato": 8
+  },
+  "2014-04": {
+   "total": 6026,
+   "hombres": 4126,
+   "mujeres": 1885,
+   "sin_dato": 15
+  },
+  "2014-05": {
+   "total": 6222,
+   "hombres": 4238,
+   "mujeres": 1958,
+   "sin_dato": 26
+  },
+  "2014-06": {
+   "total": 5700,
+   "hombres": 3847,
+   "mujeres": 1843,
+   "sin_dato": 10
+  },
+  "2014-07": {
+   "total": 7542,
+   "hombres": 5124,
+   "mujeres": 2402,
+   "sin_dato": 16
+  },
+  "2014-08": {
+   "total": 7885,
+   "hombres": 5329,
+   "mujeres": 2537,
+   "sin_dato": 19
+  },
+  "2014-09": {
+   "total": 7298,
+   "hombres": 4916,
+   "mujeres": 2361,
+   "sin_dato": 21
+  },
+  "2014-10": {
+   "total": 8320,
+   "hombres": 5739,
+   "mujeres": 2560,
+   "sin_dato": 21
+  },
+  "2014-11": {
+   "total": 7474,
+   "hombres": 5100,
+   "mujeres": 2346,
+   "sin_dato": 28
+  },
+  "2014-12": {
+   "total": 6439,
+   "hombres": 4458,
+   "mujeres": 1961,
+   "sin_dato": 20
+  },
+  "2015-01": {
+   "total": 7286,
+   "hombres": 5002,
+   "mujeres": 2273,
+   "sin_dato": 11
+  },
+  "2015-02": {
+   "total": 6707,
+   "hombres": 4486,
+   "mujeres": 2200,
+   "sin_dato": 21
+  },
+  "2015-03": {
+   "total": 8313,
+   "hombres": 5652,
+   "mujeres": 2639,
+   "sin_dato": 22
+  },
+  "2015-04": {
+   "total": 8009,
+   "hombres": 5437,
+   "mujeres": 2540,
+   "sin_dato": 32
+  },
+  "2015-05": {
+   "total": 7771,
+   "hombres": 5329,
+   "mujeres": 2417,
+   "sin_dato": 25
+  },
+  "2015-06": {
+   "total": 8243,
+   "hombres": 5571,
+   "mujeres": 2650,
+   "sin_dato": 22
+  },
+  "2015-07": {
+   "total": 8812,
+   "hombres": 5888,
+   "mujeres": 2883,
+   "sin_dato": 41
+  },
+  "2015-08": {
+   "total": 7989,
+   "hombres": 5393,
+   "mujeres": 2557,
+   "sin_dato": 39
+  },
+  "2015-09": {
+   "total": 8713,
+   "hombres": 5909,
+   "mujeres": 2739,
+   "sin_dato": 65
+  },
+  "2015-10": {
+   "total": 9275,
+   "hombres": 6383,
+   "mujeres": 2848,
+   "sin_dato": 44
+  },
+  "2015-11": {
+   "total": 8427,
+   "hombres": 5737,
+   "mujeres": 2646,
+   "sin_dato": 44
+  },
+  "2015-12": {
+   "total": 7473,
+   "hombres": 5052,
+   "mujeres": 2387,
+   "sin_dato": 34
+  },
+  "2016-01": {
+   "total": 8284,
+   "hombres": 5544,
+   "mujeres": 2716,
+   "sin_dato": 24
+  },
+  "2016-02": {
+   "total": 8074,
+   "hombres": 5473,
+   "mujeres": 2567,
+   "sin_dato": 34
+  },
+  "2016-03": {
+   "total": 9946,
+   "hombres": 6842,
+   "mujeres": 3061,
+   "sin_dato": 43
+  },
+  "2016-04": {
+   "total": 9242,
+   "hombres": 6271,
+   "mujeres": 2939,
+   "sin_dato": 32
+  },
+  "2016-05": {
+   "total": 10312,
+   "hombres": 7047,
+   "mujeres": 3236,
+   "sin_dato": 29
+  },
+  "2016-06": {
+   "total": 9674,
+   "hombres": 6526,
+   "mujeres": 3098,
+   "sin_dato": 50
+  },
+  "2016-07": {
+   "total": 9773,
+   "hombres": 6642,
+   "mujeres": 3104,
+   "sin_dato": 27
+  },
+  "2016-08": {
+   "total": 11341,
+   "hombres": 7651,
+   "mujeres": 3659,
+   "sin_dato": 31
+  },
+  "2016-09": {
+   "total": 9167,
+   "hombres": 6192,
+   "mujeres": 2925,
+   "sin_dato": 50
+  },
+  "2016-10": {
+   "total": 9309,
+   "hombres": 6224,
+   "mujeres": 3041,
+   "sin_dato": 44
+  },
+  "2016-11": {
+   "total": 8674,
+   "hombres": 5706,
+   "mujeres": 2929,
+   "sin_dato": 39
+  },
+  "2016-12": {
+   "total": 8552,
+   "hombres": 5771,
+   "mujeres": 2752,
+   "sin_dato": 29
+  },
+  "2017-01": {
+   "total": 9532,
+   "hombres": 6399,
+   "mujeres": 3083,
+   "sin_dato": 50
+  },
+  "2017-02": {
+   "total": 8552,
+   "hombres": 5716,
+   "mujeres": 2802,
+   "sin_dato": 34
+  },
+  "2017-03": {
+   "total": 11084,
+   "hombres": 7497,
+   "mujeres": 3533,
+   "sin_dato": 54
+  },
+  "2017-04": {
+   "total": 9218,
+   "hombres": 6169,
+   "mujeres": 2994,
+   "sin_dato": 55
+  },
+  "2017-05": {
+   "total": 11270,
+   "hombres": 7518,
+   "mujeres": 3691,
+   "sin_dato": 61
+  },
+  "2017-06": {
+   "total": 10463,
+   "hombres": 6940,
+   "mujeres": 3450,
+   "sin_dato": 73
+  },
+  "2017-07": {
+   "total": 10991,
+   "hombres": 7318,
+   "mujeres": 3621,
+   "sin_dato": 52
+  },
+  "2017-08": {
+   "total": 13585,
+   "hombres": 9108,
+   "mujeres": 4437,
+   "sin_dato": 40
+  },
+  "2017-09": {
+   "total": 9886,
+   "hombres": 6476,
+   "mujeres": 3346,
+   "sin_dato": 64
+  },
+  "2017-10": {
+   "total": 11648,
+   "hombres": 7589,
+   "mujeres": 3953,
+   "sin_dato": 106
+  },
+  "2017-11": {
+   "total": 11376,
+   "hombres": 7507,
+   "mujeres": 3796,
+   "sin_dato": 73
+  },
+  "2017-12": {
+   "total": 9258,
+   "hombres": 6135,
+   "mujeres": 3050,
+   "sin_dato": 73
+  },
+  "2018-01": {
+   "total": 11630,
+   "hombres": 7646,
+   "mujeres": 3903,
+   "sin_dato": 81
+  },
+  "2018-02": {
+   "total": 9783,
+   "hombres": 6483,
+   "mujeres": 3229,
+   "sin_dato": 71
+  },
+  "2018-03": {
+   "total": 11357,
+   "hombres": 7468,
+   "mujeres": 3804,
+   "sin_dato": 85
+  },
+  "2018-04": {
+   "total": 11900,
+   "hombres": 7822,
+   "mujeres": 3939,
+   "sin_dato": 139
+  },
+  "2018-05": {
+   "total": 12340,
+   "hombres": 8145,
+   "mujeres": 4109,
+   "sin_dato": 86
+  },
+  "2018-06": {
+   "total": 12582,
+   "hombres": 8247,
+   "mujeres": 4199,
+   "sin_dato": 136
+  },
+  "2018-07": {
+   "total": 12710,
+   "hombres": 8125,
+   "mujeres": 4401,
+   "sin_dato": 184
+  },
+  "2018-08": {
+   "total": 14497,
+   "hombres": 9566,
+   "mujeres": 4829,
+   "sin_dato": 102
+  },
+  "2018-09": {
+   "total": 10308,
+   "hombres": 6811,
+   "mujeres": 3431,
+   "sin_dato": 66
+  },
+  "2018-10": {
+   "total": 15023,
+   "hombres": 9961,
+   "mujeres": 4963,
+   "sin_dato": 99
+  },
+  "2018-11": {
+   "total": 12654,
+   "hombres": 8305,
+   "mujeres": 4254,
+   "sin_dato": 95
+  },
+  "2018-12": {
+   "total": 10405,
+   "hombres": 6862,
+   "mujeres": 3479,
+   "sin_dato": 64
+  },
+  "2019-01": {
+   "total": 13795,
+   "hombres": 9055,
+   "mujeres": 4662,
+   "sin_dato": 78
+  },
+  "2019-02": {
+   "total": 10970,
+   "hombres": 7167,
+   "mujeres": 3717,
+   "sin_dato": 86
+  },
+  "2019-03": {
+   "total": 13747,
+   "hombres": 8970,
+   "mujeres": 4705,
+   "sin_dato": 72
+  },
+  "2019-04": {
+   "total": 13535,
+   "hombres": 8791,
+   "mujeres": 4640,
+   "sin_dato": 104
+  },
+  "2019-05": {
+   "total": 13734,
+   "hombres": 9075,
+   "mujeres": 4546,
+   "sin_dato": 113
+  },
+  "2019-06": {
+   "total": 13085,
+   "hombres": 8581,
+   "mujeres": 4416,
+   "sin_dato": 88
+  },
+  "2019-07": {
+   "total": 14560,
+   "hombres": 9313,
+   "mujeres": 5157,
+   "sin_dato": 90
+  },
+  "2019-08": {
+   "total": 15298,
+   "hombres": 9878,
+   "mujeres": 5355,
+   "sin_dato": 65
+  },
+  "2019-09": {
+   "total": 11698,
+   "hombres": 7582,
+   "mujeres": 4033,
+   "sin_dato": 83
+  },
+  "2019-10": {
+   "total": 12344,
+   "hombres": 8016,
+   "mujeres": 4233,
+   "sin_dato": 95
+  },
+  "2019-11": {
+   "total": 10748,
+   "hombres": 6988,
+   "mujeres": 3716,
+   "sin_dato": 44
+  },
+  "2019-12": {
+   "total": 10530,
+   "hombres": 6931,
+   "mujeres": 3563,
+   "sin_dato": 36
+  },
+  "2020-01": {
+   "total": 13351,
+   "hombres": 8724,
+   "mujeres": 4583,
+   "sin_dato": 44
+  },
+  "2020-02": {
+   "total": 11297,
+   "hombres": 7375,
+   "mujeres": 3879,
+   "sin_dato": 43
+  },
+  "2020-03": {
+   "total": 9890,
+   "hombres": 6620,
+   "mujeres": 3238,
+   "sin_dato": 32
+  },
+  "2020-04": {
+   "total": 8843,
+   "hombres": 6171,
+   "mujeres": 2667,
+   "sin_dato": 5
+  },
+  "2020-05": {
+   "total": 14244,
+   "hombres": 9754,
+   "mujeres": 4483,
+   "sin_dato": 7
+  },
+  "2020-06": {
+   "total": 16100,
+   "hombres": 11208,
+   "mujeres": 4888,
+   "sin_dato": 4
+  },
+  "2020-07": {
+   "total": 18159,
+   "hombres": 12528,
+   "mujeres": 5626,
+   "sin_dato": 5
+  },
+  "2020-08": {
+   "total": 19883,
+   "hombres": 13372,
+   "mujeres": 6508,
+   "sin_dato": 3
+  },
+  "2020-09": {
+   "total": 20223,
+   "hombres": 13414,
+   "mujeres": 6802,
+   "sin_dato": 7
+  },
+  "2020-10": {
+   "total": 20868,
+   "hombres": 13720,
+   "mujeres": 7129,
+   "sin_dato": 19
+  },
+  "2020-11": {
+   "total": 19902,
+   "hombres": 13097,
+   "mujeres": 6793,
+   "sin_dato": 12
+  },
+  "2020-12": {
+   "total": 14963,
+   "hombres": 9950,
+   "mujeres": 4991,
+   "sin_dato": 22
+  },
+  "2021-01": {
+   "total": 19151,
+   "hombres": 12564,
+   "mujeres": 6576,
+   "sin_dato": 11
+  },
+  "2021-02": {
+   "total": 18531,
+   "hombres": 12010,
+   "mujeres": 6504,
+   "sin_dato": 17
+  },
+  "2021-03": {
+   "total": 22268,
+   "hombres": 14612,
+   "mujeres": 7633,
+   "sin_dato": 23
+  },
+  "2021-04": {
+   "total": 19949,
+   "hombres": 13306,
+   "mujeres": 6629,
+   "sin_dato": 14
+  },
+  "2021-05": {
+   "total": 18801,
+   "hombres": 12619,
+   "mujeres": 6171,
+   "sin_dato": 11
+  },
+  "2021-06": {
+   "total": 21652,
+   "hombres": 13962,
+   "mujeres": 7674,
+   "sin_dato": 16
+  },
+  "2021-07": {
+   "total": 20532,
+   "hombres": 13270,
+   "mujeres": 7246,
+   "sin_dato": 16
+  },
+  "2021-08": {
+   "total": 22966,
+   "hombres": 14183,
+   "mujeres": 8775,
+   "sin_dato": 8
+  },
+  "2021-09": {
+   "total": 20355,
+   "hombres": 12497,
+   "mujeres": 7836,
+   "sin_dato": 22
+  },
+  "2021-10": {
+   "total": 21900,
+   "hombres": 13270,
+   "mujeres": 8609,
+   "sin_dato": 21
+  },
+  "2021-11": {
+   "total": 18508,
+   "hombres": 11431,
+   "mujeres": 7048,
+   "sin_dato": 29
+  },
+  "2021-12": {
+   "total": 14740,
+   "hombres": 9310,
+   "mujeres": 5391,
+   "sin_dato": 39
+  },
+  "2022-01": {
+   "total": 17624,
+   "hombres": 11139,
+   "mujeres": 6427,
+   "sin_dato": 58
+  },
+  "2022-02": {
+   "total": 15112,
+   "hombres": 9511,
+   "mujeres": 5556,
+   "sin_dato": 45
+  },
+  "2022-03": {
+   "total": 19427,
+   "hombres": 12278,
+   "mujeres": 7112,
+   "sin_dato": 37
+  },
+  "2022-04": {
+   "total": 16238,
+   "hombres": 10137,
+   "mujeres": 6064,
+   "sin_dato": 37
+  },
+  "2022-05": {
+   "total": 17431,
+   "hombres": 11087,
+   "mujeres": 6285,
+   "sin_dato": 59
+  },
+  "2022-06": {
+   "total": 15944,
+   "hombres": 10281,
+   "mujeres": 5631,
+   "sin_dato": 32
+  },
+  "2022-07": {
+   "total": 16149,
+   "hombres": 10333,
+   "mujeres": 5790,
+   "sin_dato": 26
+  },
+  "2022-08": {
+   "total": 19542,
+   "hombres": 12324,
+   "mujeres": 7193,
+   "sin_dato": 25
+  },
+  "2022-09": {
+   "total": 15572,
+   "hombres": 9808,
+   "mujeres": 5739,
+   "sin_dato": 25
+  },
+  "2022-10": {
+   "total": 16208,
+   "hombres": 10125,
+   "mujeres": 6028,
+   "sin_dato": 55
+  },
+  "2022-11": {
+   "total": 17186,
+   "hombres": 10682,
+   "mujeres": 6456,
+   "sin_dato": 48
+  },
+  "2022-12": {
+   "total": 14862,
+   "hombres": 9237,
+   "mujeres": 5597,
+   "sin_dato": 28
+  },
+  "2023-01": {
+   "total": 17549,
+   "hombres": 10945,
+   "mujeres": 6570,
+   "sin_dato": 34
+  },
+  "2023-02": {
+   "total": 14673,
+   "hombres": 9243,
+   "mujeres": 5400,
+   "sin_dato": 30
+  },
+  "2023-03": {
+   "total": 18623,
+   "hombres": 11669,
+   "mujeres": 6910,
+   "sin_dato": 44
+  },
+  "2023-04": {
+   "total": 15168,
+   "hombres": 9713,
+   "mujeres": 5425,
+   "sin_dato": 30
+  },
+  "2023-05": {
+   "total": 18034,
+   "hombres": 11515,
+   "mujeres": 6479,
+   "sin_dato": 40
+  },
+  "2023-06": {
+   "total": 16274,
+   "hombres": 10522,
+   "mujeres": 5729,
+   "sin_dato": 23
+  },
+  "2023-07": {
+   "total": 18345,
+   "hombres": 11596,
+   "mujeres": 6723,
+   "sin_dato": 26
+  },
+  "2023-08": {
+   "total": 19849,
+   "hombres": 12377,
+   "mujeres": 7428,
+   "sin_dato": 44
+  },
+  "2023-09": {
+   "total": 16118,
+   "hombres": 9796,
+   "mujeres": 6295,
+   "sin_dato": 27
+  },
+  "2023-10": {
+   "total": 16792,
+   "hombres": 10325,
+   "mujeres": 6431,
+   "sin_dato": 36
+  },
+  "2023-11": {
+   "total": 17098,
+   "hombres": 10637,
+   "mujeres": 6421,
+   "sin_dato": 40
+  },
+  "2023-12": {
+   "total": 13124,
+   "hombres": 8379,
+   "mujeres": 4693,
+   "sin_dato": 52
+  },
+  "2024-01": {
+   "total": 17874,
+   "hombres": 11239,
+   "mujeres": 6615,
+   "sin_dato": 20
+  },
+  "2024-02": {
+   "total": 15356,
+   "hombres": 9605,
+   "mujeres": 5728,
+   "sin_dato": 23
+  },
+  "2024-03": {
+   "total": 16969,
+   "hombres": 10848,
+   "mujeres": 6092,
+   "sin_dato": 29
+  },
+  "2024-04": {
+   "total": 17839,
+   "hombres": 11189,
+   "mujeres": 6619,
+   "sin_dato": 31
+  },
+  "2024-05": {
+   "total": 17224,
+   "hombres": 10879,
+   "mujeres": 6317,
+   "sin_dato": 28
+  },
+  "2024-06": {
+   "total": 15971,
+   "hombres": 10038,
+   "mujeres": 5910,
+   "sin_dato": 23
+  },
+  "2024-07": {
+   "total": 19495,
+   "hombres": 12451,
+   "mujeres": 7019,
+   "sin_dato": 25
+  },
+  "2024-08": {
+   "total": 19959,
+   "hombres": 12459,
+   "mujeres": 7464,
+   "sin_dato": 36
+  },
+  "2024-09": {
+   "total": 15797,
+   "hombres": 9798,
+   "mujeres": 5971,
+   "sin_dato": 28
+  },
+  "2024-10": {
+   "total": 23973,
+   "hombres": 14010,
+   "mujeres": 9908,
+   "sin_dato": 55
+  },
+  "2024-11": {
+   "total": 22485,
+   "hombres": 13205,
+   "mujeres": 9252,
+   "sin_dato": 28
+  },
+  "2024-12": {
+   "total": 17159,
+   "hombres": 10616,
+   "mujeres": 6507,
+   "sin_dato": 36
+  },
+  "2025-01": {
+   "total": 22156,
+   "hombres": 13511,
+   "mujeres": 8614,
+   "sin_dato": 31
+  },
+  "2025-02": {
+   "total": 17863,
+   "hombres": 10904,
+   "mujeres": 6919,
+   "sin_dato": 40
+  },
+  "2025-03": {
+   "total": 21733,
+   "hombres": 13384,
+   "mujeres": 8304,
+   "sin_dato": 45
+  },
+  "2025-04": {
+   "total": 21085,
+   "hombres": 12976,
+   "mujeres": 8069,
+   "sin_dato": 40
+  },
+  "2025-05": {
+   "total": 21593,
+   "hombres": 13199,
+   "mujeres": 8349,
+   "sin_dato": 45
+  },
+  "2025-06": {
+   "total": 21567,
+   "hombres": 13199,
+   "mujeres": 8334,
+   "sin_dato": 34
+  },
+  "2025-07": {
+   "total": 25108,
+   "hombres": 15731,
+   "mujeres": 9349,
+   "sin_dato": 28
+  },
+  "2025-08": {
+   "total": 24721,
+   "hombres": 14957,
+   "mujeres": 9732,
+   "sin_dato": 32
+  },
+  "2025-09": {
+   "total": 22068,
+   "hombres": 13491,
+   "mujeres": 8539,
+   "sin_dato": 38
+  },
+  "2025-10": {
+   "total": 25652,
+   "hombres": 15473,
+   "mujeres": 10140,
+   "sin_dato": 39
+  },
+  "2025-11": {
+   "total": 23159,
+   "hombres": 13887,
+   "mujeres": 9233,
+   "sin_dato": 39
+  },
+  "2025-12": {
+   "total": 19089,
+   "hombres": 11814,
+   "mujeres": 7244,
+   "sin_dato": 31
+  },
+  "2026-01": {
+   "total": 23968,
+   "hombres": 14804,
+   "mujeres": 9108,
+   "sin_dato": 56
+  },
+  "2026-02": {
+   "total": 21193,
+   "hombres": 13131,
+   "mujeres": 8027,
+   "sin_dato": 35
+  },
+  "2026-03": {
+   "total": 25667,
+   "hombres": 15832,
+   "mujeres": 9789,
+   "sin_dato": 46
+  },
+  "2026-04": {
+   "total": 24733,
+   "hombres": 15347,
+   "mujeres": 9347,
+   "sin_dato": 39
+  },
+  "2026-05": {
+   "total": 23560,
+   "hombres": 14768,
+   "mujeres": 8763,
+   "sin_dato": 29
+  },
+  "2026-06": {
+   "total": 24396,
+   "hombres": 15174,
+   "mujeres": 9173,
+   "sin_dato": 49
+  },
+  "2026-07": {
+   "total": 23776,
+   "hombres": 14617,
+   "mujeres": 9129,
+   "sin_dato": 30
+  },
+  "2026-08": {
+   "total": 24491,
+   "hombres": 15271,
+   "mujeres": 9188,
+   "sin_dato": 32
+  }
+ },
+ "sociedades_sexo": {
+  "2013-05": {
+   "solo_mujeres": 149,
+   "solo_hombres": 689,
+   "mixtas": 887,
+   "sin_dato": 2
+  },
+  "2013-06": {
+   "solo_mujeres": 196,
+   "solo_hombres": 816,
+   "mixtas": 1063,
+   "sin_dato": 7
+  },
+  "2013-07": {
+   "solo_mujeres": 248,
+   "solo_hombres": 919,
+   "mixtas": 1187,
+   "sin_dato": 11
+  },
+  "2013-08": {
+   "solo_mujeres": 254,
+   "solo_hombres": 856,
+   "mixtas": 1122,
+   "sin_dato": 5
+  },
+  "2013-09": {
+   "solo_mujeres": 183,
+   "solo_hombres": 592,
+   "mixtas": 798,
+   "sin_dato": 5
+  },
+  "2013-10": {
+   "solo_mujeres": 656,
+   "solo_hombres": 2170,
+   "mixtas": 962,
+   "sin_dato": 18
+  },
+  "2013-11": {
+   "solo_mujeres": 655,
+   "solo_hombres": 2072,
+   "mixtas": 923,
+   "sin_dato": 9
+  },
+  "2013-12": {
+   "solo_mujeres": 565,
+   "solo_hombres": 1786,
+   "mixtas": 774,
+   "sin_dato": 10
+  },
+  "2014-01": {
+   "solo_mujeres": 693,
+   "solo_hombres": 2021,
+   "mixtas": 846,
+   "sin_dato": 17
+  },
+  "2014-02": {
+   "solo_mujeres": 642,
+   "solo_hombres": 1824,
+   "mixtas": 754,
+   "sin_dato": 11
+  },
+  "2014-03": {
+   "solo_mujeres": 844,
+   "solo_hombres": 2342,
+   "mixtas": 986,
+   "sin_dato": 8
+  },
+  "2014-04": {
+   "solo_mujeres": 761,
+   "solo_hombres": 2163,
+   "mixtas": 843,
+   "sin_dato": 11
+  },
+  "2014-05": {
+   "solo_mujeres": 762,
+   "solo_hombres": 2208,
+   "mixtas": 873,
+   "sin_dato": 20
+  },
+  "2014-06": {
+   "solo_mujeres": 763,
+   "solo_hombres": 2119,
+   "mixtas": 786,
+   "sin_dato": 9
+  },
+  "2014-07": {
+   "solo_mujeres": 1021,
+   "solo_hombres": 2865,
+   "mixtas": 987,
+   "sin_dato": 12
+  },
+  "2014-08": {
+   "solo_mujeres": 1080,
+   "solo_hombres": 2904,
+   "mixtas": 1035,
+   "sin_dato": 18
+  },
+  "2014-09": {
+   "solo_mujeres": 1034,
+   "solo_hombres": 2724,
+   "mixtas": 950,
+   "sin_dato": 15
+  },
+  "2014-10": {
+   "solo_mujeres": 1074,
+   "solo_hombres": 3190,
+   "mixtas": 1073,
+   "sin_dato": 18
+  },
+  "2014-11": {
+   "solo_mujeres": 1042,
+   "solo_hombres": 2825,
+   "mixtas": 905,
+   "sin_dato": 21
+  },
+  "2014-12": {
+   "solo_mujeres": 842,
+   "solo_hombres": 2571,
+   "mixtas": 822,
+   "sin_dato": 15
+  },
+  "2015-01": {
+   "solo_mujeres": 1006,
+   "solo_hombres": 2837,
+   "mixtas": 925,
+   "sin_dato": 10
+  },
+  "2015-02": {
+   "solo_mujeres": 978,
+   "solo_hombres": 2554,
+   "mixtas": 869,
+   "sin_dato": 17
+  },
+  "2015-03": {
+   "solo_mujeres": 1178,
+   "solo_hombres": 3282,
+   "mixtas": 1046,
+   "sin_dato": 19
+  },
+  "2015-04": {
+   "solo_mujeres": 1157,
+   "solo_hombres": 3111,
+   "mixtas": 983,
+   "sin_dato": 24
+  },
+  "2015-05": {
+   "solo_mujeres": 1076,
+   "solo_hombres": 3048,
+   "mixtas": 977,
+   "sin_dato": 14
+  },
+  "2015-06": {
+   "solo_mujeres": 1216,
+   "solo_hombres": 3211,
+   "mixtas": 1015,
+   "sin_dato": 12
+  },
+  "2015-07": {
+   "solo_mujeres": 1304,
+   "solo_hombres": 3382,
+   "mixtas": 1127,
+   "sin_dato": 32
+  },
+  "2015-08": {
+   "solo_mujeres": 1185,
+   "solo_hombres": 3134,
+   "mixtas": 993,
+   "sin_dato": 28
+  },
+  "2015-09": {
+   "solo_mujeres": 1274,
+   "solo_hombres": 3412,
+   "mixtas": 1048,
+   "sin_dato": 46
+  },
+  "2015-10": {
+   "solo_mujeres": 1323,
+   "solo_hombres": 3708,
+   "mixtas": 1139,
+   "sin_dato": 30
+  },
+  "2015-11": {
+   "solo_mujeres": 1226,
+   "solo_hombres": 3282,
+   "mixtas": 1044,
+   "sin_dato": 29
+  },
+  "2015-12": {
+   "solo_mujeres": 1108,
+   "solo_hombres": 2957,
+   "mixtas": 934,
+   "sin_dato": 23
+  },
+  "2016-01": {
+   "solo_mujeres": 1287,
+   "solo_hombres": 3265,
+   "mixtas": 1032,
+   "sin_dato": 20
+  },
+  "2016-02": {
+   "solo_mujeres": 1196,
+   "solo_hombres": 3261,
+   "mixtas": 1001,
+   "sin_dato": 25
+  },
+  "2016-03": {
+   "solo_mujeres": 1503,
+   "solo_hombres": 4085,
+   "mixtas": 1136,
+   "sin_dato": 31
+  },
+  "2016-04": {
+   "solo_mujeres": 1358,
+   "solo_hombres": 3672,
+   "mixtas": 1096,
+   "sin_dato": 28
+  },
+  "2016-05": {
+   "solo_mujeres": 1553,
+   "solo_hombres": 4159,
+   "mixtas": 1207,
+   "sin_dato": 26
+  },
+  "2016-06": {
+   "solo_mujeres": 1462,
+   "solo_hombres": 3791,
+   "mixtas": 1196,
+   "sin_dato": 32
+  },
+  "2016-07": {
+   "solo_mujeres": 1434,
+   "solo_hombres": 3916,
+   "mixtas": 1214,
+   "sin_dato": 23
+  },
+  "2016-08": {
+   "solo_mujeres": 1753,
+   "solo_hombres": 4523,
+   "mixtas": 1352,
+   "sin_dato": 25
+  },
+  "2016-09": {
+   "solo_mujeres": 1396,
+   "solo_hombres": 3627,
+   "mixtas": 1086,
+   "sin_dato": 38
+  },
+  "2016-10": {
+   "solo_mujeres": 1530,
+   "solo_hombres": 3691,
+   "mixtas": 1091,
+   "sin_dato": 36
+  },
+  "2016-11": {
+   "solo_mujeres": 1463,
+   "solo_hombres": 3367,
+   "mixtas": 1043,
+   "sin_dato": 28
+  },
+  "2016-12": {
+   "solo_mujeres": 1319,
+   "solo_hombres": 3382,
+   "mixtas": 1021,
+   "sin_dato": 21
+  },
+  "2017-01": {
+   "solo_mujeres": 1489,
+   "solo_hombres": 3820,
+   "mixtas": 1148,
+   "sin_dato": 34
+  },
+  "2017-02": {
+   "solo_mujeres": 1388,
+   "solo_hombres": 3439,
+   "mixtas": 1047,
+   "sin_dato": 31
+  },
+  "2017-03": {
+   "solo_mujeres": 1728,
+   "solo_hombres": 4525,
+   "mixtas": 1304,
+   "sin_dato": 38
+  },
+  "2017-04": {
+   "solo_mujeres": 1447,
+   "solo_hombres": 3681,
+   "mixtas": 1103,
+   "sin_dato": 41
+  },
+  "2017-05": {
+   "solo_mujeres": 1800,
+   "solo_hombres": 4504,
+   "mixtas": 1361,
+   "sin_dato": 44
+  },
+  "2017-06": {
+   "solo_mujeres": 1643,
+   "solo_hombres": 4146,
+   "mixtas": 1273,
+   "sin_dato": 56
+  },
+  "2017-07": {
+   "solo_mujeres": 1853,
+   "solo_hombres": 4429,
+   "mixtas": 1244,
+   "sin_dato": 38
+  },
+  "2017-08": {
+   "solo_mujeres": 2207,
+   "solo_hombres": 5363,
+   "mixtas": 1626,
+   "sin_dato": 32
+  },
+  "2017-09": {
+   "solo_mujeres": 1634,
+   "solo_hombres": 3817,
+   "mixtas": 1220,
+   "sin_dato": 52
+  },
+  "2017-10": {
+   "solo_mujeres": 2007,
+   "solo_hombres": 4518,
+   "mixtas": 1344,
+   "sin_dato": 71
+  },
+  "2017-11": {
+   "solo_mujeres": 2052,
+   "solo_hombres": 4721,
+   "mixtas": 1237,
+   "sin_dato": 57
+  },
+  "2017-12": {
+   "solo_mujeres": 1631,
+   "solo_hombres": 3830,
+   "mixtas": 1027,
+   "sin_dato": 54
+  },
+  "2018-01": {
+   "solo_mujeres": 2012,
+   "solo_hombres": 4656,
+   "mixtas": 1378,
+   "sin_dato": 64
+  },
+  "2018-02": {
+   "solo_mujeres": 1677,
+   "solo_hombres": 4086,
+   "mixtas": 1107,
+   "sin_dato": 55
+  },
+  "2018-03": {
+   "solo_mujeres": 1949,
+   "solo_hombres": 4573,
+   "mixtas": 1346,
+   "sin_dato": 67
+  },
+  "2018-04": {
+   "solo_mujeres": 2006,
+   "solo_hombres": 4683,
+   "mixtas": 1428,
+   "sin_dato": 87
+  },
+  "2018-05": {
+   "solo_mujeres": 2136,
+   "solo_hombres": 4936,
+   "mixtas": 1436,
+   "sin_dato": 59
+  },
+  "2018-06": {
+   "solo_mujeres": 2148,
+   "solo_hombres": 5015,
+   "mixtas": 1461,
+   "sin_dato": 82
+  },
+  "2018-07": {
+   "solo_mujeres": 2392,
+   "solo_hombres": 4948,
+   "mixtas": 1390,
+   "sin_dato": 108
+  },
+  "2018-08": {
+   "solo_mujeres": 2438,
+   "solo_hombres": 5748,
+   "mixtas": 1730,
+   "sin_dato": 74
+  },
+  "2018-09": {
+   "solo_mujeres": 1726,
+   "solo_hombres": 4079,
+   "mixtas": 1259,
+   "sin_dato": 47
+  },
+  "2018-10": {
+   "solo_mujeres": 2573,
+   "solo_hombres": 6037,
+   "mixtas": 1732,
+   "sin_dato": 81
+  },
+  "2018-11": {
+   "solo_mujeres": 2284,
+   "solo_hombres": 5200,
+   "mixtas": 1437,
+   "sin_dato": 67
+  },
+  "2018-12": {
+   "solo_mujeres": 1853,
+   "solo_hombres": 4264,
+   "mixtas": 1182,
+   "sin_dato": 45
+  },
+  "2019-01": {
+   "solo_mujeres": 2470,
+   "solo_hombres": 5606,
+   "mixtas": 1551,
+   "sin_dato": 58
+  },
+  "2019-02": {
+   "solo_mujeres": 1974,
+   "solo_hombres": 4436,
+   "mixtas": 1245,
+   "sin_dato": 66
+  },
+  "2019-03": {
+   "solo_mujeres": 2474,
+   "solo_hombres": 5578,
+   "mixtas": 1503,
+   "sin_dato": 58
+  },
+  "2019-04": {
+   "solo_mujeres": 2480,
+   "solo_hombres": 5449,
+   "mixtas": 1527,
+   "sin_dato": 70
+  },
+  "2019-05": {
+   "solo_mujeres": 2326,
+   "solo_hombres": 5582,
+   "mixtas": 1594,
+   "sin_dato": 82
+  },
+  "2019-06": {
+   "solo_mujeres": 2338,
+   "solo_hombres": 5264,
+   "mixtas": 1497,
+   "sin_dato": 72
+  },
+  "2019-07": {
+   "solo_mujeres": 2769,
+   "solo_hombres": 5737,
+   "mixtas": 1681,
+   "sin_dato": 70
+  },
+  "2019-08": {
+   "solo_mujeres": 2961,
+   "solo_hombres": 6174,
+   "mixtas": 1724,
+   "sin_dato": 57
+  },
+  "2019-09": {
+   "solo_mujeres": 2221,
+   "solo_hombres": 4752,
+   "mixtas": 1317,
+   "sin_dato": 59
+  },
+  "2019-10": {
+   "solo_mujeres": 2284,
+   "solo_hombres": 5043,
+   "mixtas": 1386,
+   "sin_dato": 83
+  },
+  "2019-11": {
+   "solo_mujeres": 2033,
+   "solo_hombres": 4357,
+   "mixtas": 1210,
+   "sin_dato": 37
+  },
+  "2019-12": {
+   "solo_mujeres": 1944,
+   "solo_hombres": 4406,
+   "mixtas": 1171,
+   "sin_dato": 26
+  },
+  "2020-01": {
+   "solo_mujeres": 2469,
+   "solo_hombres": 5499,
+   "mixtas": 1514,
+   "sin_dato": 33
+  },
+  "2020-02": {
+   "solo_mujeres": 2192,
+   "solo_hombres": 4772,
+   "mixtas": 1224,
+   "sin_dato": 39
+  },
+  "2020-03": {
+   "solo_mujeres": 1795,
+   "solo_hombres": 4263,
+   "mixtas": 1057,
+   "sin_dato": 25
+  },
+  "2020-04": {
+   "solo_mujeres": 1492,
+   "solo_hombres": 4083,
+   "mixtas": 932,
+   "sin_dato": 4
+  },
+  "2020-05": {
+   "solo_mujeres": 2382,
+   "solo_hombres": 6249,
+   "mixtas": 1603,
+   "sin_dato": 7
+  },
+  "2020-06": {
+   "solo_mujeres": 2579,
+   "solo_hombres": 7289,
+   "mixtas": 1797,
+   "sin_dato": 4
+  },
+  "2020-07": {
+   "solo_mujeres": 2835,
+   "solo_hombres": 7864,
+   "mixtas": 2178,
+   "sin_dato": 5
+  },
+  "2020-08": {
+   "solo_mujeres": 3404,
+   "solo_hombres": 8314,
+   "mixtas": 2355,
+   "sin_dato": 3
+  },
+  "2020-09": {
+   "solo_mujeres": 3517,
+   "solo_hombres": 8331,
+   "mixtas": 2424,
+   "sin_dato": 7
+  },
+  "2020-10": {
+   "solo_mujeres": 3724,
+   "solo_hombres": 8425,
+   "mixtas": 2568,
+   "sin_dato": 14
+  },
+  "2020-11": {
+   "solo_mujeres": 3577,
+   "solo_hombres": 8063,
+   "mixtas": 2373,
+   "sin_dato": 10
+  },
+  "2020-12": {
+   "solo_mujeres": 2623,
+   "solo_hombres": 6348,
+   "mixtas": 1719,
+   "sin_dato": 17
+  },
+  "2021-01": {
+   "solo_mujeres": 3486,
+   "solo_hombres": 7972,
+   "mixtas": 2285,
+   "sin_dato": 10
+  },
+  "2021-02": {
+   "solo_mujeres": 3351,
+   "solo_hombres": 7416,
+   "mixtas": 2293,
+   "sin_dato": 13
+  },
+  "2021-03": {
+   "solo_mujeres": 4030,
+   "solo_hombres": 9190,
+   "mixtas": 2689,
+   "sin_dato": 17
+  },
+  "2021-04": {
+   "solo_mujeres": 3427,
+   "solo_hombres": 8481,
+   "mixtas": 2380,
+   "sin_dato": 13
+  },
+  "2021-05": {
+   "solo_mujeres": 3173,
+   "solo_hombres": 8019,
+   "mixtas": 2268,
+   "sin_dato": 7
+  },
+  "2021-06": {
+   "solo_mujeres": 4101,
+   "solo_hombres": 8683,
+   "mixtas": 2661,
+   "sin_dato": 15
+  },
+  "2021-07": {
+   "solo_mujeres": 3953,
+   "solo_hombres": 8348,
+   "mixtas": 2434,
+   "sin_dato": 11
+  },
+  "2021-08": {
+   "solo_mujeres": 4949,
+   "solo_hombres": 8787,
+   "mixtas": 2804,
+   "sin_dato": 7
+  },
+  "2021-09": {
+   "solo_mujeres": 4538,
+   "solo_hombres": 7832,
+   "mixtas": 2403,
+   "sin_dato": 15
+  },
+  "2021-10": {
+   "solo_mujeres": 5060,
+   "solo_hombres": 8319,
+   "mixtas": 2594,
+   "sin_dato": 11
+  },
+  "2021-11": {
+   "solo_mujeres": 3825,
+   "solo_hombres": 7016,
+   "mixtas": 2211,
+   "sin_dato": 19
+  },
+  "2021-12": {
+   "solo_mujeres": 2788,
+   "solo_hombres": 5652,
+   "mixtas": 1759,
+   "sin_dato": 22
+  },
+  "2022-01": {
+   "solo_mujeres": 3280,
+   "solo_hombres": 6814,
+   "mixtas": 2087,
+   "sin_dato": 38
+  },
+  "2022-02": {
+   "solo_mujeres": 2996,
+   "solo_hombres": 5854,
+   "mixtas": 1887,
+   "sin_dato": 27
+  },
+  "2022-03": {
+   "solo_mujeres": 3912,
+   "solo_hombres": 7771,
+   "mixtas": 2251,
+   "sin_dato": 29
+  },
+  "2022-04": {
+   "solo_mujeres": 3362,
+   "solo_hombres": 6399,
+   "mixtas": 1947,
+   "sin_dato": 24
+  },
+  "2022-05": {
+   "solo_mujeres": 3473,
+   "solo_hombres": 7043,
+   "mixtas": 2025,
+   "sin_dato": 43
+  },
+  "2022-06": {
+   "solo_mujeres": 3053,
+   "solo_hombres": 6472,
+   "mixtas": 1873,
+   "sin_dato": 25
+  },
+  "2022-07": {
+   "solo_mujeres": 3186,
+   "solo_hombres": 6535,
+   "mixtas": 1835,
+   "sin_dato": 20
+  },
+  "2022-08": {
+   "solo_mujeres": 4212,
+   "solo_hombres": 8006,
+   "mixtas": 2181,
+   "sin_dato": 22
+  },
+  "2022-09": {
+   "solo_mujeres": 3306,
+   "solo_hombres": 6285,
+   "mixtas": 1785,
+   "sin_dato": 24
+  },
+  "2022-10": {
+   "solo_mujeres": 3432,
+   "solo_hombres": 6317,
+   "mixtas": 1886,
+   "sin_dato": 39
+  },
+  "2022-11": {
+   "solo_mujeres": 3718,
+   "solo_hombres": 6750,
+   "mixtas": 1996,
+   "sin_dato": 30
+  },
+  "2022-12": {
+   "solo_mujeres": 3032,
+   "solo_hombres": 5662,
+   "mixtas": 1830,
+   "sin_dato": 21
+  },
+  "2023-01": {
+   "solo_mujeres": 3479,
+   "solo_hombres": 6735,
+   "mixtas": 2260,
+   "sin_dato": 29
+  },
+  "2023-02": {
+   "solo_mujeres": 2896,
+   "solo_hombres": 5768,
+   "mixtas": 1866,
+   "sin_dato": 23
+  },
+  "2023-03": {
+   "solo_mujeres": 3771,
+   "solo_hombres": 7326,
+   "mixtas": 2262,
+   "sin_dato": 31
+  },
+  "2023-04": {
+   "solo_mujeres": 3031,
+   "solo_hombres": 6136,
+   "mixtas": 1729,
+   "sin_dato": 24
+  },
+  "2023-05": {
+   "solo_mujeres": 3541,
+   "solo_hombres": 7390,
+   "mixtas": 2150,
+   "sin_dato": 31
+  },
+  "2023-06": {
+   "solo_mujeres": 3235,
+   "solo_hombres": 6792,
+   "mixtas": 1886,
+   "sin_dato": 20
+  },
+  "2023-07": {
+   "solo_mujeres": 3849,
+   "solo_hombres": 7504,
+   "mixtas": 2082,
+   "sin_dato": 23
+  },
+  "2023-08": {
+   "solo_mujeres": 4244,
+   "solo_hombres": 7789,
+   "mixtas": 2319,
+   "sin_dato": 29
+  },
+  "2023-09": {
+   "solo_mujeres": 3877,
+   "solo_hombres": 6398,
+   "mixtas": 1704,
+   "sin_dato": 20
+  },
+  "2023-10": {
+   "solo_mujeres": 3819,
+   "solo_hombres": 6775,
+   "mixtas": 1861,
+   "sin_dato": 26
+  },
+  "2023-11": {
+   "solo_mujeres": 3727,
+   "solo_hombres": 6838,
+   "mixtas": 1969,
+   "sin_dato": 28
+  },
+  "2023-12": {
+   "solo_mujeres": 2616,
+   "solo_hombres": 5399,
+   "mixtas": 1509,
+   "sin_dato": 33
+  },
+  "2024-01": {
+   "solo_mujeres": 3793,
+   "solo_hombres": 7335,
+   "mixtas": 2083,
+   "sin_dato": 18
+  },
+  "2024-02": {
+   "solo_mujeres": 3431,
+   "solo_hombres": 6294,
+   "mixtas": 1638,
+   "sin_dato": 21
+  },
+  "2024-03": {
+   "solo_mujeres": 3606,
+   "solo_hombres": 7058,
+   "mixtas": 1865,
+   "sin_dato": 22
+  },
+  "2024-04": {
+   "solo_mujeres": 3889,
+   "solo_hombres": 7349,
+   "mixtas": 1971,
+   "sin_dato": 22
+  },
+  "2024-05": {
+   "solo_mujeres": 3665,
+   "solo_hombres": 7113,
+   "mixtas": 1879,
+   "sin_dato": 27
+  },
+  "2024-06": {
+   "solo_mujeres": 3479,
+   "solo_hombres": 6585,
+   "mixtas": 1743,
+   "sin_dato": 17
+  },
+  "2024-07": {
+   "solo_mujeres": 4019,
+   "solo_hombres": 8183,
+   "mixtas": 2182,
+   "sin_dato": 20
+  },
+  "2024-08": {
+   "solo_mujeres": 4388,
+   "solo_hombres": 8217,
+   "mixtas": 2226,
+   "sin_dato": 29
+  },
+  "2024-09": {
+   "solo_mujeres": 3598,
+   "solo_hombres": 6403,
+   "mixtas": 1781,
+   "sin_dato": 25
+  },
+  "2024-10": {
+   "solo_mujeres": 6365,
+   "solo_hombres": 9310,
+   "mixtas": 2540,
+   "sin_dato": 40
+  },
+  "2024-11": {
+   "solo_mujeres": 5872,
+   "solo_hombres": 8840,
+   "mixtas": 2421,
+   "sin_dato": 22
+  },
+  "2024-12": {
+   "solo_mujeres": 3997,
+   "solo_hombres": 7077,
+   "mixtas": 1849,
+   "sin_dato": 28
+  },
+  "2025-01": {
+   "solo_mujeres": 5228,
+   "solo_hombres": 8893,
+   "mixtas": 2454,
+   "sin_dato": 26
+  },
+  "2025-02": {
+   "solo_mujeres": 4120,
+   "solo_hombres": 7128,
+   "mixtas": 2024,
+   "sin_dato": 32
+  },
+  "2025-03": {
+   "solo_mujeres": 5118,
+   "solo_hombres": 8999,
+   "mixtas": 2296,
+   "sin_dato": 38
+  },
+  "2025-04": {
+   "solo_mujeres": 4833,
+   "solo_hombres": 8545,
+   "mixtas": 2330,
+   "sin_dato": 26
+  },
+  "2025-05": {
+   "solo_mujeres": 5122,
+   "solo_hombres": 8832,
+   "mixtas": 2285,
+   "sin_dato": 30
+  },
+  "2025-06": {
+   "solo_mujeres": 5022,
+   "solo_hombres": 8780,
+   "mixtas": 2345,
+   "sin_dato": 27
+  },
+  "2025-07": {
+   "solo_mujeres": 5718,
+   "solo_hombres": 10720,
+   "mixtas": 2572,
+   "sin_dato": 26
+  },
+  "2025-08": {
+   "solo_mujeres": 6006,
+   "solo_hombres": 10107,
+   "mixtas": 2578,
+   "sin_dato": 24
+  },
+  "2025-09": {
+   "solo_mujeres": 5274,
+   "solo_hombres": 9122,
+   "mixtas": 2328,
+   "sin_dato": 33
+  },
+  "2025-10": {
+   "solo_mujeres": 6465,
+   "solo_hombres": 10533,
+   "mixtas": 2643,
+   "sin_dato": 32
+  },
+  "2025-11": {
+   "solo_mujeres": 5934,
+   "solo_hombres": 9477,
+   "mixtas": 2336,
+   "sin_dato": 31
+  },
+  "2025-12": {
+   "solo_mujeres": 4532,
+   "solo_hombres": 8066,
+   "mixtas": 1978,
+   "sin_dato": 27
+  },
+  "2026-01": {
+   "solo_mujeres": 5786,
+   "solo_hombres": 10147,
+   "mixtas": 2476,
+   "sin_dato": 37
+  },
+  "2026-02": {
+   "solo_mujeres": 5003,
+   "solo_hombres": 9080,
+   "mixtas": 2161,
+   "sin_dato": 26
+  },
+  "2026-03": {
+   "solo_mujeres": 6142,
+   "solo_hombres": 10831,
+   "mixtas": 2618,
+   "sin_dato": 32
+  },
+  "2026-04": {
+   "solo_mujeres": 5775,
+   "solo_hombres": 10396,
+   "mixtas": 2605,
+   "sin_dato": 34
+  },
+  "2026-05": {
+   "solo_mujeres": 5443,
+   "solo_hombres": 10169,
+   "mixtas": 2478,
+   "sin_dato": 25
+  },
+  "2026-06": {
+   "solo_mujeres": 5699,
+   "solo_hombres": 10451,
+   "mixtas": 2550,
+   "sin_dato": 38
+  },
+  "2026-07": {
+   "solo_mujeres": 5691,
+   "solo_hombres": 10062,
+   "mixtas": 2441,
+   "sin_dato": 22
+  },
+  "2026-08": {
+   "solo_mujeres": 5792,
+   "solo_hombres": 10601,
+   "mixtas": 2479,
+   "sin_dato": 32
+  }
+ },
+ "sociedades_nacionalidad": {
+  "2013-05": {
+   "solo_chilenas": 1638,
+   "solo_extranjeras": 28,
+   "mixtas": 61,
+   "total": 1727
+  },
+  "2013-06": {
+   "solo_chilenas": 1950,
+   "solo_extranjeras": 35,
+   "mixtas": 97,
+   "total": 2082
+  },
+  "2013-07": {
+   "solo_chilenas": 2245,
+   "solo_extranjeras": 28,
+   "mixtas": 92,
+   "total": 2365
+  },
+  "2013-08": {
+   "solo_chilenas": 2132,
+   "solo_extranjeras": 32,
+   "mixtas": 73,
+   "total": 2237
+  },
+  "2013-09": {
+   "solo_chilenas": 1493,
+   "solo_extranjeras": 23,
+   "mixtas": 62,
+   "total": 1578
+  },
+  "2013-10": {
+   "solo_chilenas": 3602,
+   "solo_extranjeras": 94,
+   "mixtas": 110,
+   "total": 3806
+  },
+  "2013-11": {
+   "solo_chilenas": 3511,
+   "solo_extranjeras": 78,
+   "mixtas": 70,
+   "total": 3659
+  },
+  "2013-12": {
+   "solo_chilenas": 2988,
+   "solo_extranjeras": 75,
+   "mixtas": 72,
+   "total": 3135
+  },
+  "2014-01": {
+   "solo_chilenas": 3416,
+   "solo_extranjeras": 94,
+   "mixtas": 67,
+   "total": 3577
+  },
+  "2014-02": {
+   "solo_chilenas": 3080,
+   "solo_extranjeras": 80,
+   "mixtas": 71,
+   "total": 3231
+  },
+  "2014-03": {
+   "solo_chilenas": 3996,
+   "solo_extranjeras": 113,
+   "mixtas": 71,
+   "total": 4180
+  },
+  "2014-04": {
+   "solo_chilenas": 3589,
+   "solo_extranjeras": 107,
+   "mixtas": 82,
+   "total": 3778
+  },
+  "2014-05": {
+   "solo_chilenas": 3694,
+   "solo_extranjeras": 84,
+   "mixtas": 85,
+   "total": 3863
+  },
+  "2014-06": {
+   "solo_chilenas": 3523,
+   "solo_extranjeras": 99,
+   "mixtas": 55,
+   "total": 3677
+  },
+  "2014-07": {
+   "solo_chilenas": 4657,
+   "solo_extranjeras": 145,
+   "mixtas": 83,
+   "total": 4885
+  },
+  "2014-08": {
+   "solo_chilenas": 4812,
+   "solo_extranjeras": 134,
+   "mixtas": 91,
+   "total": 5037
+  },
+  "2014-09": {
+   "solo_chilenas": 4523,
+   "solo_extranjeras": 132,
+   "mixtas": 68,
+   "total": 4723
+  },
+  "2014-10": {
+   "solo_chilenas": 5086,
+   "solo_extranjeras": 170,
+   "mixtas": 99,
+   "total": 5355
+  },
+  "2014-11": {
+   "solo_chilenas": 4558,
+   "solo_extranjeras": 138,
+   "mixtas": 97,
+   "total": 4793
+  },
+  "2014-12": {
+   "solo_chilenas": 4036,
+   "solo_extranjeras": 133,
+   "mixtas": 81,
+   "total": 4250
+  },
+  "2015-01": {
+   "solo_chilenas": 4564,
+   "solo_extranjeras": 149,
+   "mixtas": 65,
+   "total": 4778
+  },
+  "2015-02": {
+   "solo_chilenas": 4187,
+   "solo_extranjeras": 144,
+   "mixtas": 87,
+   "total": 4418
+  },
+  "2015-03": {
+   "solo_chilenas": 5246,
+   "solo_extranjeras": 180,
+   "mixtas": 99,
+   "total": 5525
+  },
+  "2015-04": {
+   "solo_chilenas": 5023,
+   "solo_extranjeras": 172,
+   "mixtas": 80,
+   "total": 5275
+  },
+  "2015-05": {
+   "solo_chilenas": 4824,
+   "solo_extranjeras": 195,
+   "mixtas": 96,
+   "total": 5115
+  },
+  "2015-06": {
+   "solo_chilenas": 5194,
+   "solo_extranjeras": 174,
+   "mixtas": 86,
+   "total": 5454
+  },
+  "2015-07": {
+   "solo_chilenas": 5530,
+   "solo_extranjeras": 196,
+   "mixtas": 119,
+   "total": 5845
+  },
+  "2015-08": {
+   "solo_chilenas": 5067,
+   "solo_extranjeras": 188,
+   "mixtas": 85,
+   "total": 5340
+  },
+  "2015-09": {
+   "solo_chilenas": 5422,
+   "solo_extranjeras": 235,
+   "mixtas": 123,
+   "total": 5780
+  },
+  "2015-10": {
+   "solo_chilenas": 5855,
+   "solo_extranjeras": 231,
+   "mixtas": 114,
+   "total": 6200
+  },
+  "2015-11": {
+   "solo_chilenas": 5270,
+   "solo_extranjeras": 206,
+   "mixtas": 105,
+   "total": 5581
+  },
+  "2015-12": {
+   "solo_chilenas": 4723,
+   "solo_extranjeras": 192,
+   "mixtas": 107,
+   "total": 5022
+  },
+  "2016-01": {
+   "solo_chilenas": 5278,
+   "solo_extranjeras": 222,
+   "mixtas": 104,
+   "total": 5604
+  },
+  "2016-02": {
+   "solo_chilenas": 5131,
+   "solo_extranjeras": 252,
+   "mixtas": 100,
+   "total": 5483
+  },
+  "2016-03": {
+   "solo_chilenas": 6354,
+   "solo_extranjeras": 279,
+   "mixtas": 122,
+   "total": 6755
+  },
+  "2016-04": {
+   "solo_chilenas": 5761,
+   "solo_extranjeras": 267,
+   "mixtas": 126,
+   "total": 6154
+  },
+  "2016-05": {
+   "solo_chilenas": 6530,
+   "solo_extranjeras": 297,
+   "mixtas": 118,
+   "total": 6945
+  },
+  "2016-06": {
+   "solo_chilenas": 6072,
+   "solo_extranjeras": 280,
+   "mixtas": 129,
+   "total": 6481
+  },
+  "2016-07": {
+   "solo_chilenas": 6207,
+   "solo_extranjeras": 272,
+   "mixtas": 108,
+   "total": 6587
+  },
+  "2016-08": {
+   "solo_chilenas": 7227,
+   "solo_extranjeras": 296,
+   "mixtas": 130,
+   "total": 7653
+  },
+  "2016-09": {
+   "solo_chilenas": 5758,
+   "solo_extranjeras": 280,
+   "mixtas": 109,
+   "total": 6147
+  },
+  "2016-10": {
+   "solo_chilenas": 5922,
+   "solo_extranjeras": 300,
+   "mixtas": 126,
+   "total": 6348
+  },
+  "2016-11": {
+   "solo_chilenas": 5520,
+   "solo_extranjeras": 289,
+   "mixtas": 92,
+   "total": 5901
+  },
+  "2016-12": {
+   "solo_chilenas": 5398,
+   "solo_extranjeras": 245,
+   "mixtas": 100,
+   "total": 5743
+  },
+  "2017-01": {
+   "solo_chilenas": 6053,
+   "solo_extranjeras": 303,
+   "mixtas": 135,
+   "total": 6491
+  },
+  "2017-02": {
+   "solo_chilenas": 5503,
+   "solo_extranjeras": 284,
+   "mixtas": 118,
+   "total": 5905
+  },
+  "2017-03": {
+   "solo_chilenas": 7079,
+   "solo_extranjeras": 378,
+   "mixtas": 138,
+   "total": 7595
+  },
+  "2017-04": {
+   "solo_chilenas": 5807,
+   "solo_extranjeras": 356,
+   "mixtas": 109,
+   "total": 6272
+  },
+  "2017-05": {
+   "solo_chilenas": 7190,
+   "solo_extranjeras": 370,
+   "mixtas": 149,
+   "total": 7709
+  },
+  "2017-06": {
+   "solo_chilenas": 6620,
+   "solo_extranjeras": 361,
+   "mixtas": 137,
+   "total": 7118
+  },
+  "2017-07": {
+   "solo_chilenas": 7018,
+   "solo_extranjeras": 401,
+   "mixtas": 145,
+   "total": 7564
+  },
+  "2017-08": {
+   "solo_chilenas": 8607,
+   "solo_extranjeras": 459,
+   "mixtas": 162,
+   "total": 9228
+  },
+  "2017-09": {
+   "solo_chilenas": 6240,
+   "solo_extranjeras": 338,
+   "mixtas": 145,
+   "total": 6723
+  },
+  "2017-10": {
+   "solo_chilenas": 7312,
+   "solo_extranjeras": 476,
+   "mixtas": 152,
+   "total": 7940
+  },
+  "2017-11": {
+   "solo_chilenas": 7428,
+   "solo_extranjeras": 480,
+   "mixtas": 159,
+   "total": 8067
+  },
+  "2017-12": {
+   "solo_chilenas": 6046,
+   "solo_extranjeras": 377,
+   "mixtas": 119,
+   "total": 6542
+  },
+  "2018-01": {
+   "solo_chilenas": 7441,
+   "solo_extranjeras": 506,
+   "mixtas": 163,
+   "total": 8110
+  },
+  "2018-02": {
+   "solo_chilenas": 6256,
+   "solo_extranjeras": 528,
+   "mixtas": 141,
+   "total": 6925
+  },
+  "2018-03": {
+   "solo_chilenas": 7274,
+   "solo_extranjeras": 496,
+   "mixtas": 165,
+   "total": 7935
+  },
+  "2018-04": {
+   "solo_chilenas": 7395,
+   "solo_extranjeras": 623,
+   "mixtas": 186,
+   "total": 8204
+  },
+  "2018-05": {
+   "solo_chilenas": 7812,
+   "solo_extranjeras": 586,
+   "mixtas": 169,
+   "total": 8567
+  },
+  "2018-06": {
+   "solo_chilenas": 7903,
+   "solo_extranjeras": 624,
+   "mixtas": 179,
+   "total": 8706
+  },
+  "2018-07": {
+   "solo_chilenas": 8100,
+   "solo_extranjeras": 569,
+   "mixtas": 169,
+   "total": 8838
+  },
+  "2018-08": {
+   "solo_chilenas": 9102,
+   "solo_extranjeras": 704,
+   "mixtas": 184,
+   "total": 9990
+  },
+  "2018-09": {
+   "solo_chilenas": 6405,
+   "solo_extranjeras": 537,
+   "mixtas": 169,
+   "total": 7111
+  },
+  "2018-10": {
+   "solo_chilenas": 9429,
+   "solo_extranjeras": 755,
+   "mixtas": 239,
+   "total": 10423
+  },
+  "2018-11": {
+   "solo_chilenas": 8097,
+   "solo_extranjeras": 705,
+   "mixtas": 186,
+   "total": 8988
+  },
+  "2018-12": {
+   "solo_chilenas": 6627,
+   "solo_extranjeras": 564,
+   "mixtas": 153,
+   "total": 7344
+  },
+  "2019-01": {
+   "solo_chilenas": 8736,
+   "solo_extranjeras": 746,
+   "mixtas": 203,
+   "total": 9685
+  },
+  "2019-02": {
+   "solo_chilenas": 6837,
+   "solo_extranjeras": 719,
+   "mixtas": 165,
+   "total": 7721
+  },
+  "2019-03": {
+   "solo_chilenas": 8599,
+   "solo_extranjeras": 799,
+   "mixtas": 215,
+   "total": 9613
+  },
+  "2019-04": {
+   "solo_chilenas": 8479,
+   "solo_extranjeras": 839,
+   "mixtas": 208,
+   "total": 9526
+  },
+  "2019-05": {
+   "solo_chilenas": 8500,
+   "solo_extranjeras": 852,
+   "mixtas": 232,
+   "total": 9584
+  },
+  "2019-06": {
+   "solo_chilenas": 8172,
+   "solo_extranjeras": 810,
+   "mixtas": 189,
+   "total": 9171
+  },
+  "2019-07": {
+   "solo_chilenas": 9146,
+   "solo_extranjeras": 905,
+   "mixtas": 206,
+   "total": 10257
+  },
+  "2019-08": {
+   "solo_chilenas": 9735,
+   "solo_extranjeras": 951,
+   "mixtas": 230,
+   "total": 10916
+  },
+  "2019-09": {
+   "solo_chilenas": 7451,
+   "solo_extranjeras": 720,
+   "mixtas": 178,
+   "total": 8349
+  },
+  "2019-10": {
+   "solo_chilenas": 7786,
+   "solo_extranjeras": 814,
+   "mixtas": 196,
+   "total": 8796
+  },
+  "2019-11": {
+   "solo_chilenas": 6822,
+   "solo_extranjeras": 657,
+   "mixtas": 158,
+   "total": 7637
+  },
+  "2019-12": {
+   "solo_chilenas": 6816,
+   "solo_extranjeras": 589,
+   "mixtas": 142,
+   "total": 7547
+  },
+  "2020-01": {
+   "solo_chilenas": 8410,
+   "solo_extranjeras": 913,
+   "mixtas": 192,
+   "total": 9515
+  },
+  "2020-02": {
+   "solo_chilenas": 7268,
+   "solo_extranjeras": 768,
+   "mixtas": 191,
+   "total": 8227
+  },
+  "2020-03": {
+   "solo_chilenas": 6371,
+   "solo_extranjeras": 622,
+   "mixtas": 147,
+   "total": 7140
+  },
+  "2020-04": {
+   "solo_chilenas": 5936,
+   "solo_extranjeras": 464,
+   "mixtas": 111,
+   "total": 6511
+  },
+  "2020-05": {
+   "solo_chilenas": 9366,
+   "solo_extranjeras": 725,
+   "mixtas": 150,
+   "total": 10241
+  },
+  "2020-06": {
+   "solo_chilenas": 10574,
+   "solo_extranjeras": 916,
+   "mixtas": 179,
+   "total": 11669
+  },
+  "2020-07": {
+   "solo_chilenas": 11501,
+   "solo_extranjeras": 1116,
+   "mixtas": 265,
+   "total": 12882
+  },
+  "2020-08": {
+   "solo_chilenas": 12487,
+   "solo_extranjeras": 1339,
+   "mixtas": 250,
+   "total": 14076
+  },
+  "2020-09": {
+   "solo_chilenas": 12458,
+   "solo_extranjeras": 1516,
+   "mixtas": 305,
+   "total": 14279
+  },
+  "2020-10": {
+   "solo_chilenas": 12849,
+   "solo_extranjeras": 1553,
+   "mixtas": 329,
+   "total": 14731
+  },
+  "2020-11": {
+   "solo_chilenas": 12212,
+   "solo_extranjeras": 1502,
+   "mixtas": 309,
+   "total": 14023
+  },
+  "2020-12": {
+   "solo_chilenas": 9338,
+   "solo_extranjeras": 1163,
+   "mixtas": 206,
+   "total": 10707
+  },
+  "2021-01": {
+   "solo_chilenas": 12047,
+   "solo_extranjeras": 1469,
+   "mixtas": 237,
+   "total": 13753
+  },
+  "2021-02": {
+   "solo_chilenas": 11197,
+   "solo_extranjeras": 1606,
+   "mixtas": 270,
+   "total": 13073
+  },
+  "2021-03": {
+   "solo_chilenas": 13939,
+   "solo_extranjeras": 1689,
+   "mixtas": 298,
+   "total": 15926
+  },
+  "2021-04": {
+   "solo_chilenas": 12571,
+   "solo_extranjeras": 1456,
+   "mixtas": 274,
+   "total": 14301
+  },
+  "2021-05": {
+   "solo_chilenas": 11797,
+   "solo_extranjeras": 1413,
+   "mixtas": 257,
+   "total": 13467
+  },
+  "2021-06": {
+   "solo_chilenas": 13360,
+   "solo_extranjeras": 1763,
+   "mixtas": 337,
+   "total": 15460
+  },
+  "2021-07": {
+   "solo_chilenas": 12596,
+   "solo_extranjeras": 1873,
+   "mixtas": 277,
+   "total": 14746
+  },
+  "2021-08": {
+   "solo_chilenas": 14217,
+   "solo_extranjeras": 2002,
+   "mixtas": 328,
+   "total": 16547
+  },
+  "2021-09": {
+   "solo_chilenas": 12745,
+   "solo_extranjeras": 1747,
+   "mixtas": 296,
+   "total": 14788
+  },
+  "2021-10": {
+   "solo_chilenas": 13709,
+   "solo_extranjeras": 1980,
+   "mixtas": 295,
+   "total": 15984
+  },
+  "2021-11": {
+   "solo_chilenas": 11122,
+   "solo_extranjeras": 1664,
+   "mixtas": 285,
+   "total": 13071
+  },
+  "2021-12": {
+   "solo_chilenas": 8787,
+   "solo_extranjeras": 1227,
+   "mixtas": 207,
+   "total": 10221
+  },
+  "2022-01": {
+   "solo_chilenas": 10266,
+   "solo_extranjeras": 1675,
+   "mixtas": 278,
+   "total": 12219
+  },
+  "2022-02": {
+   "solo_chilenas": 9120,
+   "solo_extranjeras": 1423,
+   "mixtas": 221,
+   "total": 10764
+  },
+  "2022-03": {
+   "solo_chilenas": 11997,
+   "solo_extranjeras": 1671,
+   "mixtas": 295,
+   "total": 13963
+  },
+  "2022-04": {
+   "solo_chilenas": 10178,
+   "solo_extranjeras": 1323,
+   "mixtas": 231,
+   "total": 11732
+  },
+  "2022-05": {
+   "solo_chilenas": 10869,
+   "solo_extranjeras": 1443,
+   "mixtas": 272,
+   "total": 12584
+  },
+  "2022-06": {
+   "solo_chilenas": 9844,
+   "solo_extranjeras": 1341,
+   "mixtas": 238,
+   "total": 11423
+  },
+  "2022-07": {
+   "solo_chilenas": 10069,
+   "solo_extranjeras": 1266,
+   "mixtas": 241,
+   "total": 11576
+  },
+  "2022-08": {
+   "solo_chilenas": 12678,
+   "solo_extranjeras": 1510,
+   "mixtas": 233,
+   "total": 14421
+  },
+  "2022-09": {
+   "solo_chilenas": 9902,
+   "solo_extranjeras": 1264,
+   "mixtas": 234,
+   "total": 11400
+  },
+  "2022-10": {
+   "solo_chilenas": 10136,
+   "solo_extranjeras": 1313,
+   "mixtas": 225,
+   "total": 11674
+  },
+  "2022-11": {
+   "solo_chilenas": 10838,
+   "solo_extranjeras": 1414,
+   "mixtas": 242,
+   "total": 12494
+  },
+  "2022-12": {
+   "solo_chilenas": 9232,
+   "solo_extranjeras": 1086,
+   "mixtas": 227,
+   "total": 10545
+  },
+  "2023-01": {
+   "solo_chilenas": 10913,
+   "solo_extranjeras": 1351,
+   "mixtas": 239,
+   "total": 12503
+  },
+  "2023-02": {
+   "solo_chilenas": 9032,
+   "solo_extranjeras": 1275,
+   "mixtas": 246,
+   "total": 10553
+  },
+  "2023-03": {
+   "solo_chilenas": 11648,
+   "solo_extranjeras": 1474,
+   "mixtas": 268,
+   "total": 13390
+  },
+  "2023-04": {
+   "solo_chilenas": 9511,
+   "solo_extranjeras": 1218,
+   "mixtas": 191,
+   "total": 10920
+  },
+  "2023-05": {
+   "solo_chilenas": 11359,
+   "solo_extranjeras": 1484,
+   "mixtas": 269,
+   "total": 13112
+  },
+  "2023-06": {
+   "solo_chilenas": 10354,
+   "solo_extranjeras": 1376,
+   "mixtas": 203,
+   "total": 11933
+  },
+  "2023-07": {
+   "solo_chilenas": 11820,
+   "solo_extranjeras": 1384,
+   "mixtas": 254,
+   "total": 13458
+  },
+  "2023-08": {
+   "solo_chilenas": 12681,
+   "solo_extranjeras": 1437,
+   "mixtas": 263,
+   "total": 14381
+  },
+  "2023-09": {
+   "solo_chilenas": 10601,
+   "solo_extranjeras": 1211,
+   "mixtas": 187,
+   "total": 11999
+  },
+  "2023-10": {
+   "solo_chilenas": 11053,
+   "solo_extranjeras": 1231,
+   "mixtas": 197,
+   "total": 12481
+  },
+  "2023-11": {
+   "solo_chilenas": 11030,
+   "solo_extranjeras": 1277,
+   "mixtas": 255,
+   "total": 12562
+  },
+  "2023-12": {
+   "solo_chilenas": 8500,
+   "solo_extranjeras": 887,
+   "mixtas": 170,
+   "total": 9557
+  },
+  "2024-01": {
+   "solo_chilenas": 11561,
+   "solo_extranjeras": 1439,
+   "mixtas": 229,
+   "total": 13229
+  },
+  "2024-02": {
+   "solo_chilenas": 9904,
+   "solo_extranjeras": 1279,
+   "mixtas": 201,
+   "total": 11384
+  },
+  "2024-03": {
+   "solo_chilenas": 10984,
+   "solo_extranjeras": 1326,
+   "mixtas": 241,
+   "total": 12551
+  },
+  "2024-04": {
+   "solo_chilenas": 11588,
+   "solo_extranjeras": 1412,
+   "mixtas": 231,
+   "total": 13231
+  },
+  "2024-05": {
+   "solo_chilenas": 11023,
+   "solo_extranjeras": 1407,
+   "mixtas": 254,
+   "total": 12684
+  },
+  "2024-06": {
+   "solo_chilenas": 10394,
+   "solo_extranjeras": 1216,
+   "mixtas": 214,
+   "total": 11824
+  },
+  "2024-07": {
+   "solo_chilenas": 12608,
+   "solo_extranjeras": 1541,
+   "mixtas": 255,
+   "total": 14404
+  },
+  "2024-08": {
+   "solo_chilenas": 13010,
+   "solo_extranjeras": 1591,
+   "mixtas": 259,
+   "total": 14860
+  },
+  "2024-09": {
+   "solo_chilenas": 10373,
+   "solo_extranjeras": 1223,
+   "mixtas": 211,
+   "total": 11807
+  },
+  "2024-10": {
+   "solo_chilenas": 15876,
+   "solo_extranjeras": 2050,
+   "mixtas": 329,
+   "total": 18255
+  },
+  "2024-11": {
+   "solo_chilenas": 14901,
+   "solo_extranjeras": 1961,
+   "mixtas": 293,
+   "total": 17155
+  },
+  "2024-12": {
+   "solo_chilenas": 11427,
+   "solo_extranjeras": 1314,
+   "mixtas": 210,
+   "total": 12951
+  },
+  "2025-01": {
+   "solo_chilenas": 14461,
+   "solo_extranjeras": 1867,
+   "mixtas": 273,
+   "total": 16601
+  },
+  "2025-02": {
+   "solo_chilenas": 11447,
+   "solo_extranjeras": 1608,
+   "mixtas": 249,
+   "total": 13304
+  },
+  "2025-03": {
+   "solo_chilenas": 14378,
+   "solo_extranjeras": 1786,
+   "mixtas": 287,
+   "total": 16451
+  },
+  "2025-04": {
+   "solo_chilenas": 13690,
+   "solo_extranjeras": 1788,
+   "mixtas": 256,
+   "total": 15734
+  },
+  "2025-05": {
+   "solo_chilenas": 14159,
+   "solo_extranjeras": 1805,
+   "mixtas": 305,
+   "total": 16269
+  },
+  "2025-06": {
+   "solo_chilenas": 14190,
+   "solo_extranjeras": 1711,
+   "mixtas": 273,
+   "total": 16174
+  },
+  "2025-07": {
+   "solo_chilenas": 16697,
+   "solo_extranjeras": 2003,
+   "mixtas": 336,
+   "total": 19036
+  },
+  "2025-08": {
+   "solo_chilenas": 16426,
+   "solo_extranjeras": 1967,
+   "mixtas": 322,
+   "total": 18715
+  },
+  "2025-09": {
+   "solo_chilenas": 14746,
+   "solo_extranjeras": 1721,
+   "mixtas": 290,
+   "total": 16757
+  },
+  "2025-10": {
+   "solo_chilenas": 17283,
+   "solo_extranjeras": 2076,
+   "mixtas": 314,
+   "total": 19673
+  },
+  "2025-11": {
+   "solo_chilenas": 15585,
+   "solo_extranjeras": 1875,
+   "mixtas": 318,
+   "total": 17778
+  },
+  "2025-12": {
+   "solo_chilenas": 12953,
+   "solo_extranjeras": 1389,
+   "mixtas": 261,
+   "total": 14603
+  },
+  "2026-01": {
+   "solo_chilenas": 16163,
+   "solo_extranjeras": 1975,
+   "mixtas": 308,
+   "total": 18446
+  },
+  "2026-02": {
+   "solo_chilenas": 14129,
+   "solo_extranjeras": 1868,
+   "mixtas": 273,
+   "total": 16270
+  },
+  "2026-03": {
+   "solo_chilenas": 17149,
+   "solo_extranjeras": 2133,
+   "mixtas": 341,
+   "total": 19623
+  },
+  "2026-04": {
+   "solo_chilenas": 16480,
+   "solo_extranjeras": 2015,
+   "mixtas": 315,
+   "total": 18810
+  },
+  "2026-05": {
+   "solo_chilenas": 15830,
+   "solo_extranjeras": 1970,
+   "mixtas": 315,
+   "total": 18115
+  },
+  "2026-06": {
+   "solo_chilenas": 16428,
+   "solo_extranjeras": 1942,
+   "mixtas": 338,
+   "total": 18708
+  },
+  "2026-07": {
+   "solo_chilenas": 16090,
+   "solo_extranjeras": 1862,
+   "mixtas": 264,
+   "total": 18216
+  },
+  "2026-08": {
+   "solo_chilenas": 16554,
+   "solo_extranjeras": 2047,
+   "mixtas": 299,
+   "total": 18900
+  }
+ }
+}

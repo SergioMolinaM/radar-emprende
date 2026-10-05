@@ -10,6 +10,7 @@ const carga = (p: Promise<Record<string, unknown>>, k: string) =>
 const Portada = lazy(() => carga(import('./pages/Portada'), 'Portada'))
 const EmpresasCreadas = lazy(() => carga(import('./pages/EmpresasCreadas'), 'EmpresasCreadas'))
 const Cohortes = lazy(() => carga(import('./pages/Cohortes'), 'Cohortes'))
+const QuienLasCrea = lazy(() => carga(import('./pages/QuienLasCrea'), 'QuienLasCrea'))
 const Corfo = lazy(() => carga(import('./pages/Corfo'), 'Corfo'))
 const Informalidad = lazy(() => carga(import('./pages/Informalidad'), 'Informalidad'))
 const Metodologia = lazy(() => carga(import('./pages/Metodologia'), 'Metodologia'))
@@ -32,6 +33,7 @@ function App() {
           <Route element={<Layout />}>
             <Route index element={<Portada />} />
             <Route path="empresas-creadas" element={<EmpresasCreadas />} />
+            <Route path="quien-las-crea" element={<QuienLasCrea />} />
             <Route path="cohortes" element={<Cohortes />} />
             <Route path="corfo" element={<Corfo />} />
             <Route path="formales-e-informales" element={<Informalidad />} />
