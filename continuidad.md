@@ -30,8 +30,17 @@
 - Regla llevada a `~/.claude/agents/verificador.md` para todos los proyectos y memoria `revision-web-completa`.
 - No verificado: teléfono físico, ícono guardado de verdad, vista previa en redes con el dominio (aún no resuelve).
 
+**Deploy de producción: bloqueado por Netlify**
+- Sergio asignó el dominio (`updateSite`: custom_domain radaremprende.cl, alias www); Netlify creó los registros NETLIFY de apex y www; NIC delegó a p05.nsone.net; `ssl: true`.
+- Push hecho (`3a8c7d3`; el sitio no tiene repo enlazado, `build_settings` vacío: 0 créditos).
+- `netlify deploy --prod` (con DEPLOY-AUTORIZADO creado por Sergio) → `JSONHTTPError: Forbidden`. No se creó deploy de producción (`published_deploy: null`); no se reintentó.
+- Cuenta `sergiomolinam`: `grace_topup_granted_at` 2026-10-06T18:48 UTC y `in_operational_mode: true`; período de uso 12-sep → 12-oct, 1.000 créditos de plan. Lectura (no verificada): créditos agotados; borradores permitidos, producción bloqueada. El saldo es compartido por los 29 sitios: riesgo de pausa de sitios en vivo, incluidos clientes.
+- Sergio: «ok... esperemos».
+
 ### Pendiente
 
+- **Sergio, urgente:** revisar https://app.netlify.com/teams/sergiomolinam/billing/general (créditos, modo operacional, riesgo para los demás sitios). Recargar o esperar al 12-oct.
+- **Claude, cuando Sergio destrabe la cuenta:** un deploy de producción de `sitio/dist` (= borrador verificado 6ac54882289a6b95f97af0a7; si se reconstruye, comparar md5). `~/.claude/DEPLOY-AUTORIZADO` ya se consumió (el guardia lo confirmó al bloquear el push de cierre): Sergio tiene que crearlo de nuevo. Después, en vivo: HTTPS, www → apex, portada, 404, og, ícono, celular.
 - **Sergio:** abrir el sitio en su celular (iPhone/Android) y probar compartir el link cuando el dominio resuelva.
 - **Sergio:** `netlify api updateSite` con `custom_domain` radaremprende.cl y el alias www (sin eso Netlify no sirve el dominio ni emite HTTPS).
 - **Sergio:** `! touch ~/.claude/DEPLOY-AUTORIZADO` → un deploy de producción.
