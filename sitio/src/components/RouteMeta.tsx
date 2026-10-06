@@ -1,13 +1,13 @@
 // src/components/RouteMeta.tsx — título y meta description por ruta (SPA).
-// Sin dominio propio todavía (no inscrito al 2-oct-2026): mientras ORIGEN sea null no se emiten
-// canónica ni og:url. Cuando exista el dominio, se fija aquí y en scripts/prerender.py.
+// Dominio radaremprende.cl (inscrito en NIC el 6-oct-2026). Se fija aquí y en scripts/prerender.py;
+// si ORIGEN es null no se emiten canónica, og:url ni og:image.
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 type Meta = { title: string; description: string }
 const SITIO = 'Radar Emprende'
-/** Dominio propio: pendiente. No inventar. */
-const ORIGEN = null as string | null
+/** Dominio propio, sin barra final. */
+const ORIGEN = 'https://radaremprende.cl' as string | null
 
 const HOME: Meta = {
   title: `${SITIO} — Chile`,
@@ -59,27 +59,35 @@ function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
 export function RouteMeta() {
   const { pathname } = useLocation()
   useEffect(() => {
-    const m = META[pathname] ?? { title: `Página no encontrada — ${SITIO}`, description: HOME.description }
+    const ruta = pathname === '/' ? '/' : pathname.replace(/\/$/, '')
+    const conocida = META[ruta]
+    const m = conocida ?? { title: `Página no encontrada — ${SITIO}`, description: 'Esta dirección no existe en Radar Emprende.' }
     document.title = m.title
     upsertMeta('name', 'description', m.description)
     upsertMeta('property', 'og:title', m.title)
     upsertMeta('property', 'og:description', m.description)
     if (ORIGEN) {
-      const url = ORIGEN + (pathname === '/' ? '/' : pathname.replace(/\/$/, ''))
-      upsertMeta('property', 'og:url', url)
       // Imagen para redes: exige URL absoluta, por eso solo con dominio. Fuente: scripts/og-imagen.html.
       upsertMeta('property', 'og:image', `${ORIGEN}/og.png`)
       upsertMeta('property', 'og:image:width', '1200')
       upsertMeta('property', 'og:image:height', '630')
       upsertMeta('name', 'twitter:card', 'summary_large_image')
-      let canon = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]')
-      if (!canon) {
-        canon = document.createElement('link')
-        canon.setAttribute('rel', 'canonical')
-        document.head.appendChild(canon)
-      }
-      canon.setAttribute('href', url)
     }
+    // Una ruta desconocida (la 404) no tiene URL canónica: se quitan canónica y og:url si quedaron.
+    if (!ORIGEN || !conocida) {
+      document.head.querySelector('link[rel="canonical"]')?.remove()
+      document.head.querySelector('meta[property="og:url"]')?.remove()
+      return
+    }
+    const url = ORIGEN + ruta
+    upsertMeta('property', 'og:url', url)
+    let canon = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]')
+    if (!canon) {
+      canon = document.createElement('link')
+      canon.setAttribute('rel', 'canonical')
+      document.head.appendChild(canon)
+    }
+    canon.setAttribute('href', url)
   }, [pathname])
   return null
 }

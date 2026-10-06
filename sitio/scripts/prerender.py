@@ -9,7 +9,7 @@ También escribe dist/404.html (ruta inexistente → Netlify responde 404 real, 
 código 200) y regenera dist/sitemap.xml con lastmod = último cambio de contenido (git).
 
 Uso: python scripts/prerender.py   (lo llama `npm run build`; requiere playwright para Python).
-Heredado de Radar Construcción Industrializada el 2-oct-2026. Sin dominio (ORIGEN = None) no escribe
+Heredado de Radar Construcción Industrializada el 2-oct-2026. Con ORIGEN = None no escribe
 canónica ni sitemap.xml.
 """
 from __future__ import annotations
@@ -25,8 +25,8 @@ from playwright.sync_api import sync_playwright
 
 RAIZ = pathlib.Path(__file__).resolve().parents[1]
 DIST = RAIZ / 'dist'
-# Dominio propio: pendiente (no inscrito al 2-oct-2026). Mientras sea None no hay canónica ni sitemap.
-ORIGEN: str | None = None
+# Dominio radaremprende.cl (inscrito en NIC el 6-oct-2026). Con None no hay canónica ni sitemap.
+ORIGEN: str | None = 'https://radaremprende.cl'
 PUERTO = 4198
 
 # (ruta, changefreq, priority) — la misma lista que el sitemap
@@ -91,6 +91,7 @@ def main() -> None:
             navegador = p.chromium.launch()
             pagina = navegador.new_page(viewport={'width': 1280, 'height': 900})
             errores: list[str] = []
+            listos: list[tuple[str, pathlib.Path, str]] = []
             pagina.on('pageerror', lambda e: errores.append(str(e)))
             # <ruta>.html y no <ruta>/index.html: con el directorio, Netlify redirige /indice → /indice/ (301) y la
             # canónica dice /indice; con el archivo plano sirve /indice tal cual (verificado en vivo el 18-sep-2026).
@@ -113,21 +114,26 @@ def main() -> None:
                     canon = ORIGEN + ('/' if ruta == '/' else ruta)
                     if ruta != '/__no-existe__' and f'<link rel="canonical" href="{canon}">' not in html:
                         raise SystemExit(f'prerender: {ruta} sin canónica {canon}')
-                    if ruta == '/__no-existe__':
-                        html = html.replace(f'<link rel="canonical" href="{canon}">', '')
-                        html = html.replace(f'<meta property="og:url" content="{canon}">', '')
+                    # Control: RouteMeta no pone canónica ni og:url en una ruta desconocida.
+                    if ruta == '/__no-existe__' and ('rel="canonical"' in html or 'property="og:url"' in html):
+                        raise SystemExit('prerender: la 404 trae canónica u og:url')
                 if ruta == '/__no-existe__':
                     # La 404 no es una URL indexable.
                     html = html.replace('</head>', '<meta name="robots" content="noindex"></head>', 1)
                 # Control: la página trae su título propio (lo pone RouteMeta) y no el genérico.
                 if ruta not in ('/', '/__no-existe__') and '<title>Radar Emprende — Chile</title>' in html:
                     raise SystemExit(f'prerender: {ruta} quedó con el título genérico')
-                destino.parent.mkdir(parents=True, exist_ok=True)
-                destino.write_text(html, encoding='utf-8')
-                print(f'  {ruta:22s} -> {destino.relative_to(DIST)}  ({len(html) // 1024} KB)')
+                listos.append((ruta, destino, html))
             navegador.close()
             if errores:
                 raise SystemExit('prerender: errores de página: ' + '; '.join(errores[:3]))
+        # Se escribe todo al final: vite preview sirve dist/index.html como respaldo de cada ruta, y si la
+        # portada ya renderizada lo reemplazara a mitad de camino, sus modulepreload (datos de la portada)
+        # quedarían copiados en todas las páginas siguientes.
+        for ruta, destino, html in listos:
+            destino.parent.mkdir(parents=True, exist_ok=True)
+            destino.write_text(html, encoding='utf-8')
+            print(f'  {ruta:22s} -> {destino.relative_to(DIST)}  ({len(html) // 1024} KB)')
         assert '<div id="root">' in plantilla
         if ORIGEN:
             xml = sitemap()

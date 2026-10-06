@@ -21,3 +21,6 @@ sitio/node_modules/
 sitio/dist/
 # Copias generadas por npm run datos (la fuente es datos/)
 sitio/src/data/*.json
+
+# Estado local del CLI de Netlify
+sitio/.netlify/

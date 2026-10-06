@@ -2,8 +2,12 @@
 // Todas las cifras salen de los JSON.
 import { Link } from 'react-router-dom'
 import { Byline, Columnas, Dek, Hed, Kicker, KpiStrip, Rule, SectionTitle, SplitBar, type KpiItem } from '../components/editorial'
-import { CONSTITUCIONES, COHORTES, CORFO, ECONOMIA } from '../data/fuentes'
+import { CONSTITUCIONES } from '../data/datos-constituciones'
+import { COHORTES } from '../data/datos-cohortes'
+import { CORFO } from '../data/datos-corfo'
+import { ECONOMIA } from '../data/datos-economia'
 import { fechaCorta, num } from '../data/fechas'
+import { EN_CURSO, PRIMER_ANIO_SOCIOS, TRAMO, mujeresSocios } from '../data/socios'
 import type { Estado } from '../data/tipos'
 
 const anios = Object.keys(CONSTITUCIONES.totales_por_anio).sort()
@@ -49,22 +53,20 @@ const KPIS: KpiItem[] = [
     detalle: 'Constituciones del Registro sobre la población del Censo 2024 (INE) · nacional',
   },
   {
-    valor: `${num(c0.pct.en_nomina_2024, 1)} %`,
-    label: `De las sociedades creadas en ${C0}, en la nómina del SII de 2024`,
-    detalle: 'Cruce del Registro con la nómina de personas jurídicas del SII · no es tasa de supervivencia',
-    alt: true,
+    valor: `${num(mujeresSocios(EN_CURSO, true), 1)} %`,
+    label: `De los socios de las sociedades nuevas son mujeres (${TRAMO} de ${EN_CURSO})`,
+    detalle: `Informe mensual de creación de empresas del Ministerio de Economía · ${num(mujeresSocios(PRIMER_ANIO_SOCIOS), 1)} % en ${PRIMER_ANIO_SOCIOS}`,
   },
   {
     valor: num(CORFO.comunas_sin_proyectos.length),
     label: 'Comunas sin proyectos de Corfo 2016–2025',
     detalle: `De ${num(CORFO.comunas.length)} · Corfo DataInnovación cruzado con el domicilio vigente en el SII`,
-    alt: true,
   },
 ]
 
 const ESTADOS: { e: Estado; label: string; color: string }[] = [
   { e: 'en_nomina_2024', label: 'Figura en la nómina del SII de 2024', color: 'var(--accent)' },
-  { e: 'fuera_nomina_2024', label: 'Sin término de giro y fuera de esa nómina', color: 'var(--c2)' },
+  { e: 'fuera_nomina_2024', label: 'Sin término de giro y fuera de esa nómina', color: 'var(--c5)' },
   { e: 'termino_giro', label: 'Con término de giro ante el SII', color: 'var(--accent-2)' },
 ]
 

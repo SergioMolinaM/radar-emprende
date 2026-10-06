@@ -2,10 +2,17 @@
 import { Link } from 'react-router-dom'
 import { BarsH, Callout, Columnas, EditorialTable, Figure, KpiStrip, MenorQueN, N_MIN, PageHead, Rule, SectionTitle, type Column, type KpiItem } from '../components/editorial'
 import { ordenar, useFiltroComunas, useOrden } from '../components/FiltroComunas'
-import { CONSTITUCIONES, ECONOMIA, FUENTES, REPO } from '../data/fuentes'
+import { FUENTES, REPO } from '../data/fuentes'
+import { CONSTITUCIONES } from '../data/datos-constituciones'
+import { ECONOMIA } from '../data/datos-economia'
 import { fechaCorta, llano, num } from '../data/fechas'
 
 const M = CONSTITUCIONES._meta
+/** Los límites que cambian la lectura de la cifra van a la vista; el resto, en Metodología. Si el JSON cambia
+ *  la redacción y alguno no se encuentra, se muestran todos. */
+const CLAVE_LIMITES = ['Solo sociedades', 'La comuna es', 'El mes es']
+const elegidos = CLAVE_LIMITES.map((c) => M.limites.find((l) => l.startsWith(c)))
+const LIMITES_VISIBLES = elegidos.every(Boolean) ? (elegidos as string[]) : M.limites
 const anios = Object.keys(CONSTITUCIONES.totales_por_anio).sort()
 /** El primer y el último año del archivo son parciales (ver los límites que declara el archivo). */
 const parciales = new Set([anios[0], anios[anios.length - 1]])
@@ -123,10 +130,15 @@ export function EmpresasCreadas() {
 
       <Callout variant="warning" title="Antes de leer estas cifras">
         <ul className="rc-limites">
-          {M.limites.map((l) => (
+          {LIMITES_VISIBLES.map((l) => (
             <li key={l}>{l}</li>
           ))}
         </ul>
+        {LIMITES_VISIBLES.length < M.limites.length && (
+          <p>
+            <Link to="/metodologia#constituciones_comuna">Los demás límites de esta serie, en Metodología →</Link>
+          </p>
+        )}
       </Callout>
 
       <section className="rc-block">
@@ -176,7 +188,7 @@ export function EmpresasCreadas() {
             data={anios.map((a) => ({
               label: etiqueta(a),
               value: CONSTITUCIONES.totales_por_anio[a],
-              color: parciales.has(a) ? 'var(--c2)' : 'var(--ink)',
+              color: parciales.has(a) ? 'var(--c5)' : 'var(--ink)',
             }))}
           />
         </Figure>

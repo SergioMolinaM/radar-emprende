@@ -1,6 +1,8 @@
 // Gráficos pequeños (small multiples): una serie por panel, misma escala en todos, rótulos dentro del SVG.
 // Se usan cuando varias líneas en un mismo gráfico se confunden (por ejemplo, cinco cohortes).
 const fmt1 = (n: number) => n.toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 })
+/** Eje: sin decimal cuando la marca es entera (0, 50, 100). */
+const fmtEje = (n: number) => (Number.isInteger(n) ? n.toLocaleString('es-CL') : fmt1(n))
 
 export interface Panel {
   titulo: string
@@ -27,7 +29,7 @@ export function Multiples({ paneles, anios, yMax = 100, unidad = ' %', titulo }:
                 <g key={g}>
                   <line x1={padL} y1={ys(g)} x2={W - padR} y2={ys(g)} stroke="var(--line)" strokeWidth="1" />
                   <text x={padL - 6} y={ys(g)} className="rc-ax" textAnchor="end" dominantBaseline="middle">
-                    {fmt1(g)}{unidad}
+                    {fmtEje(g)}{unidad}
                   </text>
                 </g>
               ))}

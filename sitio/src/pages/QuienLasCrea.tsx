@@ -1,11 +1,13 @@
 // src/pages/QuienLasCrea.tsx — socios por sexo y nacionalidad (informe mensual de Economía) y capital declarado (CSV del RES).
 import { Link } from 'react-router-dom'
 import { Callout, Columnas, EditorialTable, Figure, KpiStrip, MenorQueN, N_MIN, PageHead, Rule, SectionTitle, type KpiItem } from '../components/editorial'
-import { CONSTITUCIONES, ECONOMIA, FUENTES, REPO } from '../data/fuentes'
+import { FUENTES, REPO } from '../data/fuentes'
+import { CONSTITUCIONES } from '../data/datos-constituciones'
+import { ECONOMIA } from '../data/datos-economia'
 import { fechaCorta, num } from '../data/fechas'
+import { EN_CURSO, MESES, TRAMO as tramo, mujeresSocios, pct, suma } from '../data/socios'
 
 const E = ECONOMIA
-const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
 const FUENTE_ECO = FUENTES.find((f) => f.id === 'economia-res')!
 const RES = FUENTES.find((f) => f.id === 'res')!
 
@@ -15,16 +17,7 @@ const mesesPorAnio = Object.keys(E.socios_sexo).reduce<Record<string, number>>((
   return acc
 }, {})
 const completos = Object.keys(mesesPorAnio).filter((a) => mesesPorAnio[a] === 12).sort()
-const EN_CURSO = String(E.corte.anio)
-const tramo = E.corte.mes === 1 ? 'enero' : `enero a ${MESES[E.corte.mes - 1]}`
 const ANTERIOR = String(E.corte.anio - 1)
-/** Suma un campo de una serie mensual en un año, opcionalmente solo hasta el mes del corte. */
-function suma<T>(serie: Record<string, T>, anio: string, campo: (v: T) => number, hastaCorte = false) {
-  return Object.entries(serie).reduce((s, [k, v]) => (k.startsWith(anio) && (!hastaCorte || Number(k.slice(5)) <= E.corte.mes) ? s + campo(v) : s), 0)
-}
-const pct = (a: number, b: number) => (b > 0 ? (100 * a) / b : 0)
-
-const mujeresSocios = (a: string, h = false) => pct(suma(E.socios_sexo, a, (v) => v.mujeres, h), suma(E.socios_sexo, a, (v) => v.total, h))
 const sociedadesSexo = (a: string, h = false) => suma(E.sociedades_sexo, a, (v) => v.solo_mujeres + v.solo_hombres + v.mixtas + v.sin_dato, h)
 const soloMujeres = (a: string, h = false) => pct(suma(E.sociedades_sexo, a, (v) => v.solo_mujeres, h), sociedadesSexo(a, h))
 const conMujer = (a: string, h = false) => pct(suma(E.sociedades_sexo, a, (v) => v.solo_mujeres + v.mixtas, h), sociedadesSexo(a, h))

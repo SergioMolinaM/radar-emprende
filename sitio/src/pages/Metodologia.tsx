@@ -1,6 +1,11 @@
 // src/pages/Metodologia.tsx — fuentes, niveles de afirmación, regla n < 5, correcciones y reproducibilidad.
 import { EditorialTable, N_MIN, PageHead, Rule, SectionTitle } from '../components/editorial'
-import { CONSTITUCIONES, COHORTES, CORFO, ECONOMIA, FUENTES, INFORMALIDAD, REPO } from '../data/fuentes'
+import { FUENTES, REPO } from '../data/fuentes'
+import { CONSTITUCIONES } from '../data/datos-constituciones'
+import { COHORTES } from '../data/datos-cohortes'
+import { CORFO } from '../data/datos-corfo'
+import { ECONOMIA } from '../data/datos-economia'
+import { INFORMALIDAD } from '../data/datos-informalidad'
 import { fechaCorta, llano } from '../data/fechas'
 
 /** Registro de correcciones (PLAN §2, R8). Formato: fecha ISO, qué decía, qué dice, por qué. */
@@ -39,6 +44,7 @@ export function Metodologia() {
         <SectionTitle kicker="URL y fecha de consulta de cada fuente">Fuentes</SectionTitle>
         <EditorialTable
           stack
+          caption="Fuentes de Radar Emprende, uso, condición y fecha de consulta"
           firstCol={{ min: '14rem', max: '18rem' }}
           columns={[{ label: 'Fuente', align: 'left' }, { label: 'Para qué se usa' }, { label: 'Condición de uso' }, { label: 'Consulta' }]}
           rows={FUENTES.map((f) => [
@@ -59,9 +65,21 @@ export function Metodologia() {
       <section className="rc-block">
         <SectionTitle kicker="Lo que declara cada archivo de datos sobre sí mismo">Las series</SectionTitle>
         {SERIES.map((x) => (
-          <div className="rc-prose" key={x.archivo} style={{ maxWidth: '72ch' }}>
+          <div className="rc-prose" key={x.archivo} id={x.archivo.replace(/^datos\/|\.json$/g, '')} style={{ maxWidth: '72ch' }}>
             <h3>{x.nombre}</h3>
             <p>{x.m.descripcion}</p>
+            {(x.m as { limites?: string[] }).limites?.length ? (
+              <>
+                <p>
+                  <strong>Límites:</strong>
+                </p>
+                <ul>
+                  {(x.m as { limites?: string[] }).limites!.map((l) => (
+                    <li key={l}>{l}</li>
+                  ))}
+                </ul>
+              </>
+            ) : null}
             <p>
               <strong>Fuentes:</strong> {x.fuentes.map(llano).join(' ')}
             </p>
@@ -84,7 +102,7 @@ export function Metodologia() {
 
       <Rule weight="hair" />
 
-      <section className="rc-block">
+      <section className="rc-block" id="niveles">
         <SectionTitle kicker="Protocolo de veracidad del proyecto">Niveles de afirmación</SectionTitle>
         <div className="rc-prose">
           <ul>

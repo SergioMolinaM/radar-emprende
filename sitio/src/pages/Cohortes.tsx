@@ -4,7 +4,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Callout, EditorialTable, Figure, MenorQueN, Multiples, N_MIN, Nivel, PageHead, Pct, Rule, SectionTitle, SplitBar, type Column } from '../components/editorial'
 import { ordenar, useFiltroComunas, useOrden } from '../components/FiltroComunas'
-import { COHORTES, FUENTES, REPO } from '../data/fuentes'
+import { FUENTES, REPO } from '../data/fuentes'
+import { COHORTES } from '../data/datos-cohortes'
 import { fechaCorta, llano, num } from '../data/fechas'
 import type { Cohorte, Estado } from '../data/tipos'
 
@@ -21,7 +22,7 @@ const NOMBRE: Record<Estado, string> = {
 }
 const COLOR: Record<Estado, string> = {
   en_nomina_2024: 'var(--accent)',
-  fuera_nomina_2024: 'var(--c2)',
+  fuera_nomina_2024: 'var(--c5)',
   termino_giro: 'var(--signal)',
 }
 const fuentesSii = FUENTES.filter((f) => f.id === 'res' || f.id === 'sii-nomina')

@@ -1,4 +1,4 @@
-# Radar Emprende — sitio estático. Sin dominio propio todavía (no inscrito al 2-oct-2026).
+# Radar Emprende — sitio estático. Dominio: radaremprende.cl (inscrito en NIC el 6-oct-2026).
 # El sitio vive en la carpeta sitio/ del repo: en Netlify, «Base directory» = sitio.
 [build]
   command   = "npm run build"

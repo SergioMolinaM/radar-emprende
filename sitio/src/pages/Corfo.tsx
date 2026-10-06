@@ -2,7 +2,8 @@
 import { Link } from 'react-router-dom'
 import { Callout, EditorialTable, KpiStrip, MenorQueN, N_MIN, Nivel, PageHead, Rule, SectionTitle, type Column } from '../components/editorial'
 import { ordenar, useFiltroComunas, useOrden } from '../components/FiltroComunas'
-import { CORFO, FUENTES, REPO } from '../data/fuentes'
+import { FUENTES, REPO } from '../data/fuentes'
+import { CORFO } from '../data/datos-corfo'
 import { fechaCorta, llano, millones, num } from '../data/fechas'
 
 const M = CORFO._meta

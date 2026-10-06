@@ -1,5 +1,47 @@
 # Continuidad — Radar Emprende (antes Radar Pyme)
 
+## 2026-10-06 — adversarial, audit de diseño y publicación
+
+### Hecho
+
+**Adversarial sobre publicar** (pedido de Sergio)
+- «Publicar sin difundir» no se sostenía con `robots.txt` abierto. Se propuso `noindex` hasta la respuesta del abogado. **Sergio eligió indexable desde hoy.** Contraargumento registrado: Circular, Educativo y CI ya son públicos con «Radar»; lo que agrega Emprende es el choque con la clase 35 y con el podcast «RADAR EMPRENDE».
+- **El dominio quedó a nombre de Sergio Molina Monasterios**, no de Tercera Letra SpA (whois NIC, creado 6-oct 14:41). Cambio de titular: lo hace el contacto administrativo desde la cuenta NIC («Cambio de Titular», faq tit-02). Costo y requisitos para la SpA no verificados.
+- **Conectar Netlify a GitHub se salta `guard-creditos-netlify`** (un push a `main` publica y cobra). Decisión de Sergio: deploy a mano hoy. La conexión se decide con el primer PR mensual (~28-oct), con regla `ignore` en `netlify.toml`.
+- Comprobado: datos al día (`actualizar.py`: sin publicación nueva, corte ago-2026). Las cifras de `eme8_limitantes` no aparecen en el sitio (búsqueda con control positivo en los 18 archivos).
+
+**Dominio y Netlify**
+- `ORIGEN = https://radaremprende.cl` en `RouteMeta.tsx` y `prerender.py`. `robots.txt` con la línea `Sitemap`.
+- Sitio Netlify `radar-emprende` (id ed125311-2659-499e-a183-8fa974754d78), creado por Sergio. Zona DNS creada por Sergio: nameservers dns1–dns4.p05.nsone.net, puestos en NIC el 6-oct. El clasificador de permisos bloquea a Claude los cambios de DNS y dominio.
+
+**Audit de impeccable** (subagente): 15/20, sin P0. Corregido:
+- Peso: `fuentes.ts` ya no importa datos (`meta_fuentes.json` generado por `copiar-datos.mjs`); el prerender escribe todo al final (antes la portada ya renderizada servía de plantilla y sus modulepreload se copiaban a todas las páginas). Acerca y 404 no bajan datos; `fuentes` pasó de 176 KB a 3,4 KB.
+- Táctiles de 44 px: menú, orden de tablas, menú lateral, sello N1/N2 (ahora enlace a `/metodologia#niveles`). `ScrollToTop` respeta anclas.
+- 404 sin canónica ni og:url (el prerender lo controla). Letra mínima 12 px (incluye `.rc-ax`). Gris de gráficos `--c2` → `--c5` (3,5:1). Caption en la tabla de fuentes. Ejes de los múltiplos sin decimal.
+- Portada: el indicador repetido (44,8 %) pasa a % de mujeres entre socios, desde `src/data/socios.ts`, compartido con /quien-las-crea. Indicadores en negro.
+- /empresas-creadas: 3 límites a la vista (Registro, comuna tributaria, mes) + enlace; Metodología lista ahora los límites de cada serie. En /cohortes y /formales-e-informales no se recortó: sus advertencias definen la cifra.
+- Detector mecánico: 0 hallazgos (con control positivo).
+
+**Verificador** sobre el borrador de Netlify: FALLA (solo `.rc-ax` a 11,5 px) → corregido → PASA sobre el borrador 6ac53a080a35fedc4e29c4f2 (letra ≥ 12 px en 8 rutas a 320 y 1280, ejes sin solaparse, assets idénticos a `dist/`). Antes había pasado los otros 8 puntos: canónicas, 404 real sin canónica, chunks por página, 37,8 % igual en portada y /quien-las-crea, anclas, táctiles, cifras contra `datos/`, 0 errores de consola con la CSP real.
+
+### Pendiente
+
+- **Sergio:** `netlify api updateSite` con `custom_domain` radaremprende.cl y el alias www (sin eso Netlify no sirve el dominio ni emite HTTPS).
+- **Sergio:** `! touch ~/.claude/DEPLOY-AUTORIZADO` → un deploy de producción.
+- **Claude:** cuando NIC delegue, comprobar NS, HTTPS y el sitio en vivo en radaremprende.cl.
+- **Sergio:** cambio de titular del dominio a Tercera Letra SpA (consultar costo y requisitos con soporte NIC) y factura a nombre de la SpA.
+- **Sergio:** abogado por la marca (sin cambios). El sitio queda indexable.
+- **Claude, ~28-oct:** primer PR mensual del workflow; decidir con Sergio la conexión a GitHub con regla `ignore`.
+- Sin cambios: retención de `data-raw/` antes del 1-dic; recalcular `eme8_limitantes.json` antes de publicar esas cifras; transparencia hacia el 2-nov.
+
+### Estado del repo
+
+`main`. Cambios del 6-oct en el commit de cierre (incluye el nuevo `sitio/src/data/socios.ts`). `sitio/.netlify/` ignorado.
+
+### Incumplimientos
+
+- Encadené `cd` en el tercer comando de la sesión (memoria `no-encadenar-cd` actualizada).
+
 ## 2026-10-05 — radar mensual, Diario Oficial, socios y capital
 
 ### Hecho

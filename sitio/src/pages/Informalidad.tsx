@@ -2,7 +2,8 @@
 // y las razones para iniciar o no iniciar actividades en el SII. Todas las cifras salen de eme8_informalidad.json.
 // Radar mide y no prescribe: la página no califica la informalidad ni recomienda formalizarse.
 import { BarsH, Callout, Figure, KpiStrip, PageHead, Rule, SectionTitle, type BarDatum } from '../components/editorial'
-import { FUENTES, INFORMALIDAD, REPO } from '../data/fuentes'
+import { FUENTES, REPO } from '../data/fuentes'
+import { INFORMALIDAD } from '../data/datos-informalidad'
 import { fechaCorta, num } from '../data/fechas'
 import type { Calidad, Estimacion } from '../data/datos-informalidad'
 import { SERVICIOS, SERVICIOS_CONSULTA } from '../data/servicios'

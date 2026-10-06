@@ -1,14 +1,7 @@
-// src/data/fuentes.ts — carga tipada de los JSON (copiados por `npm run datos` desde ../datos/)
-// e inventario de fuentes. Las cifras salen de los JSON; aquí solo hay URL, fechas de consulta y
-// condiciones de uso, tomadas de los _meta y de investigacion/2026-10-02-datos-publicos.md.
-// Cada JSON vive en su propio módulo (datos-*.ts) para que cada página cargue solo el que usa.
-import { CONSTITUCIONES } from './datos-constituciones'
-import { ECONOMIA } from './datos-economia'
-export { CONSTITUCIONES } from './datos-constituciones'
-export { COHORTES } from './datos-cohortes'
-export { CORFO } from './datos-corfo'
-export { INFORMALIDAD } from './datos-informalidad'
-export { ECONOMIA } from './datos-economia'
+// src/data/fuentes.ts — inventario de fuentes: URL, fechas de consulta y condiciones de uso, tomadas
+// de los _meta y de investigacion/2026-10-02-datos-publicos.md. No importa datos: cada página importa
+// su datos-*.ts. Las fechas que vienen de los JSON llegan en meta_fuentes.json (scripts/copiar-datos.mjs).
+import META from './meta_fuentes.json'
 
 /** Repositorio público del proyecto (scripts/ y datos/). */
 export const REPO = 'https://github.com/SergioMolinaM/radar-emprende'
@@ -27,8 +20,8 @@ export const FUENTES: Fuente[] = [
   {
     id: 'res',
     nombre: 'Registro de Empresas y Sociedades (RES), Ministerio de Economía, en datos.gob.cl',
-    url: CONSTITUCIONES._meta.fuente_url,
-    consulta: CONSTITUCIONES.corte.consulta,
+    url: META.res_url,
+    consulta: META.res_consulta,
     uso: 'Sociedades constituidas por comuna tributaria, año y mes (el Registro republica el archivo del año cerca de una vez al mes); base para seguir a las sociedades creadas entre 2020 y 2024.',
     condicion: 'CC BY (declarada en datos.gob.cl).',
   },
@@ -36,7 +29,7 @@ export const FUENTES: Fuente[] = [
     id: 'economia-res',
     nombre: 'Ministerio de Economía, informe mensual de creación de empresas y cooperativas (planilla de figuras y cuadros)',
     url: 'https://www.economia.gob.cl/category/estudios-encuestas/registro-de-empresas-y-sociedades',
-    consulta: ECONOMIA._meta.generado,
+    consulta: META.economia_generado,
     uso: 'Sociedades constituidas por escritura en el Diario Oficial, por mes; socios por sexo y sociedades según el sexo y la nacionalidad de sus socios.',
     condicion: 'Sin licencia declarada en el informe: se publican las series con cita de la fuente.',
   },
