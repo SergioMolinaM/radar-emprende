@@ -7,9 +7,11 @@ export function NoEncontrada() {
     <article className="rc-screen">
       <PageHead kicker="No encontrada" title="Esta página no existe" dek="La dirección no existe o la sección cambió de nombre." />
       <Rule weight="bold" />
-      <p className="rc-block-intro">
-        <Link to="/">Volver al inicio →</Link>
-      </p>
+      <div className="rc-cover-cta">
+        <Link className="rc-cta-primary" to="/">
+          Volver al inicio →
+        </Link>
+      </div>
     </article>
   )
 }

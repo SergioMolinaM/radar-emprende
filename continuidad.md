@@ -24,8 +24,15 @@
 
 **Verificador** sobre el borrador de Netlify: FALLA (solo `.rc-ax` a 11,5 px) → corregido → PASA sobre el borrador 6ac53a080a35fedc4e29c4f2 (letra ≥ 12 px en 8 rutas a 320 y 1280, ejes sin solaparse, assets idénticos a `dist/`). Antes había pasado los otros 8 puntos: canónicas, 404 real sin canónica, chunks por página, 37,8 % igual en portada y /quien-las-crea, anclas, táctiles, cifras contra `datos/`, 0 errores de consola con la CSP real.
 
+**Revisión web completa** (Sergio: «chequeaste en celular?… el logo al descargarlo en el celu… el og… todo»)
+- Faltaba ícono de pantalla de inicio: `apple-touch-icon.png`, `icon-192/512.png`, `icon-maskable-512.png` (marca «ping» estática, punto rojo; `scripts/iconos.py` los regenera), `manifest.webmanifest` con Content-Type en `netlify.toml`, `theme-color`. Favicon con el punto rojo de la marca.
+- Verificador, revisión completa (iPhone 13 en WebKit, Pixel 7, 320 px; 9 rutas; ícono, manifest, og, cabeceras, 37 enlaces externos, cifras): PASA con menores → corregidos: táctiles de 44 px en filtros, selector, buscador, botones, marca, enlaces de servicios y 404; título de tabla fuera del área desplazable (`.rc-itable-cap` visible + `<caption class="rc-sr">`); botón de la 404 como el de portada. Reverificado: PASA (borrador 6ac54882289a6b95f97af0a7). N2: área táctil efectiva 46×47.
+- Regla llevada a `~/.claude/agents/verificador.md` para todos los proyectos y memoria `revision-web-completa`.
+- No verificado: teléfono físico, ícono guardado de verdad, vista previa en redes con el dominio (aún no resuelve).
+
 ### Pendiente
 
+- **Sergio:** abrir el sitio en su celular (iPhone/Android) y probar compartir el link cuando el dominio resuelva.
 - **Sergio:** `netlify api updateSite` con `custom_domain` radaremprende.cl y el alias www (sin eso Netlify no sirve el dominio ni emite HTTPS).
 - **Sergio:** `! touch ~/.claude/DEPLOY-AUTORIZADO` → un deploy de producción.
 - **Claude:** cuando NIC delegue, comprobar NS, HTTPS y el sitio en vivo en radaremprende.cl.

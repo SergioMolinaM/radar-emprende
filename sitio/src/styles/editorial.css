@@ -317,7 +317,6 @@ html { scrollbar-color: #6b6b6b #e4e4e4; scrollbar-width: auto; }
 .rc-details .rc-prose { padding-bottom: 8px; }
 
 /* ---------- Tablas ---------- */
-.rc-itable-cap { font-size: 0.94rem; font-weight: 600; color: var(--ink); margin: 16px 0 4px; }
 .rc-itable-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-surface); margin: 12px 0;
   /* sombras de desplazamiento: aparecen sólo cuando hay contenido oculto a ese lado */
   background:
@@ -509,3 +508,15 @@ html { scrollbar-color: #6b6b6b #e4e4e4; scrollbar-width: auto; }
 @media (max-width: 680px) { .rc-servicios { grid-template-columns: 1fr; } }
 
 .rc-kpi-label { hyphens: auto; } /* «microemprendedores» no cabe en la columna de 132 px a 320 */
+
+/* Áreas táctiles de 44 px en celular (verificador, 6-oct-2026). */
+@media (max-width: 860px) {
+  .rc-filter, .rc-select, .rc-btn, .rc-search, .rc-topbrand { min-height: 44px; }
+  .rc-filter, .rc-btn { display: inline-flex; align-items: center; }
+  .rc-servicios a { display: inline-block; padding: 10px 0; margin: -10px 0; }
+}
+
+/* Título de tabla fuera del área desplazable: en el celular se lee entero aunque la tabla sea más ancha.
+   El <caption> sigue dentro de la tabla para lectores de pantalla, oculto a la vista. */
+.rc-itable-cap { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); margin: 12px 0 0; padding: 8px 12px; border: 1px solid var(--line); border-bottom: 0; border-radius: var(--r-surface) var(--r-surface) 0 0; background: var(--paper); }
+.rc-itable-cap + .rc-itable-wrap { margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0; }

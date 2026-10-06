@@ -57,10 +57,15 @@ export function EditorialTable({
     c?.labelText ?? (typeof c?.label === 'string' ? c.label : undefined)
   return (
     <>
+      {caption && (
+        <p className="rc-itable-cap" aria-hidden="true">
+          {caption}
+        </p>
+      )}
       {/* región desplazable alcanzable por teclado; el nombre sale del caption */}
       <div className="rc-itable-wrap" role="region" aria-label={typeof caption === 'string' ? caption : 'Tabla'} tabIndex={0}>
         <table className={'rc-itable' + (stack ? ' is-stack' : '')} style={style}>
-          {caption && <caption>{caption}</caption>}
+          {caption && <caption className="rc-sr">{caption}</caption>}
           <thead>
             <tr>
               {columns.map((c, i) => {
