@@ -1,5 +1,32 @@
 # Continuidad — Radar Emprende (antes Radar Pyme)
 
+## 2026-10-14 — publicación en producción (con un error de cabeceras)
+
+### Hecho
+
+- Cuenta Netlify destrabada: período nuevo 12-oct → 11-nov, `in_operational_mode: false`. Panel de facturación leído en Chrome: 1.289,4 créditos (837/1.000 del plan, vencen 11-nov; 452,4/500 comprados el 6-oct, sin vencimiento). Consumido en el período: 163 (5 deploys de producción 75, ancho de banda 70,3, solicitudes 16,7, cómputo 1).
+- NIC ya delega a p05.nsone.net; HTTPS emitido (válido hasta 4-ene-2027).
+- **Deploy de producción** `6acfa1f59f3f6616f9dfaa04` (autorizado por Sergio) desde `sitio/dist` del 6-oct (md5 idéntico, no se reconstruyó). radaremprende.cl en vivo.
+- **Verificador: FALLA.** Error mío: lancé el deploy desde la raíz del repo y `netlify.toml` vive en `sitio/`, así que producción quedó sin CSP, X-Frame-Options, nosniff, Referrer-Policy ni Permissions-Policy, y el manifiesto sale como `application/octet-stream`. Lo demás pasa: http→https y www→apex con 301, 8 rutas en 200, 404 real sin canónica, og e íconos, celular sin desborde, md5 = dist, 0 errores de consola (medido sin CSP).
+- Corrección probada en borrador (0 créditos) con `netlify deploy --dir=dist --site <id> --cwd …\sitio`: borrador `6acfa3ce170a342ef486c24b` trae todas las cabeceras y el manifiesto como `application/manifest+json`. Memoria `netlify-deploy-desde-sitio`.
+- Ancho de banda del período: casi todo es **patentes-ia** (producción 744 MB y unos once borradores de 100–400 MB cada uno). Lectura no verificada: pasadas del verificador sobre borradores con una página pesada. El panel no cuadra entre vistas (2 GB total contra ~2,9 GB en filas; 66 contra 163 créditos).
+
+### Pendiente
+
+- **Producción sigue sin cabeceras de seguridad.** Sergio difirió el segundo deploy al cierre: quiere hacer otros cambios antes y desplegar todo junto. Al retomar: cambios → build → borrador con `--cwd …\sitio` y verificador → `! touch ~/.claude/DEPLOY-AUTORIZADO` → un deploy de producción. **Claude:** mismo comando del borrador con `--prod`; después `curl -sI` de cabeceras y consola con CSP en vivo (verificador).
+- **Sergio, ok pendiente:** borrar `.netlify/` suelto en la raíz del repo (sin seguimiento en git, creado por el deploy equivocado).
+- **Otra sesión, patentes-ia:** revisar peso de portada y datos; iterar en local en vez de borradores cuando no dependa de Netlify.
+- Del 6-oct, sin cambios: celular físico y compartir el link; cambio de titular del dominio a la SpA; abogado por la marca; PR mensual ~28-oct y decisión de conexión a GitHub; retención de `data-raw/` antes del 1-dic; `eme8_limitantes`; transparencia hacia el 2-nov.
+- Cerrado: `custom_domain` y alias www ya estaban en Netlify; delegación NIC comprobada.
+
+### Estado del repo
+
+`main`, sin cambios de código. Solo esta entrada de continuidad sin commitear. `.netlify/` sin seguimiento en la raíz.
+
+### Incumplimientos
+
+- Deploy de producción sin borrador previo con el mismo comando: costó un segundo deploy.
+
 ## 2026-10-06 — adversarial, audit de diseño y publicación
 
 ### Hecho
