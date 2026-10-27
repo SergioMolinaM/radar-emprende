@@ -59,8 +59,8 @@ const KPIS: KpiItem[] = [
   },
   {
     valor: num(CORFO.comunas_sin_proyectos.length),
-    label: 'Comunas sin proyectos de Corfo 2016–2025',
-    detalle: `De ${num(CORFO.comunas.length)} · Corfo DataInnovación cruzado con el domicilio vigente en el SII`,
+    label: 'Comunas sin proyectos de CORFO 2016–2025',
+    detalle: `De ${num(CORFO.comunas.length)} · CORFO DataInnovación cruzado con el domicilio vigente en el SII`,
   },
 ]
 
@@ -71,12 +71,12 @@ const ESTADOS: { e: Estado; label: string; color: string }[] = [
 ]
 
 const SECCIONES = [
-  { to: '/empresas-creadas', go: 'Ver la serie →', t: 'Empresas creadas por comuna', d: `Sociedades constituidas en cada comuna, ${anios[0]}–${anios[anios.length - 1]}, y por cada mil habitantes.` },
-  { to: '/quien-las-crea', go: 'Ver los datos →', t: 'Quién las crea y con cuánto capital', d: 'Mujeres y extranjeros entre los socios de las sociedades nuevas, y el capital que declaran al constituirse.' },
+  { to: '/empresas-creadas', go: 'Ver la serie →', t: 'Cuántas empresas nacen en cada comuna', d: `Sociedades constituidas en cada comuna, ${anios[0]}–${anios[anios.length - 1]}, y por cada mil habitantes.` },
+  { to: '/quien-las-crea', go: 'Ver los datos →', t: 'Quién crea las empresas y con cuánto capital', d: 'Mujeres y extranjeros entre los socios de las sociedades nuevas, y el capital que declaran al constituirse.' },
   { to: '/cohortes', go: 'Ver la serie →', t: 'Qué pasó con las empresas creadas', d: `Las sociedades creadas cada año entre ${cohortes[0]} y ${cohortes[cohortes.length - 1]}, según su situación ante el SII, en todo el país y por comuna.` },
-  { to: '/corfo', go: 'Ver la serie →', t: 'A qué comunas llega Corfo', d: 'Proyectos de innovación y emprendimiento por comuna del beneficiario, y las comunas sin ninguno.' },
-  { to: '/fosis-y-sercotec', go: 'Ver los datos →', t: 'Cuántos postulan a FOSIS y Sercotec', d: 'Postulaciones y seleccionados en sus programas de emprendimiento, 2023–2025, por programa, región y comuna.' },
-  { to: '/formales-e-informales', go: 'Ver los datos →', t: 'Formales e informales', d: 'Microemprendedores con y sin registro en el SII por región y rama, y las razones que dan para iniciar actividades o no.' },
+  { to: '/corfo', go: 'Ver la serie →', t: 'A qué comunas llega CORFO', d: 'Proyectos de innovación y emprendimiento por comuna del beneficiario, y las comunas sin ninguno.' },
+  { to: '/fosis-y-sercotec', go: 'Ver los datos →', t: 'Cuántos consiguen apoyo de FOSIS y SERCOTEC', d: 'Postulaciones y seleccionados en sus programas de emprendimiento, 2023–2025, por programa, región y comuna.' },
+  { to: '/formales-e-informales', go: 'Ver los datos →', t: 'Cuántos emprenden en la informalidad', d: 'Microemprendedores con y sin registro en el SII por región y rama, y las razones que dan para iniciar actividades o no.' },
   { to: '/metodologia', go: 'Leer la metodología →', t: 'Metodología y fuentes', d: 'Fuentes con fecha de consulta, niveles de afirmación, regla de menos de cinco casos y cómo reproducir el cálculo.' },
 ]
 
@@ -87,14 +87,14 @@ export function Portada() {
         <div className="rc-cover-lead">
           <Kicker>Emprendimiento y pymes · Chile</Kicker>
           <Hed className="rc-cover-hed">
-            Las empresas que nacen en cada comuna de Chile
-            <span className="rc-cover-ask"> y lo que pasa con ellas.</span>
+            Cómo nacen, crecen y se financian
+            <span className="rc-cover-ask"> las pequeñas empresas de Chile.</span>
           </Hed>
           <Dek>
-            Radar Emprende reúne datos oficiales sobre las empresas que se crean en Chile: cuántas nacen cada mes y en
-            cada comuna, quiénes son sus socios y con cuánto capital parten, su situación ante el SII en los años
-            siguientes, los proyectos de Corfo que llegan a cada territorio y cuántos postulan y quedan en FOSIS y
-            Sercotec, con la fuente y los límites de cada cifra.
+            Radar Emprende sigue con datos oficiales a las empresas que se crean cada mes en cada comuna, lo que pasa con
+            ellas ante el SII y a cuáles llegan CORFO, FOSIS y SERCOTEC. El financiamiento que se mide es el de esos
+            fondos públicos, y lo que sigue a cada empresa, su situación ante el SII: el crédito, las ventas y el empleo
+            no están en estos datos.
           </Dek>
           <Byline>Datos generados el {fechaCorta(CONSTITUCIONES._meta.generado)} · cortes de cada fuente en Metodología</Byline>
           <div className="rc-cover-cta">

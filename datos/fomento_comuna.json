@@ -1,9 +1,9 @@
 {
  "_meta": {
-  "descripcion": "Postulaciones y personas seleccionadas en los programas de emprendimiento de FOSIS y Sercotec, 2023 a 2025, por comuna y región, según sus respuestas a solicitudes de acceso a la información.",
+  "descripcion": "Postulaciones y personas seleccionadas en los programas de emprendimiento de FOSIS y SERCOTEC, 2023 a 2025, por comuna y región, según sus respuestas a solicitudes de acceso a la información.",
   "fuentes": [
    "FOSIS, respuesta a la solicitud AI004T0002258 (Ley 20.285), 22-oct-2026: planilla Base_Datos_AI004T002258.xlsx, elaborada por la Unidad de Gestión de la Subdirección de Gestión de Programas desde el Sistema de Postulación a Programas (SPP).",
-   "Sercotec, respuesta a la solicitud AH012T0003197 (Ley 20.285), carta G.G. N° 283 del 23-oct-2026: planilla Datos_Emprende_Crece_Almacen_Modo_Empleo_2023_al_2026.xlsx.",
+   "SERCOTEC, respuesta a la solicitud AH012T0003197 (Ley 20.285), carta G.G. N° 283 del 23-oct-2026: planilla Datos_Emprende_Crece_Almacen_Modo_Empleo_2023_al_2026.xlsx.",
    "INE, Censo 2024, para la lista y los nombres de las comunas."
   ],
   "nivel": 1,
@@ -16,13 +16,13 @@
    "Solo convocatorias de 2023 a 2025. Las de 2026 siguen en selección o ejecución y no se suman.",
    "FOSIS cuenta postulaciones registradas en su sistema, no personas distintas: una persona que postula a dos programas o dos años cuenta dos veces.",
    "FOSIS informa más personas seleccionadas que cupos en todos los programas y años; la respuesta no lo explica.",
-   "Sercotec por comuna incluye Emprende (Capital Semilla, Capital Abeja y, desde 2024, Pioneras; Semilla Modo Empleo solo tiene convocatorias en 2026) y Almacenes. Crece se muestra solo por región: en la respuesta, sus beneficiarios por comuna vienen mezclados con las postulaciones, y separarlos sería suponer.",
-   "La columna de renuncias de Sercotec es, según su carta, un «registro de renuncias o restituciones de recursos».",
-   "Sercotec no entregó el monto total adjudicado ni cuántos terminaron con rendición aprobada; no se estiman.",
-   "La comuna es la que informa cada servicio para el postulante. «Otro lugar» (Sercotec) queda sin comuna.",
+   "SERCOTEC por comuna incluye Emprende (Capital Semilla, Capital Abeja y, desde 2024, Pioneras; Semilla Modo Empleo solo tiene convocatorias en 2026) y Almacenes. Crece se muestra solo por región: en la respuesta, sus beneficiarios por comuna vienen mezclados con las postulaciones, y separarlos sería suponer.",
+   "La columna de renuncias de SERCOTEC es, según su carta, un «registro de renuncias o restituciones de recursos».",
+   "SERCOTEC no entregó el monto total adjudicado ni cuántos terminaron con rendición aprobada; no se estiman.",
+   "La comuna es la que informa cada servicio para el postulante. «Otro lugar» (SERCOTEC) queda sin comuna.",
    "Una comuna con cero no prueba que el programa no llegue: puede haber cupos sin postulantes o postulantes registrados en otra comuna."
   ],
-  "control": "FOSIS: la hoja de datos sumada por año y programa reproduce las 16 filas de la tabla resumen que entregó FOSIS. Sercotec: los beneficiarios por comuna suman exacto lo informado en cada convocatoria; las postulaciones por comuna también, salvo 1 postulación de una convocatoria de Emprende 2023.",
+  "control": "FOSIS: la hoja de datos sumada por año y programa reproduce las 16 filas de la tabla resumen que entregó FOSIS. SERCOTEC: los beneficiarios por comuna suman exacto lo informado en cada convocatoria; las postulaciones por comuna también, salvo 1 postulación de una convocatoria de Emprende 2023.",
   "sercotec_postulaciones_sin_comuna": 25,
   "sercotec_beneficiarios_sin_comuna": 0,
   "fosis_comunas_sin_filas": [
@@ -41,8 +41,8 @@
   "comunas_sin_seleccionados": 3,
   "generado": "2026-10-27",
   "script": "scripts/fomento.py",
-  "licencia": "Cifras de FOSIS y Sercotec entregadas por Ley de Transparencia, citadas como fuente. Sumas y tasas: CC BY 4.0 (Radar Emprende, de Tercera Letra SpA).",
-  "reproducibilidad": "Las planillas originales, respuesta a las solicitudes FOSIS AI004T0002258 y Sercotec AH012T0003197, no se publican en el repositorio; con ellas en data-raw/transparencia/, python scripts/fomento.py regenera este archivo."
+  "licencia": "Cifras de FOSIS y SERCOTEC entregadas por Ley de Transparencia, citadas como fuente. Sumas y tasas: CC BY 4.0 (Radar Emprende, de Tercera Letra SpA).",
+  "reproducibilidad": "Las planillas originales, respuesta a las solicitudes FOSIS AI004T0002258 y SERCOTEC AH012T0003197, no se publican en el repositorio; con ellas en data-raw/transparencia/, python scripts/fomento.py regenera este archivo."
  },
  "fosis_programas": [
   {

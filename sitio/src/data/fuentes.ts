@@ -38,7 +38,7 @@ export const FUENTES: Fuente[] = [
     nombre: 'SII, nómina de personas jurídicas',
     url: 'https://www.sii.cl/sobre_el_sii/nominapersonasjuridicas.html',
     consulta: '2026-10-02',
-    uso: 'Término de giro vigente y presencia en la nómina de cada año comercial de las sociedades creadas cada año; domicilio vigente de los beneficiarios de Corfo.',
+    uso: 'Término de giro vigente y presencia en la nómina de cada año comercial de las sociedades creadas cada año; domicilio vigente de los beneficiarios de CORFO.',
     condicion: 'Sin licencia declarada en la página: se publican solo agregados por comuna.',
   },
   {
@@ -46,7 +46,7 @@ export const FUENTES: Fuente[] = [
     nombre: 'SII, estadísticas de empresas por comuna',
     url: 'https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html',
     consulta: '2026-10-02',
-    uso: 'Número de empresas por comuna, denominador de los proyectos Corfo por cada mil empresas.',
+    uso: 'Número de empresas por comuna, denominador de los proyectos CORFO por cada mil empresas.',
     condicion: 'Sin licencia declarada en la página; la columna conserva las condiciones del SII.',
   },
   {
@@ -59,7 +59,7 @@ export const FUENTES: Fuente[] = [
   },
   {
     id: 'corfo',
-    nombre: 'Corfo DataInnovación, proyectos adjudicados (descarga por su API pública)',
+    nombre: 'CORFO DataInnovación, proyectos adjudicados (descarga por su API pública)',
     url: 'https://datainnovacion.cl/api',
     consulta: '2026-10-02',
     uso: 'Proyectos con subsidio de innovación y emprendimiento por comuna del beneficiario; certificados de la Ley I+D aparte.',
@@ -75,7 +75,7 @@ export const FUENTES: Fuente[] = [
   },
   {
     id: 'sercotec',
-    nombre: 'Sercotec, respuesta a la solicitud de acceso a la información AH012T0003197 (Ley 20.285)',
+    nombre: 'SERCOTEC, respuesta a la solicitud de acceso a la información AH012T0003197 (Ley 20.285)',
     url: 'https://www.portaltransparencia.cl',
     consulta: '2026-10-26',
     uso: 'Postulaciones, admisibles, seleccionados, beneficiarios y renuncias o restituciones de Emprende, Crece y Almacenes, por convocatoria, región y comuna.',

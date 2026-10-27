@@ -18,7 +18,7 @@ export function Footer() {
           <p className="rc-foot-src">
             <strong>Sobre los datos.</strong> Registros públicos del Estado de Chile (Registro de Empresas y Sociedades e
             informe mensual del Ministerio de Economía, nóminas del SII, Censo 2024 y Encuesta de Microemprendimiento del
-            INE), proyectos de Corfo publicados en DataInnovación y respuestas de FOSIS y Sercotec por Ley de
+            INE), proyectos de CORFO publicados en DataInnovación y respuestas de FOSIS y SERCOTEC por Ley de
             Transparencia, con cálculo propio
             descrito y reproducible. Este sitio no es un medio oficial del Gobierno de Chile ni de ningún gremio.{' '}
             <Link to="/metodologia">Metodología y&nbsp;fuentes&nbsp;→</Link>

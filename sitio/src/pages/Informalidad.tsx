@@ -54,7 +54,7 @@ export function Informalidad() {
     <article className="rc-screen">
       <PageHead
         kicker="Encuesta de Microemprendimiento 2025 · INE"
-        title="Formales e informales"
+        title={`${nac.pct > 50 ? 'Más de la mitad' : `El ${num(nac.pct, 1)} %`} de los microemprendedores trabaja en la informalidad`}
         dek="Cuántos microemprendedores trabajan con registro en el SII y cuántos sin él, por región y por rama, y las razones que dan unos y otros, según la VIII Encuesta de Microemprendimiento."
         byline={`Datos generados el ${fechaCorta(M.generado)} · nivel de afirmación ${M.nivel}`}
       />

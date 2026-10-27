@@ -11,12 +11,12 @@ interface NavItem {
 }
 
 const NAV_EXPLORAR: NavItem[] = [
-  { to: '/empresas-creadas', label: 'Empresas creadas por comuna' },
-  { to: '/quien-las-crea', label: 'Quién las crea y con cuánto capital' },
+  { to: '/empresas-creadas', label: 'Cuántas empresas nacen en cada comuna' },
+  { to: '/quien-las-crea', label: 'Quién crea las empresas y con cuánto capital' },
   { to: '/cohortes', label: 'Qué pasó con las empresas creadas' },
-  { to: '/corfo', label: 'A qué comunas llega Corfo' },
-  { to: '/fosis-y-sercotec', label: 'Cuántos postulan a FOSIS y Sercotec' },
-  { to: '/formales-e-informales', label: 'Formales e informales' },
+  { to: '/corfo', label: 'A qué comunas llega CORFO' },
+  { to: '/fosis-y-sercotec', label: 'Cuántos consiguen apoyo de FOSIS y SERCOTEC' },
+  { to: '/formales-e-informales', label: 'Cuántos emprenden en la informalidad' },
 ]
 const NAV_REF: NavItem[] = [
   { to: '/metodologia', label: 'Metodología y fuentes' },

@@ -1,6 +1,6 @@
-"""¿A qué comunas llegan los proyectos de innovación y emprendimiento de Corfo? (2016-2025)
+"""¿A qué comunas llegan los proyectos de innovación y emprendimiento de CORFO? (2016-2025)
 
-Cruza por RUT los proyectos adjudicados (Corfo DataInnovación) con el domicilio vigente del
+Cruza por RUT los proyectos adjudicados (CORFO DataInnovación) con el domicilio vigente del
 beneficiario en la nómina de personas jurídicas del SII, y los compara con el número de empresas
 de cada comuna (SII, estadísticas de empresas, año comercial 2024).
 
@@ -37,7 +37,7 @@ def rut_num(texto):
     """Número de RUT sin DV. Acepta «12345678-9» y también el DV pegado sin guion («123456789», «12345678K»),
     que trae DataInnovación en 113 proyectos (detectado por el verificador el 2-oct-2026)."""
     s = str(texto).strip().replace('.', '').upper()
-    if s == 'PERSONA NATURAL':  # Corfo reemplaza el RUT de las personas naturales por este texto
+    if s == 'PERSONA NATURAL':  # CORFO reemplaza el RUT de las personas naturales por este texto
         return None
     if '-' in s:
         base, d = s.split('-', 1)
@@ -152,22 +152,22 @@ def main():
     sin_proyectos = [f['comuna'] for f in filas if f['proyectos'] == 0]
     salida = {
         '_meta': {
-            'descripcion': f'Proyectos de Corfo con subsidio (innovación y emprendimiento) adjudicados entre {DESDE} y {HASTA}, por comuna del domicilio vigente del beneficiario. Los certificados de la Ley I+D (crédito tributario, no subsidio) se informan aparte.',
+            'descripcion': f'Proyectos de CORFO con subsidio (innovación y emprendimiento) adjudicados entre {DESDE} y {HASTA}, por comuna del domicilio vigente del beneficiario. Los certificados de la Ley I+D (crédito tributario, no subsidio) se informan aparte.',
             'fuentes': [
-                'Corfo DataInnovación, API pública de proyectos (https://datainnovacion.cl/api/v1/proyectos, descargada con scripts/descargar.py; 11.017 proyectos al 2-oct-2026). Aquí se muestran solo totales por comuna.',
+                'CORFO DataInnovación, API pública de proyectos (https://datainnovacion.cl/api/v1/proyectos, descargada con scripts/descargar.py; 11.017 proyectos al 2-oct-2026). Aquí se muestran solo totales por comuna.',
                 'SII, nómina de personas jurídicas, domicilios vigentes (PUB_NOM_DIRECCIONES, agosto de 2026).',
                 'SII, estadísticas de empresas por comuna, año comercial 2024 (PUB_COMU).',
             ],
             'nivel': 2,
             'limites': [
-                'La fuente cubre solo los instrumentos de innovación y emprendimiento que publica DataInnovación (Voucher, Startup, Semilla, Innova Región, etc., además de la Ley I+D, que aquí va aparte). No incluye Sercotec, Fosis ni el resto de Corfo.',
+                'La fuente cubre solo los instrumentos de innovación y emprendimiento que publica DataInnovación (Voucher, Startup, Semilla, Innova Región, etc., además de la Ley I+D, que aquí va aparte). No incluye SERCOTEC, FOSIS ni el resto de CORFO.',
                 'Cuatro proyectos con subsidio vienen con monto cero en la fuente (uno de Huella y tres de Innova Región) y se cuentan como proyectos.',
                 'Comuna del domicilio vigente a agosto de 2026, no al momento del proyecto. Universidades, centros y grandes empresas suelen tener domicilio en Santiago, Providencia o Las Condes aunque ejecuten el proyecto en regiones.',
-                'Beneficiarios sin domicilio vigente en la nómina de personas jurídicas del SII quedan fuera; son sobre todo personas naturales, cuyo RUT Corfo no publica.',
-                'Los certificados de la Ley I+D (1.116 entre 2016 y 2025) no son subsidios adjudicados (no tienen monto aprobado por Corfo) y no se cuentan como proyectos ni en la tasa por cada 1.000 empresas.',
+                'Beneficiarios sin domicilio vigente en la nómina de personas jurídicas del SII quedan fuera; son sobre todo personas naturales, cuyo RUT CORFO no publica.',
+                'Los certificados de la Ley I+D (1.116 entre 2016 y 2025) no son subsidios adjudicados (no tienen monto aprobado por CORFO) y no se cuentan como proyectos ni en la tasa por cada 1.000 empresas.',
                 'La tasa por cada 1.000 empresas divide los proyectos de diez años por las empresas de un solo año (SII, 2024). Sirve para comparar comunas entre sí, no como tasa anual.',
                 'En comunas con uno o dos proyectos, el monto permite identificar el proyecto en DataInnovación (fuente pública).',
-                'Monto aprobado Corfo tal como viene en DataInnovación (pesos nominales de cada año, sin ajustar).',
+                'Monto aprobado CORFO tal como viene en DataInnovación (pesos nominales de cada año, sin ajustar).',
             ],
             'proyectos_en_rango': len(proyectos),
             'certificados_ley_id_en_rango': len(ley_id),

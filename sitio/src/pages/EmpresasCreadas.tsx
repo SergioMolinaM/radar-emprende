@@ -122,7 +122,7 @@ export function EmpresasCreadas() {
     <article className="rc-screen">
       <PageHead
         kicker="Registro de Empresas y Sociedades"
-        title="Empresas creadas por comuna"
+        title="Cuántas empresas nacen en cada comuna"
         dek={M.descripcion}
         byline={`Datos generados el ${fechaCorta(M.generado)}`}
       />

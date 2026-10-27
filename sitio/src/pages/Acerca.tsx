@@ -20,7 +20,7 @@ export function Acerca() {
             Radar Emprende reúne y verifica datos dispersos en registros públicos sobre la creación de empresas y los
             apoyos al emprendimiento en Chile. Mantiene la independencia editorial como condición: ningún cliente ni
             patrocinador interviene en lo que se publica, en los datos ni en su lectura. No representa al Ministerio de
-            Economía, al SII, al INE ni a Corfo, cuyos registros cita como fuente, ni recibe encargo de ellos.
+            Economía, al SII, al INE ni a CORFO, cuyos registros cita como fuente, ni recibe encargo de ellos.
           </p>
           <p>
             Ningún software, asesoría ni fondo figura por haber pagado o pedido figurar. El sitio es gratuito y de acceso

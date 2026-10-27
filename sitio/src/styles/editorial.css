@@ -50,8 +50,8 @@
   --muted: var(--mute);
   --panel: var(--paper-2);
 
-  --serif: 'Newsreader Variable', 'Newsreader', Georgia, serif;
-  --sans: 'Libre Franklin Variable', 'Libre Franklin', system-ui, sans-serif;
+  --serif: 'Libre Caslon Text', Georgia, serif;
+  --sans: 'Public Sans Variable', 'Public Sans', system-ui, sans-serif;
   --mono: 'Spline Sans Mono Variable', 'Spline Sans Mono', ui-monospace, monospace;
   --r-surface: 4px;
   --r-control: 2px;
@@ -520,3 +520,11 @@ html { scrollbar-color: #6b6b6b #e4e4e4; scrollbar-width: auto; }
    El <caption> sigue dentro de la tabla para lectores de pantalla, oculto a la vista. */
 .rc-itable-cap { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); margin: 12px 0 0; padding: 8px 12px; border: 1px solid var(--line); border-bottom: 0; border-radius: var(--r-surface) var(--r-surface) 0 0; background: var(--paper); }
 .rc-itable-cap + .rc-itable-wrap { margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0; }
+
+/* Titulares largos en celulares angostos: «microemprendedores» desbordaba el h1 a 320 px (verificador, 27-oct-2026). */
+@media (max-width: 480px) {
+  .rc-hed { overflow-wrap: break-word; -webkit-hyphens: auto; hyphens: auto; }
+}
+
+/* Libre Caslon Text trae solo 400 y 700: los titulares van en 700 (el 500 de Newsreader caía a 400 y se veía débil). */
+.rc-hed, .rc-sec-hed, .rc-fig-title { font-weight: 700; letter-spacing: -0.01em; }

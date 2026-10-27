@@ -1,4 +1,4 @@
-// src/pages/Corfo.tsx — proyectos Corfo de innovación y emprendimiento por comuna (corfo_comuna.json).
+// src/pages/Corfo.tsx — proyectos CORFO de innovación y emprendimiento por comuna (corfo_comuna.json).
 import { Link } from 'react-router-dom'
 import { Callout, EditorialTable, KpiStrip, MenorQueN, N_MIN, Nivel, PageHead, Rule, SectionTitle, type Column } from '../components/editorial'
 import { ordenar, useFiltroComunas, useOrden } from '../components/FiltroComunas'
@@ -49,7 +49,7 @@ export function Corfo() {
     { label: 'Proyectos con subsidio', sortKey: 'proyectos', align: 'right' },
     { label: 'Beneficiarios', sortKey: 'benef', align: 'right' },
     { label: 'Proyectos de micro y pequeñas', sortKey: 'micro', align: 'right' },
-    { label: 'Monto aprobado Corfo (nominal)', sortKey: 'monto', align: 'right' },
+    { label: 'Monto aprobado CORFO (nominal)', sortKey: 'monto', align: 'right' },
     { label: 'Empresas SII 2024', sortKey: 'empresas', align: 'right' },
     { label: 'Proyectos por mil empresas', sortKey: 'tasa', align: 'right' },
     { label: 'Certificados Ley I+D (aparte)', sortKey: 'ley', align: 'right' },
@@ -69,8 +69,8 @@ export function Corfo() {
   return (
     <article className="rc-screen">
       <PageHead
-        kicker="Corfo DataInnovación y SII"
-        title="A qué comunas llega Corfo"
+        kicker="CORFO DataInnovación y SII"
+        title={`En ${num(CORFO.comunas_sin_proyectos.length)} comunas no encontramos proyectos de CORFO`}
         dek={M.descripcion}
         byline={`Datos generados el ${fechaCorta(M.generado)} · nivel de afirmación ${M.nivel}`}
       />
@@ -118,7 +118,7 @@ export function Corfo() {
           onSort={onSort}
           maxRows={40}
           firstCol={{ min: '9rem' }}
-          caption="Proyectos Corfo de innovación y emprendimiento por comuna del beneficiario"
+          caption="Proyectos CORFO de innovación y emprendimiento por comuna del beneficiario"
         />
       </section>
 

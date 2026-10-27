@@ -35,6 +35,17 @@
 - `prerender.py` dejaba huérfano el servidor `vite preview` en Windows, y eso hizo fallar un build por `--strictPort`. Arreglado con `taskkill /T`.
 - **Borrador del correo a Sercotec** en Gmail (sin enviar), dirigido a encargadodai@sercotec.cl. Pide tres cosas: Crece por comuna (ejemplo 661989), monto total adjudicado y terminados con rendición aprobada. Pasó el guardia de correo con un verificador.
 - Borradores de Netlify: `6ae0f4fe…` (el primero) y `6ae0fa47664e56a3eb46a5c2` (con las correcciones).
+- **Cambios editoriales de Sergio (tarde del 27-oct).** El verificador pasó cada borrador; el último es `6ae112d0041ef07e456b1eb3`.
+  - **Mayúsculas:** SERCOTEC, FOSIS y CORFO en todo texto visible. También en los `_meta` de `corfo.py` y `fomento.py`. El componente `Corfo` y su archivo quedan igual.
+  - **Titular de portada:** «Cómo nacen, crecen y se financian las pequeñas empresas de Chile.», elegido por Sergio. Lo marqué como sobreafirmación y él pidió aclararlo abajo. La bajada acota: el financiamiento medido es el de los fondos públicos, lo que se sigue es la situación ante el SII, y el crédito, las ventas y el empleo no están en los datos.
+  - **Menú y pestañas con verbo, en tono de consultoría:** «Cuántas empresas nacen en cada comuna», «Quién crea las empresas y con cuánto capital», «Cuántos consiguen apoyo de FOSIS y SERCOTEC», «Cuántos emprenden en la informalidad».
+  - **Títulos de página periodísticos, calculados de los datos:**
+    - «7 de cada 100 postulaciones a SERCOTEC consiguen el fondo»
+    - «Las mujeres son el 37,8 % de los nuevos socios»
+    - «En 98 comunas no encontramos proyectos de CORFO». Dice «no encontramos» porque la ausencia sale de nuestro cruce con el SII: hay 235 proyectos sin comuna.
+    - «Más de la mitad de los microemprendedores trabaja en la informalidad». La definición del INE exige no tener registro en el SII y tampoco contabilidad; el intervalo de confianza del 95 % va de 52,6 a 55,8 %.
+  - **Tipografía, como experimento de la familia Radar:** Libre Caslon Text (400 y 700) en titulares y Public Sans en el texto, en reemplazo de Newsreader y Libre Franklin. Va autohospedada y la CSP no cambia. `og.png` se regeneró. Si a Sergio le convence, se lleva a Radar Circular y Radar CI.
+  - El texto del post para LinkedIn y WhatsApp quedó en el chat (no está en el repo).
 
 ### Pendiente
 
@@ -44,6 +55,9 @@
 - Anotado sin cambiar (patrones previos): la portada fecha «Datos generados» con la fecha de constituciones; las insignias N1/N2 son enlaces de 28×21 px; el buscador de comuna mide 40 px.
 - Copias de los adjuntos en `Descargas` (traen el teléfono): Sergio decide si las borra.
 - El índice de memoria del revisor está en 20,4 KB y conviene compactarlo en otra sesión.
+- `npm audit`: 1 vulnerabilidad alta en `vite` (herramienta de construcción, no llega al sitio servido). Venía de antes. No se aplicó `audit fix` antes del deploy; revisarla en otra sesión.
+- **Difusión:** en la sesión del 5-oct quedó anotado no difundir hasta tener la respuesta del abogado por la marca «RADAR». El post de LinkedIn y WhatsApp lo decide Sergio.
+- Desde el 27-oct, el material de terceros (adjuntos, bases) se abre en el sandbox Linux. Los de FOSIS y SERCOTEC se abrieron en este equipo, antes de que existiera la regla.
 
 ## 2026-10-27 — aviso desde la sesión raíz: llegaron dos respuestas de Transparencia
 

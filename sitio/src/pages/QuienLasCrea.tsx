@@ -93,7 +93,7 @@ export function QuienLasCrea() {
     <article className="rc-screen">
       <PageHead
         kicker="Registro de Empresas y Sociedades · Ministerio de Economía"
-        title="Quién crea sociedades y con cuánto capital"
+        title={`Las mujeres son el ${num(mujeresSocios(EN_CURSO, true), 1)} % de los nuevos socios`}
         dek="Sexo y nacionalidad de los socios de las sociedades constituidas en el Registro, y el capital que declaran al constituirse."
         byline={`Informe de Economía de ${MESES[E.corte.mes - 1]} de ${E.corte.anio}, actualizado el ${fechaCorta(E.corte.actualizado)}`}
       />

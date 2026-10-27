@@ -12,16 +12,16 @@ const ORIGEN = 'https://radaremprende.cl' as string | null
 const HOME: Meta = {
   title: `${SITIO} — Chile`,
   description:
-    'Empresas que nacen en cada comuna de Chile, mes a mes; quiénes las crean y con cuánto capital; qué pasó con ellas ante el SII; a qué comunas llega Corfo y cuántos postulan a FOSIS y Sercotec. Datos públicos con fuente y método.',
+    'Empresas que nacen en cada comuna de Chile, mes a mes; quiénes las crean y con cuánto capital; qué pasó con ellas ante el SII; a qué comunas llega CORFO y cuántos postulan a FOSIS y SERCOTEC. Datos públicos con fuente y método.',
 }
 const META: Record<string, Meta> = {
   '/': HOME,
   '/quien-las-crea': {
-    title: `Quién crea sociedades y con cuánto capital — ${SITIO}`,
+    title: `Quién crea las empresas y con cuánto capital — ${SITIO}`,
     description: 'Mujeres y extranjeros entre los socios de las sociedades constituidas en el Registro de Empresas y Sociedades, por año, y capital declarado al constituirse.',
   },
   '/empresas-creadas': {
-    title: `Empresas creadas por comuna — ${SITIO}`,
+    title: `Cuántas empresas nacen en cada comuna — ${SITIO}`,
     description: 'Sociedades constituidas en el Registro de Empresas y Sociedades mes a mes, por región y por comuna tributaria desde 2013, y por cada mil habitantes en el último año completo.',
   },
   '/cohortes': {
@@ -29,15 +29,15 @@ const META: Record<string, Meta> = {
     description: 'Estado a agosto de 2026 de las sociedades creadas entre 2020 y 2024: con término de giro, en la nómina del SII o fuera de ella. No es una tasa de supervivencia.',
   },
   '/corfo': {
-    title: `A qué comunas llega Corfo — ${SITIO}`,
-    description: 'Proyectos de innovación y emprendimiento de Corfo adjudicados entre 2016 y 2025 por comuna del beneficiario, y las comunas sin ningún proyecto.',
+    title: `A qué comunas llega CORFO — ${SITIO}`,
+    description: 'Proyectos de innovación y emprendimiento de CORFO adjudicados entre 2016 y 2025 por comuna del beneficiario, y las comunas sin ningún proyecto.',
   },
   '/fosis-y-sercotec': {
-    title: `Cuántos postulan a FOSIS y Sercotec y cuántos quedan — ${SITIO}`,
-    description: 'Postulaciones y seleccionados en los programas de emprendimiento de FOSIS y Sercotec entre 2023 y 2025, por programa, región y comuna, según sus respuestas por Ley de Transparencia.',
+    title: `Cuántos consiguen apoyo de FOSIS y SERCOTEC — ${SITIO}`,
+    description: 'Postulaciones y seleccionados en los programas de emprendimiento de FOSIS y SERCOTEC entre 2023 y 2025, por programa, región y comuna, según sus respuestas por Ley de Transparencia.',
   },
   '/formales-e-informales': {
-    title: `Formales e informales — ${SITIO}`,
+    title: `Cuántos emprenden en la informalidad — ${SITIO}`,
     description: 'Microemprendedores con y sin registro en el SII por región y rama, y las razones para iniciar o no iniciar actividades, según la VIII Encuesta de Microemprendimiento (INE, 2025).',
   },
   '/metodologia': {

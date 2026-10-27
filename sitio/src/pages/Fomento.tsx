@@ -1,4 +1,4 @@
-// src/pages/Fomento.tsx — postulaciones y seleccionados de FOSIS y Sercotec por comuna (fomento_comuna.json).
+// src/pages/Fomento.tsx — postulaciones y seleccionados de FOSIS y SERCOTEC por comuna (fomento_comuna.json).
 import { Link } from 'react-router-dom'
 import { Callout, EditorialTable, KpiStrip, MenorQueN, N_MIN, Nivel, PageHead, Pct, Rule, SectionTitle, type Column } from '../components/editorial'
 import { ordenar, useFiltroComunas, useOrden } from '../components/FiltroComunas'
@@ -15,10 +15,16 @@ const PERIODO = `${DESDE}–${HASTA}`
 const suma = <T,>(xs: T[], f: (x: T) => number) => xs.reduce((s, x) => s + f(x), 0)
 const fosisPost = suma(FOMENTO.fosis_programas, (p) => p.postulaciones)
 const fosisSel = suma(FOMENTO.fosis_programas, (p) => p.seleccionadas)
-// Totales de Sercotec desde las convocatorias (no desde el desglose comunal, que tiene una postulación menos).
+// Totales de SERCOTEC desde las convocatorias (no desde el desglose comunal, que tiene una postulación menos).
 const sercRegiones = FOMENTO.sercotec_regiones.filter((r) => r.programa !== 'Crece')
 const sercPost = suma(sercRegiones, (r) => r.postulaciones)
 const sercBen = suma(sercRegiones, (r) => r.beneficiarios)
+// Titular: los tres programas de SERCOTEC (Crece incluido) por cada 100 postulaciones, y FOSIS como «una de cada N».
+const titularSercotec = Math.round(
+  (100 * suma(FOMENTO.sercotec_regiones, (r) => r.beneficiarios)) / suma(FOMENTO.sercotec_regiones, (r) => r.postulaciones),
+)
+const unaDeCadaFosis = Math.round(fosisPost / fosisSel)
+const NUMERAL = ['', 'una', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve', 'diez']
 
 /** Tasa con una cifra decimal, o «n = …» si la parte tiene menos de 5 casos; «—» sin postulaciones. */
 const tasa = (parte: number, total: number) => {
@@ -42,7 +48,7 @@ const programasFosis = (() => {
   return [...m.entries()].sort((a, b) => b[1].postulaciones - a[1].postulaciones)
 })()
 
-/* ----- Sercotec por programa (nacional) y por región ----- */
+/* ----- SERCOTEC por programa (nacional) y por región ----- */
 const PROGRAMAS_SERCOTEC = ['Emprende', 'Crece', 'Almacenes']
 const sercotecNacional = PROGRAMAS_SERCOTEC.map((p) => {
   const rs = FOMENTO.sercotec_regiones.filter((r) => r.programa === p)
@@ -88,9 +94,9 @@ export function Fomento() {
     { label: 'FOSIS: postulaciones', sortKey: 'fpost', align: 'right' },
     { label: 'FOSIS: seleccionadas', sortKey: 'fsel', align: 'right' },
     { label: 'FOSIS: % seleccionadas', sortKey: 'ftasa', align: 'right' },
-    { label: 'Sercotec: postulaciones', sortKey: 'spost', align: 'right' },
-    { label: 'Sercotec: beneficiarios', sortKey: 'sben', align: 'right' },
-    { label: 'Sercotec: % beneficiarios', sortKey: 'stasa', align: 'right' },
+    { label: 'SERCOTEC: postulaciones', sortKey: 'spost', align: 'right' },
+    { label: 'SERCOTEC: beneficiarios', sortKey: 'sben', align: 'right' },
+    { label: 'SERCOTEC: % beneficiarios', sortKey: 'stasa', align: 'right' },
   ]
   const rows = filas.map((c) => [
     c.comuna,
@@ -106,9 +112,9 @@ export function Fomento() {
   return (
     <article className="rc-screen">
       <PageHead
-        kicker="FOSIS y Sercotec · Ley de Transparencia"
-        title="Cuántos postulan y cuántos quedan"
-        dek={`Postulaciones y personas seleccionadas en los programas de emprendimiento de FOSIS y Sercotec, ${PERIODO}, por comuna y región. Las cifras vienen de las respuestas de ambos servicios a solicitudes de acceso a la información.`}
+        kicker="FOSIS y SERCOTEC · Ley de Transparencia"
+        title={`${titularSercotec} de cada 100 postulaciones a SERCOTEC consiguen el fondo`}
+        dek={`Contando Emprende, Crece y Almacenes. En FOSIS queda seleccionada ${fosisSel / fosisPost > 1 / unaDeCadaFosis ? 'algo más de ' : ''}${unaDeCadaFosis <= 10 ? `una de cada ${NUMERAL[unaDeCadaFosis]}` : `una de cada ${unaDeCadaFosis}`}. Son las cifras de ${PERIODO} que ambos servicios entregaron por Ley de Transparencia, por programa, región y comuna.`}
         byline={`Datos generados el ${fechaCorta(M.generado)} · nivel de afirmación ${M.nivel}`}
       />
       <Rule weight="bold" />
@@ -126,8 +132,8 @@ export function Fomento() {
           items={[
             { valor: num(fosisPost), label: `Postulaciones a FOSIS, ${PERIODO}`, detalle: `${num(fosisSel)} personas seleccionadas en los cuatro programas Emprendamos.` },
             { valor: <Pct parte={fosisSel} total={fosisPost} />, label: 'De las postulaciones a FOSIS terminan en selección', detalle: 'Postulaciones, no personas: quien postula dos veces cuenta dos.' },
-            { valor: num(sercPost), label: `Postulaciones a Sercotec Emprende y Almacenes, ${PERIODO}`, detalle: `${num(sercBen)} beneficiarios.` },
-            { valor: <Pct parte={sercBen} total={sercPost} />, label: 'De las postulaciones a Sercotec Emprende y Almacenes terminan en beneficio', detalle: 'Crece aparte, más abajo.', alt: true },
+            { valor: num(sercPost), label: `Postulaciones a SERCOTEC Emprende y Almacenes, ${PERIODO}`, detalle: `${num(sercBen)} beneficiarios.` },
+            { valor: <Pct parte={sercBen} total={sercPost} />, label: 'De las postulaciones a SERCOTEC Emprende y Almacenes terminan en beneficio', detalle: 'Crece aparte, más abajo.', alt: true },
           ]}
         />
       </section>
@@ -153,7 +159,7 @@ export function Fomento() {
 
       <section className="rc-block">
         <SectionTitle kicker={`Suma de ${PERIODO}, todas las regiones`}>
-          Sercotec por programa <Nivel nivel={NIVEL} fuente="Sercotec, respuesta AH012T0003197" fecha="2026-10-23" />
+          SERCOTEC por programa <Nivel nivel={NIVEL} fuente="SERCOTEC, respuesta AH012T0003197" fecha="2026-10-23" />
         </SectionTitle>
         <EditorialTable
           columns={[
@@ -175,7 +181,7 @@ export function Fomento() {
             num(p.renuncias),
           ])}
           firstCol={{ min: '14rem' }}
-          caption={`Programas de Sercotec, ${PERIODO}`}
+          caption={`Programas de SERCOTEC, ${PERIODO}`}
         />
         <p className="rc-sourcenote">
           El porcentaje se calcula sobre las postulaciones enviadas. En Crece, la mayoría de las postulaciones no pasa la
@@ -185,7 +191,7 @@ export function Fomento() {
 
       <section className="rc-block">
         <SectionTitle kicker={`Suma de ${PERIODO}, por región de la convocatoria`}>
-          Sercotec por región <Nivel nivel={NIVEL} fuente="Sercotec, respuesta AH012T0003197" fecha="2026-10-23" />
+          SERCOTEC por región <Nivel nivel={NIVEL} fuente="SERCOTEC, respuesta AH012T0003197" fecha="2026-10-23" />
         </SectionTitle>
         <EditorialTable
           columns={[
@@ -198,16 +204,16 @@ export function Fomento() {
           rows={sercotecRegiones.map((r) => [regionCorta(r.region), r.programa, num(r.postulaciones), num(r.beneficiarios), tasa(r.beneficiarios, r.postulaciones)])}
           maxRows={18}
           firstCol={{ min: '10rem' }}
-          caption={`Programas de Sercotec por región, ${PERIODO}`}
+          caption={`Programas de SERCOTEC por región, ${PERIODO}`}
         />
       </section>
 
       <section className="rc-block">
         <SectionTitle kicker="Por comuna del postulante, según cada servicio">
-          Postulaciones y seleccionados por comuna <Nivel nivel={NIVEL} fuente="FOSIS y Sercotec, Ley de Transparencia" fecha={M.generado} />
+          Postulaciones y seleccionados por comuna <Nivel nivel={NIVEL} fuente="FOSIS y SERCOTEC, Ley de Transparencia" fecha={M.generado} />
         </SectionTitle>
         <p className="rc-block-intro">
-          Sercotec incluye solo Emprende y Almacenes. El porcentaje no se calcula si las postulaciones, o los
+          SERCOTEC incluye solo Emprende y Almacenes. El porcentaje no se calcula si las postulaciones, o los
           seleccionados o beneficiarios, son menos de {N_MIN}; ahí se muestra el número (n). «—» en FOSIS: la comuna no aparece en su respuesta.
         </p>
         {controles}
@@ -219,24 +225,24 @@ export function Fomento() {
           onSort={onSort}
           maxRows={40}
           firstCol={{ min: '9rem' }}
-          caption={`Postulaciones y seleccionados de FOSIS y Sercotec por comuna, ${PERIODO}`}
+          caption={`Postulaciones y seleccionados de FOSIS y SERCOTEC por comuna, ${PERIODO}`}
         />
         {M.sercotec_postulaciones_sin_comuna > 0 && (
           <p className="rc-sourcenote">
-            Postulaciones a Sercotec sin comuna («Otro lugar»): {num(M.sercotec_postulaciones_sin_comuna)}.
+            Postulaciones a SERCOTEC sin comuna («Otro lugar»): {num(M.sercotec_postulaciones_sin_comuna)}.
           </p>
         )}
       </section>
 
       <section className="rc-block" id="sin-seleccionados">
-        <SectionTitle kicker={`FOSIS no informa personas seleccionadas ni Sercotec (Emprende y Almacenes) beneficiarios en ${PERIODO}`}>
+        <SectionTitle kicker={`FOSIS no informa personas seleccionadas ni SERCOTEC (Emprende y Almacenes) beneficiarios en ${PERIODO}`}>
           Las {num(FOMENTO.comunas_sin_seleccionados.length)} comunas sin seleccionados
         </SectionTitle>
         <p>{FOMENTO.comunas_sin_seleccionados.join(', ')}.</p>
         <p className="rc-sourcenote">
           FOSIS no informa filas para {num(M.fosis_comunas_sin_filas.length)} comunas: {M.fosis_comunas_sin_filas.join(', ')}.
           Que una comuna no tenga seleccionados no prueba que el programa no llegue: puede no haber postulantes, o haberlos
-          con domicilio registrado en otra comuna. Corfo va en <Link to="/corfo">su propia página</Link>, con otro período.
+          con domicilio registrado en otra comuna. CORFO va en <Link to="/corfo">su propia página</Link>, con otro período.
         </p>
       </section>
 

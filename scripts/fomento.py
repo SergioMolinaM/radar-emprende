@@ -1,6 +1,6 @@
-"""¿Cuántos postulan y cuántos quedan en los programas de emprendimiento de FOSIS y Sercotec? (2023-2025)
+"""¿Cuántos postulan y cuántos quedan en los programas de emprendimiento de FOSIS y SERCOTEC? (2023-2025)
 
-Lee las respuestas a las solicitudes de transparencia FOSIS AI004T0002258 (22-oct-2026) y Sercotec
+Lee las respuestas a las solicitudes de transparencia FOSIS AI004T0002258 (22-oct-2026) y SERCOTEC
 AH012T0003197 (26-oct-2026), guardadas en data-raw/transparencia/ (fuera de git). Cotejo y límites en
 investigacion/2026-10-27-transparencia-respuestas.md.
 
@@ -20,7 +20,7 @@ RAIZ = pathlib.Path(__file__).resolve().parent.parent
 FOSIS = RAIZ / 'data-raw' / 'transparencia' / 'fosis' / 'Base_Datos_AI004T002258.xlsx'
 SERCOTEC = RAIZ / 'data-raw' / 'transparencia' / 'sercotec' / 'Datos_Emprende_Crece_Almacen_Modo_Empleo_2023_al_2026.xlsx'
 SALIDA = RAIZ / 'datos' / 'fomento_comuna.json'
-# 2026 queda fuera: las convocatorias siguen en selección (Sercotec Emprende 2026 informa 185 beneficiarios
+# 2026 queda fuera: las convocatorias siguen en selección (SERCOTEC Emprende 2026 informa 185 beneficiarios
 # contra 2.203 en 2023) y FOSIS informa 0 personas que completaron.
 ANIOS = (2023, 2024, 2025)
 
@@ -118,7 +118,7 @@ def sercotec(cs, idx):
             cod = C.resolver(x['comuna'], x['direccion_regional_id'], *idx)
             if cod is None:
                 if C.norm(x['comuna']) not in C.NO_COMUNA:
-                    raise SystemExit(f'Sercotec: comuna sin calce {x["comuna"]!r}. Agregar alias en comunas.py.')
+                    raise SystemExit(f'SERCOTEC: comuna sin calce {x["comuna"]!r}. Agregar alias en comunas.py.')
                 sin += x['Cantidad'] or 0
             else:
                 n[cod] += x['Cantidad'] or 0
@@ -130,10 +130,10 @@ def sercotec(cs, idx):
     post, post_sin, dif_post = por_comuna('Postulaciones_comuna', 'postulaciones_enviadas')
     benef, benef_sin, dif_benef = por_comuna('Beneficiarios_comuna', 'Beneficiarios/as')
     if dif_benef:
-        raise SystemExit(f'Sercotec: beneficiarios por comuna no calzan con la convocatoria en {dif_benef}.')
+        raise SystemExit(f'SERCOTEC: beneficiarios por comuna no calzan con la convocatoria en {dif_benef}.')
     # Única diferencia conocida al 27-oct-2026: una convocatoria de Emprende 2023 con una postulación menos.
     if sum(abs(v) for v in dif_post.values()) > 1:
-        raise SystemExit(f'Sercotec: postulaciones por comuna no calzan con la convocatoria en {dif_post}.')
+        raise SystemExit(f'SERCOTEC: postulaciones por comuna no calzan con la convocatoria en {dif_post}.')
     regiones = [dict(programa=p, region=r, **dict(v)) for (p, r), v in sorted(region.items())]
     return post, post_sin, benef, benef_sin, regiones, sum(dif_post.values())
 
@@ -162,10 +162,10 @@ def main():
     sin_nada = [c['comuna'] for c in comunas if c['fosis_seleccionadas'] == 0 and c['sercotec_beneficiarios'] == 0]
     salida = {
         '_meta': {
-            'descripcion': f'Postulaciones y personas seleccionadas en los programas de emprendimiento de FOSIS y Sercotec, {ANIOS[0]} a {ANIOS[-1]}, por comuna y región, según sus respuestas a solicitudes de acceso a la información.',
+            'descripcion': f'Postulaciones y personas seleccionadas en los programas de emprendimiento de FOSIS y SERCOTEC, {ANIOS[0]} a {ANIOS[-1]}, por comuna y región, según sus respuestas a solicitudes de acceso a la información.',
             'fuentes': [
                 'FOSIS, respuesta a la solicitud AI004T0002258 (Ley 20.285), 22-oct-2026: planilla Base_Datos_AI004T002258.xlsx, elaborada por la Unidad de Gestión de la Subdirección de Gestión de Programas desde el Sistema de Postulación a Programas (SPP).',
-                'Sercotec, respuesta a la solicitud AH012T0003197 (Ley 20.285), carta G.G. N° 283 del 23-oct-2026: planilla Datos_Emprende_Crece_Almacen_Modo_Empleo_2023_al_2026.xlsx.',
+                'SERCOTEC, respuesta a la solicitud AH012T0003197 (Ley 20.285), carta G.G. N° 283 del 23-oct-2026: planilla Datos_Emprende_Crece_Almacen_Modo_Empleo_2023_al_2026.xlsx.',
                 'INE, Censo 2024, para la lista y los nombres de las comunas.',
             ],
             'nivel': 1,
@@ -174,21 +174,21 @@ def main():
                 f'Solo convocatorias de {ANIOS[0]} a {ANIOS[-1]}. Las de 2026 siguen en selección o ejecución y no se suman.',
                 'FOSIS cuenta postulaciones registradas en su sistema, no personas distintas: una persona que postula a dos programas o dos años cuenta dos veces.',
                 'FOSIS informa más personas seleccionadas que cupos en todos los programas y años; la respuesta no lo explica.',
-                'Sercotec por comuna incluye Emprende (Capital Semilla, Capital Abeja y, desde 2024, Pioneras; Semilla Modo Empleo solo tiene convocatorias en 2026) y Almacenes. Crece se muestra solo por región: en la respuesta, sus beneficiarios por comuna vienen mezclados con las postulaciones, y separarlos sería suponer.',
-                'La columna de renuncias de Sercotec es, según su carta, un «registro de renuncias o restituciones de recursos».',
-                'Sercotec no entregó el monto total adjudicado ni cuántos terminaron con rendición aprobada; no se estiman.',
-                'La comuna es la que informa cada servicio para el postulante. «Otro lugar» (Sercotec) queda sin comuna.',
+                'SERCOTEC por comuna incluye Emprende (Capital Semilla, Capital Abeja y, desde 2024, Pioneras; Semilla Modo Empleo solo tiene convocatorias en 2026) y Almacenes. Crece se muestra solo por región: en la respuesta, sus beneficiarios por comuna vienen mezclados con las postulaciones, y separarlos sería suponer.',
+                'La columna de renuncias de SERCOTEC es, según su carta, un «registro de renuncias o restituciones de recursos».',
+                'SERCOTEC no entregó el monto total adjudicado ni cuántos terminaron con rendición aprobada; no se estiman.',
+                'La comuna es la que informa cada servicio para el postulante. «Otro lugar» (SERCOTEC) queda sin comuna.',
                 'Una comuna con cero no prueba que el programa no llegue: puede haber cupos sin postulantes o postulantes registrados en otra comuna.',
             ],
-            'control': f'FOSIS: la hoja de datos sumada por año y programa reproduce las 16 filas de la tabla resumen que entregó FOSIS. Sercotec: los beneficiarios por comuna suman exacto lo informado en cada convocatoria; las postulaciones por comuna también, salvo {abs(dif_post)} postulación de una convocatoria de Emprende 2023.',
+            'control': f'FOSIS: la hoja de datos sumada por año y programa reproduce las 16 filas de la tabla resumen que entregó FOSIS. SERCOTEC: los beneficiarios por comuna suman exacto lo informado en cada convocatoria; las postulaciones por comuna también, salvo {abs(dif_post)} postulación de una convocatoria de Emprende 2023.',
             'sercotec_postulaciones_sin_comuna': sp_sin,
             'sercotec_beneficiarios_sin_comuna': sb_sin,
             'fosis_comunas_sin_filas': [c['comuna'] for c in comunas if not c['fosis_en_respuesta']],
             'comunas_sin_seleccionados': len(sin_nada),
             'generado': datetime.date.today().isoformat(),
             'script': 'scripts/fomento.py',
-            'licencia': 'Cifras de FOSIS y Sercotec entregadas por Ley de Transparencia, citadas como fuente. Sumas y tasas: CC BY 4.0 (Radar Emprende, de Tercera Letra SpA).',
-            'reproducibilidad': 'Las planillas originales, respuesta a las solicitudes FOSIS AI004T0002258 y Sercotec AH012T0003197, no se publican en el repositorio; con ellas en data-raw/transparencia/, python scripts/fomento.py regenera este archivo.',
+            'licencia': 'Cifras de FOSIS y SERCOTEC entregadas por Ley de Transparencia, citadas como fuente. Sumas y tasas: CC BY 4.0 (Radar Emprende, de Tercera Letra SpA).',
+            'reproducibilidad': 'Las planillas originales, respuesta a las solicitudes FOSIS AI004T0002258 y SERCOTEC AH012T0003197, no se publican en el repositorio; con ellas en data-raw/transparencia/, python scripts/fomento.py regenera este archivo.',
         },
         'fosis_programas': programas_fosis,
         'sercotec_regiones': regiones,
@@ -198,7 +198,7 @@ def main():
     SALIDA.write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding='utf-8')
     t = lambda k: sum(c[k] for c in comunas)
     print('FOSIS', ANIOS, 'postulaciones', t('fosis_postulaciones'), 'seleccionadas', t('fosis_seleccionadas'))
-    print('Sercotec por comuna: postulaciones', t('sercotec_postulaciones'), '+ sin comuna', sp_sin,
+    print('SERCOTEC por comuna: postulaciones', t('sercotec_postulaciones'), '+ sin comuna', sp_sin,
           '| beneficiarios', t('sercotec_beneficiarios'), '+ sin comuna', sb_sin)
     print('comunas sin seleccionados en ninguno de los dos:', len(sin_nada), sin_nada[:15])
 

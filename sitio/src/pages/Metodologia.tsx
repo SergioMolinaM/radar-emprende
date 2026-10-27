@@ -13,23 +13,23 @@ import { fechaCorta, llano } from '../data/fechas'
 const CORRECCIONES: { fecha: string; decia: string; dice: string; porque: string }[] = []
 
 const SERIES = [
-  { nombre: 'Empresas creadas por comuna', archivo: 'datos/constituciones_comuna.json', m: CONSTITUCIONES._meta, fuentes: [CONSTITUCIONES._meta.fuente], metodo: CONSTITUCIONES._meta.metodo, nivel: CONSTITUCIONES._meta.nivel },
+  { nombre: 'Cuántas empresas nacen en cada comuna', archivo: 'datos/constituciones_comuna.json', m: CONSTITUCIONES._meta, fuentes: [CONSTITUCIONES._meta.fuente], metodo: CONSTITUCIONES._meta.metodo, nivel: CONSTITUCIONES._meta.nivel },
   { nombre: 'Diario Oficial y socios (informe mensual de Economía)', archivo: 'datos/economia_res.json', m: ECONOMIA._meta, fuentes: [ECONOMIA._meta.fuente], metodo: `${ECONOMIA._meta.metodo} Control: ${ECONOMIA._meta.control}` as string | null, nivel: ECONOMIA._meta.nivel },
   { nombre: 'Qué pasó con las empresas creadas cada año', archivo: 'datos/cohortes_comuna.json', m: COHORTES._meta, fuentes: COHORTES._meta.fuentes, metodo: null as string | null, nivel: COHORTES._meta.nivel },
-  { nombre: 'A qué comunas llega Corfo', archivo: 'datos/corfo_comuna.json', m: CORFO._meta, fuentes: CORFO._meta.fuentes, metodo: null as string | null, nivel: CORFO._meta.nivel },
-  { nombre: 'Cuántos postulan a FOSIS y Sercotec', archivo: 'datos/fomento_comuna.json', m: FOMENTO._meta, fuentes: FOMENTO._meta.fuentes, metodo: `Control: ${FOMENTO._meta.control}` as string | null, nivel: FOMENTO._meta.nivel },
-  { nombre: 'Formales e informales', archivo: 'datos/eme8_informalidad.json', m: INFORMALIDAD._meta, fuentes: [INFORMALIDAD._meta.fuente], metodo: `${INFORMALIDAD._meta.diseno} ${INFORMALIDAD._meta.calidad} ${INFORMALIDAD._meta.redondeo} Control: ${INFORMALIDAD._meta.control}` as string | null, nivel: INFORMALIDAD._meta.nivel },
+  { nombre: 'A qué comunas llega CORFO', archivo: 'datos/corfo_comuna.json', m: CORFO._meta, fuentes: CORFO._meta.fuentes, metodo: null as string | null, nivel: CORFO._meta.nivel },
+  { nombre: 'Cuántos consiguen apoyo de FOSIS y SERCOTEC', archivo: 'datos/fomento_comuna.json', m: FOMENTO._meta, fuentes: FOMENTO._meta.fuentes, metodo: `Control: ${FOMENTO._meta.control}` as string | null, nivel: FOMENTO._meta.nivel },
+  { nombre: 'Cuántos emprenden en la informalidad', archivo: 'datos/eme8_informalidad.json', m: INFORMALIDAD._meta, fuentes: [INFORMALIDAD._meta.fuente], metodo: `${INFORMALIDAD._meta.diseno} ${INFORMALIDAD._meta.calidad} ${INFORMALIDAD._meta.redondeo} Control: ${INFORMALIDAD._meta.control}` as string | null, nivel: INFORMALIDAD._meta.nivel },
 ]
 
 const SCRIPTS = [
-  { s: 'scripts/descargar.py', q: 'Baja las demás bases oficiales (SII, Censo, EME, Corfo) a data-raw/ (no versionado: son pesadas y traen RUT).' },
+  { s: 'scripts/descargar.py', q: 'Baja las demás bases oficiales (SII, Censo, EME, CORFO) a data-raw/ (no versionado: son pesadas y traen RUT).' },
   { s: 'scripts/actualizar.py', q: 'Baja del Registro de Empresas y Sociedades (API de datos.gob.cl) los años con versión nueva y recalcula; no hace nada si los datos ya usan la última. Lo corre cada semana .github/workflows/actualizar.yml, que abre un pull request para revisión.' },
   { s: 'scripts/economia_res.py', q: 'Busca el informe mensual más reciente de Economía y genera datos/economia_res.json; se detiene si su serie del Registro no reproduce la calculada desde el CSV.' },
-  { s: 'scripts/comunas.py', q: 'Tabla maestra de comunas del Censo 2024 y homologación de nombres entre RES, SII y Corfo.' },
+  { s: 'scripts/comunas.py', q: 'Tabla maestra de comunas del Censo 2024 y homologación de nombres entre RES, SII y CORFO.' },
   { s: 'scripts/constituciones.py', q: 'Genera datos/constituciones_comuna.json.' },
   { s: 'scripts/cohortes.py', q: 'Genera datos/cohortes_comuna.json.' },
   { s: 'scripts/corfo.py', q: 'Genera datos/corfo_comuna.json.' },
-  { s: 'scripts/fomento.py', q: 'Genera datos/fomento_comuna.json desde las respuestas de FOSIS y Sercotec por Ley de Transparencia; se detiene si los datos de FOSIS no reproducen su propia tabla resumen o si los beneficiarios de Sercotec por comuna no suman lo informado en cada convocatoria.' },
+  { s: 'scripts/fomento.py', q: 'Genera datos/fomento_comuna.json desde las respuestas de FOSIS y SERCOTEC por Ley de Transparencia; se detiene si los datos de FOSIS no reproducen su propia tabla resumen o si los beneficiarios de SERCOTEC por comuna no suman lo informado en cada convocatoria.' },
   { s: 'scripts/eme8_informalidad.py', q: 'Genera datos/eme8_informalidad.json; se detiene si no reproduce las cifras oficiales de la síntesis de la EME 8.' },
 ]
 
@@ -129,7 +129,7 @@ export function Metodologia() {
         <div className="rc-prose">
           <p>
             Cuando una celda tiene menos de {N_MIN} casos (sociedades creadas en un año en una comuna, sociedades creadas en
-            el año de la tasa, proyectos de Corfo en una comuna) el sitio muestra el número, marcado «n =», y no calcula
+            el año de la tasa, proyectos de CORFO en una comuna) el sitio muestra el número, marcado «n =», y no calcula
             porcentajes ni tasas. Es una regla estadística: los registros de origen ya publican esos datos por RUT, pero un
             «100,0 %» sobre una o dos sociedades se lee como un juicio sobre ellas.
           </p>
@@ -177,7 +177,7 @@ export function Metodologia() {
             ))}
           </ol>
           <p>
-            <strong>Corfo:</strong> {CORFO._meta.reproducibilidad}
+            <strong>CORFO:</strong> {CORFO._meta.reproducibilidad}
           </p>
           <p>
             El sitio no calcula las series: <code>npm run datos</code> copia los JSON de <code>datos/</code> a{' '}
