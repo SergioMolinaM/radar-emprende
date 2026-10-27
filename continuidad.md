@@ -17,7 +17,18 @@ Sesión raíz, solo lectura de Gmail. Nada se bajó ni se tocó en este repo. Se
 - Cotejar cada respuesta con lo pedido (postulantes, admisibles y adjudicados por región y comuna, 2023-2026). Si viene incompleta o denegada: amparo al CPLT en 15 días hábiles desde la notificación (cálculo propio, sin verificar feriados: FOSIS hacia el 12-nov, Sercotec hacia el 16-nov).
 - Revisor antes de usar o publicar: las bases de beneficiarios pueden traer RUT o nombres.
 - Lo que entre al sitio va junto con la corrección de cabeceras: borrador con `--cwd …\sitio`, verificador y un solo deploy con autorización nueva.
-- **28-oct:** decidir la conexión de GitHub a Netlify. Recomendación de la sesión raíz: no conectar, porque un push a `main` publicaría y cobraría sin pasar por `guard-creditos-netlify`. Sigue pendiente el ok para borrar `.netlify/` de la raíz.
+- **Conexión con GitHub (27-oct, Sergio pidió conectarla y después la postergó: «dejalo para otro día»).** Hay un
+  bloqueo técnico: `npm run build` corre `scripts/prerender.py`, que usa Playwright con Chromium, y el build de Netlify
+  no lo trae. Conectar el repo tal cual hace fallar cada build, o, con `build:sin-prerender`, saca todas las rutas con el
+  `index.html` genérico (se pierden el SEO y las vistas previas). Además, conectar dispara un deploy de producción.
+  - Elegido como recomendación: una GitHub Action que construye con Playwright y despliega con la CLI, solo cuando
+    cambian `sitio/` o `datos/`, o a mano.
+  - Descartada: conexión directa con Chromium instalado en el build de Netlify (no verificado que el servidor tenga las
+    librerías).
+  - Por qué es mejor para el producto: el resultado es idéntico al sitio verificado, con prerender y cabeceras.
+  - Costo para nosotros (no decide): una sesión de trabajo; los créditos por deploy son los mismos.
+  - Falta: ok de Sergio, secreto `NETLIFY_AUTH_TOKEN` en el repo (lo pone él) y autorización del primer deploy.
+- Sigue pendiente el ok para borrar `.netlify/` de la raíz.
 
 ## 2026-10-14 — publicación en producción (con un error de cabeceras)
 
