@@ -1,6 +1,6 @@
 # Continuidad — Radar Emprende (antes Radar Pyme)
 
-## 2026-10-27 (tarde) — apertura: primer pull request mensual
+## 2026-10-27 (tarde) — transparencia FOSIS y SERCOTEC, página nueva, portada de diario y deploy
 
 ### Hecho
 
@@ -57,29 +57,39 @@
   - El verificador en vivo pasó: los archivos son idénticos a `dist`, están las seis cabeceras de seguridad (corrige lo del 14-oct), el manifiesto tiene su tipo correcto, las redirecciones 301 funcionan, el 404 es real, los enlaces a GitHub responden 200 y la consola no tiene errores con la CSP en 9 rutas.
 - Posts para LinkedIn, WhatsApp y Facebook entregados en el chat, con la línea de CORFO corregida.
 
+- **Correo a SERCOTEC:** Sergio lo envió y rebotó (`550 5.7.1 XGEMAIL_0011 Command rejected`, filtro Sophos de sercotec.cl). Lectura no verificada: encargadodai@ no recibe correo externo. Sergio ingresó una **solicitud nueva por el portal, AH012T0003223**, el 27-oct (Crece por comuna, monto total y rendición aprobada). Registrada en `solicitudes-transparencia.md` §4 y en el calendario de `ESTADO.md`.
+- **Repo público:** las notas internas pasaron a `privado/`, que está en `.gitignore` (commit `be455aa`).
+  - Los originales íntegros quedaron en `privado/originales-2026-10-27/`, y `investigacion/2026-10-05-marcas-alternativas.md` se movió entera.
+  - En los archivos públicos, cada pasaje dice «(movido a nota privada, fuera de git)».
+  - Desde ahora, esos temas no se escriben en archivos versionados.
+- **vite 8.3.2 → 8.3.5** (`d090efd`). Eran seis avisos de GitHub, todos del servidor de desarrollo; no afectaban al sitio servido. El build nuevo tiene el mismo texto y el mismo HTML en las 10 páginas, y solo cambian los hashes, así que no hizo falta otro deploy.
+- **Aviso a la web de Tercera Letra:** quedó en su `TERCERA-LETRA-WEB-CONTINUIDAD.md`, commit local `ad962c0`, sin push. Dice que «cuántas siguen vivas» es falso (×6), que faltan FOSIS y SERCOTEC, que «Corfo» va en minúscula y que la captura está desactualizada.
+- **Memoria** de esta sesión respaldada en el repo del arnés (`bac8363`, push hecho por Sergio): titulares con verbo, repo público sin temas internos, no deducir de nombres de archivo.
+- Descartado por Sergio: la GitHub Action para publicar sola, porque se saltaría el guardia de deploy, que exige autorización expresa.
+
 ### Pendiente
 
-- **Solicitud nueva a SERCOTEC: AH012T0003223**, ingresada por Sergio en el portal el 27-oct-2026 (el comprobante llegó a su correo). Pide Crece por comuna, el monto total por convocatoria y la rendición aprobada. Plazo: 20 días hábiles, hasta el **24-nov** (cálculo propio, sin sábados ni domingos; el 31-oct y el 1-nov caen en fin de semana; prorrogable 10 días). Esto no detiene el reclamo al CPLT por la AH012T0003197, que vence el 16-nov.
-- **El correo a encargadodai@sercotec.cl rebotó** (27-oct, 20:00 UTC): `550 5.7.1 XGEMAIL_0011 Command rejected`, desde el filtro Sophos de sercotec.cl. Lectura no verificada: la casilla no recibe correo externo. **Sergio:** ingresar una solicitud nueva en el Portal de Transparencia (idOrg=58300) con el texto que quedó en el chat del 27-oct (Crece por comuna, monto total y rendición aprobada).
-- (Anterior) **Sergio:** revisar y enviar el borrador a Sercotec. Si al ~12-nov no hay respuesta, reclamo al CPLT antes del 16-nov (cálculo propio; el 31-oct cae sábado y el 1-nov domingo).
-- **Corfo AH004T0008055:** sin respuesta. Vence alrededor del 2-nov; desde ahí corre el plazo para reclamar por falta de respuesta.
-- **Web de Tercera Letra** (`web-tercera-letra/radar.html` y sus versiones en inglés y francés), en otra sesión:
-  - Dice que Radar Emprende muestra «cuántas siguen vivas», y es falso: cohortes no es supervivencia.
-  - No nombra a FOSIS ni a SERCOTEC y escribe «Corfo» en minúsculas.
-  - La captura `radar-emprende.jpg` muestra el diseño anterior.
-- **Repo público, hecho el 27-oct (pedido de Sergio):** las notas internas pasaron a `privado/`, que está en `.gitignore` y no se versiona.
-  - Copia íntegra de los originales en `privado/originales-2026-10-27/`.
-  - `investigacion/2026-10-05-marcas-alternativas.md` se movió entera a `privado/`.
-  - En los archivos públicos, cada pasaje dice «(movido a nota privada, fuera de git)».
-  - Lo anterior sigue en el historial de git: borrarlo exige reescribirlo, y eso solo con ok de Sergio.
-  - Desde ahora, esos temas no se escriben en archivos versionados.
-- Teléfono físico sin probar; las redes pueden mostrar la og anterior hasta que refresquen su caché.
-- Anotado sin cambiar (patrones previos): la portada fecha «Datos generados» con la fecha de constituciones; las insignias N1/N2 son enlaces de 28×21 px; el buscador de comuna mide 40 px.
-- Copias de los adjuntos en `Descargas` (traen el teléfono): Sergio decide si las borra.
-- El índice de memoria del revisor está en 20,4 KB y conviene compactarlo en otra sesión.
-- **`vite`: resuelto el 27-oct.** Pasó de 8.3.2 a 8.3.5 con `npm audit fix`, y quedan 0 vulnerabilidades. Eran seis avisos de GitHub (GHSA), todos del servidor de desarrollo y de la herramienta que abre el editor: afectaban a `vite dev`/`preview` en la máquina local, no al sitio servido. El build nuevo tiene el mismo texto y el mismo HTML en las 10 páginas; solo cambian los hashes de los assets. No hace falta otro deploy: el próximo build ya sale con vite 8.3.5.
-- (movido a nota privada, fuera de git)
-- Desde el 27-oct, el material de terceros (adjuntos, bases) se abre en el sandbox Linux. Los de FOSIS y SERCOTEC se abrieron en este equipo, antes de que existiera la regla.
+- **SERCOTEC AH012T0003197:** si al ~12-nov no corrigió nada, reclamo al CPLT por respuesta incompleta antes del **16-nov** (cálculo propio).
+- **SERCOTEC AH012T0003223:** responde hasta el **24-nov** (20 días hábiles, prorrogables 10; cálculo propio). Cuando llegue, va a `data-raw/transparencia/sercotec/` y se coteja; si trae Crece por comuna, se suma a `scripts/fomento.py`.
+- **CORFO AH004T0008055:** sin respuesta; vence alrededor del **2-nov**. Desde ahí corre el plazo del reclamo por falta de respuesta.
+- **Sergio:**
+  - Antes de difundir y de decidir si se reescribe el historial de git, revisar la consulta pendiente que está en `privado/`.
+  - Publicar los posts, que quedaron en el chat del 27-oct.
+  - Probar el sitio en un teléfono físico.
+  - Decidir la retención de `data-raw/` antes del 1-dic.
+  - Cambiar el titular del dominio a la SpA.
+  - Borrar las copias de los adjuntos en `Descargas`, que traen su teléfono.
+- **Otra sesión de web-tercera-letra**, antes de su deploy del 28-oct: aplicar el aviso `ad962c0`.
+- **Si la tipografía convence:** llevar Libre Caslon y Public Sans a Radar Circular y Radar CI.
+- **Arnés:** `guard-push-continuidad` evalúa la continuidad del repo donde se abrió la sesión, no la del repo de `git -C`. Frenó un push de `~/.claude` hecho desde aquí y no ofrece cómo confirmarlo.
+- Anotado sin cambiar, porque son patrones previos: la portada fecha «Datos generados» con la fecha de constituciones; las insignias N1/N2 son enlaces de 28×21 px; el buscador de comuna mide 40 px; el índice de memoria del revisor pesa 20,4 KB.
+- Las redes pueden mostrar la imagen anterior hasta que refresquen su caché.
+
+### Estado del repo
+
+- Rama `main` = `origin/main`. Producción es el deploy `6ae126463c425ac82c85ddd2`, construido desde `87214b5`. Lo que se commiteó después no cambia el sitio: documentación y `package-lock` con vite 8.3.5, con salida equivalente salvo hashes.
+- Quedan fuera de git, por diseño: `data-raw/` (incluye `transparencia/`), `privado/` y `sitio/dist`.
+- No hay nada a medio camino.
 
 ## 2026-10-27 — aviso desde la sesión raíz: llegaron dos respuestas de Transparencia
 
