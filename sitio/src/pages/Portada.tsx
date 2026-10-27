@@ -1,7 +1,7 @@
 // src/pages/Portada.tsx — portada al modo de Radar Circular: portada, cifras, un hallazgo y el índice.
 // Todas las cifras salen de los JSON.
 import { Link } from 'react-router-dom'
-import { Byline, Columnas, Dek, Hed, Kicker, KpiStrip, Rule, SectionTitle, SplitBar, type KpiItem } from '../components/editorial'
+import { Byline, Columnas, Dek, Hed, Kicker, Rule, SectionTitle, SplitBar, type KpiItem } from '../components/editorial'
 import { CONSTITUCIONES } from '../data/datos-constituciones'
 import { COHORTES } from '../data/datos-cohortes'
 import { CORFO } from '../data/datos-corfo'
@@ -71,25 +71,26 @@ const ESTADOS: { e: Estado; label: string; color: string }[] = [
 ]
 
 const SECCIONES = [
-  { to: '/empresas-creadas', go: 'Ver la serie →', t: 'Cuántas empresas nacen en cada comuna', d: `Sociedades constituidas en cada comuna, ${anios[0]}–${anios[anios.length - 1]}, y por cada mil habitantes.` },
-  { to: '/quien-las-crea', go: 'Ver los datos →', t: 'Quién crea las empresas y con cuánto capital', d: 'Mujeres y extranjeros entre los socios de las sociedades nuevas, y el capital que declaran al constituirse.' },
-  { to: '/cohortes', go: 'Ver la serie →', t: 'Qué pasó con las empresas creadas', d: `Las sociedades creadas cada año entre ${cohortes[0]} y ${cohortes[cohortes.length - 1]}, según su situación ante el SII, en todo el país y por comuna.` },
-  { to: '/corfo', go: 'Ver la serie →', t: 'A qué comunas llega CORFO', d: 'Proyectos de innovación y emprendimiento por comuna del beneficiario, y las comunas sin ninguno.' },
-  { to: '/fosis-y-sercotec', go: 'Ver los datos →', t: 'Cuántos consiguen apoyo de FOSIS y SERCOTEC', d: 'Postulaciones y seleccionados en sus programas de emprendimiento, 2023–2025, por programa, región y comuna.' },
-  { to: '/formales-e-informales', go: 'Ver los datos →', t: 'Cuántos emprenden en la informalidad', d: 'Microemprendedores con y sin registro en el SII por región y rama, y las razones que dan para iniciar actividades o no.' },
-  { to: '/metodologia', go: 'Leer la metodología →', t: 'Metodología y fuentes', d: 'Fuentes con fecha de consulta, niveles de afirmación, regla de menos de cinco casos y cómo reproducir el cálculo.' },
+  { to: '/empresas-creadas', t: 'Cuántas empresas nacen en cada comuna', d: `Sociedades constituidas en cada comuna, ${anios[0]}–${anios[anios.length - 1]}, y por cada mil habitantes.` },
+  { to: '/quien-las-crea', t: 'Quién crea las empresas y con cuánto capital', d: 'Mujeres y extranjeros entre los socios de las sociedades nuevas, y el capital que declaran al constituirse.' },
+  { to: '/cohortes', t: 'Qué pasó con las empresas creadas', d: `Las sociedades creadas cada año entre ${cohortes[0]} y ${cohortes[cohortes.length - 1]}, según su situación ante el SII, en todo el país y por comuna.` },
+  { to: '/corfo', t: 'A qué comunas llega CORFO', d: 'Proyectos de innovación y emprendimiento por comuna del beneficiario, y las comunas sin ninguno.' },
+  { to: '/fosis-y-sercotec', t: 'Cuántos consiguen apoyo de FOSIS y SERCOTEC', d: 'Postulaciones y seleccionados en sus programas de emprendimiento, 2023–2025, por programa, región y comuna.' },
+  { to: '/formales-e-informales', t: 'Cuántos emprenden en la informalidad', d: 'Microemprendedores con y sin registro en el SII por región y rama, y las razones que dan para iniciar actividades o no.' },
+  { to: '/metodologia', t: 'Metodología y fuentes', d: 'Fuentes con fecha de consulta, niveles de afirmación, regla de menos de cinco casos y cómo reproducir el cálculo.' },
 ]
 
 export function Portada() {
   return (
     <article className="rc-screen">
-      <section className="rc-cover rc-anim-in">
-        <div className="rc-cover-lead">
-          <Kicker>Emprendimiento y pymes · Chile</Kicker>
-          <Hed className="rc-cover-hed">
-            Cómo nacen, crecen y se financian
-            <span className="rc-cover-ask"> las pequeñas empresas de Chile.</span>
-          </Hed>
+      <header className="rc-front-head rc-anim-in">
+        <Kicker>Emprendimiento y pymes · Chile</Kicker>
+        <Hed className="rc-front-hed">
+          Cómo nacen, crecen y se financian <span className="rc-cover-ask">las pequeñas empresas de Chile</span>
+        </Hed>
+      </header>
+      <section className="rc-front">
+        <div className="rc-front-lead">
           <Dek>
             Radar Emprende sigue con datos oficiales a las empresas que se crean cada mes en cada comuna, lo que pasa con
             ellas ante el SII y a cuáles llegan CORFO, FOSIS y SERCOTEC. El financiamiento que se mide es el de esos
@@ -97,13 +98,18 @@ export function Portada() {
             no están en estos datos.
           </Dek>
           <Byline>Datos generados el {fechaCorta(CONSTITUCIONES._meta.generado)} · cortes de cada fuente en Metodología</Byline>
-          <div className="rc-cover-cta">
-            <Link className="rc-cta-primary" to="/empresas-creadas">
-              Ver los datos →
-            </Link>
-            <Link className="rc-cta-ghost" to="/metodologia">
-              Metodología
-            </Link>
+          <div className="rc-cifras">
+            <dl>
+              {KPIS.map((k) => (
+                <div key={String(k.label)} className="rc-cifra">
+                  <dt>{k.valor}</dt>
+                  <dd>
+                    <span className="rc-cifra-l">{k.label}</span>
+                    <span className="rc-cifra-d">{k.detalle}</span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
         <aside className="rc-cover-fig" aria-labelledby="fig-portada">
@@ -126,10 +132,6 @@ export function Portada() {
             empresas, Diario Oficial), años completos {A0}–{ANIO_T}. <Link to="/empresas-creadas">Por comuna y mes a mes →</Link>
           </p>
         </aside>
-      </section>
-
-      <section className="rc-block">
-        <KpiStrip items={KPIS} />
       </section>
 
       <Rule weight="hair" />
@@ -169,16 +171,17 @@ export function Portada() {
       <Rule weight="hair" />
 
       <section className="rc-block">
-        <SectionTitle kicker="Las series">Dentro del radar</SectionTitle>
-        <div className="rc-readmore">
+        <h2 className="rc-sumario-t">Secciones</h2>
+        <ol className="rc-sumario">
           {SECCIONES.map((c) => (
-            <Link key={c.to} to={c.to} className="rc-rmcard">
-              <span className="rc-rmcard-t">{c.t}</span>
-              <span className="rc-rmcard-d">{c.d}</span>
-              <span className="rc-rmcard-go">{c.go}</span>
-            </Link>
+            <li key={c.to}>
+              <Link to={c.to} className="rc-sumario-a">
+                {c.t}
+              </Link>
+              <p>{c.d}</p>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
     </article>
   )
