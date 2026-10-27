@@ -24,3 +24,6 @@ sitio/src/data/*.json
 
 # Estado local del CLI de Netlify
 sitio/.netlify/
+
+# Notas internas (marca, cuenta de Netlify, datos personales): el repo es público.
+privado/

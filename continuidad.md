@@ -67,20 +67,25 @@
   - Dice que Radar Emprende muestra «cuántas siguen vivas», y es falso: cohortes no es supervivencia.
   - No nombra a FOSIS ni a SERCOTEC y escribe «Corfo» en minúsculas.
   - La captura `radar-emprende.jpg` muestra el diseño anterior.
-- **Repo público:** Sergio decide qué notas internas salen del repositorio (conversación del 27-oct). Desde ahora, los temas legales y de facturación no se escriben aquí. Reescribir el historial, solo con ok de Sergio.
+- **Repo público, hecho el 27-oct (pedido de Sergio):** las notas internas pasaron a `privado/`, que está en `.gitignore` y no se versiona.
+  - Copia íntegra de los originales en `privado/originales-2026-10-27/`.
+  - `investigacion/2026-10-05-marcas-alternativas.md` se movió entera a `privado/`.
+  - En los archivos públicos, cada pasaje dice «(movido a nota privada, fuera de git)».
+  - Lo anterior sigue en el historial de git: borrarlo exige reescribirlo, y eso solo con ok de Sergio.
+  - Desde ahora, esos temas no se escriben en archivos versionados.
 - Teléfono físico sin probar; las redes pueden mostrar la og anterior hasta que refresquen su caché.
 - Anotado sin cambiar (patrones previos): la portada fecha «Datos generados» con la fecha de constituciones; las insignias N1/N2 son enlaces de 28×21 px; el buscador de comuna mide 40 px.
 - Copias de los adjuntos en `Descargas` (traen el teléfono): Sergio decide si las borra.
 - El índice de memoria del revisor está en 20,4 KB y conviene compactarlo en otra sesión.
 - `npm audit`: 1 vulnerabilidad alta en `vite` (herramienta de construcción, no llega al sitio servido). Venía de antes. No se aplicó `audit fix` antes del deploy; revisarla en otra sesión.
-- **Difusión:** en la sesión del 5-oct quedó anotado no difundir hasta tener la respuesta del abogado por la marca «RADAR». El post de LinkedIn y WhatsApp lo decide Sergio.
+- (movido a nota privada, fuera de git)
 - Desde el 27-oct, el material de terceros (adjuntos, bases) se abre en el sandbox Linux. Los de FOSIS y SERCOTEC se abrieron en este equipo, antes de que existiera la regla.
 
 ## 2026-10-27 — aviso desde la sesión raíz: llegaron dos respuestas de Transparencia
 
 Sesión raíz, solo lectura de Gmail. Nada se bajó ni se tocó en este repo. Sergio trabaja esto aquí.
 
-### Hecho (leído en Gmail, sergio.molina@terceraletra.cl)
+### Hecho (leído en Gmail)
 
 - **Sercotec AH012T0003197, respondida el 26-oct 16:48 (hora de Chile)**, hilo `1a179c201d4e00ab`. Adjuntos: `_F__Respuesta_de_transparencia_3197.pdf`, `Datos_Emprende_Crece_Almacen_Modo_Empleo_2023_al_2026.xlsx`, `Datos_Mejora_Negocios_2023_2024_2025.xlsx`, `ACUSE_RECIBO.pdf`. Contenido sin leer.
 - **FOSIS AI004T0002258, respondida el 22-oct 16:09**, hilo `1a16504ac20015fe`. Adjuntos: `EE4D5AF7B2B1_RESPUESTA_TRANSPARENCIA_AI004T0002258.pdf`, `Base_Datos_AI004T002258.xlsx`, `16968655_RESPOSITIVA.odt`, `16968884_RESPOSITIVA.pdf`, `ACUSE_RECIBO.pdf`. Contenido sin leer.
@@ -110,19 +115,19 @@ Sesión raíz, solo lectura de Gmail. Nada se bajó ni se tocó en este repo. Se
 
 ### Hecho
 
-- Cuenta Netlify destrabada: período nuevo 12-oct → 11-nov, `in_operational_mode: false`. Panel de facturación leído en Chrome: 1.289,4 créditos (837/1.000 del plan, vencen 11-nov; 452,4/500 comprados el 6-oct, sin vencimiento). Consumido en el período: 163 (5 deploys de producción 75, ancho de banda 70,3, solicitudes 16,7, cómputo 1).
+- Cuenta Netlify destrabada: período nuevo 12-oct → 11-nov. Saldo y consumo: nota privada, fuera de git.
 - NIC ya delega a p05.nsone.net; HTTPS emitido (válido hasta 4-ene-2027).
 - **Deploy de producción** `6acfa1f59f3f6616f9dfaa04` (autorizado por Sergio) desde `sitio/dist` del 6-oct (md5 idéntico, no se reconstruyó). radaremprende.cl en vivo.
 - **Verificador: FALLA.** Error mío: lancé el deploy desde la raíz del repo y `netlify.toml` vive en `sitio/`, así que producción quedó sin CSP, X-Frame-Options, nosniff, Referrer-Policy ni Permissions-Policy, y el manifiesto sale como `application/octet-stream`. Lo demás pasa: http→https y www→apex con 301, 8 rutas en 200, 404 real sin canónica, og e íconos, celular sin desborde, md5 = dist, 0 errores de consola (medido sin CSP).
 - Corrección probada en borrador (0 créditos) con `netlify deploy --dir=dist --site <id> --cwd …\sitio`: borrador `6acfa3ce170a342ef486c24b` trae todas las cabeceras y el manifiesto como `application/manifest+json`. Memoria `netlify-deploy-desde-sitio`.
-- Ancho de banda del período: casi todo es **patentes-ia** (producción 744 MB y unos once borradores de 100–400 MB cada uno). Lectura no verificada: pasadas del verificador sobre borradores con una página pesada. El panel no cuadra entre vistas (2 GB total contra ~2,9 GB en filas; 66 contra 163 créditos).
+- (movido a nota privada, fuera de git)
 
 ### Pendiente
 
 - **Producción sigue sin cabeceras de seguridad.** Sergio difirió el segundo deploy al cierre: quiere hacer otros cambios antes y desplegar todo junto. Al retomar: cambios → build → borrador con `--cwd …\sitio` y verificador → `! touch ~/.claude/DEPLOY-AUTORIZADO` → un deploy de producción. **Claude:** mismo comando del borrador con `--prod`; después `curl -sI` de cabeceras y consola con CSP en vivo (verificador).
 - **Sergio, ok pendiente:** borrar `.netlify/` suelto en la raíz del repo (sin seguimiento en git, creado por el deploy equivocado).
 - **Otra sesión, patentes-ia:** revisar peso de portada y datos; iterar en local en vez de borradores cuando no dependa de Netlify.
-- Del 6-oct, sin cambios: celular físico y compartir el link; cambio de titular del dominio a la SpA; abogado por la marca; PR mensual ~28-oct y decisión de conexión a GitHub; retención de `data-raw/` antes del 1-dic; `eme8_limitantes`; transparencia hacia el 2-nov.
+- (movido a nota privada, fuera de git)
 - Cerrado: `custom_domain` y alias www ya estaban en Netlify; delegación NIC comprobada.
 
 ### Estado del repo
@@ -138,8 +143,7 @@ Sesión raíz, solo lectura de Gmail. Nada se bajó ni se tocó en este repo. Se
 ### Hecho
 
 **Adversarial sobre publicar** (pedido de Sergio)
-- «Publicar sin difundir» no se sostenía con `robots.txt` abierto. Se propuso `noindex` hasta la respuesta del abogado. **Sergio eligió indexable desde hoy.** Contraargumento registrado: Circular, Educativo y CI ya son públicos con «Radar»; lo que agrega Emprende es el choque con la clase 35 y con el podcast «RADAR EMPRENDE».
-- **El dominio quedó a nombre de Sergio Molina Monasterios**, no de Tercera Letra SpA (whois NIC, creado 6-oct 14:41). Cambio de titular: lo hace el contacto administrativo desde la cuenta NIC («Cambio de Titular», faq tit-02). Costo y requisitos para la SpA no verificados.
+- **Sergio eligió el sitio indexable desde el 6-oct.** El contexto de esa decisión está en una nota privada, fuera de git.
 - **Conectar Netlify a GitHub se salta `guard-creditos-netlify`** (un push a `main` publica y cobra). Decisión de Sergio: deploy a mano hoy. La conexión se decide con el primer PR mensual (~28-oct), con regla `ignore` en `netlify.toml`.
 - Comprobado: datos al día (`actualizar.py`: sin publicación nueva, corte ago-2026). Las cifras de `eme8_limitantes` no aparecen en el sitio (búsqueda con control positivo en los 18 archivos).
 
@@ -166,20 +170,19 @@ Sesión raíz, solo lectura de Gmail. Nada se bajó ni se tocó en este repo. Se
 **Deploy de producción: bloqueado por Netlify**
 - Sergio asignó el dominio (`updateSite`: custom_domain radaremprende.cl, alias www); Netlify creó los registros NETLIFY de apex y www; NIC delegó a p05.nsone.net; `ssl: true`.
 - Push hecho (`3a8c7d3`; el sitio no tiene repo enlazado, `build_settings` vacío: 0 créditos).
-- `netlify deploy --prod` (con DEPLOY-AUTORIZADO creado por Sergio) → `JSONHTTPError: Forbidden`. No se creó deploy de producción (`published_deploy: null`); no se reintentó.
-- Cuenta `sergiomolinam`: `grace_topup_granted_at` 2026-10-06T18:48 UTC y `in_operational_mode: true`; período de uso 12-sep → 12-oct, 1.000 créditos de plan. Lectura (no verificada): créditos agotados; borradores permitidos, producción bloqueada. El saldo es compartido por los 29 sitios: riesgo de pausa de sitios en vivo, incluidos clientes.
+- `netlify deploy --prod` → `JSONHTTPError: Forbidden`. No se creó deploy de producción; no se reintentó. Estado de la cuenta: nota privada.
 - Sergio: «ok... esperemos».
 
 ### Pendiente
 
-- **Sergio, urgente:** revisar https://app.netlify.com/teams/sergiomolinam/billing/general (créditos, modo operacional, riesgo para los demás sitios). Recargar o esperar al 12-oct.
+- (movido a nota privada, fuera de git)
 - **Claude, cuando Sergio destrabe la cuenta:** un deploy de producción de `sitio/dist` (= borrador verificado 6ac54882289a6b95f97af0a7; si se reconstruye, comparar md5). `~/.claude/DEPLOY-AUTORIZADO` ya se consumió (el guardia lo confirmó al bloquear el push de cierre): Sergio tiene que crearlo de nuevo. Después, en vivo: HTTPS, www → apex, portada, 404, og, ícono, celular.
 - **Sergio:** abrir el sitio en su celular (iPhone/Android) y probar compartir el link cuando el dominio resuelva.
 - **Sergio:** `netlify api updateSite` con `custom_domain` radaremprende.cl y el alias www (sin eso Netlify no sirve el dominio ni emite HTTPS).
 - **Sergio:** `! touch ~/.claude/DEPLOY-AUTORIZADO` → un deploy de producción.
 - **Claude:** cuando NIC delegue, comprobar NS, HTTPS y el sitio en vivo en radaremprende.cl.
 - **Sergio:** cambio de titular del dominio a Tercera Letra SpA (consultar costo y requisitos con soporte NIC) y factura a nombre de la SpA.
-- **Sergio:** abogado por la marca (sin cambios). El sitio queda indexable.
+- (movido a nota privada, fuera de git)
 - **Claude, ~28-oct:** primer PR mensual del workflow; decidir con Sergio la conexión a GitHub con regla `ignore`.
 - Sin cambios: retención de `data-raw/` antes del 1-dic; recalcular `eme8_limitantes.json` antes de publicar esas cifras; transparencia hacia el 2-nov.
 
@@ -245,11 +248,9 @@ Sesión raíz, solo lectura de Gmail. Nada se bajó ni se tocó en este repo. Se
 **Netlify**
 - Crear el sitio (`netlify sites:create --name radar-emprende --account-slug sergiomolinam --disable-linking`) fue denegado por el clasificador de permisos. Sin sitio ni borrador. Queda para Sergio. No conectar el repo a GitHub sin decidirlo: cada push a `main` sería un deploy de producción de 15 créditos.
 
-**Marca: insumos para el abogado** (`investigacion/2026-10-05-marcas-alternativas.md`)
-- INAPI no se pudo consultar: el buscador carga por JavaScript. No se afirma ninguna ausencia. Los pasos para hacerlo a mano están en la nota.
+(movido a nota privada, fuera de git)
 - Dominios .cl el 5-oct: radaremprende.cl y radar-emprende.cl libres; vigia.cl, atalaya.cl y mirador.cl inscritos por terceros; vigiaemprende.cl, atalayaemprende.cl y miradoremprende.cl libres.
-- Existe un podcast «RADAR EMPRENDE» en Spotify (Ellioth Gomez). Comprobado por Claude con búsqueda; país y actividad no verificados.
-- Alternativa que propuso Claude si la familia cambia de nombre: Vigía. Tiene usos en datos (VigIA de Suseso/U. de Chile).
+- (movido a nota privada, fuera de git)
 
 **Incumplimientos**
 - Encadené `cd X && …` en muchos comandos. Memoria `no-encadenar-cd`.
@@ -257,7 +258,7 @@ Sesión raíz, solo lectura de Gmail. Nada se bajó ni se tocó en este repo. Se
 
 ### Pendiente
 
-**Publicación del 6-oct (Sergio: «mañana publicamos»).** Propuesta de Claude: publicar sin difundir hasta la respuesta del abogado. Orden:
+**Publicación del 6-oct (Sergio: «mañana publicamos»).** Orden:
 1. **Sergio:** terminar la inscripción de radaremprende.cl a nombre de Tercera Letra SpA (NIC: $9.990/año, exento de IVA; pedir factura a nombre de la SpA).
 2. **Sergio:** `! netlify sites:create --name radar-emprende --account-slug sergiomolinam --disable-linking`.
 3. **Claude:** fijar `ORIGEN` en `RouteMeta.tsx` y `scripts/prerender.py`, build y borrador `netlify deploy --dir=dist` (0 créditos); verificador sobre la URL del borrador.
@@ -265,7 +266,7 @@ Sesión raíz, solo lectura de Gmail. Nada se bajó ni se tocó en este repo. Se
 5. **Decisión de Sergio:** conectar el sitio a GitHub (recomendado: el pull request mensual aceptado publica solo, ~15 créditos/mes; commits de documentación con `[skip ci]`) o deploys a mano.
 6. **Sergio:** crear `~/.claude/DEPLOY-AUTORIZADO` con `!`; un solo deploy de producción.
 
-- **Sergio:** consulta a abogado por la marca «RADAR» (preguntas en `investigacion/2026-10-05-marcas-alternativas.md`; INAPI hay que consultarlo a mano). Sin respuesta: no difundir.
+- (movido a nota privada, fuera de git)
 - **Sergio:** crear el sitio en Netlify (comando arriba) o autorizar que Claude lo cree; después, borrador `netlify deploy --dir=dist` (0 créditos) y verificador sobre esa URL.
 - **Claude, al tener dominio:** fijar `ORIGEN` en `RouteMeta.tsx` y `scripts/prerender.py` (canónica, og:url, og:image, sitemap).
 - **Sergio:** retención de `data-raw/` antes del 1-dic-2026 (sin cambios; `data-raw/economia/` solo trae agregados).
@@ -303,7 +304,7 @@ Sesión raíz, solo lectura de Gmail. Nada se bajó ni se tocó en este repo. Se
 - **Claude:** recalcular `datos/eme8_limitantes.json` (2-oct) con el método de esta sesión (diseño + estándar INE); hoy usa solo n < 60 («criterio propio»). Desbloquea: nada; hacerlo antes de publicar esas cifras.
 - **Claude, opcional:** tabular `e4_otro` (n = 171; incluye «no es rentable o no le conviene»).
 - **Claude:** reverificar los 10 enlaces de «Fuentes y servicios» antes de cualquier deploy (consultados el 3-oct-2026); Emprendamos Semilla: requisito de inicio de actividades no verificado en sus bases (no se afirma en el sitio).
-- **Sergio:** consulta a abogado por la marca «RADAR» (bloquea dominio, deploy y difusión).
+- (movido a nota privada, fuera de git)
 - **Sergio:** sondeo de WhatsApp y cinco entrevistas largas; anotar las dos llamadas del 3-oct como fichas T1 y T2 («queja general, sin caso»). Propuesta pendiente de respuesta: sumar al guion «¿Conoce la Ruta de la Pyme? ¿La usó? ¿En qué paso se quedó?».
 - **Sergio:** retención de `data-raw/` antes del 1-dic-2026 (sin cambios).
 - Respuestas de transparencia hacia el 2-nov (sin cambios).
@@ -320,7 +321,7 @@ Sesión raíz, solo lectura de Gmail. Nada se bajó ni se tocó en este repo. Se
 - Sergio pidió ver qué software libre (GitHub, Hugging Face) se podía dar a pymes «como favor a la patria». Barrido en `investigacion/2026-10-02-barrido-open-source.md`. Decisión: **información, no software de impuestos** (un ERP o facturador gratis abandonado deja a la pyme multada; el SII ya da gratis la facturación).
 - Abierto y libre: repo público, contenido CC BY 4.0, código MIT. Fichas de entrevistas y contactos fuera de git.
 - Nombre: Trastienda → Radar Pyme → **Radar Emprende**. radarpyme.cl es un producto comercial de un tercero (alertas de Compra Ágil, landing en radar-publico-delta.vercel.app); por eso F6 ya no incluye Compra Ágil. `investigacion/2026-10-02-nombre.md`.
-- **Marca «RADAR» registrada en INAPI en clases 35 y 42 por Marketing y Estrategia SpA; ningún radar de Tercera Letra tiene marca.** Memoria `marca-radar-registrada-por-tercero`.
+- (movido a nota privada, fuera de git)
 - Formalización y permisos **fuera del núcleo**: los cubren Ruta de la Pyme (GORE RM/UAI), Pyme Ágil, SUPER y el propio `patentes-ia`. Radar Emprende empieza donde termina la Ruta de la Pyme (tesis de la propuesta archivada al GORE del 12-jun, `_propuestas-archivadas/lobby-gore-rm/`).
 
 **Investigación F0** (`investigacion/`, todas del 2-oct): contratar (A), formalizarse + calendario + herramientas oficiales (B/C/D), catálogo de herramientas libres (E), benchmark (F), datos públicos (G, verificado con descarga real), sistema Radar (H), fondos (I), encuestas previas, Ruta de la Pyme, canales de transparencia, desafíos de las empresas (ELE y otras: no hay ranking oficial de obstáculos por tamaño con micro; EME 5 2017: falta de clientes 29,5 %, financiamiento 25,4 %).
@@ -343,7 +344,7 @@ Sesión raíz, solo lectura de Gmail. Nada se bajó ni se tocó en este repo. Se
 
 ### Pendiente
 
-- **Sergio:** consulta a abogado de propiedad industrial por la marca «RADAR» (afecta a toda la familia). Bloquea inscribir radar-emprende.cl o radaremprende.cl y cualquier deploy o difusión.
+- (movido a nota privada, fuera de git)
 - **Sergio:** mandar el sondeo de WhatsApp (15–20 emprendedores) y hacer las cinco entrevistas largas; fichas en `fichas/` (no versionadas), contactos en `contactos.md`. Desbloquea F2 (elegir el núcleo de la guía).
 - **Sergio:** decidir la retención de `data-raw/` (direcciones y razones sociales de todas las personas jurídicas): borrar tras cada cálculo o fijar plazo, antes del 1-dic-2026 (Ley 21.719). No se borró: «sigamos» no fue un sí.
 - Frase de portada sobre la guía: sacada (decisión de Sergio, 2-oct). Se anuncia la guía cuando exista.

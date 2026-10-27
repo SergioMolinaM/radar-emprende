@@ -41,7 +41,7 @@ Parte de la familia RADAR de Tercera Letra: información pública dispersa conve
 
 ## Abierto
 
-- Marca «RADAR» registrada por un tercero en INAPI (clases 35 y 42): consulta a abogado antes de inscribir dominio, desplegar o difundir.
+- (movido a nota privada, fuera de git)
 - Dominio: radaremprende.cl o radar-emprende.cl, después de la consulta.
 
 ## Estructura
