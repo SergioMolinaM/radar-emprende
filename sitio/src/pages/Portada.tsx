@@ -71,7 +71,7 @@ const ESTADOS: { e: Estado; label: string; color: string }[] = [
 ]
 
 const SECCIONES = [
-  { to: '/empresas-creadas', t: 'Cuántas empresas nacen en cada comuna', d: `Sociedades constituidas en cada comuna, ${anios[0]}–${anios[anios.length - 1]}, y por cada mil habitantes.` },
+  { to: '/empresas-creadas', t: 'Cuántas empresas nacen en cada comuna del país', d: `Sociedades constituidas en cada comuna, ${anios[0]}–${anios[anios.length - 1]}, y por cada mil habitantes.` },
   { to: '/quien-las-crea', t: 'Quién crea las empresas y con cuánto capital', d: 'Mujeres y extranjeros entre los socios de las sociedades nuevas, y el capital que declaran al constituirse.' },
   { to: '/cohortes', t: 'Qué pasó con las empresas creadas', d: `Las sociedades creadas cada año entre ${cohortes[0]} y ${cohortes[cohortes.length - 1]}, según su situación ante el SII, en todo el país y por comuna.` },
   { to: '/corfo', t: 'A qué comunas llega CORFO', d: 'Proyectos de innovación y emprendimiento por comuna del beneficiario, y las comunas sin ninguno.' },

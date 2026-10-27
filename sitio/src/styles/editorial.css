@@ -558,3 +558,5 @@ html { scrollbar-color: #6b6b6b #e4e4e4; scrollbar-width: auto; }
 .rc-front-hed { -webkit-hyphens: manual; hyphens: manual; }
 /* Portada: el gráfico no lleva filete propio; bastan el del titular (Sergio, 27-oct-2026: «dos líneas, una larga y otra corta»). */
 .rc-front .rc-cover-fig { border-top: 0; padding-top: 0; margin-top: 0; }
+/* Portada: el gráfico baja hasta terminar a la altura de la columna de cifras (Sergio, 27-oct-2026). */
+.rc-front > .rc-cover-fig { align-self: end; }

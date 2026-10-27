@@ -13,7 +13,7 @@ import { fechaCorta, llano } from '../data/fechas'
 const CORRECCIONES: { fecha: string; decia: string; dice: string; porque: string }[] = []
 
 const SERIES = [
-  { nombre: 'Cuántas empresas nacen en cada comuna', archivo: 'datos/constituciones_comuna.json', m: CONSTITUCIONES._meta, fuentes: [CONSTITUCIONES._meta.fuente], metodo: CONSTITUCIONES._meta.metodo, nivel: CONSTITUCIONES._meta.nivel },
+  { nombre: 'Cuántas empresas nacen en cada comuna del país', archivo: 'datos/constituciones_comuna.json', m: CONSTITUCIONES._meta, fuentes: [CONSTITUCIONES._meta.fuente], metodo: CONSTITUCIONES._meta.metodo, nivel: CONSTITUCIONES._meta.nivel },
   { nombre: 'Diario Oficial y socios (informe mensual de Economía)', archivo: 'datos/economia_res.json', m: ECONOMIA._meta, fuentes: [ECONOMIA._meta.fuente], metodo: `${ECONOMIA._meta.metodo} Control: ${ECONOMIA._meta.control}` as string | null, nivel: ECONOMIA._meta.nivel },
   { nombre: 'Qué pasó con las empresas creadas cada año', archivo: 'datos/cohortes_comuna.json', m: COHORTES._meta, fuentes: COHORTES._meta.fuentes, metodo: null as string | null, nivel: COHORTES._meta.nivel },
   { nombre: 'A qué comunas llega CORFO', archivo: 'datos/corfo_comuna.json', m: CORFO._meta, fuentes: CORFO._meta.fuentes, metodo: null as string | null, nivel: CORFO._meta.nivel },

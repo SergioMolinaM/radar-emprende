@@ -21,7 +21,7 @@ const META: Record<string, Meta> = {
     description: 'Mujeres y extranjeros entre los socios de las sociedades constituidas en el Registro de Empresas y Sociedades, por año, y capital declarado al constituirse.',
   },
   '/empresas-creadas': {
-    title: `Cuántas empresas nacen en cada comuna — ${SITIO}`,
+    title: `Cuántas empresas nacen en cada comuna del país — ${SITIO}`,
     description: 'Sociedades constituidas en el Registro de Empresas y Sociedades mes a mes, por región y por comuna tributaria desde 2013, y por cada mil habitantes en el último año completo.',
   },
   '/cohortes': {

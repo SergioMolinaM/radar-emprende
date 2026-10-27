@@ -11,7 +11,7 @@ interface NavItem {
 }
 
 const NAV_EXPLORAR: NavItem[] = [
-  { to: '/empresas-creadas', label: 'Cuántas empresas nacen en cada comuna' },
+  { to: '/empresas-creadas', label: 'Cuántas empresas nacen en cada comuna del país' },
   { to: '/quien-las-crea', label: 'Quién crea las empresas y con cuánto capital' },
   { to: '/cohortes', label: 'Qué pasó con las empresas creadas' },
   { to: '/corfo', label: 'A qué comunas llega CORFO' },
