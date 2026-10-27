@@ -49,4 +49,4 @@
 
 ---
 
-**Al recibir respuesta:** guardar el PDF o archivo original en `investigacion/transparencia/` con la fecha y el número de solicitud; las cifras pasan a `datos/` con la respuesta como fuente (nivel 1).
+**Al recibir respuesta:** guardar los originales en `data-raw/transparencia/<servicio>/`, fuera de git, porque los acuses traen nombre, correo y teléfono del solicitante. El cotejo va en una nota de `investigacion/`, y las cifras pasan a `datos/` con la respuesta como fuente (nivel 1). Corrección del 27-oct-2026: antes decía `investigacion/transparencia/`, que está versionada (lo detectó el revisor).

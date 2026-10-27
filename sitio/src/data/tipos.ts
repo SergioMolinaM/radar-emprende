@@ -102,3 +102,36 @@ export interface CorfoJson {
   comunas_sin_proyectos: string[]
   comunas: CorfoComuna[]
 }
+
+/* ----- fomento_comuna.json (scripts/fomento.py) ----- */
+export interface FomentoComuna extends ComunaBase {
+  fosis_en_respuesta: boolean
+  fosis_postulaciones: number
+  fosis_cupos: number
+  fosis_seleccionadas: number
+  fosis_completaron: number
+  sercotec_postulaciones: number
+  sercotec_beneficiarios: number
+}
+export interface FomentoJson {
+  _meta: {
+    descripcion: string
+    fuentes: string[]
+    nivel: number
+    anios: number[]
+    limites: string[]
+    control: string
+    sercotec_postulaciones_sin_comuna: number
+    sercotec_beneficiarios_sin_comuna: number
+    fosis_comunas_sin_filas: string[]
+    comunas_sin_seleccionados: number
+    generado: string
+    script: string
+    licencia: string
+    reproducibilidad: string
+  }
+  fosis_programas: { programa: string; anio: number; postulaciones: number; cupos: number; seleccionadas: number; completaron: number }[]
+  sercotec_regiones: { programa: string; region: string; postulaciones: number; admisibles: number; seleccionados: number; beneficiarios: number; renuncias: number }[]
+  comunas_sin_seleccionados: string[]
+  comunas: FomentoComuna[]
+}

@@ -36,6 +36,7 @@ RUTAS: list[tuple[str, str, str | None]] = [
     ('/quien-las-crea', 'monthly', None),
     ('/cohortes', 'yearly', None),
     ('/corfo', 'yearly', None),
+    ('/fosis-y-sercotec', 'yearly', None),
     ('/formales-e-informales', 'yearly', None),
     ('/metodologia', 'monthly', None),
     ('/acerca', 'yearly', None),
@@ -142,6 +143,10 @@ def main() -> None:
         else:
             print('  sitemap.xml: no se escribe (sin dominio propio todavía)')
     finally:
+        # En Windows srv es el cmd de shell=True: terminate() no alcanza al node de vite preview, que quedaba
+        # escuchando y hacía fallar el build siguiente por --strictPort (visto el 27-oct-2026).
+        if sys.platform == 'win32':
+            subprocess.run(['taskkill', '/T', '/F', '/PID', str(srv.pid)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         srv.terminate()
         try:
             srv.wait(timeout=5)

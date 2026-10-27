@@ -5,6 +5,7 @@ import { CONSTITUCIONES } from '../data/datos-constituciones'
 import { COHORTES } from '../data/datos-cohortes'
 import { CORFO } from '../data/datos-corfo'
 import { ECONOMIA } from '../data/datos-economia'
+import { FOMENTO } from '../data/datos-fomento'
 import { INFORMALIDAD } from '../data/datos-informalidad'
 import { fechaCorta, llano } from '../data/fechas'
 
@@ -16,6 +17,7 @@ const SERIES = [
   { nombre: 'Diario Oficial y socios (informe mensual de Economía)', archivo: 'datos/economia_res.json', m: ECONOMIA._meta, fuentes: [ECONOMIA._meta.fuente], metodo: `${ECONOMIA._meta.metodo} Control: ${ECONOMIA._meta.control}` as string | null, nivel: ECONOMIA._meta.nivel },
   { nombre: 'Qué pasó con las empresas creadas cada año', archivo: 'datos/cohortes_comuna.json', m: COHORTES._meta, fuentes: COHORTES._meta.fuentes, metodo: null as string | null, nivel: COHORTES._meta.nivel },
   { nombre: 'A qué comunas llega Corfo', archivo: 'datos/corfo_comuna.json', m: CORFO._meta, fuentes: CORFO._meta.fuentes, metodo: null as string | null, nivel: CORFO._meta.nivel },
+  { nombre: 'Cuántos postulan a FOSIS y Sercotec', archivo: 'datos/fomento_comuna.json', m: FOMENTO._meta, fuentes: FOMENTO._meta.fuentes, metodo: `Control: ${FOMENTO._meta.control}` as string | null, nivel: FOMENTO._meta.nivel },
   { nombre: 'Formales e informales', archivo: 'datos/eme8_informalidad.json', m: INFORMALIDAD._meta, fuentes: [INFORMALIDAD._meta.fuente], metodo: `${INFORMALIDAD._meta.diseno} ${INFORMALIDAD._meta.calidad} ${INFORMALIDAD._meta.redondeo} Control: ${INFORMALIDAD._meta.control}` as string | null, nivel: INFORMALIDAD._meta.nivel },
 ]
 
@@ -27,6 +29,7 @@ const SCRIPTS = [
   { s: 'scripts/constituciones.py', q: 'Genera datos/constituciones_comuna.json.' },
   { s: 'scripts/cohortes.py', q: 'Genera datos/cohortes_comuna.json.' },
   { s: 'scripts/corfo.py', q: 'Genera datos/corfo_comuna.json.' },
+  { s: 'scripts/fomento.py', q: 'Genera datos/fomento_comuna.json desde las respuestas de FOSIS y Sercotec por Ley de Transparencia; se detiene si los datos de FOSIS no reproducen su propia tabla resumen o si los beneficiarios de Sercotec por comuna no suman lo informado en cada convocatoria.' },
   { s: 'scripts/eme8_informalidad.py', q: 'Genera datos/eme8_informalidad.json; se detiene si no reproduce las cifras oficiales de la síntesis de la EME 8.' },
 ]
 

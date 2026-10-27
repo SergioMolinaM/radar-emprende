@@ -12,6 +12,7 @@ const EmpresasCreadas = lazy(() => carga(import('./pages/EmpresasCreadas'), 'Emp
 const Cohortes = lazy(() => carga(import('./pages/Cohortes'), 'Cohortes'))
 const QuienLasCrea = lazy(() => carga(import('./pages/QuienLasCrea'), 'QuienLasCrea'))
 const Corfo = lazy(() => carga(import('./pages/Corfo'), 'Corfo'))
+const Fomento = lazy(() => carga(import('./pages/Fomento'), 'Fomento'))
 const Informalidad = lazy(() => carga(import('./pages/Informalidad'), 'Informalidad'))
 const Metodologia = lazy(() => carga(import('./pages/Metodologia'), 'Metodologia'))
 const Acerca = lazy(() => carga(import('./pages/Acerca'), 'Acerca'))
@@ -36,6 +37,7 @@ function App() {
             <Route path="quien-las-crea" element={<QuienLasCrea />} />
             <Route path="cohortes" element={<Cohortes />} />
             <Route path="corfo" element={<Corfo />} />
+            <Route path="fosis-y-sercotec" element={<Fomento />} />
             <Route path="formales-e-informales" element={<Informalidad />} />
             <Route path="metodologia" element={<Metodologia />} />
             <Route path="acerca" element={<Acerca />} />

@@ -12,7 +12,7 @@ const ORIGEN = 'https://radaremprende.cl' as string | null
 const HOME: Meta = {
   title: `${SITIO} — Chile`,
   description:
-    'Empresas que nacen en cada comuna de Chile, mes a mes; quiénes las crean y con cuánto capital; qué pasó con ellas ante el SII y a qué comunas llega Corfo. Datos públicos con fuente y método.',
+    'Empresas que nacen en cada comuna de Chile, mes a mes; quiénes las crean y con cuánto capital; qué pasó con ellas ante el SII; a qué comunas llega Corfo y cuántos postulan a FOSIS y Sercotec. Datos públicos con fuente y método.',
 }
 const META: Record<string, Meta> = {
   '/': HOME,
@@ -31,6 +31,10 @@ const META: Record<string, Meta> = {
   '/corfo': {
     title: `A qué comunas llega Corfo — ${SITIO}`,
     description: 'Proyectos de innovación y emprendimiento de Corfo adjudicados entre 2016 y 2025 por comuna del beneficiario, y las comunas sin ningún proyecto.',
+  },
+  '/fosis-y-sercotec': {
+    title: `Cuántos postulan a FOSIS y Sercotec y cuántos quedan — ${SITIO}`,
+    description: 'Postulaciones y seleccionados en los programas de emprendimiento de FOSIS y Sercotec entre 2023 y 2025, por programa, región y comuna, según sus respuestas por Ley de Transparencia.',
   },
   '/formales-e-informales': {
     title: `Formales e informales — ${SITIO}`,

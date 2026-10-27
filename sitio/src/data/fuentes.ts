@@ -66,6 +66,22 @@ export const FUENTES: Fuente[] = [
     condicion: 'La página dice «todos los derechos reservados»: se publican solo agregados por comuna.',
   },
   {
+    id: 'fosis',
+    nombre: 'FOSIS, respuesta a la solicitud de acceso a la información AI004T0002258 (Ley 20.285)',
+    url: 'https://www.portaltransparencia.cl',
+    consulta: '2026-10-22',
+    uso: 'Postulaciones, cupos, personas seleccionadas y personas que completaron los programas Emprendamos, por año, región y comuna.',
+    condicion: 'Información pública entregada por Ley de Transparencia: se publican agregados por comuna con cita de la respuesta.',
+  },
+  {
+    id: 'sercotec',
+    nombre: 'Sercotec, respuesta a la solicitud de acceso a la información AH012T0003197 (Ley 20.285)',
+    url: 'https://www.portaltransparencia.cl',
+    consulta: '2026-10-26',
+    uso: 'Postulaciones, admisibles, seleccionados, beneficiarios y renuncias o restituciones de Emprende, Crece y Almacenes, por convocatoria, región y comuna.',
+    condicion: 'Información pública entregada por Ley de Transparencia: se publican agregados por comuna con cita de la respuesta.',
+  },
+  {
     id: 'eme',
     nombre: 'INE y Ministerio de Economía, VIII Encuesta de Microemprendimiento (EME 8), base full, diccionario, cuestionario y manual',
     url: 'https://www.economia.gob.cl/2025/12/10/octava-encuesta-de-microemprendimiento-eme-8.htm',

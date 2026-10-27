@@ -1,5 +1,50 @@
 # Continuidad — Radar Emprende (antes Radar Pyme)
 
+## 2026-10-27 (tarde) — apertura: primer pull request mensual
+
+### Hecho
+
+- La corrida programada del 26-oct (run 40377211841) abrió el **PR #1** «corte 2026-08-eco-2026-09». Es el primer caso real del camino del pull request, que no se había probado: funciona. Solo cambia `datos/economia_res.json`, con el informe de Economía de septiembre (actualizado el 22-oct): agrega 2026-09 y no corrige meses anteriores. El Registro sigue en agosto porque datos.gob.cl todavía no republica el CSV.
+- Cotejo propio contra la planilla bajada hoy (`figuras-y-cuadros-informe-res-septiembre-2026.xlsx`). Septiembre calza en las cuatro figuras: DO 1.565 (fig. 2); socios 22.523 = 13.978 H + 8.509 M + 36 s/d (fig. 6); solo mujeres 5.374, solo hombres 9.612, mixtas 2.294, s/d 30 (fig. 7); chilenas 15.014, extranjeras 2.007, mixtas 289, total 17.310 (fig. 9).
+- Que los cortes no coincidan no rompe el sitio. Cada fuente rotula su propio tramo (`socios.ts` y `QuienLasCrea.tsx`), y `EmpresasCreadas.tsx` suma el DO solo hasta el corte del Registro (`doCubre`). En /quien-las-crea van a convivir «enero a septiembre» (socios) y «enero a agosto» (capital), cada uno con su rótulo.
+- `.netlify/` ya no está en la raíz del repo; ese pendiente se cierra.
+- El texto del PR dice «al aceptarlo, el sitio se publica», y hoy es falso: el sitio no está conectado a GitHub. Solo será cierto si se adopta la Action.
+
+- **PR #1 fusionado** con el ok de Sergio (`5138fd4`).
+- **Transparencia.** Con el ok de Sergio se bajaron con Chrome los 9 adjuntos a `data-raw/transparencia/{sercotec,fosis}/`, que queda fuera de git. Quedan copias en `Descargas`. El cotejo está en `investigacion/2026-10-27-transparencia-respuestas.md`:
+  - FOSIS respondió completo, y la hoja `datos` reproduce exacto la hoja `tabla`.
+  - Sercotec no entrega el monto total ni los terminados con rendición aprobada.
+  - El desglose comunal de Crece trae los beneficiarios pegados en la hoja de postulaciones.
+  - No hay RUT ni nombres en ninguna planilla.
+  - Corfo 8055 sigue sin respuesta.
+- Mi aviso de que Sercotec omitía Capital Semilla y Abeja era falso: vienen en la hoja «Emprende». Lo había deducido solo de los nombres de los archivos.
+
+- **Decisiones de Sergio (27-oct):** sacar hoy la página nueva y escribirle a Sercotec, con el reclamo al CPLT como respaldo. Eligió las dos opciones recomendadas.
+- **Página nueva `/fosis-y-sercotec`** («Cuántos postulan y cuántos quedan»).
+  - Datos: `scripts/fomento.py` genera `datos/fomento_comuna.json` con 2023–2025 (2026 sigue en selección).
+  - FOSIS va por programa y por comuna, sumado entre programas. El script lo controla, porque Semilla SyO atiende a personas en extrema pobreza.
+  - Sercotec va por programa y región (Crece incluido) y por comuna (solo Emprende y Almacenes).
+  - Controles: FOSIS reproduce su tabla resumen y los beneficiarios de Sercotec cuadran con cada convocatoria.
+  - Alias nuevos en `comunas.py` (Puerto Saavedra, Treguaco, Paiguano, Chol Chol, «Otro lugar»). Los demás JSON siguen iguales; solo cambiaba la fecha, que se restauró.
+  - El sitio quedó conectado en ruta, menú, portada, RouteMeta, index.html, prerender, Metodología, fuentes y pie, y `og.png` se regeneró.
+- **Revisor:** aprobado con observaciones, todas aplicadas.
+  - `solicitudes-transparencia.md` mandaba guardar los originales en una carpeta versionada. Corregido: los acuses traen el teléfono de Sergio.
+  - Se agregó el rótulo «renuncias o restituciones» y se completó el texto de la regla n<5.
+  - Las 8 comunas con menos de 5 postulaciones a Sercotec se publican con «n = k». La decisión está escrita con sus cuatro líneas en la nota de investigación.
+- **Verificador:** la primera pasada dio FALLA. Había puesto «Semilla Modo Empleo» como parte de 2023–2025, pero sus 48 convocatorias son de 2026; lo tomé de la carta sin cruzarlo con los años. Faltaban además el pie y la imagen para redes, y el «—» de FOSIS. Todo corregido. Las cifras pasaron completas: 346 comunas comparadas celda por celda contra las planillas originales.
+- `prerender.py` dejaba huérfano el servidor `vite preview` en Windows, y eso hizo fallar un build por `--strictPort`. Arreglado con `taskkill /T`.
+- **Borrador del correo a Sercotec** en Gmail (sin enviar), dirigido a encargadodai@sercotec.cl. Pide tres cosas: Crece por comuna (ejemplo 661989), monto total adjudicado y terminados con rendición aprobada. Pasó el guardia de correo con un verificador.
+- Borradores de Netlify: `6ae0f4fe…` (el primero) y `6ae0fa47664e56a3eb46a5c2` (con las correcciones).
+
+### Pendiente
+
+- **Sergio:** revisar y enviar el borrador a Sercotec. Si al ~12-nov no hay respuesta, reclamo al CPLT antes del 16-nov (cálculo propio; el 31-oct cae sábado y el 1-nov domingo).
+- **Corfo AH004T0008055:** sin respuesta. Vence alrededor del 2-nov; desde ahí corre el plazo para reclamar por falta de respuesta.
+- Deploy: hace falta push antes, porque la página enlaza a `datos/fomento_comuna.json` y `scripts/fomento.py` en GitHub. Después, un deploy de producción con `--cwd …\sitio` y autorización nueva. Corrige también las cabeceras.
+- Anotado sin cambiar (patrones previos): la portada fecha «Datos generados» con la fecha de constituciones; las insignias N1/N2 son enlaces de 28×21 px; el buscador de comuna mide 40 px.
+- Copias de los adjuntos en `Descargas` (traen el teléfono): Sergio decide si las borra.
+- El índice de memoria del revisor está en 20,4 KB y conviene compactarlo en otra sesión.
+
 ## 2026-10-27 — aviso desde la sesión raíz: llegaron dos respuestas de Transparencia
 
 Sesión raíz, solo lectura de Gmail. Nada se bajó ni se tocó en este repo. Sergio trabaja esto aquí.

@@ -75,6 +75,7 @@ const SECCIONES = [
   { to: '/quien-las-crea', go: 'Ver los datos →', t: 'Quién las crea y con cuánto capital', d: 'Mujeres y extranjeros entre los socios de las sociedades nuevas, y el capital que declaran al constituirse.' },
   { to: '/cohortes', go: 'Ver la serie →', t: 'Qué pasó con las empresas creadas', d: `Las sociedades creadas cada año entre ${cohortes[0]} y ${cohortes[cohortes.length - 1]}, según su situación ante el SII, en todo el país y por comuna.` },
   { to: '/corfo', go: 'Ver la serie →', t: 'A qué comunas llega Corfo', d: 'Proyectos de innovación y emprendimiento por comuna del beneficiario, y las comunas sin ninguno.' },
+  { to: '/fosis-y-sercotec', go: 'Ver los datos →', t: 'Cuántos postulan a FOSIS y Sercotec', d: 'Postulaciones y seleccionados en sus programas de emprendimiento, 2023–2025, por programa, región y comuna.' },
   { to: '/formales-e-informales', go: 'Ver los datos →', t: 'Formales e informales', d: 'Microemprendedores con y sin registro en el SII por región y rama, y las razones que dan para iniciar actividades o no.' },
   { to: '/metodologia', go: 'Leer la metodología →', t: 'Metodología y fuentes', d: 'Fuentes con fecha de consulta, niveles de afirmación, regla de menos de cinco casos y cómo reproducir el cálculo.' },
 ]
@@ -92,7 +93,8 @@ export function Portada() {
           <Dek>
             Radar Emprende reúne datos oficiales sobre las empresas que se crean en Chile: cuántas nacen cada mes y en
             cada comuna, quiénes son sus socios y con cuánto capital parten, su situación ante el SII en los años
-            siguientes y los proyectos de Corfo que llegan a cada territorio, con la fuente y los límites de cada cifra.
+            siguientes, los proyectos de Corfo que llegan a cada territorio y cuántos postulan y quedan en FOSIS y
+            Sercotec, con la fuente y los límites de cada cifra.
           </Dek>
           <Byline>Datos generados el {fechaCorta(CONSTITUCIONES._meta.generado)} · cortes de cada fuente en Metodología</Byline>
           <div className="rc-cover-cta">

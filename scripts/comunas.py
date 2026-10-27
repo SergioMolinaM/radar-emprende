@@ -37,10 +37,15 @@ ALIAS = {
     # SII, domicilios vigentes (PUB_NOM_DIRECCIONES).
     'SAN FRANCISCO DE MOSTAZAL': 'MOSTAZAL',
     'LLAYLLAY': 'LLAILLAY',
+    # Respuestas de transparencia de Sercotec y FOSIS, vistas el 27-oct-2026.
+    'PUERTO SAAVEDRA': 'SAAVEDRA',
+    'TREGUACO': 'TREHUACO',
+    'PAIGUANO': 'PAIHUANO',
+    'CHOL CHOL': 'CHOLCHOL',
 }
 
-# Valores que no son comuna en las fuentes del SII.
-NO_COMUNA = {'SIN INFORMACION', 'SIN COMUNA'}
+# Valores que no son comuna en las fuentes del SII y de Sercotec.
+NO_COMUNA = {'SIN INFORMACION', 'SIN COMUNA', 'OTRO LUGAR'}
 
 
 def norm(nombre):
