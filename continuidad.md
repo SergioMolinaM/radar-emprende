@@ -46,12 +46,27 @@
     - «Más de la mitad de los microemprendedores trabaja en la informalidad». La definición del INE exige no tener registro en el SII y tampoco contabilidad; el intervalo de confianza del 95 % va de 52,6 a 55,8 %.
   - **Tipografía, como experimento de la familia Radar:** Libre Caslon Text (400 y 700) en titulares y Public Sans en el texto, en reemplazo de Newsreader y Libre Franklin. Va autohospedada y la CSP no cambia. `og.png` se regeneró. Si a Sergio le convence, se lleva a Radar Circular y Radar CI.
   - El texto del post para LinkedIn y WhatsApp quedó en el chat (no está en el repo).
+- **Portada de diario** (pedido de Sergio: «menos IA»).
+  - Titular sin punto final, a todo el ancho, un poco más chico y con interlineado 1,16 (antes chocaban la q y la l).
+  - Se quitaron los botones, la franja de indicadores y la grilla de tarjetas.
+  - Las cifras van en una lista sin título, y las secciones en un sumario de dos columnas.
+  - El gráfico parte a la altura de la primera línea de la bajada.
+  - El verificador pasó.
+- **Push** `5138fd4..87214b5`, con ok de Sergio.
+- **Deploy de producción** `6ae126463c425ac82c85ddd2`, autorizado por Sergio, desde `--cwd sitio`. Costó 15 créditos y es el primer deploy de producción de la sesión.
+  - El verificador en vivo pasó: los archivos son idénticos a `dist`, están las seis cabeceras de seguridad (corrige lo del 14-oct), el manifiesto tiene su tipo correcto, las redirecciones 301 funcionan, el 404 es real, los enlaces a GitHub responden 200 y la consola no tiene errores con la CSP en 9 rutas.
+- Posts para LinkedIn, WhatsApp y Facebook entregados en el chat, con la línea de CORFO corregida.
 
 ### Pendiente
 
 - **Sergio:** revisar y enviar el borrador a Sercotec. Si al ~12-nov no hay respuesta, reclamo al CPLT antes del 16-nov (cálculo propio; el 31-oct cae sábado y el 1-nov domingo).
 - **Corfo AH004T0008055:** sin respuesta. Vence alrededor del 2-nov; desde ahí corre el plazo para reclamar por falta de respuesta.
-- Deploy: hace falta push antes, porque la página enlaza a `datos/fomento_comuna.json` y `scripts/fomento.py` en GitHub. Después, un deploy de producción con `--cwd …\sitio` y autorización nueva. Corrige también las cabeceras.
+- **Web de Tercera Letra** (`web-tercera-letra/radar.html` y sus versiones en inglés y francés), en otra sesión:
+  - Dice que Radar Emprende muestra «cuántas siguen vivas», y es falso: cohortes no es supervivencia.
+  - No nombra a FOSIS ni a SERCOTEC y escribe «Corfo» en minúsculas.
+  - La captura `radar-emprende.jpg` muestra el diseño anterior.
+- **Repo público:** Sergio decide qué notas internas salen del repositorio (conversación del 27-oct). Desde ahora, los temas legales y de facturación no se escriben aquí. Reescribir el historial, solo con ok de Sergio.
+- Teléfono físico sin probar; las redes pueden mostrar la og anterior hasta que refresquen su caché.
 - Anotado sin cambiar (patrones previos): la portada fecha «Datos generados» con la fecha de constituciones; las insignias N1/N2 son enlaces de 28×21 px; el buscador de comuna mide 40 px.
 - Copias de los adjuntos en `Descargas` (traen el teléfono): Sergio decide si las borra.
 - El índice de memoria del revisor está en 20,4 KB y conviene compactarlo en otra sesión.
