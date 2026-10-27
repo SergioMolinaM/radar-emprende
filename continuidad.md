@@ -1,5 +1,24 @@
 # Continuidad — Radar Emprende (antes Radar Pyme)
 
+## 2026-10-27 — aviso desde la sesión raíz: llegaron dos respuestas de Transparencia
+
+Sesión raíz, solo lectura de Gmail. Nada se bajó ni se tocó en este repo. Sergio trabaja esto aquí.
+
+### Hecho (leído en Gmail, sergio.molina@terceraletra.cl)
+
+- **Sercotec AH012T0003197, respondida el 26-oct 16:48 (hora de Chile)**, hilo `1a179c201d4e00ab`. Adjuntos: `_F__Respuesta_de_transparencia_3197.pdf`, `Datos_Emprende_Crece_Almacen_Modo_Empleo_2023_al_2026.xlsx`, `Datos_Mejora_Negocios_2023_2024_2025.xlsx`, `ACUSE_RECIBO.pdf`. Contenido sin leer.
+- **FOSIS AI004T0002258, respondida el 22-oct 16:09**, hilo `1a16504ac20015fe`. Adjuntos: `EE4D5AF7B2B1_RESPUESTA_TRANSPARENCIA_AI004T0002258.pdf`, `Base_Datos_AI004T002258.xlsx`, `16968655_RESPOSITIVA.odt`, `16968884_RESPOSITIVA.pdf`, `ACUSE_RECIBO.pdf`. Contenido sin leer.
+- **Corfo AH004T0008055: sin respuesta** (acuse del 2-oct). Vence alrededor del 2-nov (20 días hábiles, cálculo propio que coincide con la entrada del 6-oct).
+- No es de este proyecto: Corfo AH004T0008031 (Bienes Públicos 2020-2026) es de `patentes-ia`, respondida el 23-oct.
+
+### Pendiente
+
+- Bajar los adjuntos a `data-raw/` (fuera de git; retención antes del 1-dic). El conector de Gmail no baja adjuntos: Chrome o Sergio.
+- Cotejar cada respuesta con lo pedido (postulantes, admisibles y adjudicados por región y comuna, 2023-2026). Si viene incompleta o denegada: amparo al CPLT en 15 días hábiles desde la notificación (cálculo propio, sin verificar feriados: FOSIS hacia el 12-nov, Sercotec hacia el 16-nov).
+- Revisor antes de usar o publicar: las bases de beneficiarios pueden traer RUT o nombres.
+- Lo que entre al sitio va junto con la corrección de cabeceras: borrador con `--cwd …\sitio`, verificador y un solo deploy con autorización nueva.
+- **28-oct:** decidir la conexión de GitHub a Netlify. Recomendación de la sesión raíz: no conectar, porque un push a `main` publicaría y cobraría sin pasar por `guard-creditos-netlify`. Sigue pendiente el ok para borrar `.netlify/` de la raíz.
+
 ## 2026-10-14 — publicación en producción (con un error de cabeceras)
 
 ### Hecho
