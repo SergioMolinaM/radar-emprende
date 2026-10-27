@@ -59,7 +59,8 @@
 
 ### Pendiente
 
-- **Sergio:** revisar y enviar el borrador a Sercotec. Si al ~12-nov no hay respuesta, reclamo al CPLT antes del 16-nov (cálculo propio; el 31-oct cae sábado y el 1-nov domingo).
+- **El correo a encargadodai@sercotec.cl rebotó** (27-oct, 20:00 UTC): `550 5.7.1 XGEMAIL_0011 Command rejected`, desde el filtro Sophos de sercotec.cl. Lectura no verificada: la casilla no recibe correo externo. **Sergio:** ingresar una solicitud nueva en el Portal de Transparencia (idOrg=58300) con el texto que quedó en el chat del 27-oct (Crece por comuna, monto total y rendición aprobada).
+- (Anterior) **Sergio:** revisar y enviar el borrador a Sercotec. Si al ~12-nov no hay respuesta, reclamo al CPLT antes del 16-nov (cálculo propio; el 31-oct cae sábado y el 1-nov domingo).
 - **Corfo AH004T0008055:** sin respuesta. Vence alrededor del 2-nov; desde ahí corre el plazo para reclamar por falta de respuesta.
 - **Web de Tercera Letra** (`web-tercera-letra/radar.html` y sus versiones en inglés y francés), en otra sesión:
   - Dice que Radar Emprende muestra «cuántas siguen vivas», y es falso: cohortes no es supervivencia.
