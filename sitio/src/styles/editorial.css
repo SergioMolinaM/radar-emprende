@@ -532,7 +532,7 @@ html { scrollbar-color: #6b6b6b #e4e4e4; scrollbar-width: auto; }
 /* ---- Portada de diario (27-oct-2026): titular a todo el ancho, bajada y «En cifras» junto al gráfico,
    sumario de secciones sin tarjetas. Reemplaza el par de botones, la franja de KPI y la grilla de tarjetas. ---- */
 .rc-front-head { padding: 8px 0 20px; border-bottom: 2px solid var(--ink); margin-bottom: 26px; }
-.rc-front-hed { font-size: clamp(2.1rem, 4.6vw, 3.6rem); line-height: 1.16; color: var(--ink); max-width: 22ch; text-wrap: balance; }
+.rc-front-hed { font-size: clamp(1.95rem, 4vw, 3.15rem); line-height: 1.16; color: var(--ink); max-width: 22ch; text-wrap: balance; }
 .rc-front { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; padding-bottom: 24px; }
 .rc-front-lead .rc-dek { font-size: 1.06rem; }
 .rc-cifras { margin-top: 26px; border-top: 1px solid var(--line); }
