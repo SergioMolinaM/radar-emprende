@@ -77,7 +77,7 @@
 - Anotado sin cambiar (patrones previos): la portada fecha «Datos generados» con la fecha de constituciones; las insignias N1/N2 son enlaces de 28×21 px; el buscador de comuna mide 40 px.
 - Copias de los adjuntos en `Descargas` (traen el teléfono): Sergio decide si las borra.
 - El índice de memoria del revisor está en 20,4 KB y conviene compactarlo en otra sesión.
-- `npm audit`: 1 vulnerabilidad alta en `vite` (herramienta de construcción, no llega al sitio servido). Venía de antes. No se aplicó `audit fix` antes del deploy; revisarla en otra sesión.
+- **`vite`: resuelto el 27-oct.** Pasó de 8.3.2 a 8.3.5 con `npm audit fix`, y quedan 0 vulnerabilidades. Eran seis avisos de GitHub (GHSA), todos del servidor de desarrollo y de la herramienta que abre el editor: afectaban a `vite dev`/`preview` en la máquina local, no al sitio servido. El build nuevo tiene el mismo texto y el mismo HTML en las 10 páginas; solo cambian los hashes de los assets. No hace falta otro deploy: el próximo build ya sale con vite 8.3.5.
 - (movido a nota privada, fuera de git)
 - Desde el 27-oct, el material de terceros (adjuntos, bases) se abre en el sandbox Linux. Los de FOSIS y SERCOTEC se abrieron en este equipo, antes de que existiera la regla.
 
