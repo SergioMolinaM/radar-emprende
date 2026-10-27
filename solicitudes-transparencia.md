@@ -49,4 +49,10 @@
 
 ---
 
+## 4. SERCOTEC, aclaración (AH012T0003223, 27-oct-2026)
+
+La pidió Sergio por el portal, después de revisar la respuesta a la AH012T0003197. Pide Crece por comuna con postulaciones y beneficiarios por separado, el monto total adjudicado por convocatoria y los beneficiarios con rendición aprobada. Plazo: alrededor del 24-nov (cálculo propio).
+
+---
+
 **Al recibir respuesta:** guardar los originales en `data-raw/transparencia/<servicio>/`, fuera de git, porque los acuses traen nombre, correo y teléfono del solicitante. El cotejo va en una nota de `investigacion/`, y las cifras pasan a `datos/` con la respuesta como fuente (nivel 1). Corrección del 27-oct-2026: antes decía `investigacion/transparencia/`, que está versionada (lo detectó el revisor).

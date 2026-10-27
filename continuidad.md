@@ -59,6 +59,7 @@
 
 ### Pendiente
 
+- **Solicitud nueva a SERCOTEC: AH012T0003223**, ingresada por Sergio en el portal el 27-oct-2026 (el comprobante llegó a su correo). Pide Crece por comuna, el monto total por convocatoria y la rendición aprobada. Plazo: 20 días hábiles, hasta el **24-nov** (cálculo propio, sin sábados ni domingos; el 31-oct y el 1-nov caen en fin de semana; prorrogable 10 días). Esto no detiene el reclamo al CPLT por la AH012T0003197, que vence el 16-nov.
 - **El correo a encargadodai@sercotec.cl rebotó** (27-oct, 20:00 UTC): `550 5.7.1 XGEMAIL_0011 Command rejected`, desde el filtro Sophos de sercotec.cl. Lectura no verificada: la casilla no recibe correo externo. **Sergio:** ingresar una solicitud nueva en el Portal de Transparencia (idOrg=58300) con el texto que quedó en el chat del 27-oct (Crece por comuna, monto total y rendición aprobada).
 - (Anterior) **Sergio:** revisar y enviar el borrador a Sercotec. Si al ~12-nov no hay respuesta, reclamo al CPLT antes del 16-nov (cálculo propio; el 31-oct cae sábado y el 1-nov domingo).
 - **Corfo AH004T0008055:** sin respuesta. Vence alrededor del 2-nov; desde ahí corre el plazo para reclamar por falta de respuesta.
