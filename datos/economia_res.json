@@ -1,9 +1,9 @@
 {
  "_meta": {
   "descripcion": "Constituciones por escritura en el Diario Oficial y composición de los socios de las sociedades constituidas en el Registro de Empresas y Sociedades, por mes.",
-  "fuente": "Ministerio de Economía, Fomento y Turismo, informe mensual de creación de empresas y cooperativas de agosto de 2026, planilla de figuras y cuadros (actualizada el 24-sep-2026). Elaborada por la División de Política Comercial e Industrial con datos de la División de Empresas de Menor Tamaño.",
-  "fuente_url": "https://www.economia.gob.cl/2026/09/28/informe-de-creacion-de-empresas-y-cooperativas-agosto-2026.htm",
-  "archivo_url": "https://www.economia.gob.cl/wp-content/uploads/2026/09/figuras-y-cuadros-informe-res-agosto-2026.xlsx",
+  "fuente": "Ministerio de Economía, Fomento y Turismo, informe mensual de creación de empresas y cooperativas de septiembre de 2026, planilla de figuras y cuadros (actualizada el 22-oct-2026). Elaborada por la División de Política Comercial e Industrial con datos de la División de Empresas de Menor Tamaño.",
+  "fuente_url": "https://www.economia.gob.cl/2026/10/26/informe-de-creacion-de-empresas-y-cooperativas-septiembre-2026.htm",
+  "archivo_url": "https://www.economia.gob.cl/wp-content/uploads/2026/10/figuras-y-cuadros-informe-res-septiembre-2026.xlsx",
   "metodo": "Se copian sin cambios las series mensuales de las figuras 2 (Diario Oficial), 6 (socios por sexo), 7 (sociedades según el sexo de sus socios) y 9 (según su nacionalidad). Las sumas por año y los porcentajes son cálculo propio.",
   "nivel": 1,
   "control": "La columna del Registro de la figura 2 reproduce la serie mensual calculada desde el CSV del Registro en 150 de 160 meses; los demás difieren en 1 a 3 sociedades (extracciones distintas del mismo registro).",
@@ -12,14 +12,14 @@
    "Los socios por sexo y nacionalidad son solo los de las sociedades del Registro, no los de las constituidas en el Diario Oficial.",
    "El informe no declara licencia de uso; se publican las series con cita de la fuente."
   ],
-  "generado": "2026-10-05",
+  "generado": "2026-10-26",
   "script": "scripts/economia_res.py",
   "licencia": "Series del Ministerio de Economía sin licencia declarada, citadas como fuente. Sumas y porcentajes: CC BY 4.0 (Radar Emprende, de Tercera Letra SpA)."
  },
  "corte": {
   "anio": 2026,
-  "mes": 8,
-  "actualizado": "2026-09-24"
+  "mes": 9,
+  "actualizado": "2026-10-22"
  },
  "diario_oficial": {
   "2013-05": 5812,
@@ -181,7 +181,8 @@
   "2026-05": 1597,
   "2026-06": 1594,
   "2026-07": 1619,
-  "2026-08": 1846
+  "2026-08": 1846,
+  "2026-09": 1565
  },
  "socios_sexo": {
   "2013-05": {
@@ -1143,6 +1144,12 @@
    "hombres": 15271,
    "mujeres": 9188,
    "sin_dato": 32
+  },
+  "2026-09": {
+   "total": 22523,
+   "hombres": 13978,
+   "mujeres": 8509,
+   "sin_dato": 36
   }
  },
  "sociedades_sexo": {
@@ -2105,6 +2112,12 @@
    "solo_hombres": 10601,
    "mixtas": 2479,
    "sin_dato": 32
+  },
+  "2026-09": {
+   "solo_mujeres": 5374,
+   "solo_hombres": 9612,
+   "mixtas": 2294,
+   "sin_dato": 30
   }
  },
  "sociedades_nacionalidad": {
@@ -3067,6 +3080,12 @@
    "solo_extranjeras": 2047,
    "mixtas": 299,
    "total": 18900
+  },
+  "2026-09": {
+   "solo_chilenas": 15014,
+   "solo_extranjeras": 2007,
+   "mixtas": 289,
+   "total": 17310
   }
  }
 }
