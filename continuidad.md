@@ -1,5 +1,27 @@
 # Continuidad — Radar Emprende (antes Radar Pyme)
 
+## 2026-11-02 — respuesta de CORFO a la AH004T0008055 (desde la sesión «Licitaciones»)
+
+### Hecho
+- **CORFO respondió el 29-oct** (correo del Portal, 23:57; carta de Fiscalía firmada el 29-oct). Bajada por Sergio el
+  02-11 y extraída en `data-raw/transparencia/corfo-AH004T0008055/` (ignorado por git), **sin el acuse**, que trae datos
+  del solicitante. Archivos: carta PDF (2 págs.) y `AH004T0008055.xlsx`.
+- La carta dice que se entrega «la lista de proyectos postulados, con la información disponible… desagregada
+  únicamente por región». La planilla: 22.421 postulaciones de Semilla Inicia (14.048), Semilla Inicia mujeres
+  (3.694), Semilla Expande (3.597) y Semilla Expande mujeres (1.082), 2023-2026, una fila por proyecto, con estado,
+  condición de término (incluye CIERRE ANTICIPADO 15 y DESISTIMIENTO POSTCOMITE 97), montos postulados y aprobados,
+  fechas de informe final (606 con fecha de aprobación), total pagado, rendido aprobado y devolución.
+- Lo pedido que se puede reconstruir por región: postulaciones, adjudicados, monto, informe final aprobado y término
+  anticipado. **Falta:** (a) la comuna (ni la entregan ni declaran expresamente que no exista, como se pidió); (b) los
+  «programas regionales de apoyo al emprendimiento y a empresas de menor tamaño», que no vienen ni se mencionan;
+  (c) qué es «Localización»: 16.285 filas dicen «Metropolitana» y 1.318 «Direccion Regional Metropolitana»; si es el
+  domicilio del postulante o la oficina que tramita, **no verificado** (73 % en la RM hace dudar).
+
+### Pendiente
+- **Sergio decide:** solicitud de aclaración (como la AH012T0003223 a SERCOTEC) por (a), (b) y (c), o reclamo al CPLT
+  por respuesta incompleta (15 días hábiles desde la notificación del 29-oct a las 23:57: ~19-nov, cálculo propio).
+- Cotejo y cifras a `investigacion/` y `datos/` según `solicitudes-transparencia.md` («Al recibir respuesta»).
+
 ## 2026-10-27 (tarde) — transparencia FOSIS y SERCOTEC, página nueva, portada de diario y deploy
 
 ### Hecho
