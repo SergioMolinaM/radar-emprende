@@ -17,9 +17,15 @@
   (c) qué es «Localización»: 16.285 filas dicen «Metropolitana» y 1.318 «Direccion Regional Metropolitana»; si es el
   domicilio del postulante o la oficina que tramita, **no verificado** (73 % en la RM hace dudar).
 
+- **Solicitud de aclaración AH004T0008155** (Sergio eligió aclaración), ingresada el 02-11 por el Portal: (a) comuna
+  por código de proyecto o agregada, o declaración expresa de que no existe; (b) qué es «Localización»; (c) los
+  programas regionales o cuáles cuenta CORFO en esa categoría. Claude llenó el formulario; Sergio completó el captcha y
+  envió. Un primer intento se perdió porque el portal comparte la sesión entre pestañas (se había llenado la del MINVU
+  en otra pestaña).
+
 ### Pendiente
-- **Sergio decide:** solicitud de aclaración (como la AH012T0003223 a SERCOTEC) por (a), (b) y (c), o reclamo al CPLT
-  por respuesta incompleta (15 días hábiles desde la notificación del 29-oct a las 23:57: ~19-nov, cálculo propio).
+- Acuse de la AH004T0008155 por correo; respuesta en 20 días hábiles, ~30-nov (cálculo propio). El plazo del CPLT por
+  la AH004T0008055 (~19-nov) sigue abierto si la aclaración no llega a tiempo.
 - Cotejo y cifras a `investigacion/` y `datos/` según `solicitudes-transparencia.md` («Al recibir respuesta»).
 
 ## 2026-10-27 (tarde) — transparencia FOSIS y SERCOTEC, página nueva, portada de diario y deploy
