@@ -1,5 +1,21 @@
 # Continuidad — Radar Emprende (antes Radar Pyme)
 
+## 2026-11-16 — amparo al CPLT por SERCOTEC AH012T0003197 (desde la sesión «Postulaciones»)
+
+### Hecho
+- **Amparo ingresado, rol C16118-26** (correo del CPLT, 16-11). Por respuesta incompleta a la AH012T0003197. Claude llenó el formulario en línea (extranet.consejotransparencia.cl, «Respuesta incompleta o parcial»); Sergio subió los adjuntos, completó el código de validación y lo envió. Notificaciones solo por correo a sergio.molina@terceraletra.cl.
+- Fundamento (1.207 caracteres): (1) la carta G.G. N° 283 entrega el «monto máximo adjudicado por beneficiario», no el monto total; (2) faltan los beneficiarios con rendición aprobada; (3) en Crece, «Postulaciones_comuna» suma postulaciones y beneficiarios en 144 de 146 convocatorias (ej. 661989), y faltan 106 convocatorias en «Beneficiarios_comuna»; (4) la carta no invoca ninguna causal de reserva ni dice que lo omitido no exista; (5) cronología: el correo al encargado del 27-oct rebotó y la AH012T0003223 sigue pendiente. Las cifras salen de `investigacion/2026-10-27-transparencia-respuestas.md`, y el texto de la carta se leyó en `data-raw/`.
+- Adjuntos: `ACUSE_RECIBO.pdf` (solicitud) y `_F__Respuesta_de_transparencia_3197.pdf`. El sistema rotuló el acuse como «Poder» y no permite cambiarlo, así que se aclaró en «Otros antecedentes».
+- Decisión: se eligió presentar el amparo y no solo esperar la AH012T0003223. La alternativa descartada era confiar solo en la AH012T0003223. Es mejor porque deja a salvo la primera solicitud, cuyo plazo vencía hoy, y la cronología muestra que se agotó la vía directa. Para nosotros es más trabajo, por los dos trámites en paralelo, pero eso no decidió.
+
+### Pendiente
+- Seguir el rol C16118-26 en «Seguimiento de Casos» del CPLT. Las notificaciones llegan por correo.
+- SERCOTEC AH012T0003223 vence alrededor del 24-nov. Si responde lo omitido, se avisa al CPLT en el C16118-26.
+- CORFO AH004T0008055: el plazo del CPLT vence alrededor del 19-nov (cálculo propio), si la aclaración AH004T0008155 no llega antes.
+
+### Estado del repo
+- Solo cambia esta continuidad. `data-raw/` sigue fuera de git.
+
 ## 2026-11-02 — respuesta de CORFO a la AH004T0008055 (desde la sesión «Licitaciones»)
 
 ### Hecho
